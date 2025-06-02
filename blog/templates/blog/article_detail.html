@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article.title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+    <a href="{% url 'home' %}" class="btn btn-secondary mb-3">&larr; Retour à l'accueil</a>
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+                <h2 class="card-title">{{ article.title }}</h2>
+                <div class="btn-group">
+                    <a href="{% url 'modifier_article' article.id %}" class="btn btn-outline-primary">
+                        ✏️ Modifier
+                    </a>
+                    <a href="{% url 'supprimer_article' article.id %}" class="btn btn-outline-danger">
+                        🗑️ Supprimer
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3">
+                {% if article.category %}
+                <span class="badge bg-primary">{{ article.category.name }}</span>
+                {% else %}
+                <span class="badge bg-secondary">Non catégorisé</span>
+                {% endif %}
+                <small class="text-muted ms-2">Publié le {{ article.created_at|date:"d/m/Y à H:i" }}</small>
+            </div>
+            <p class="card-text">{{ article.content|safe }}</p>
+        </div>
+    </div>
+
+    <h3>Commentaires ({{ comments.count }})</h3>
+    {% if comments %}
+        <ul class="list-group mb-4">
+            {% for comment in comments %}
+                <li class="list-group-item">
+                    <strong>{{ comment.pseudo }}</strong> <span class="text-muted">le {{ comment.created_at|date:"d/m/Y à H:i" }}</span><br>
+                    {{ comment.comment|linebreaksbr }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="alert alert-info">Aucun commentaire pour cet article.</div>
+    {% endif %}
+
+    <div class="card">
+        <div class="card-header">
+            <h4>Ajouter un commentaire</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="mb-3">
+                    <label for="id_pseudo" class="form-label">Votre pseudo</label>
+                    {{ form.pseudo }}
+                    {{ form.pseudo.errors }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_comment" class="form-label">Commentaire</label>
+                    {{ form.comment }}
+                    {{ form.comment.errors }}
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

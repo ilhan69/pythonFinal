@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    {% if user.avatar %}
+                    <img src="{{ user.avatar.url }}" alt="Avatar" class="rounded-circle img-fluid mb-3" style="max-width: 150px;">
+                    {% else %}
+                    <img src="https://via.placeholder.com/150" alt="Avatar" class="rounded-circle img-fluid mb-3">
+                    {% endif %}
+                    <h3>{{ user.username }}</h3>
+                    <p class="text-muted">{{ user.email }}</p>
+                    {% if user.bio %}
+                    <p>{{ user.bio }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h2>Mes articles</h2>
+            {% if posts %}
+            {% for post in posts %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.content|truncatewords:30 }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">Publié le {{ post.created_at|date:"d/m/Y" }}</small>
+                        <a href="{% url 'post_detail' post.id %}" class="btn btn-primary btn-sm">Lire la suite</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>Vous n'avez pas encore publié d'articles.</p>
+            <a href="{% url 'create_post' %}" class="btn btn-primary">Créer un article</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %} 
