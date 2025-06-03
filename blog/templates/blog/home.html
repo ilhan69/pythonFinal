@@ -75,6 +75,9 @@
         {% for article in posts %}
         <div class="col-md-6 mb-3">
             <div class="card">
+                {% if article.cover_image %}
+                <img src="{{ article.cover_image.url }}" class="card-img-top" alt="{{ article.title }}" style="height: 200px; object-fit: cover;">
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ article.title }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">

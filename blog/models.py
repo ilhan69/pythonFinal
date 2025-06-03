@@ -35,6 +35,16 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
+    def has_cover_image(self):
+        """Retourne True si l'article a une image de couverture"""
+        return bool(self.cover_image)
+
+    def get_cover_image_url(self):
+        """Retourne l'URL de l'image de couverture ou None"""
+        if self.cover_image:
+            return self.cover_image.url
+        return None
+
     class Meta:
         ordering = ['-created_at']  # Order articles by creation date, newest first
 

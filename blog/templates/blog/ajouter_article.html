@@ -15,7 +15,7 @@
                     <h2>📝 Ajouter un Nouvel Article</h2>
                 </div>
                 <div class="card-body">
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form.non_field_errors }}
 
@@ -37,6 +37,17 @@
                                 <a href="{% url 'ajouter_categorie' %}" class="text-decoration-none">
                                     ➕ Ajouter une nouvelle catégorie
                                 </a>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.cover_image.id_for_label }}" class="form-label">
+                                Image de couverture
+                            </label>
+                            {{ form.cover_image }}
+                            {{ form.cover_image.errors }}
+                            <div class="form-text">
+                                Formats acceptés : JPG, PNG, GIF (optionnel)
                             </div>
                         </div>
 

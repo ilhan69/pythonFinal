@@ -15,7 +15,7 @@
                     <h2>📝 Modifier l'article</h2>
                 </div>
                 <div class="card-body">
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form.non_field_errors }}
 
@@ -37,6 +37,23 @@
                                 <a href="{% url 'ajouter_categorie' %}" class="text-decoration-none">
                                     ➕ Ajouter une nouvelle catégorie
                                 </a>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.cover_image.id_for_label }}" class="form-label">
+                                Image de couverture
+                            </label>
+                            {% if article.cover_image %}
+                                <div class="mb-2">
+                                    <img src="{{ article.cover_image.url }}" alt="Image actuelle" class="img-thumbnail" style="max-width: 200px;">
+                                    <p class="text-muted small">Image actuelle</p>
+                                </div>
+                            {% endif %}
+                            {{ form.cover_image }}
+                            {{ form.cover_image.errors }}
+                            <div class="form-text">
+                                Formats acceptés : JPG, PNG, GIF (optionnel)
                             </div>
                         </div>
 
@@ -64,4 +81,4 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+</html>
