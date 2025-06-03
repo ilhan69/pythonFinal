@@ -278,7 +278,7 @@ def post_detail(request, post_id):
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
-            comment.post = post
+            comment.article = post  # Correction ici
             comment.author = request.user
             comment.save()
             messages.success(request, _("Votre commentaire a été ajouté avec succès !"))
@@ -288,8 +288,8 @@ def post_detail(request, post_id):
     else:
         form = CommentForm()
     
-    return render(request, 'blog/post_detail.html', {
-        'post': post,
+    return render(request, 'blog/article_detail.html', {
+        'article': post,  # Adapter la clé pour le template
         'comments': comments,
         'form': form
     })
