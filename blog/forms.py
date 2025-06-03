@@ -134,3 +134,43 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'comment': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         }
+
+class UserProfileForm(forms.ModelForm):
+    """Formulaire pour modifier le profil utilisateur"""
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'bio', 'avatar', 'first_name', 'last_name']
+        widgets = {
+            'username': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Nom d\'utilisateur'
+            }),
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Adresse email'
+            }),
+            'first_name': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Prénom'
+            }),
+            'last_name': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Nom de famille'
+            }),
+            'bio': forms.Textarea(attrs={
+                'class': 'form-control',
+                'rows': 4,
+                'placeholder': 'Parlez-nous de vous...'
+            }),
+            'avatar': forms.FileInput(attrs={
+                'class': 'form-control',
+                'accept': 'image/*'
+            }),
+        }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['bio'].required = False
+        self.fields['avatar'].required = False
+        self.fields['first_name'].required = False
+        self.fields['last_name'].required = False

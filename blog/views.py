@@ -8,8 +8,10 @@ from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Count, Q, F
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
+from django.utils.translation import gettext as _, gettext_lazy
+from django.utils import translation
 import json
-from .forms import PostForm, CommentForm, CategoryForm, TagForm, UserRegistrationForm, UserLoginForm
+from .forms import PostForm, CommentForm, CategoryForm, TagForm, UserRegistrationForm, UserLoginForm, UserProfileForm
 from .models import Article, Category, Tag, User, ArticleLike, ArticleShare
 
 # Create your views here.
@@ -70,16 +72,16 @@ def ajouter_article(request):
                 article.author = request.user
                 article.save()
                 form.save_m2m()  # Important pour sauvegarder les relations many-to-many
-                messages.success(request, "L'article a été créé avec succès !")
+                messages.success(request, _("L'article a été créé avec succès !"))
                 return redirect('home')
             except Exception as e:
-                messages.error(request, f"Erreur lors de l'enregistrement : {str(e)}")
+                messages.error(request, _("Erreur lors de l'enregistrement : %(error)s") % {'error': str(e)})
                 print(f"Erreur détaillée : {e}")  # Pour le debug
         else:
             # Afficher les erreurs du formulaire
             for field, errors in form.errors.items():
                 for error in errors:
-                    messages.error(request, f"Erreur dans le champ '{field}': {error}")
+                    messages.error(request, _("Erreur dans le champ '%(field)s': %(error)s") % {'field': field, 'error': error})
             print(f"Erreurs du formulaire : {form.errors}")  # Pour le debug
     else:
         form = PostForm()
@@ -92,7 +94,7 @@ def modifier_article(request, article_id):
         form = PostForm(request.POST, request.FILES, instance=article)
         if form.is_valid():
             form.save()
-            messages.success(request, "L'article a été modifié avec succès !")
+            messages.success(request, _("L'article a été modifié avec succès !"))
             return redirect('article_detail', article_id=article.id)
     else:
         form = PostForm(instance=article)
@@ -103,7 +105,7 @@ def supprimer_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
     if request.method == 'POST':
         article.delete()
-        messages.success(request, "L'article a été supprimé avec succès !")
+        messages.success(request, _("L'article a été supprimé avec succès !"))
         return redirect('home')
     return render(request, 'blog/supprimer_article.html', {'article': article})
 
@@ -113,7 +115,7 @@ def ajouter_categorie(request):
         form = CategoryForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "La catégorie a été créée avec succès !")
+            messages.success(request, _("La catégorie a été créée avec succès !"))
             return redirect('home')
     else:
         form = CategoryForm()
@@ -126,7 +128,7 @@ def modifier_categorie(request, category_id):
         form = CategoryForm(request.POST, instance=category)
         if form.is_valid():
             form.save()
-            messages.success(request, "La catégorie a été modifiée avec succès !")
+            messages.success(request, _("La catégorie a été modifiée avec succès !"))
             return redirect('home')
     else:
         form = CategoryForm(instance=category)
@@ -137,7 +139,7 @@ def supprimer_categorie(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     if request.method == 'POST':
         category.delete()
-        messages.success(request, "La catégorie a été supprimée avec succès !")
+        messages.success(request, _("La catégorie a été supprimée avec succès !"))
         return redirect('home')
     return render(request, 'blog/supprimer_categorie.html', {'category': category})
 
@@ -147,7 +149,7 @@ def ajouter_tag(request):
         form = TagForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Le tag a été créé avec succès !")
+            messages.success(request, _("Le tag a été créé avec succès !"))
             return redirect('home')
     else:
         form = TagForm()
@@ -160,7 +162,7 @@ def modifier_tag(request, tag_id):
         form = TagForm(request.POST, instance=tag)
         if form.is_valid():
             form.save()
-            messages.success(request, "Le tag a été modifié avec succès !")
+            messages.success(request, _("Le tag a été modifié avec succès !"))
             return redirect('home')
     else:
         form = TagForm(instance=tag)
@@ -171,7 +173,7 @@ def supprimer_tag(request, tag_id):
     tag = get_object_or_404(Tag, id=tag_id)
     if request.method == 'POST':
         tag.delete()
-        messages.success(request, "Le tag a été supprimé avec succès !")
+        messages.success(request, _("Le tag a été supprimé avec succès !"))
         return redirect('home')
     return render(request, 'blog/supprimer_tag.html', {'tag': tag})
 
@@ -188,7 +190,7 @@ def article_detail(request, article_id):
             comment.article = article
             comment.author = request.user
             comment.save()
-            messages.success(request, "Votre commentaire a été ajouté avec succès !")
+            messages.success(request, _("Votre commentaire a été ajouté avec succès !"))
             return redirect('article_detail', article_id=article.id)
     else:
         form = CommentForm()
@@ -204,8 +206,10 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            messages.success(request, 'Votre compte a été créé avec succès !')
+            messages.success(request, _('Votre compte a été créé avec succès !'))
             return redirect('home')
+        else:
+            messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
     else:
         form = UserRegistrationForm()
     return render(request, 'blog/register.html', {'form': form})
@@ -219,18 +223,51 @@ def user_login(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                messages.success(request, 'Vous êtes maintenant connecté !')
+                messages.success(request, _('Vous êtes maintenant connecté !'))
                 return redirect('home')
+            else:
+                messages.error(request, _('Nom d\'utilisateur ou mot de passe incorrect.'))
+        else:
+            messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
     else:
         form = UserLoginForm()
     return render(request, 'blog/login.html', {'form': form})
 
 @login_required
 def profile(request):
-    user_posts = Article.objects.filter(author=request.user)
+    """Vue pour afficher et modifier le profil utilisateur"""
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _('Votre profil a été mis à jour avec succès !'))
+            return redirect('profile')
+        else:
+            messages.error(request, _('Veuillez corriger les erreurs ci-dessous.'))
+    else:
+        form = UserProfileForm(instance=request.user)
+    
+    # Récupérer les articles de l'utilisateur avec statistiques
+    user_posts = Article.objects.filter(author=request.user).order_by('-created_at')
+    
+    # Statistiques utilisateur
+    total_articles = user_posts.count()
+    published_articles = user_posts.filter(status='published').count()
+    draft_articles = user_posts.filter(status='draft').count()
+    total_views = sum(post.views_count for post in user_posts)
+    total_likes = sum(post.likes_count for post in user_posts)
+    
     return render(request, 'blog/profile.html', {
         'user': request.user,
-        'posts': user_posts
+        'posts': user_posts,
+        'form': form,
+        'stats': {
+            'total_articles': total_articles,
+            'published_articles': published_articles,
+            'draft_articles': draft_articles,
+            'total_views': total_views,
+            'total_likes': total_likes,
+        }
     })
 
 def post_detail(request, post_id):
@@ -244,7 +281,10 @@ def post_detail(request, post_id):
             comment.post = post
             comment.author = request.user
             comment.save()
+            messages.success(request, _("Votre commentaire a été ajouté avec succès !"))
             return redirect('post_detail', post_id=post.id)
+        else:
+            messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
     else:
         form = CommentForm()
     
@@ -262,7 +302,11 @@ def create_post(request):
             post = form.save(commit=False)
             post.author = request.user
             post.save()
+            form.save_m2m()
+            messages.success(request, _("L'article a été créé avec succès !"))
             return redirect('post_detail', post_id=post.id)
+        else:
+            messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
     else:
         form = PostForm()
     return render(request, 'blog/ajouter_article.html', {'form': form})
@@ -273,7 +317,10 @@ def create_category(request):
         form = CategoryForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, _("La catégorie a été créée avec succès !"))
             return redirect('home')
+        else:
+            messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
     else:
         form = CategoryForm()
     return render(request, 'blog/ajouter_categorie.html', {'form': form})
@@ -299,7 +346,7 @@ def tag_posts(request, tag_slug):
 @login_required
 def user_logout(request):
     logout(request)
-    messages.success(request, 'Vous avez été déconnecté avec succès !')
+    messages.success(request, _('Vous avez été déconnecté avec succès !'))
     return redirect('home')
 
 @require_POST
@@ -319,20 +366,20 @@ def like_article(request, article_id):
         # Nouveau like
         article.increment_likes()
         liked = True
-        message = 'Article liké avec succès!'
+        message = _('Article liké avec succès!')
     else:
         # Unlike - supprimer le like existant
         like.delete()
         article.likes_count = max(0, article.likes_count - 1)
         article.save(update_fields=['likes_count'])
         liked = False
-        message = 'Like retiré avec succès!'
+        message = _('Like retiré avec succès!')
     
     return JsonResponse({
         'success': True,
         'liked': liked,
         'likes_count': article.likes_count,
-        'message': message
+        'message': str(message)
     })
 
 @require_POST  
@@ -358,7 +405,7 @@ def share_article(request, article_id):
     return JsonResponse({
         'success': True,
         'shares_count': article.shares_count,
-        'message': 'Article partagé avec succès!'
+        'message': str(_('Article partagé avec succès!'))
     })
 
 def liste_articles(request):
@@ -510,10 +557,10 @@ def liste_articles(request):
         'is_paginated': page_obj.has_other_pages(),
         'paginator': paginator,
         'sort_options': [
-            ('recent', 'Plus récent'),
-            ('oldest', 'Plus ancien'),
-            ('popular', 'Plus populaire'),
-            ('alphabetic', 'Alphabétique'),
+            ('recent', _('Plus récent')),
+            ('oldest', _('Plus ancien')),
+            ('popular', _('Plus populaire')),
+            ('alphabetic', _('Alphabétique')),
         ],
         'per_page_options': [6, 12, 18, 24],
     }

@@ -18,11 +18,19 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
 
+# URLs sans préfixe de langue (pour le changement de langue)
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('blog.urls'))
+    path('i18n/', include('django.conf.urls.i18n')),  # Pour le changement de langue
 ]
+
+# URLs avec préfixe de langue
+urlpatterns += i18n_patterns(
+    path('admin/', admin.site.urls),
+    path('', include('blog.urls')),
+    prefix_default_language=True,  # Ajouter le préfixe pour toutes les langues, y compris la langue par défaut
+)
 
 # Serve media files during development
 if settings.DEBUG:
