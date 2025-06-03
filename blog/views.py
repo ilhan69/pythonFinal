@@ -5,7 +5,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
-from django.db.models import Count, Q
+from django.db.models import Count, Q, F
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 import json
 from .forms import PostForm, CommentForm, CategoryForm, TagForm, UserRegistrationForm, UserLoginForm
 from .models import Article, Category, Tag, User, ArticleLike, ArticleShare
@@ -358,3 +360,162 @@ def share_article(request, article_id):
         'shares_count': article.shares_count,
         'message': 'Article partagé avec succès!'
     })
+
+def liste_articles(request):
+    """
+    Vue pour afficher la liste des articles avec pagination, filtrage, tri et recherche PostgreSQL optimisée
+    """
+    # Commencer avec tous les articles publiés
+    articles = Article.objects.filter(status='published').select_related('author', 'category').prefetch_related('tags')
+    
+    # Paramètres de recherche et filtrage
+    search_query = request.GET.get('search', '').strip()
+    category_id = request.GET.get('category', '')
+    tag_id = request.GET.get('tag', '')
+    author_id = request.GET.get('author', '')
+    sort_by = request.GET.get('sort', 'recent')  # recent, popular, alphabetic
+    
+    # Recherche full-text PostgreSQL optimisée
+    if search_query:
+        try:
+            # Configuration avancée de la recherche PostgreSQL avec pondération
+            search_vector = (
+                SearchVector('title', weight='A', config='french') + 
+                SearchVector('content', weight='B', config='french') + 
+                SearchVector('excerpt', weight='C', config='french') +
+                SearchVector('meta_title', weight='A', config='french') +
+                SearchVector('meta_description', weight='C', config='french')
+            )
+            search_query_obj = SearchQuery(search_query, config='french')
+            
+            articles = articles.annotate(
+                search=search_vector,
+                rank=SearchRank(search_vector, search_query_obj)
+            ).filter(search=search_query_obj).order_by('-rank', '-created_at')
+        except Exception as e:
+            # Fallback vers une recherche simple si PostgreSQL search échoue
+            articles = articles.filter(
+                Q(title__icontains=search_query) |
+                Q(content__icontains=search_query) |
+                Q(excerpt__icontains=search_query)
+            ).order_by('-created_at')
+    
+    # Filtrage par catégorie
+    if category_id:
+        try:
+            category_id = int(category_id)
+            articles = articles.filter(category_id=category_id)
+        except (ValueError, TypeError):
+            pass
+    
+    # Filtrage par tag
+    if tag_id:
+        try:
+            tag_id = int(tag_id)
+            articles = articles.filter(tags__id=tag_id).distinct()  # distinct() pour éviter les doublons
+        except (ValueError, TypeError):
+            pass
+    
+    # Filtrage par auteur
+    if author_id:
+        try:
+            author_id = int(author_id)
+            articles = articles.filter(author_id=author_id)
+        except (ValueError, TypeError):
+            pass
+    
+    # Tri des résultats
+    if not search_query:  # Si pas de recherche, appliquer le tri normal
+        if sort_by == 'popular':
+            # Tri par popularité optimisé avec annotation
+            articles = articles.annotate(
+                popularity_score=F('views_count') + F('likes_count') * 2 + F('shares_count') * 3
+            ).order_by('-popularity_score', '-created_at')
+        elif sort_by == 'alphabetic':
+            articles = articles.order_by('title', '-created_at')
+        elif sort_by == 'oldest':
+            articles = articles.order_by('created_at')
+        else:  # recent par défaut
+            articles = articles.order_by('-created_at')
+    
+    # Pagination
+    items_per_page = int(request.GET.get('per_page', 12))
+    items_per_page = min(max(items_per_page, 6), 24)  # Entre 6 et 24 articles par page
+    
+    paginator = Paginator(articles, items_per_page)
+    page_number = request.GET.get('page', 1)
+    
+    try:
+        page_obj = paginator.get_page(page_number)
+    except (PageNotAnInteger, EmptyPage):
+        page_obj = paginator.get_page(1)
+    
+    # Données pour les filtres avec compteurs optimisés
+    categories = Category.objects.annotate(
+        articles_count=Count('articles', filter=Q(articles__status='published'))
+    ).filter(articles_count__gt=0).order_by('name')
+    
+    tags = Tag.objects.annotate(
+        articles_count=Count('articles', filter=Q(articles__status='published'))
+    ).filter(articles_count__gt=0).order_by('name')
+    
+    authors = User.objects.annotate(
+        articles_count=Count('articles', filter=Q(articles__status='published'))
+    ).filter(articles_count__gt=0).order_by('username')
+    
+    # Statistiques pour l'affichage
+    total_articles = Article.objects.filter(status='published').count()
+    filtered_count = paginator.count
+    
+    # Catégorie et tag sélectionnés pour l'affichage
+    selected_category_obj = None
+    selected_tag_obj = None
+    selected_author_obj = None
+    
+    if category_id:
+        try:
+            selected_category_obj = Category.objects.get(id=int(category_id))
+        except (Category.DoesNotExist, ValueError):
+            pass
+    
+    if tag_id:
+        try:
+            selected_tag_obj = Tag.objects.get(id=int(tag_id))
+        except (Tag.DoesNotExist, ValueError):
+            pass
+    
+    if author_id:
+        try:
+            selected_author_obj = User.objects.get(id=int(author_id))
+        except (User.DoesNotExist, ValueError):
+            pass
+    
+    context = {
+        'page_obj': page_obj,
+        'articles': page_obj.object_list,
+        'categories': categories,
+        'tags': tags,
+        'authors': authors,
+        'search_query': search_query,
+        'selected_category': category_id,
+        'selected_tag': tag_id,
+        'selected_author': author_id,
+        'selected_category_obj': selected_category_obj,
+        'selected_tag_obj': selected_tag_obj,
+        'selected_author_obj': selected_author_obj,
+        'sort_by': sort_by,
+        'items_per_page': items_per_page,
+        'total_articles': total_articles,
+        'filtered_count': filtered_count,
+        'is_paginated': page_obj.has_other_pages(),
+        'paginator': paginator,
+        'sort_options': [
+            ('recent', 'Plus récent'),
+            ('oldest', 'Plus ancien'),
+            ('popular', 'Plus populaire'),
+            ('alphabetic', 'Alphabétique'),
+        ],
+        'per_page_options': [6, 12, 18, 24],
+    }
+    
+    return render(request, 'blog/liste_articles.html', context)
