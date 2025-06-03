@@ -128,14 +128,42 @@
             <!-- Boutons de partage et d'interaction -->
             <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
                 <div class="btn-group">
-                    <button class="btn btn-outline-danger btn-sm" onclick="likeArticle({{ article.id }})">
-                        <i class="fas fa-heart me-1"></i>
-                        J'aime (<span id="likes-count">{{ article.likes_count }}</span>)
+                    {% if user.is_authenticated %}
+                    <button class="btn btn-outline-danger btn-sm" onclick="likeArticle({{ article.id }})" id="like-btn">
+                        <i class="fas fa-heart me-1" id="like-icon"></i>
+                        <span id="like-text">J'aime</span> (<span id="likes-count">{{ article.likes_count }}</span>)
                     </button>
+                    {% else %}
+                    <button class="btn btn-outline-danger btn-sm" onclick="showLoginAlert()" title="Connectez-vous pour aimer cet article">
+                        <i class="fas fa-heart me-1"></i>
+                        J'aime ({{ article.likes_count }})
+                    </button>
+                    {% endif %}
                     <button class="btn btn-outline-primary btn-sm" onclick="shareArticle({{ article.id }})">
                         <i class="fas fa-share me-1"></i>
                         Partager (<span id="shares-count">{{ article.shares_count }}</span>)
                     </button>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-success btn-sm dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fas fa-share-alt me-1"></i>
+                            Partager sur
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="shareOnSocial('facebook')">
+                                <i class="fab fa-facebook me-2"></i>Facebook
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" onclick="shareOnSocial('twitter')">
+                                <i class="fab fa-twitter me-2"></i>Twitter
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" onclick="shareOnSocial('linkedin')">
+                                <i class="fab fa-linkedin me-2"></i>LinkedIn
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="copyToClipboard()">
+                                <i class="fas fa-link me-2"></i>Copier le lien
+                            </a></li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <!-- Informations sur le statut (pour les utilisateurs connectés) -->
@@ -241,6 +269,10 @@ function likeArticle(articleId) {
     .then(data => {
         if (data.success) {
             document.getElementById('likes-count').textContent = data.likes_count;
+            // Changer l'icône et le texte du bouton "J'aime"
+            document.getElementById('like-icon').classList.toggle('fas');
+            document.getElementById('like-icon').classList.toggle('far');
+            document.getElementById('like-text').textContent = data.liked ? 'Vous aimez' : 'J\'aime';
         }
     })
     .catch(error => console.error('Error:', error));
@@ -264,6 +296,38 @@ function shareArticle(articleId) {
         }
     })
     .catch(error => console.error('Error:', error));
+}
+
+function showLoginAlert() {
+    alert('Veuillez vous connecter pour aimer cet article.');
+}
+
+function shareOnSocial(platform) {
+    let url = window.location.href;
+    let title = document.title;
+    let text = 'Regardez cet article: ' + title + ' ' + url;
+
+    switch(platform) {
+        case 'facebook':
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank');
+            break;
+        case 'twitter':
+            window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
+            break;
+        case 'linkedin':
+            window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title), '_blank');
+            break;
+    }
+}
+
+function copyToClipboard() {
+    navigator.clipboard.writeText(window.location.href)
+    .then(() => {
+        alert('URL copiée dans le presse-papiers !');
+    })
+    .catch(err => {
+        console.error('Erreur lors de la copie dans le presse-papiers: ', err);
+    });
 }
 </script>
 </body>

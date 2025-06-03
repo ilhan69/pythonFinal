@@ -325,3 +325,10 @@ def share_article(request, article_id):
     )
     
     # Incrémenter le compteur de partages
+    article.increment_shares()
+    
+    return JsonResponse({
+        'success': True,
+        'shares_count': article.shares_count,
+        'message': 'Article partagé avec succès!'
+    })

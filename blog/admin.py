@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User, Category, Article, ArticleComment, Tag
+from .models import User, Category, Article, ArticleComment, Tag, ArticleLike, ArticleShare
 
 # Register your models here.
 
@@ -25,8 +25,8 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'category', 'get_tags_display', 'created_at', 'updated_at')
-    list_filter = ('category', 'tags', 'created_at', 'author')
+    list_display = ('title', 'author', 'category', 'get_tags_display', 'likes_count', 'shares_count', 'views_count', 'created_at', 'updated_at')
+    list_filter = ('category', 'tags', 'status', 'created_at', 'author')
     search_fields = ('title', 'content')
     filter_horizontal = ('tags',)
     
@@ -45,3 +45,18 @@ class ArticleCommentAdmin(admin.ModelAdmin):
         """Affiche un aperçu du commentaire"""
         return obj.comment[:50] + "..." if len(obj.comment) > 50 else obj.comment
     comment_preview.short_description = 'Aperçu'
+
+@admin.register(ArticleLike)
+class ArticleLikeAdmin(admin.ModelAdmin):
+    list_display = ('article', 'user', 'created_at')
+    list_filter = ('created_at', 'article__category')
+    search_fields = ('article__title', 'user__username')
+    raw_id_fields = ('article', 'user')
+
+@admin.register(ArticleShare)
+class ArticleShareAdmin(admin.ModelAdmin):
+    list_display = ('article', 'user', 'shared_at', 'ip_address')
+    list_filter = ('shared_at', 'article__category')
+    search_fields = ('article__title', 'user__username', 'ip_address')
+    raw_id_fields = ('article', 'user')
+    readonly_fields = ('ip_address', 'user_agent')
