@@ -5,19 +5,45 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
+from django.db.models import Count, Q
 import json
 from .forms import PostForm, CommentForm, CategoryForm, TagForm, UserRegistrationForm, UserLoginForm
 from .models import Article, Category, Tag, User, ArticleLike, ArticleShare
 
 # Create your views here.
 def home(request):
-    # Afficher seulement les articles publiés
+    # Articles récents (5 derniers articles publiés)
+    recent_articles = Article.objects.filter(status='published').order_by('-created_at')[:5]
+    
+    # Articles populaires (basés sur les vues, likes et partages)
+    popular_articles = Article.objects.filter(status='published').extra(
+        select={'popularity': 'views_count + likes_count * 2 + shares_count * 3'}
+    ).order_by('-popularity')[:5]
+    
+    # Catégories avec statistiques
+    categories_with_stats = Category.objects.annotate(
+        articles_count=Count('articles', filter=Q(articles__status='published')),
+        total_views=Count('articles__views_count', filter=Q(articles__status='published'))
+    ).order_by('-articles_count')
+    
+    # Auteurs populaires (basés sur le nombre d'articles publiés et vues totales)
+    popular_authors = User.objects.annotate(
+        published_articles_count=Count('articles', filter=Q(articles__status='published')),
+        total_views=Count('articles__views_count', filter=Q(articles__status='published'))
+    ).filter(published_articles_count__gt=0).order_by('-published_articles_count', '-total_views')[:5]
+    
+    # Tous les articles pour la section principale
     posts = Article.objects.filter(status='published').order_by('-created_at')
-    categories = Category.objects.all()
+    
+    # Tags populaires
     tags = Tag.objects.all().order_by('name')
+    
     return render(request, 'blog/home.html', {
         'posts': posts,
-        'categories': categories,
+        'recent_articles': recent_articles,
+        'popular_articles': popular_articles,
+        'categories': categories_with_stats,
+        'popular_authors': popular_authors,
         'tags': tags
     })
 

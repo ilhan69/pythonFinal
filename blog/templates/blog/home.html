@@ -31,10 +31,123 @@
     </div>
     {% endif %}
 
-    <!-- Catégories -->
+    <!-- Section Articles Récents et Populaires -->
+    <div class="row mb-5">
+        <!-- Articles Récents -->
+        <div class="col-lg-6 mb-4">
+            <h2><i class="fas fa-clock me-2 text-primary"></i>Articles Récents</h2>
+            {% if recent_articles %}
+            <div class="list-group">
+                {% for article in recent_articles %}
+                <div class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1">
+                            <a href="{% url 'article_detail' article.id %}" class="text-decoration-none">
+                                {{ article.title|truncatechars:50 }}
+                            </a>
+                        </h6>
+                        <small class="text-muted">{{ article.created_at|timesince }}</small>
+                    </div>
+                    {% if article.category %}
+                    <span class="badge me-1" style="background-color: {{ article.category.couleur|default:'#007bff' }};">
+                        {{ article.category.name }}
+                    </span>
+                    {% endif %}
+                    <small class="text-muted">
+                        <i class="fas fa-eye me-1"></i>{{ article.views_count }}
+                        <i class="fas fa-heart ms-2 me-1"></i>{{ article.likes_count }}
+                        <i class="fas fa-user ms-2 me-1"></i>{{ article.author.username }}
+                    </small>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i> Aucun article récent disponible.
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Articles Populaires -->
+        <div class="col-lg-6 mb-4">
+            <h2><i class="fas fa-fire me-2 text-danger"></i>Articles Populaires</h2>
+            {% if popular_articles %}
+            <div class="list-group">
+                {% for article in popular_articles %}
+                <div class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1">
+                            <a href="{% url 'article_detail' article.id %}" class="text-decoration-none">
+                                {{ article.title|truncatechars:50 }}
+                            </a>
+                        </h6>
+                        <small class="text-muted">{{ article.created_at|date:"d/m" }}</small>
+                    </div>
+                    {% if article.category %}
+                    <span class="badge me-1" style="background-color: {{ article.category.couleur|default:'#007bff' }};">
+                        {{ article.category.name }}
+                    </span>
+                    {% endif %}
+                    <small class="text-muted">
+                        <i class="fas fa-eye me-1"></i>{{ article.views_count }}
+                        <i class="fas fa-heart ms-2 me-1"></i>{{ article.likes_count }}
+                        <i class="fas fa-share ms-2 me-1"></i>{{ article.shares_count }}
+                    </small>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i> Aucun article populaire disponible.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Section Auteurs Populaires -->
+    {% if popular_authors %}
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2><i class="fas fa-users me-2 text-success"></i>Auteurs Populaires</h2>
+            <div class="row">
+                {% for author in popular_authors %}
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <div class="card h-100 border-success">
+                        <div class="card-body text-center">
+                            {% if author.avatar %}
+                            <img src="{{ author.avatar.url }}" class="rounded-circle mb-3" width="60" height="60" alt="{{ author.username }}">
+                            {% else %}
+                            <div class="bg-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                <i class="fas fa-user text-white fa-2x"></i>
+                            </div>
+                            {% endif %}
+                            <h6 class="card-title">{{ author.username }}</h6>
+                            {% if author.bio %}
+                            <p class="card-text small text-muted">{{ author.bio|truncatechars:80 }}</p>
+                            {% endif %}
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <strong class="text-success">{{ author.published_articles_count }}</strong>
+                                    <small class="d-block text-muted">Article{{ author.published_articles_count|pluralize }}</small>
+                                </div>
+                                <div class="col-6">
+                                    <strong class="text-info">{{ author.total_views|default:0 }}</strong>
+                                    <small class="d-block text-muted">Vue{{ author.total_views|pluralize }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Catégories avec Statistiques -->
     <div class="row mb-4">
         <div class="col-12">
-            <h2><i class="fas fa-folder me-2"></i>Catégories</h2>
+            <h2><i class="fas fa-folder me-2"></i>Catégories avec Statistiques</h2>
             {% if categories %}
             <div class="row">
                 {% for category in categories %}
@@ -51,12 +164,24 @@
                             </div>
                             
                             {% if category.description %}
-                            <p class="card-text text-muted">{{ category.description|truncatewords:15 }}</p>
+                            <p class="card-text text-muted small">{{ category.description|truncatewords:15 }}</p>
                             {% endif %}
                             
+                            <!-- Statistiques de la catégorie -->
+                            <div class="row text-center mb-3">
+                                <div class="col-6">
+                                    <strong class="text-primary">{{ category.articles_count }}</strong>
+                                    <small class="d-block text-muted">Article{{ category.articles_count|pluralize }}</small>
+                                </div>
+                                <div class="col-6">
+                                    <strong class="text-info">{{ category.total_views|default:0 }}</strong>
+                                    <small class="d-block text-muted">Vue{{ category.total_views|pluralize }}</small>
+                                </div>
+                            </div>
+                            
                             <div class="d-flex justify-content-between align-items-center">
-                                <a href="{% url 'category_posts' category.id %}" class="badge text-decoration-none" style="background-color: {{ category.couleur|default:'#007bff' }};">
-                                    {{ category.get_articles_count }} article{{ category.get_articles_count|pluralize }}
+                                <a href="{% url 'category_posts' category.id %}" class="btn btn-sm text-white" style="background-color: {{ category.couleur|default:'#007bff' }};">
+                                    <i class="fas fa-eye me-1"></i>Voir les articles
                                 </a>
                                 
                                 <!-- Boutons de modification - Visibles uniquement pour les utilisateurs connectés -->
@@ -136,7 +261,7 @@
     </div>
 
     <!-- Articles -->
-    <h2><i class="fas fa-newspaper me-2"></i>Articles</h2>
+    <h2><i class="fas fa-newspaper me-2"></i>Tous les Articles</h2>
     {% if posts %}
     <div class="row">
         {% for article in posts %}
