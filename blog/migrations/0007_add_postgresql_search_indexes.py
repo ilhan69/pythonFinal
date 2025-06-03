@@ -6,6 +6,8 @@ from django.contrib.postgres.search import SearchVector
 
 
 class Migration(migrations.Migration):
+    # Désactiver les transactions pour permettre CREATE INDEX CONCURRENTLY
+    atomic = False
 
     dependencies = [
         ('blog', '0006_articleshare_articlelike'),
@@ -31,7 +33,7 @@ class Migration(migrations.Migration):
         migrations.RunSQL(
             """
             CREATE INDEX CONCURRENTLY IF NOT EXISTS blog_article_popularity_idx 
-            ON blog_article (views_count + likes_count * 2 + shares_count * 3, created_at DESC);
+            ON blog_article ((views_count + likes_count * 2 + shares_count * 3));
             """,
             reverse_sql="""
             DROP INDEX IF EXISTS blog_article_popularity_idx;
