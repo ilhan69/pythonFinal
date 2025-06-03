@@ -21,7 +21,7 @@
                     {% if user.avatar %}
                     <img src="{{ user.avatar.url }}" alt="{% trans 'Avatar' %}" class="rounded-circle img-fluid mb-3" style="max-width: 150px;">
                     {% else %}
-                    <img src="https://via.placeholder.com/150" alt="{% trans 'Avatar' %}" class="rounded-circle img-fluid mb-3">
+                    <img src="https://placehold.co/150" alt="{% trans 'Avatar' %}" class="rounded-circle img-fluid mb-3">
                     {% endif %}
                     <h3>{{ user.username }}</h3>
                     <p class="text-muted">{{ user.email }}</p>
