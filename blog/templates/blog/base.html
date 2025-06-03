@@ -20,11 +20,21 @@
                         <a class="nav-link" href="{% url 'home' %}">Accueil</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'create_post' %}">Créer un article</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'create_category' %}">Créer une catégorie</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-plus"></i> Créer
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'create_post' %}">
+                                <i class="fas fa-file-alt me-2"></i>Nouvel article
+                            </a></li>
+                            <li><a class="dropdown-item" href="{% url 'create_category' %}">
+                                <i class="fas fa-folder me-2"></i>Nouvelle catégorie
+                            </a></li>
+                            <li><a class="dropdown-item" href="{% url 'ajouter_tag' %}">
+                                <i class="fas fa-tag me-2"></i>Nouveau tag
+                            </a></li>
+                        </ul>
                     </li>
                     {% endif %}
                 </ul>
@@ -73,4 +83,4 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+</html>

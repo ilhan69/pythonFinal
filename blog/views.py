@@ -3,24 +3,28 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
-from .forms import PostForm, CommentForm, CategoryForm, UserRegistrationForm, UserLoginForm
-from .models import Article, Category, User
+from .forms import PostForm, CommentForm, CategoryForm, TagForm, UserRegistrationForm, UserLoginForm
+from .models import Article, Category, Tag, User
 
 # Create your views here.
 def home(request):
     posts = Article.objects.all().order_by('-created_at')
     categories = Category.objects.all()
+    tags = Tag.objects.all().order_by('name')
     return render(request, 'blog/home.html', {
         'posts': posts,
-        'categories': categories
+        'categories': categories,
+        'tags': tags
     })
 
 def home_template(request):
     articles = Article.objects.all()
     categories = Category.objects.all()
+    tags = Tag.objects.all().order_by('name')
     return render(request, 'blog/home.html', {
         'articles': articles,
-        'categories': categories
+        'categories': categories,
+        'tags': tags
     })
 
 @login_required
@@ -31,6 +35,7 @@ def ajouter_article(request):
             article = form.save(commit=False)
             article.author = request.user
             article.save()
+            form.save_m2m()  # Important pour sauvegarder les relations many-to-many
             messages.success(request, "L'article a été créé avec succès !")
             return redirect('home')
     else:
@@ -92,6 +97,40 @@ def supprimer_categorie(request, category_id):
         messages.success(request, "La catégorie a été supprimée avec succès !")
         return redirect('home')
     return render(request, 'blog/supprimer_categorie.html', {'category': category})
+
+@login_required
+def ajouter_tag(request):
+    if request.method == 'POST':
+        form = TagForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Le tag a été créé avec succès !")
+            return redirect('home')
+    else:
+        form = TagForm()
+    return render(request, 'blog/ajouter_tag.html', {'form': form})
+
+@login_required
+def modifier_tag(request, tag_id):
+    tag = get_object_or_404(Tag, id=tag_id)
+    if request.method == 'POST':
+        form = TagForm(request.POST, instance=tag)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Le tag a été modifié avec succès !")
+            return redirect('home')
+    else:
+        form = TagForm(instance=tag)
+    return render(request, 'blog/modifier_tag.html', {'form': form, 'tag': tag})
+
+@login_required
+def supprimer_tag(request, tag_id):
+    tag = get_object_or_404(Tag, id=tag_id)
+    if request.method == 'POST':
+        tag.delete()
+        messages.success(request, "Le tag a été supprimé avec succès !")
+        return redirect('home')
+    return render(request, 'blog/supprimer_tag.html', {'tag': tag})
 
 def article_detail(request, article_id):
     article = get_object_or_404(Article, id=article_id)
@@ -198,6 +237,14 @@ def category_posts(request, category_id):
     posts = Article.objects.filter(category=category).order_by('-created_at')
     return render(request, 'blog/home.html', {
         'category': category,
+        'posts': posts
+    })
+
+def tag_posts(request, tag_slug):
+    tag = get_object_or_404(Tag, slug=tag_slug)
+    posts = Article.objects.filter(tags=tag).order_by('-created_at')
+    return render(request, 'blog/home.html', {
+        'tag': tag,
         'posts': posts
     })
 

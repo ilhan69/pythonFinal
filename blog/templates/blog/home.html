@@ -22,8 +22,11 @@
         <a href="{% url 'ajouter_article' %}" class="btn btn-primary me-2">
             <i class="fas fa-plus"></i> Ajouter un article
         </a>
-        <a href="{% url 'ajouter_categorie' %}" class="btn btn-success">
+        <a href="{% url 'ajouter_categorie' %}" class="btn btn-success me-2">
             <i class="fas fa-folder-plus"></i> Ajouter une catégorie
+        </a>
+        <a href="{% url 'ajouter_tag' %}" class="btn btn-warning">
+            <i class="fas fa-tag"></i> Ajouter un tag
         </a>
     </div>
     {% endif %}
@@ -31,28 +34,44 @@
     <!-- Catégories -->
     <div class="row mb-4">
         <div class="col-12">
-            <h2>Catégories</h2>
+            <h2><i class="fas fa-folder me-2"></i>Catégories</h2>
             {% if categories %}
-            <div class="list-group">
+            <div class="row">
                 {% for category in categories %}
-                <div class="list-group-item">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h5 class="mb-1">{{ category.name }}</h5>
-                            <p class="mb-1">{{ category.description|truncatewords:20 }}</p>
-                            <small class="text-muted">{{ category.articles.count }} article(s)</small>
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <div class="card h-100" style="border-left: 4px solid {{ category.couleur|default:'#007bff' }};">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                {% if category.icone %}
+                                    <i class="{{ category.icone }} me-2" style="color: {{ category.couleur|default:'#007bff' }}; font-size: 1.5rem;"></i>
+                                {% else %}
+                                    <i class="fas fa-folder me-2" style="color: {{ category.couleur|default:'#007bff' }}; font-size: 1.5rem;"></i>
+                                {% endif %}
+                                <h5 class="card-title mb-0">{{ category.name }}</h5>
+                            </div>
+                            
+                            {% if category.description %}
+                            <p class="card-text text-muted">{{ category.description|truncatewords:15 }}</p>
+                            {% endif %}
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{% url 'category_posts' category.id %}" class="badge text-decoration-none" style="background-color: {{ category.couleur|default:'#007bff' }};">
+                                    {{ category.get_articles_count }} article{{ category.get_articles_count|pluralize }}
+                                </a>
+                                
+                                <!-- Boutons de modification - Visibles uniquement pour les utilisateurs connectés -->
+                                {% if user.is_authenticated %}
+                                <div class="btn-group btn-group-sm">
+                                    <a href="{% url 'modifier_categorie' category.id %}" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="{% url 'supprimer_categorie' category.id %}" class="btn btn-outline-danger btn-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                                {% endif %}
+                            </div>
                         </div>
-                        <!-- Boutons de modification - Visibles uniquement pour les utilisateurs connectés -->
-                        {% if user.is_authenticated %}
-                        <div class="btn-group">
-                            <a href="{% url 'modifier_categorie' category.id %}" class="btn btn-sm btn-outline-primary">
-                                <i class="fas fa-edit"></i> Modifier
-                            </a>
-                            <a href="{% url 'supprimer_categorie' category.id %}" class="btn btn-sm btn-outline-danger">
-                                <i class="fas fa-trash"></i> Supprimer
-                            </a>
-                        </div>
-                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
@@ -68,8 +87,56 @@
         </div>
     </div>
 
+    <!-- Tags -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2><i class="fas fa-tags me-2"></i>Tags</h2>
+            {% if tags %}
+            <div class="row">
+                {% for tag in tags %}
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <div class="card h-100" style="border-left: 4px solid {{ tag.couleur }};">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-tag me-2" style="color: {{ tag.couleur }}; font-size: 1.5rem;"></i>
+                                <h5 class="card-title mb-0">{{ tag.name }}</h5>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{% url 'tag_posts' tag.slug %}" class="badge text-decoration-none" style="background-color: {{ tag.couleur }};">
+                                    {{ tag.get_articles_count }} article{{ tag.get_articles_count|pluralize }}
+                                </a>
+                                
+                                <!-- Boutons de modification - Visibles uniquement pour les utilisateurs connectés -->
+                                {% if user.is_authenticated %}
+                                <div class="btn-group btn-group-sm">
+                                    <a href="{% url 'modifier_tag' tag.id %}" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="{% url 'supprimer_tag' tag.id %}" class="btn btn-outline-danger btn-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i> Aucun tag pour le moment
+                {% if user.is_authenticated %}
+                <br><a href="{% url 'ajouter_tag' %}" class="alert-link">Créer le premier tag</a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
     <!-- Articles -->
-    <h2>Articles</h2>
+    <h2><i class="fas fa-newspaper me-2"></i>Articles</h2>
     {% if posts %}
     <div class="row">
         {% for article in posts %}
@@ -82,13 +149,32 @@
                     <h5 class="card-title">{{ article.title }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">
                         {% if article.category %}
-                        <span class="badge bg-primary">{{ article.category.name }}</span>
+                        <span class="badge rounded-pill" style="background-color: {{ article.category.couleur|default:'#007bff' }};">
+                            {% if article.category.icone %}
+                                <i class="{{ article.category.icone }} me-1"></i>
+                            {% else %}
+                                <i class="fas fa-folder me-1"></i>
+                            {% endif %}
+                            {{ article.category.name }}
+                        </span>
                         {% endif %}
                         <small>{{ article.created_at|date:"d/m/Y à H:i" }}</small>
                         {% if article.author %}
                         <small>par {{ article.author.username }}</small>
                         {% endif %}
                     </h6>
+                    
+                    <!-- Affichage des tags de l'article -->
+                    {% if article.tags.all %}
+                    <div class="mb-2">
+                        {% for tag in article.tags.all %}
+                        <a href="{% url 'tag_posts' tag.slug %}" class="badge text-decoration-none me-1" style="background-color: {{ tag.couleur }};">
+                            <i class="fas fa-tag me-1"></i>{{ tag.name }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
                     <p class="card-text">{{ article.content|truncatewords:30 }}</p>
                     <div class="btn-group">
                         <a href="{% url 'article_detail' article.id %}" class="btn btn-outline-primary btn-sm">
