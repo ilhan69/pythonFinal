@@ -249,7 +249,10 @@ def profile(request):
     
     # Récupérer les articles de l'utilisateur avec statistiques
     user_posts = Article.objects.filter(author=request.user).order_by('-created_at')
-    
+
+    # Articles favoris (likés)
+    favoris = Article.objects.filter(user_likes__user=request.user).distinct().order_by('-created_at')
+
     # Statistiques utilisateur
     total_articles = user_posts.count()
     published_articles = user_posts.filter(status='published').count()
@@ -260,6 +263,7 @@ def profile(request):
     return render(request, 'blog/profile.html', {
         'user': request.user,
         'posts': user_posts,
+        'favoris': favoris,
         'form': form,
         'stats': {
             'total_articles': total_articles,

@@ -219,6 +219,41 @@
                     <a href="{% url 'ajouter_article' %}" class="btn btn-primary">{% trans "Créer mon premier article" %}</a>
                 </div>
             {% endif %}
+
+            <!-- SECTION FAVORIS -->
+            <div class="mt-5">
+                <h2><i class="fas fa-heart text-danger me-2"></i>{% trans "Mes favoris" %}</h2>
+                {% if favoris %}
+                    <div class="row">
+                        {% for article in favoris %}
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="{% url 'article_detail' article.id %}">{{ article.title }}</a>
+                                    </h5>
+                                    <p class="card-text text-muted mb-1">
+                                        {% if article.excerpt %}
+                                            {{ article.excerpt|truncatewords:20 }}
+                                        {% else %}
+                                            {{ article.content|truncatewords:20 }}
+                                        {% endif %}
+                                    </p>
+                                    <small class="text-muted">
+                                        <i class="fas fa-user"></i> {{ article.author.username }}
+                                        • <i class="fas fa-calendar"></i> {{ article.created_at|date:"d/m/Y" }}
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-heart-broken"></i> {% trans "Vous n'avez pas encore de favoris." %}
+                    </div>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
