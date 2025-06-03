@@ -86,18 +86,46 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        fields = ['title', 'content', 'cover_image', 'category', 'tags']
+        fields = [
+            'title', 'slug', 'content', 'excerpt', 'cover_image', 
+            'category', 'tags', 'status', 'meta_title', 'meta_description'
+        ]
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'content': forms.TextInput(attrs={'class': 'form-control'}),
+            'slug': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Généré automatiquement si vide'
+            }),
+            'excerpt': forms.Textarea(attrs={
+                'class': 'form-control',
+                'rows': 3,
+                'placeholder': 'Résumé de l\'article (généré automatiquement si vide)',
+                'maxlength': 300
+            }),
             'cover_image': forms.FileInput(attrs={'class': 'form-control', 'accept': 'image/*'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
+            'status': forms.Select(attrs={'class': 'form-control'}),
+            'meta_title': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Titre SEO (généré automatiquement si vide)',
+                'maxlength': 60
+            }),
+            'meta_description': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Description SEO (générée automatiquement si vide)',
+                'maxlength': 160
+            }),
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # Organiser les tags par ordre alphabétique
         self.fields['tags'].queryset = Tag.objects.all().order_by('name')
+        # Rendre certains champs optionnels dans le formulaire
+        self.fields['slug'].required = False
+        self.fields['excerpt'].required = False
+        self.fields['meta_title'].required = False
+        self.fields['meta_description'].required = False
 
 class CommentForm(forms.ModelForm):
     class Meta:

@@ -1,14 +1,18 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
+from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt
+import json
 from .forms import PostForm, CommentForm, CategoryForm, TagForm, UserRegistrationForm, UserLoginForm
-from .models import Article, Category, Tag, User
+from .models import Article, Category, Tag, User, ArticleLike, ArticleShare
 
 # Create your views here.
 def home(request):
-    posts = Article.objects.all().order_by('-created_at')
+    # Afficher seulement les articles publiés
+    posts = Article.objects.filter(status='published').order_by('-created_at')
     categories = Category.objects.all()
     tags = Tag.objects.all().order_by('name')
     return render(request, 'blog/home.html', {
@@ -18,7 +22,8 @@ def home(request):
     })
 
 def home_template(request):
-    articles = Article.objects.all()
+    # Afficher seulement les articles publiés
+    articles = Article.objects.filter(status='published').order_by('-created_at')
     categories = Category.objects.all()
     tags = Tag.objects.all().order_by('name')
     return render(request, 'blog/home.html', {
@@ -32,12 +37,22 @@ def ajouter_article(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            article = form.save(commit=False)
-            article.author = request.user
-            article.save()
-            form.save_m2m()  # Important pour sauvegarder les relations many-to-many
-            messages.success(request, "L'article a été créé avec succès !")
-            return redirect('home')
+            try:
+                article = form.save(commit=False)
+                article.author = request.user
+                article.save()
+                form.save_m2m()  # Important pour sauvegarder les relations many-to-many
+                messages.success(request, "L'article a été créé avec succès !")
+                return redirect('home')
+            except Exception as e:
+                messages.error(request, f"Erreur lors de l'enregistrement : {str(e)}")
+                print(f"Erreur détaillée : {e}")  # Pour le debug
+        else:
+            # Afficher les erreurs du formulaire
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"Erreur dans le champ '{field}': {error}")
+            print(f"Erreurs du formulaire : {form.errors}")  # Pour le debug
     else:
         form = PostForm()
     return render(request, 'blog/ajouter_article.html', {'form': form})
@@ -134,6 +149,9 @@ def supprimer_tag(request, tag_id):
 
 def article_detail(request, article_id):
     article = get_object_or_404(Article, id=article_id)
+    # Incrémenter le compteur de vues
+    article.increment_views()
+    
     comments = article.comments.all()
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -234,7 +252,8 @@ def create_category(request):
 
 def category_posts(request, category_id):
     category = get_object_or_404(Category, id=category_id)
-    posts = Article.objects.filter(category=category).order_by('-created_at')
+    # Afficher seulement les articles publiés de cette catégorie
+    posts = Article.objects.filter(category=category, status='published').order_by('-created_at')
     return render(request, 'blog/home.html', {
         'category': category,
         'posts': posts
@@ -242,7 +261,8 @@ def category_posts(request, category_id):
 
 def tag_posts(request, tag_slug):
     tag = get_object_or_404(Tag, slug=tag_slug)
-    posts = Article.objects.filter(tags=tag).order_by('-created_at')
+    # Afficher seulement les articles publiés avec ce tag
+    posts = Article.objects.filter(tags=tag, status='published').order_by('-created_at')
     return render(request, 'blog/home.html', {
         'tag': tag,
         'posts': posts
@@ -253,3 +273,55 @@ def user_logout(request):
     logout(request)
     messages.success(request, 'Vous avez été déconnecté avec succès !')
     return redirect('home')
+
+@require_POST
+@login_required
+def like_article(request, article_id):
+    """Vue pour gérer les likes d'articles via AJAX"""
+    article = get_object_or_404(Article, id=article_id)
+    user = request.user
+    
+    # Vérifier si l'utilisateur a déjà liké cet article
+    like, created = ArticleLike.objects.get_or_create(
+        article=article,
+        user=user
+    )
+    
+    if created:
+        # Nouveau like
+        article.increment_likes()
+        liked = True
+        message = 'Article liké avec succès!'
+    else:
+        # Unlike - supprimer le like existant
+        like.delete()
+        article.likes_count = max(0, article.likes_count - 1)
+        article.save(update_fields=['likes_count'])
+        liked = False
+        message = 'Like retiré avec succès!'
+    
+    return JsonResponse({
+        'success': True,
+        'liked': liked,
+        'likes_count': article.likes_count,
+        'message': message
+    })
+
+@require_POST  
+def share_article(request, article_id):
+    """Vue pour gérer les partages d'articles via AJAX"""
+    article = get_object_or_404(Article, id=article_id)
+    
+    # Récupérer l'adresse IP et le user agent
+    ip_address = request.META.get('REMOTE_ADDR')
+    user_agent = request.META.get('HTTP_USER_AGENT', '')
+    
+    # Créer un enregistrement de partage
+    share = ArticleShare.objects.create(
+        article=article,
+        user=request.user if request.user.is_authenticated else None,
+        ip_address=ip_address,
+        user_agent=user_agent
+    )
+    
+    # Incrémenter le compteur de partages
