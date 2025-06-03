@@ -223,7 +223,7 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## 👨‍💻 Auteur
 
-**Votre Nom** - Projet Final Python/Django
+**Ilhan KOPRULU** - Projet Final Python/Django
 
 ## 📞 Support
 
