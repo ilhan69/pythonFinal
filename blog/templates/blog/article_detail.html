@@ -13,6 +13,7 @@
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-start">
                 <h2 class="card-title">{{ article.title }}</h2>
+                {% if user.is_authenticated %}
                 <div class="btn-group">
                     <a href="{% url 'modifier_article' article.id %}" class="btn btn-outline-primary">
                         ✏️ Modifier
@@ -21,6 +22,7 @@
                         🗑️ Supprimer
                     </a>
                 </div>
+                {% endif %}
             </div>
             <div class="mb-3">
                 {% if article.category %}
@@ -48,6 +50,7 @@
         <div class="alert alert-info">Aucun commentaire pour cet article.</div>
     {% endif %}
 
+    {% if user.is_authenticated %}
     <div class="card">
         <div class="card-header">
             <h4>Ajouter un commentaire</h4>
@@ -70,7 +73,13 @@
             </form>
         </div>
     </div>
+    {% else %}
+    <div class="alert alert-warning">
+        <i class="fas fa-exclamation-triangle"></i> 
+        <a href="{% url 'login' %}" class="alert-link">Connectez-vous</a> pour ajouter un commentaire.
+    </div>
+    {% endif %}
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+</html>

@@ -122,6 +122,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Media files configuration
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -129,3 +133,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # User model configuration
 AUTH_USER_MODEL = 'blog.User'
+
+# Authentication URLs
+LOGIN_URL = 'login'  # URL vers laquelle rediriger les utilisateurs non connectés
+LOGIN_REDIRECT_URL = 'home'  # URL après connexion réussie
+LOGOUT_REDIRECT_URL = 'home'  # URL après déconnexion

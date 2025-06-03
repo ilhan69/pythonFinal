@@ -26,7 +26,7 @@ def home_template(request):
 @login_required
 def ajouter_article(request):
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             article = form.save(commit=False)
             article.author = request.user
@@ -37,10 +37,11 @@ def ajouter_article(request):
         form = PostForm()
     return render(request, 'blog/ajouter_article.html', {'form': form})
 
+@login_required
 def modifier_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
     if request.method == 'POST':
-        form = PostForm(request.POST, instance=article)
+        form = PostForm(request.POST, request.FILES, instance=article)
         if form.is_valid():
             form.save()
             messages.success(request, "L'article a été modifié avec succès !")
@@ -49,6 +50,7 @@ def modifier_article(request, article_id):
         form = PostForm(instance=article)
     return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
 
+@login_required
 def supprimer_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
     if request.method == 'POST':
@@ -57,6 +59,7 @@ def supprimer_article(request, article_id):
         return redirect('home')
     return render(request, 'blog/supprimer_article.html', {'article': article})
 
+@login_required
 def ajouter_categorie(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
@@ -68,6 +71,7 @@ def ajouter_categorie(request):
         form = CategoryForm()
     return render(request, 'blog/ajouter_categorie.html', {'form': form})
 
+@login_required
 def modifier_categorie(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     if request.method == 'POST':
@@ -80,6 +84,7 @@ def modifier_categorie(request, category_id):
         form = CategoryForm(instance=category)
     return render(request, 'blog/modifier_categorie.html', {'form': form, 'category': category})
 
+@login_required
 def supprimer_categorie(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     if request.method == 'POST':
@@ -167,7 +172,7 @@ def post_detail(request, post_id):
 @login_required
 def create_post(request):
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user

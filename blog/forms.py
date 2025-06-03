@@ -40,10 +40,11 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        fields = ['title', 'content', 'category']
+        fields = ['title', 'content', 'cover_image', 'category']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'content': forms.TextInput(attrs={'class': 'form-control'}),
+            'cover_image': forms.FileInput(attrs={'class': 'form-control', 'accept': 'image/*'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
         }
 
