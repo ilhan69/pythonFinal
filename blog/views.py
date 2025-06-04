@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Count, Q, F, Sum
+from django.db.models import Count, Q, F, Sum, Avg, Max
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.utils.translation import gettext as _
@@ -657,3 +657,58 @@ def statistiques_tags(request):
     }
     
     return render(request, 'blog/admin/statistiques_tags.html', context)
+
+@log_view_access('blog')
+def auteurs_actifs(request):
+    """
+    Vue pour afficher la liste des auteurs actifs avec leurs statistiques
+    """
+    from django.contrib.auth import get_user_model
+    User = get_user_model()
+    
+    # Paramètres de tri
+    sort_by = request.GET.get('sort', 'articles')
+    
+    # Auteurs avec leurs statistiques
+    auteurs = User.objects.annotate(
+        articles_count=Count('articles', filter=Q(articles__status='published')),
+        total_views=Sum('articles__views_count', filter=Q(articles__status='published')),
+        total_likes=Sum('articles__likes_count', filter=Q(articles__status='published')),
+        total_shares=Sum('articles__shares_count', filter=Q(articles__status='published')),
+        avg_views=Avg('articles__views_count', filter=Q(articles__status='published')),
+        recent_activity=Max('articles__created_at', filter=Q(articles__status='published'))
+    ).filter(articles_count__gt=0)
+    
+    # Tri des auteurs
+    if sort_by == 'views':
+        auteurs = auteurs.order_by('-total_views', '-articles_count')
+    elif sort_by == 'likes':
+        auteurs = auteurs.order_by('-total_likes', '-articles_count')
+    elif sort_by == 'activity':
+        auteurs = auteurs.order_by('-recent_activity', '-articles_count')
+    elif sort_by == 'alphabetic':
+        auteurs = auteurs.order_by('username')
+    else:  # articles par défaut
+        auteurs = auteurs.order_by('-articles_count', '-total_views')
+    
+    # Statistiques générales
+    total_auteurs = auteurs.count()
+    total_articles_tous = sum(a.articles_count for a in auteurs)
+    total_vues_toutes = sum(a.total_views or 0 for a in auteurs)
+    
+    context = {
+        'auteurs': auteurs[:50],  # Limite à 50 auteurs pour la performance
+        'sort_by': sort_by,
+        'total_auteurs': total_auteurs,
+        'total_articles_tous': total_articles_tous,
+        'total_vues_toutes': total_vues_toutes,
+        'sort_options': [
+            ('articles', _('Nombre d\'articles')),
+            ('views', _('Vues totales')),
+            ('likes', _('Likes totaux')),
+            ('activity', _('Activité récente')),
+            ('alphabetic', _('Alphabétique')),
+        ],
+    }
+    
+    return render(request, 'blog/auteurs_actifs.html', context)

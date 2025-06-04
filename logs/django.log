@@ -261,3 +261,1082 @@ INFO 2025-06-04 14:18:10,652 basehttp 29916 6133608448 "GET /fr/administration/s
 INFO 2025-06-04 14:18:10,801 logging_utils 29916 6133608448 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
 INFO 2025-06-04 14:18:10,826 logging_utils 29916 6133608448 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
 INFO 2025-06-04 14:18:10,827 basehttp 29916 6133608448 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:25:36,670 autoreload 29916 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-04 14:25:36,971 autoreload 30449 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 14:25:50,269 autoreload 30449 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/urls.py changed, reloading.
+INFO 2025-06-04 14:25:50,475 autoreload 30487 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 14:28:25,084 autoreload 30487 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-04 14:28:25,350 autoreload 30613 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 14:28:28,125 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:28:28,165 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:28:28,165 basehttp 30613 6203944960 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:28:30,536 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:28:30,552 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:28:30,552 basehttp 30613 6203944960 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:28:30,713 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:28:30,730 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:28:30,730 basehttp 30613 6203944960 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:28:33,134 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:28:33,151 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:28:33,152 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:28:36,752 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.article_detail - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:28:36,792 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.06s
+INFO 2025-06-04 14:28:36,793 basehttp 30613 6203944960 "GET /fr/article/1/ HTTP/1.1" 200 14137
+INFO 2025-06-04 14:29:56,786 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:29:56,801 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:29:56,802 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:29:57,304 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:29:57,314 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:29:57,315 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:29:57,462 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:29:57,473 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:29:57,474 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:29:57,633 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:29:57,644 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:29:57,645 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:29:57,816 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:29:57,823 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:29:57,824 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:29:57,966 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:29:57,972 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:29:57,972 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:29:58,122 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:29:58,134 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:29:58,135 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:29:58,274 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:29:58,284 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:29:58,284 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:29:58,569 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:29:58,581 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:29:58,582 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:29:58,750 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:29:58,760 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:29:58,760 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:01,503 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:01,515 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:30:01,516 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:01,670 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:01,680 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:30:01,680 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:01,789 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:01,800 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:30:01,804 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:01,950 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:01,954 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:30:01,954 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:04,767 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.liste_articles - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:04,798 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.liste_articles - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:30:04,799 basehttp 30613 6203944960 "GET /fr/articles/ HTTP/1.1" 200 22445
+INFO 2025-06-04 14:30:07,784 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.article_detail - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:07,810 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:30:07,811 basehttp 30613 6203944960 "GET /fr/article/1/ HTTP/1.1" 200 14137
+INFO 2025-06-04 14:30:21,589 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.liste_articles - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:21,616 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.liste_articles - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:30:21,617 basehttp 30613 6203944960 "GET /fr/articles/ HTTP/1.1" 200 22445
+INFO 2025-06-04 14:30:22,235 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:22,247 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:30:22,248 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:22,396 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:22,407 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:30:22,407 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:22,563 logging_utils 30613 6203944960 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:22,574 logging_utils 30613 6203944960 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:30:22,575 basehttp 30613 6203944960 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:42,115 autoreload 30806 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 14:30:42,987 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:43,007 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:30:43,008 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:43,374 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:43,381 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:30:43,382 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:43,545 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:43,552 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:30:43,553 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:43,671 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:43,677 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:30:43,678 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:43,791 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:43,796 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:30:43,797 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:43,949 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:43,959 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:30:43,960 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:45,095 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.liste_articles - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:45,125 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.liste_articles - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:30:45,125 basehttp 30806 6163607552 "GET /fr/articles/ HTTP/1.1" 200 22445
+INFO 2025-06-04 14:30:45,769 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:45,780 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:30:45,781 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:30:59,148 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:30:59,169 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:30:59,169 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:31:32,065 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:31:32,076 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:31:32,077 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:31:32,621 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:31:32,629 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:31:32,630 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:31:32,781 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:31:32,791 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:31:32,792 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:32:30,605 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:32:30,623 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:32:30,623 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:32:31,086 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:32:31,101 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:32:31,101 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:32:31,656 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:32:31,669 logging_utils 30806 6163607552 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: base.html - Temps: 0.03s
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 818, in auteurs_actifs
+    return render(request, 'blog/auteurs_actifs.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+ERROR 2025-06-04 14:32:31,711 basehttp 30806 6163607552 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 146231
+INFO 2025-06-04 14:32:32,924 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:32:32,946 logging_utils 30806 6163607552 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: base.html - Temps: 0.04s
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 818, in auteurs_actifs
+    return render(request, 'blog/auteurs_actifs.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+ERROR 2025-06-04 14:32:32,994 basehttp 30806 6163607552 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 146368
+INFO 2025-06-04 14:32:33,102 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:32:33,113 logging_utils 30806 6163607552 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: base.html - Temps: 0.02s
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 818, in auteurs_actifs
+    return render(request, 'blog/auteurs_actifs.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+ERROR 2025-06-04 14:32:33,167 basehttp 30806 6163607552 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 146367
+INFO 2025-06-04 14:32:33,294 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:32:33,309 logging_utils 30806 6163607552 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: base.html - Temps: 0.03s
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 818, in auteurs_actifs
+    return render(request, 'blog/auteurs_actifs.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+ERROR 2025-06-04 14:32:33,367 basehttp 30806 6163607552 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 146368
+INFO 2025-06-04 14:32:43,169 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.liste_articles - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:32:43,197 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.liste_articles - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:32:43,197 basehttp 30806 6163607552 "GET /fr/articles/ HTTP/1.1" 200 22686
+INFO 2025-06-04 14:32:44,020 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:32:44,033 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:32:44,033 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:32:47,031 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:32:47,057 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:32:47,057 basehttp 30806 6163607552 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20852
+INFO 2025-06-04 14:32:59,987 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.modifier_tag - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:32:59,996 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.modifier_tag - Status: 200 - Temps: 0.01s
+INFO 2025-06-04 14:32:59,997 basehttp 30806 6163607552 "GET /fr/tag/1/modifier/ HTTP/1.1" 200 3998
+INFO 2025-06-04 14:33:08,137 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.modifier_tag - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-04 14:33:08,144 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.modifier_tag - Status: 302 - Temps: 0.01s
+INFO 2025-06-04 14:33:08,145 basehttp 30806 6163607552 "POST /fr/tag/1/modifier/ HTTP/1.1" 302 0
+INFO 2025-06-04 14:33:08,175 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:08,183 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:08,183 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 11011
+INFO 2025-06-04 14:33:10,458 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.modifier_tag - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:10,463 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.modifier_tag - Status: 200 - Temps: 0.01s
+INFO 2025-06-04 14:33:10,464 basehttp 30806 6163607552 "GET /fr/tag/1/modifier/ HTTP/1.1" 200 4002
+INFO 2025-06-04 14:33:10,569 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.modifier_tag - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:10,573 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.modifier_tag - Status: 200 - Temps: 0.00s
+INFO 2025-06-04 14:33:10,574 basehttp 30806 6163607552 "GET /fr/tag/1/modifier/ HTTP/1.1" 200 4002
+INFO 2025-06-04 14:33:10,737 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.modifier_tag - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:10,742 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.modifier_tag - Status: 200 - Temps: 0.00s
+INFO 2025-06-04 14:33:10,743 basehttp 30806 6163607552 "GET /fr/tag/1/modifier/ HTTP/1.1" 200 4002
+INFO 2025-06-04 14:33:11,504 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:11,529 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:11,530 basehttp 30806 6163607552 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20860
+INFO 2025-06-04 14:33:11,771 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:11,796 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:11,797 basehttp 30806 6163607552 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20860
+INFO 2025-06-04 14:33:12,471 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:12,483 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:12,484 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:12,706 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:12,718 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:12,718 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:12,975 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:12,988 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:12,989 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:13,215 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:13,225 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:13,226 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:13,387 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:13,398 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:13,399 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:13,575 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:13,586 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:13,587 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:13,781 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:13,791 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:13,792 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:14,038 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:14,053 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:33:14,054 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:14,232 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:14,242 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:14,243 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:14,408 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:14,419 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:14,420 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:14,589 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:14,600 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:14,601 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:14,935 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:14,947 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:14,948 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:15,138 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:15,152 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:33:15,152 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:15,367 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:15,378 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:15,379 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:15,566 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:15,577 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:15,578 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:15,739 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:15,750 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:15,751 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:15,906 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:15,917 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:15,918 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:16,063 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:16,069 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:33:16,069 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:16,651 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.ajouter_tag - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:16,658 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.ajouter_tag - Status: 200 - Temps: 0.01s
+INFO 2025-06-04 14:33:16,660 basehttp 30806 6163607552 "GET /fr/ajouter-tag/ HTTP/1.1" 200 11902
+INFO 2025-06-04 14:33:25,402 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.ajouter_tag - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-04 14:33:25,408 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.ajouter_tag - Status: 302 - Temps: 0.01s
+INFO 2025-06-04 14:33:25,408 basehttp 30806 6163607552 "POST /fr/ajouter-tag/ HTTP/1.1" 302 0
+INFO 2025-06-04 14:33:25,434 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:25,444 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:25,445 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 11009
+INFO 2025-06-04 14:33:29,950 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:29,958 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:29,959 basehttp 30806 6163607552 "GET /fr/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:33:36,403 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.article_detail - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:36,435 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:33:36,436 basehttp 30806 6163607552 "GET /fr/article/1/ HTTP/1.1" 200 14141
+INFO 2025-06-04 14:33:38,886 logging_utils 30806 6163607552 [ACCÈS VUE] blog.views.tag_posts - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:33:38,899 logging_utils 30806 6163607552 [VUE TERMINÉE] blog.views.tag_posts - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:33:38,899 basehttp 30806 6163607552 "GET /fr/tag/letag/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:34:39,735 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.tag_posts - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:34:39,754 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.tag_posts - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:34:39,754 basehttp 30806 6163034112 "GET /fr/tag/letag/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:34:40,212 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.tag_posts - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:34:40,226 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.tag_posts - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:34:40,227 basehttp 30806 6163034112 "GET /fr/tag/letag/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:34:40,373 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.tag_posts - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:34:40,390 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.tag_posts - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:34:40,391 basehttp 30806 6163034112 "GET /fr/tag/letag/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:34:40,548 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.tag_posts - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:34:40,561 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.tag_posts - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:34:40,561 basehttp 30806 6163034112 "GET /fr/tag/letag/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:34:40,797 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.tag_posts - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:34:40,803 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.tag_posts - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:34:40,803 basehttp 30806 6163034112 "GET /fr/tag/letag/ HTTP/1.1" 200 10722
+INFO 2025-06-04 14:34:41,341 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:34:41,379 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.06s
+INFO 2025-06-04 14:34:41,379 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:34:45,815 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:34:45,833 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:34:45,833 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:34:45,997 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:34:46,022 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:34:46,023 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:34:46,180 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:34:46,207 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:34:46,207 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:35:47,296 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:35:47,328 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.06s
+INFO 2025-06-04 14:35:47,328 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:35:48,022 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:35:48,052 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:35:48,053 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:35:50,295 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:35:50,330 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.06s
+INFO 2025-06-04 14:35:50,331 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:35:52,565 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:35:52,613 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.08s
+INFO 2025-06-04 14:35:52,614 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:35:52,807 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:35:52,840 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:35:52,840 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:35:52,980 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:35:53,007 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:35:53,008 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:03,581 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:03,610 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:03,611 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:03,843 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:03,875 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:03,876 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:03,993 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:04,018 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:36:04,019 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:17,632 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:17,661 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:17,662 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:23,522 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:23,552 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:23,553 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:24,302 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:24,332 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:24,332 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:24,552 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:24,581 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:24,582 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:24,821 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:24,853 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.06s
+INFO 2025-06-04 14:36:24,854 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:32,976 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:33,007 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:33,008 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:33,349 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:33,381 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:33,382 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:37,213 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:37,242 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:37,243 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:37,523 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:37,553 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:37,554 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:37,722 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:37,751 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:37,752 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:38,056 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:38,083 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:38,084 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:36:38,253 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:36:38,285 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:36:38,286 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:03,751 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:03,779 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:37:03,780 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:05,455 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:05,486 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:37:05,486 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:06,033 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:06,057 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:37:06,057 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:06,245 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:06,276 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:37:06,277 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:06,539 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:06,567 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:37:06,568 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:06,874 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:06,903 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:37:06,904 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:06,999 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:07,025 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:37:07,026 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:16,733 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:16,762 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:37:16,762 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:17,043 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:17,071 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:37:17,072 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:17,225 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:17,248 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:37:17,248 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:31,686 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:31,716 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:37:31,716 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:32,172 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:32,196 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:37:32,196 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:32,388 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:32,421 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:37:32,422 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:32,558 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:32,585 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:37:32,586 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:32,741 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:32,758 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:37:32,758 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:32,916 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:32,941 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:37:32,942 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:37:36,807 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:37:36,841 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:37:36,841 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15541
+INFO 2025-06-04 14:39:24,305 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:39:24,328 logging_utils 30806 6163034112 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: Invalid filter: 'lookup' - Temps: 0.04s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 818, in auteurs_actifs
+    return render(request, 'blog/auteurs_actifs.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'lookup'
+ERROR 2025-06-04 14:39:24,379 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 317627
+INFO 2025-06-04 14:39:25,115 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:39:25,139 logging_utils 30806 6163034112 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: Invalid filter: 'lookup' - Temps: 0.05s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 818, in auteurs_actifs
+    return render(request, 'blog/auteurs_actifs.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'lookup'
+ERROR 2025-06-04 14:39:25,189 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 317626
+INFO 2025-06-04 14:39:25,277 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:39:25,291 logging_utils 30806 6163034112 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: Invalid filter: 'lookup' - Temps: 0.03s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 818, in auteurs_actifs
+    return render(request, 'blog/auteurs_actifs.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'lookup'
+ERROR 2025-06-04 14:39:25,336 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 317627
+INFO 2025-06-04 14:39:25,419 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:39:25,431 logging_utils 30806 6163034112 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: Invalid filter: 'lookup' - Temps: 0.02s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 818, in auteurs_actifs
+    return render(request, 'blog/auteurs_actifs.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'lookup'
+ERROR 2025-06-04 14:39:25,469 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 317627
+INFO 2025-06-04 14:39:25,580 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:39:25,593 logging_utils 30806 6163034112 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: Invalid filter: 'lookup' - Temps: 0.03s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 818, in auteurs_actifs
+    return render(request, 'blog/auteurs_actifs.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'lookup'
+ERROR 2025-06-04 14:39:25,641 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 317627
+INFO 2025-06-04 14:40:20,121 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:40:20,159 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.06s
+INFO 2025-06-04 14:40:20,159 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 16067
+INFO 2025-06-04 14:42:48,333 logging_utils 30806 6163034112 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:42:48,347 logging_utils 30806 6163034112 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:42:48,347 basehttp 30806 6163034112 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 16067
+INFO 2025-06-04 14:42:50,546 autoreload 30806 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-04 14:42:50,810 autoreload 31667 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 14:43:00,051 autoreload 31667 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/urls.py changed, reloading.
+INFO 2025-06-04 14:43:00,312 autoreload 31680 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 14:43:52,897 logging_utils 31680 6170488832 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:43:52,897 logging_utils 31680 6170488832 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: name 'Max' is not defined - Temps: 0.02s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 679, in auteurs_actifs
+    recent_activity=Max('articles__created_at', filter=Q(articles__status='published'))
+                    ^^^
+NameError: name 'Max' is not defined. Did you mean: 'max'?
+ERROR 2025-06-04 14:43:52,918 basehttp 31680 6170488832 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 71409
+INFO 2025-06-04 14:43:53,598 logging_utils 31680 6170488832 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:43:53,599 logging_utils 31680 6170488832 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: name 'Max' is not defined - Temps: 0.02s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 679, in auteurs_actifs
+    recent_activity=Max('articles__created_at', filter=Q(articles__status='published'))
+                    ^^^
+NameError: name 'Max' is not defined. Did you mean: 'max'?
+ERROR 2025-06-04 14:43:53,619 basehttp 31680 6170488832 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 71409
+INFO 2025-06-04 14:44:02,753 logging_utils 31680 6170488832 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:44:02,753 logging_utils 31680 6170488832 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: name 'Max' is not defined - Temps: 0.02s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 679, in auteurs_actifs
+    recent_activity=Max('articles__created_at', filter=Q(articles__status='published'))
+                    ^^^
+NameError: name 'Max' is not defined. Did you mean: 'max'?
+ERROR 2025-06-04 14:44:02,764 basehttp 31680 6170488832 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 71408
+INFO 2025-06-04 14:44:03,191 logging_utils 31680 6170488832 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:44:03,191 logging_utils 31680 6170488832 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: name 'Max' is not defined - Temps: 0.03s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 679, in auteurs_actifs
+    recent_activity=Max('articles__created_at', filter=Q(articles__status='published'))
+                    ^^^
+NameError: name 'Max' is not defined. Did you mean: 'max'?
+ERROR 2025-06-04 14:44:03,202 basehttp 31680 6170488832 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 71408
+INFO 2025-06-04 14:44:03,337 logging_utils 31680 6170488832 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:44:03,338 logging_utils 31680 6170488832 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: name 'Max' is not defined - Temps: 0.01s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 679, in auteurs_actifs
+    recent_activity=Max('articles__created_at', filter=Q(articles__status='published'))
+                    ^^^
+NameError: name 'Max' is not defined. Did you mean: 'max'?
+ERROR 2025-06-04 14:44:03,346 basehttp 31680 6170488832 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 71408
+INFO 2025-06-04 14:44:03,556 logging_utils 31680 6170488832 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:44:03,556 logging_utils 31680 6170488832 [ERREUR VUE] blog.views.auteurs_actifs - Erreur: name 'Max' is not defined - Temps: 0.02s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 679, in auteurs_actifs
+    recent_activity=Max('articles__created_at', filter=Q(articles__status='published'))
+                    ^^^
+NameError: name 'Max' is not defined. Did you mean: 'max'?
+ERROR 2025-06-04 14:44:03,569 basehttp 31680 6170488832 "GET /fr/auteurs-actifs/ HTTP/1.1" 500 71408
+INFO 2025-06-04 14:44:13,520 autoreload 31680 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-04 14:44:13,835 autoreload 31772 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 14:45:17,187 logging_utils 31772 6170030080 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:45:17,217 logging_utils 31772 6170030080 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:45:17,218 basehttp 31772 6170030080 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 20348
+INFO 2025-06-04 14:45:21,340 logging_utils 31772 6170030080 [ACCÈS VUE] users.views.profile - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:45:21,370 logging_utils 31772 6170030080 [VUE TERMINÉE] users.views.profile - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:45:21,371 basehttp 31772 6170030080 "GET /fr/users/profile/?user=2 HTTP/1.1" 200 14745
+INFO 2025-06-04 14:45:29,224 logging_utils 31772 6170030080 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:45:29,232 logging_utils 31772 6170030080 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:45:29,232 basehttp 31772 6170030080 "GET /fr/auteurs-actifs/?sort=views HTTP/1.1" 200 20343
+INFO 2025-06-04 14:45:30,603 logging_utils 31772 6170030080 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:45:30,615 logging_utils 31772 6170030080 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:45:30,616 basehttp 31772 6170030080 "GET /fr/auteurs-actifs/?sort=likes HTTP/1.1" 200 20343
+INFO 2025-06-04 14:45:32,473 logging_utils 31772 6170030080 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:45:32,484 logging_utils 31772 6170030080 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:45:32,486 basehttp 31772 6170030080 "GET /fr/auteurs-actifs/?sort=articles HTTP/1.1" 200 20348
+INFO 2025-06-04 14:46:18,895 logging_utils 31772 6170030080 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:46:18,908 logging_utils 31772 6170030080 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:46:18,909 basehttp 31772 6170030080 "GET /fr/auteurs-actifs/?sort=articles HTTP/1.1" 200 20348
+INFO 2025-06-04 14:46:19,425 logging_utils 31772 6170030080 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:46:19,436 logging_utils 31772 6170030080 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:46:19,438 basehttp 31772 6170030080 "GET /fr/auteurs-actifs/?sort=articles HTTP/1.1" 200 20348
+INFO 2025-06-04 14:46:32,058 logging_utils 31772 6170030080 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:46:32,064 logging_utils 31772 6170030080 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:46:32,064 basehttp 31772 6170030080 "GET /fr/auteurs-actifs/?sort=articles HTTP/1.1" 200 20348
+INFO 2025-06-04 14:46:32,390 logging_utils 31772 6170030080 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:46:32,396 logging_utils 31772 6170030080 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:46:32,397 basehttp 31772 6170030080 "GET /fr/auteurs-actifs/?sort=articles HTTP/1.1" 200 20348
+INFO 2025-06-04 14:46:32,626 logging_utils 31772 6170030080 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:46:32,631 logging_utils 31772 6170030080 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:46:32,631 basehttp 31772 6170030080 "GET /fr/auteurs-actifs/?sort=articles HTTP/1.1" 200 20348
+INFO 2025-06-04 14:46:34,585 logging_utils 31772 6170030080 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:46:34,593 logging_utils 31772 6170030080 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:46:34,593 basehttp 31772 6170030080 "GET /fr/auteurs-actifs/?sort=views HTTP/1.1" 200 20343
