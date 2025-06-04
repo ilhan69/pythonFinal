@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeImagePreview();
     initializeTooltips();
+    initializeThemeToggle();
     
 });
 
@@ -304,6 +305,44 @@ function initializeTooltips() {
             }
         });
     });
+}
+
+/**
+ * Initialisation du système de basculement des thèmes
+ */
+function initializeThemeToggle() {
+    const toggleSwitch = document.querySelector('.theme-toggle');
+    
+    if (toggleSwitch) {
+        // Charger le thème depuis le stockage local
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', currentTheme);
+        
+        // Mettre à jour l'état du bouton
+        updateToggleButton(toggleSwitch, currentTheme);
+        
+        // Écouter les changements sur le bouton de basculement
+        toggleSwitch.addEventListener('click', function() {
+            const newTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleButton(this, newTheme);
+        });
+    }
+}
+
+/**
+ * Mettre à jour l'état visuel du bouton de basculement
+ */
+function updateToggleButton(toggleSwitch, theme) {
+    const themeIcon = toggleSwitch.querySelector('#theme-icon');
+    if (theme === 'dark') {
+        themeIcon.innerHTML = '☀️'; // Icône de soleil pour passer au mode clair
+        toggleSwitch.setAttribute('title', 'Passer au mode clair');
+    } else {
+        themeIcon.innerHTML = '🌙'; // Icône de lune pour passer au mode sombre
+        toggleSwitch.setAttribute('title', 'Passer au mode sombre');
+    }
 }
 
 /**

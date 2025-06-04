@@ -7,6 +7,69 @@
     <title>{% block title %}{% trans "Blog" %}{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles personnalisés pour le système de thèmes -->
+    <style>
+        /* Variables CSS pour les thèmes */
+        :root {
+            --bs-body-bg: #ffffff;
+            --bs-body-color: #212529;
+            --bs-navbar-bg: #212529;
+            --bs-card-bg: #ffffff;
+            --bs-border-color: #dee2e6;
+        }
+        
+        [data-bs-theme="dark"] {
+            --bs-body-bg: #1a1a1a;
+            --bs-body-color: #ffffff;
+            --bs-navbar-bg: #0d1117;
+            --bs-card-bg: #2d2d2d;
+            --bs-border-color: #404040;
+        }
+        
+        /* Transitions fluides */
+        body, .navbar, .card, .btn, .dropdown-menu {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        /* Bouton de basculement du thème */
+        #theme-toggle {
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        #theme-toggle:hover {
+            transform: rotate(180deg);
+        }
+        
+        /* Adaptations pour le mode sombre */
+        [data-bs-theme="dark"] .navbar-dark {
+            background-color: var(--bs-navbar-bg) !important;
+        }
+        
+        [data-bs-theme="dark"] .card {
+            background-color: var(--bs-card-bg);
+            border-color: var(--bs-border-color);
+        }
+        
+        [data-bs-theme="dark"] .dropdown-menu {
+            background-color: var(--bs-card-bg);
+            border-color: var(--bs-border-color);
+        }
+        
+        [data-bs-theme="dark"] .dropdown-item {
+            color: var(--bs-body-color);
+        }
+        
+        [data-bs-theme="dark"] .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -82,6 +145,13 @@
                 </ul>
                 
                 <ul class="navbar-nav">
+                    <!-- Bouton de basculement du thème -->
+                    <li class="nav-item me-2">
+                        <button id="theme-toggle" class="btn btn-outline-light btn-sm" title="{% trans 'Basculer entre mode clair et sombre' %}">
+                            <span id="theme-icon">🌙</span>
+                        </button>
+                    </li>
+                    
                     <!-- Indicateur de rôle -->
                     {% if user.is_authenticated %}
                     <li class="nav-item me-2">
@@ -172,5 +242,40 @@
     {% endblock %}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script pour le système de basculement des thèmes -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const htmlElement = document.documentElement;
+            
+            // Fonction pour mettre à jour l'icône du bouton
+            function updateThemeIcon(theme) {
+                if (theme === 'dark') {
+                    themeIcon.innerHTML = '☀️';
+                    themeToggle.setAttribute('title', '{% trans "Passer au mode clair" %}');
+                } else {
+                    themeIcon.innerHTML = '🌙';
+                    themeToggle.setAttribute('title', '{% trans "Passer au mode sombre" %}');
+                }
+            }
+            
+            // Charger le thème depuis le stockage local ou utiliser le thème par défaut
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            htmlElement.setAttribute('data-bs-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+            
+            // Gérer le clic sur le bouton de basculement
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = htmlElement.getAttribute('data-bs-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                htmlElement.setAttribute('data-bs-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+        });
+    </script>
 </body>
 </html>

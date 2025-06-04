@@ -1,2 +1,10 @@
 INFO 2025-06-04 14:45:21,340 logging_utils 31772 6170030080 [ACCÈS VUE] users.views.profile - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
 INFO 2025-06-04 14:45:21,370 logging_utils 31772 6170030080 [VUE TERMINÉE] users.views.profile - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:46:59,124 logging_utils 32019 6197899264 [ACCÈS VUE] users.views.profile - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:46:59,149 logging_utils 32019 6197899264 [VUE TERMINÉE] users.views.profile - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:48:15,503 logging_utils 32019 6197899264 [ACCÈS VUE] users.views.profile - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:48:15,528 logging_utils 32019 6197899264 [VUE TERMINÉE] users.views.profile - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:48:45,327 logging_utils 32019 6197899264 [ACCÈS VUE] users.views.profile - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:48:45,349 logging_utils 32019 6197899264 [VUE TERMINÉE] users.views.profile - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:48:46,878 logging_utils 32019 6197899264 [ACCÈS VUE] users.views.profile - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:48:46,895 logging_utils 32019 6197899264 [VUE TERMINÉE] users.views.profile - Status: 200 - Temps: 0.02s
