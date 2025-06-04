@@ -1,0 +1,1 @@
+# Fichier __init__.py pour les template tags personnalisés

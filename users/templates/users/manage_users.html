@@ -1,0 +1,240 @@
+{% extends 'blog/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Gestion des utilisateurs" %}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1><i class="fas fa-users"></i> {% trans "Gestion des utilisateurs" %}</h1>
+                <div>
+                    <a href="{% url 'users:add_user' %}" class="btn btn-success me-2">
+                        <i class="fas fa-user-plus me-2"></i>
+                        {% trans "Ajouter un utilisateur" %}
+                    </a>
+                    <span class="badge bg-primary">{{ stats.total_users }} {% trans "utilisateurs" %}</span>
+                </div>
+            </div>
+
+            <!-- Statistiques des rôles -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card text-white bg-danger">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h4>{{ stats.admin_count }}</h4>
+                                    <small>{% trans "Administrateurs" %}</small>
+                                </div>
+                                <i class="fas fa-user-shield fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-white bg-primary">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h4>{{ stats.auteur_count }}</h4>
+                                    <small>{% trans "Auteurs" %}</small>
+                                </div>
+                                <i class="fas fa-pen fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-white bg-info">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h4>{{ stats.visiteur_count }}</h4>
+                                    <small>{% trans "Visiteurs" %}</small>
+                                </div>
+                                <i class="fas fa-eye fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-white bg-success">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h4>{{ stats.active_users }}</h4>
+                                    <small>{% trans "Actifs" %}</small>
+                                </div>
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtres et recherche -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form method="get" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="search" class="form-label">{% trans "Rechercher" %}</label>
+                            <input type="text" class="form-control" id="search" name="search" 
+                                   value="{{ search_query }}" placeholder="{% trans 'Nom, email, prénom...' %}">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="role" class="form-label">{% trans "Filtrer par rôle" %}</label>
+                            <select class="form-select" id="role" name="role">
+                                <option value="">{% trans "Tous les rôles" %}</option>
+                                {% for role_value, role_label in role_choices %}
+                                    <option value="{{ role_value }}" {% if role_filter == role_value %}selected{% endif %}>
+                                        {{ role_label }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fas fa-search"></i> {% trans "Filtrer" %}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Liste des utilisateurs -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">{% trans "Liste des utilisateurs" %}</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>{% trans "Utilisateur" %}</th>
+                                    <th>{% trans "Email" %}</th>
+                                    <th>{% trans "Rôle" %}</th>
+                                    <th>{% trans "Statut" %}</th>
+                                    <th>{% trans "Inscription" %}</th>
+                                    <th>{% trans "Actions" %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in users %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            {% if user.avatar %}
+                                                <img src="{{ user.avatar.url }}" alt="Avatar" class="rounded-circle me-2" width="32" height="32">
+                                            {% else %}
+                                                <div class="bg-secondary rounded-circle me-2 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                                    <i class="fas fa-user text-white"></i>
+                                                </div>
+                                            {% endif %}
+                                            <div>
+                                                <strong>{{ user.username }}</strong>
+                                                {% if user.first_name or user.last_name %}
+                                                    <br><small class="text-muted">{{ user.first_name }} {{ user.last_name }}</small>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>{{ user.email }}</td>
+                                    <td>
+                                        {% if user.role == 'admin' %}
+                                            <span class="badge bg-danger"><i class="fas fa-user-shield"></i> {{ user.get_role_display }}</span>
+                                        {% elif user.role == 'auteur' %}
+                                            <span class="badge bg-primary"><i class="fas fa-pen"></i> {{ user.get_role_display }}</span>
+                                        {% else %}
+                                            <span class="badge bg-info"><i class="fas fa-eye"></i> {{ user.get_role_display }}</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if user.is_active %}
+                                            <span class="badge bg-success">{% trans "Actif" %}</span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">{% trans "Inactif" %}</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ user.date_joined|date:"d/m/Y" }}</td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            {% if request.user.is_admin %}
+                                            <a href="{% url 'users:edit_user' user.id %}" class="btn btn-outline-warning" title="{% trans 'Modifier' %}">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="{% url 'users:admin_change_password' user.id %}" class="btn btn-outline-info" title="{% trans 'Changer le mot de passe' %}">
+                                                <i class="fas fa-key"></i>
+                                            </a>
+                                            {% if user != request.user %}
+                                                <form method="post" action="{% url 'users:toggle_user_status' user.id %}" class="d-inline">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="btn btn-outline-{% if user.is_active %}secondary{% else %}success{% endif %}" 
+                                                            title="{% if user.is_active %}{% trans 'Désactiver' %}{% else %}{% trans 'Activer' %}{% endif %}">
+                                                        <i class="fas fa-{% if user.is_active %}ban{% else %}check{% endif %}"></i>
+                                                    </button>
+                                                </form>
+                                                <a href="{% url 'users:delete_user' user.id %}" class="btn btn-outline-danger" title="{% trans 'Supprimer' %}">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            {% endif %}
+                                            {% else %}
+                                            <span class="text-muted">{% trans "Accès restreint" %}</span>
+                                            {% endif %}
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="6" class="text-center py-4">
+                                        <i class="fas fa-users fa-3x text-muted mb-3"></i>
+                                        <p class="text-muted">{% trans "Aucun utilisateur trouvé." %}</p>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            {% if page_obj.has_other_pages %}
+            <nav aria-label="{% trans 'Pagination des utilisateurs' %}" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}{% if role_filter %}&role={{ role_filter }}{% endif %}">
+                                <i class="fas fa-chevron-left"></i> {% trans "Précédent" %}
+                            </a>
+                        </li>
+                    {% endif %}
+                    
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <li class="page-item active">
+                                <span class="page-link">{{ num }}</span>
+                            </li>
+                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ num }}{% if search_query %}&search={{ search_query }}{% endif %}{% if role_filter %}&role={{ role_filter }}{% endif %}">{{ num }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}{% if role_filter %}&role={{ role_filter }}{% endif %}">
+                                {% trans "Suivant" %} <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

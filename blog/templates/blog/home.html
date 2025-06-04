@@ -7,18 +7,22 @@
 <div class="container mt-4">
     <h1 class="mb-4">{% trans "Mon Blog Django" %}</h1>
 
-    <!-- Boutons d'ajout - Visibles uniquement pour les utilisateurs connectés -->
+    <!-- Boutons d'ajout - Visibles uniquement pour les utilisateurs autorisés -->
     {% if user.is_authenticated %}
     <div class="mb-4">
+        {% if user.can_create_article %}
         <a href="{% url 'blog:ajouter_article' %}" class="btn btn-primary me-2">
             <i class="fas fa-plus"></i> {% trans "Ajouter un article" %}
         </a>
+        {% endif %}
+        {% if user.can_manage_categories %}
         <a href="{% url 'blog:ajouter_categorie' %}" class="btn btn-success me-2">
             <i class="fas fa-folder-plus"></i> {% trans "Ajouter une catégorie" %}
         </a>
         <a href="{% url 'blog:ajouter_tag' %}" class="btn btn-warning">
             <i class="fas fa-tag"></i> {% trans "Ajouter un tag" %}
         </a>
+        {% endif %}
     </div>
     {% endif %}
 
@@ -65,12 +69,14 @@
                             <i class="fas fa-eye"></i> {% trans "Lire" %}
                         </a>
                         {% if user.is_authenticated %}
-                        <a href="{% url 'blog:modifier_article' article.id %}" class="btn btn-outline-secondary btn-sm">
-                            <i class="fas fa-edit"></i> {% trans "Modifier" %}
-                        </a>
-                        <a href="{% url 'blog:supprimer_article' article.id %}" class="btn btn-outline-danger btn-sm">
-                            <i class="fas fa-trash"></i> {% trans "Supprimer" %}
-                        </a>
+                            {% if user.is_admin or article.author == user %}
+                            <a href="{% url 'blog:modifier_article' article.id %}" class="btn btn-outline-secondary btn-sm">
+                                <i class="fas fa-edit"></i> {% trans "Modifier" %}
+                            </a>
+                            <a href="{% url 'blog:supprimer_article' article.id %}" class="btn btn-outline-danger btn-sm">
+                                <i class="fas fa-trash"></i> {% trans "Supprimer" %}
+                            </a>
+                            {% endif %}
                         {% endif %}
                     </div>
                 </div>

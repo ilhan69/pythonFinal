@@ -7,6 +7,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.utils.translation import gettext as _
 from .models import Comment
 from .forms import CommentForm
+from users.decorators import comment_owner_required
 
 @login_required
 @require_POST
@@ -48,13 +49,13 @@ def add_comment(request):
             'errors': form.errors
         })
 
-@login_required
+@comment_owner_required
 def delete_comment(request, comment_id):
     """Supprimer un commentaire"""
     comment = get_object_or_404(Comment, id=comment_id)
     
-    # Vérifier que l'utilisateur peut supprimer ce commentaire
-    if comment.author != request.user and not request.user.is_staff:
+    # Vérification supplémentaire des permissions
+    if not request.user.can_delete_comment(comment):
         messages.error(request, _('Vous n\'avez pas le droit de supprimer ce commentaire.'))
         return redirect('blog:home')
     
@@ -65,13 +66,13 @@ def delete_comment(request, comment_id):
     
     return JsonResponse({'success': False})
 
-@login_required
+@comment_owner_required
 def edit_comment(request, comment_id):
     """Modifier un commentaire"""
     comment = get_object_or_404(Comment, id=comment_id)
     
-    # Vérifier que l'utilisateur peut modifier ce commentaire
-    if comment.author != request.user:
+    # Vérification supplémentaire des permissions
+    if not request.user.can_edit_comment(comment):
         messages.error(request, _('Vous n\'avez pas le droit de modifier ce commentaire.'))
         return redirect('blog:home')
     

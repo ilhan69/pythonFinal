@@ -13,6 +13,7 @@ from .models import Article, Category, Tag
 from comments.models import Comment
 from comments.forms import CommentForm
 from stats.models import Like, Share, View
+from users.decorators import admin_required, auteur_required, article_owner_required
 
 # Create your views here.
 def home(request):
@@ -53,7 +54,7 @@ def home(request):
         'tags': tags
     })
 
-@login_required
+@auteur_required
 def ajouter_article(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
@@ -75,9 +76,14 @@ def ajouter_article(request):
         form = PostForm()
     return render(request, 'blog/ajouter_article.html', {'form': form})
 
-@login_required
+@article_owner_required
 def modifier_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
+    # Vérification supplémentaire des permissions
+    if not request.user.can_edit_article(article):
+        messages.error(request, _('Vous n\'avez pas les permissions pour modifier cet article.'))
+        return redirect('blog:home')
+    
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES, instance=article)
         if form.is_valid():
@@ -88,16 +94,21 @@ def modifier_article(request, article_id):
         form = PostForm(instance=article)
     return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
 
-@login_required
+@article_owner_required
 def supprimer_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
+    # Vérification supplémentaire des permissions
+    if not request.user.can_delete_article(article):
+        messages.error(request, _('Vous n\'avez pas les permissions pour supprimer cet article.'))
+        return redirect('blog:home')
+    
     if request.method == 'POST':
         article.delete()
         messages.success(request, _("L'article a été supprimé avec succès !"))
         return redirect('blog:home')
     return render(request, 'blog/supprimer_article.html', {'article': article})
 
-@login_required
+@admin_required
 def ajouter_categorie(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
@@ -109,7 +120,7 @@ def ajouter_categorie(request):
         form = CategoryForm()
     return render(request, 'blog/ajouter_categorie.html', {'form': form})
 
-@login_required
+@admin_required
 def modifier_categorie(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     if request.method == 'POST':
@@ -122,7 +133,7 @@ def modifier_categorie(request, category_id):
         form = CategoryForm(instance=category)
     return render(request, 'blog/modifier_categorie.html', {'form': form, 'category': category})
 
-@login_required
+@admin_required
 def supprimer_categorie(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     if request.method == 'POST':
@@ -131,7 +142,7 @@ def supprimer_categorie(request, category_id):
         return redirect('blog:home')
     return render(request, 'blog/supprimer_categorie.html', {'category': category})
 
-@login_required
+@admin_required
 def ajouter_tag(request):
     if request.method == 'POST':
         form = TagForm(request.POST)
@@ -143,7 +154,7 @@ def ajouter_tag(request):
         form = TagForm()
     return render(request, 'blog/ajouter_tag.html', {'form': form})
 
-@login_required
+@admin_required
 def modifier_tag(request, tag_id):
     tag = get_object_or_404(Tag, id=tag_id)
     if request.method == 'POST':
@@ -156,7 +167,7 @@ def modifier_tag(request, tag_id):
         form = TagForm(instance=tag)
     return render(request, 'blog/modifier_tag.html', {'form': form, 'tag': tag})
 
-@login_required
+@admin_required
 def supprimer_tag(request, tag_id):
     tag = get_object_or_404(Tag, id=tag_id)
     if request.method == 'POST':

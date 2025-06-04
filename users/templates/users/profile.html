@@ -125,6 +125,14 @@
 
                         <button type="submit" class="btn btn-primary w-100">{% trans "Mettre à jour le profil" %}</button>
                     </form>
+                    
+                    <!-- Lien vers changement de mot de passe -->
+                    <div class="mt-3 text-center">
+                        <a href="{% url 'users:change_password' %}" class="btn btn-outline-warning">
+                            <i class="fas fa-lock me-2"></i>
+                            {% trans "Changer le mot de passe" %}
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -133,7 +141,9 @@
         <div class="col-md-8">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2>{% trans "Mes articles" %}</h2>
+                {% if user.can_create_article %}
                 <a href="{% url 'blog:ajouter_article' %}" class="btn btn-success">{% trans "Nouvel article" %}</a>
+                {% endif %}
             </div>
             
             {% if posts %}
@@ -176,12 +186,14 @@
                                         <a href="{% url 'blog:article_detail' post.id %}" class="btn btn-outline-primary btn-sm">
                                             <i class="fas fa-eye"></i> {% trans "Voir" %}
                                         </a>
+                                        {% if user.is_admin or post.author == user %}
                                         <a href="{% url 'blog:modifier_article' post.id %}" class="btn btn-outline-warning btn-sm">
                                             <i class="fas fa-edit"></i> {% trans "Modifier" %}
                                         </a>
                                         <a href="{% url 'blog:supprimer_article' post.id %}" class="btn btn-outline-danger btn-sm">
                                             <i class="fas fa-trash"></i> {% trans "Supprimer" %}
                                         </a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +228,9 @@
                     <i class="fas fa-pen-nib fa-3x text-muted mb-3"></i>
                     <h4>{% trans "Aucun article" %}</h4>
                     <p class="text-muted">{% trans "Vous n'avez pas encore publié d'articles." %}</p>
+                    {% if user.can_create_article %}
                     <a href="{% url 'blog:ajouter_article' %}" class="btn btn-primary">{% trans "Créer mon premier article" %}</a>
+                    {% endif %}
                 </div>
             {% endif %}
 

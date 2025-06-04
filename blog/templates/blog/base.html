@@ -11,40 +11,83 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'blog:home' %}">{% trans "Blog" %}</a>
+            <a class="navbar-brand" href="{% url 'blog:home' %}">
+                <i class="fas fa-blog"></i> {% trans "Blog" %}
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'blog:home' %}">{% trans "Accueil" %}</a>
+                        <a class="nav-link" href="{% url 'blog:home' %}">
+                            <i class="fas fa-home"></i> {% trans "Accueil" %}
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'blog:liste_articles' %}">
                             <i class="fas fa-newspaper"></i> {% trans "Articles" %}
                         </a>
                     </li>
-                    {% if user.is_authenticated %}
+                    
+                    <!-- Menu Créer - Visible uniquement pour auteurs et admins -->
+                    {% if user.is_authenticated and user.can_create_article %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="createDropdown" role="button" data-bs-toggle="dropdown">
                             <i class="fas fa-plus"></i> {% trans "Créer" %}
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'blog:ajouter_article' %}">
                                 <i class="fas fa-file-alt me-2"></i>{% trans "Nouvel article" %}
                             </a></li>
+                            {% if user.can_manage_categories %}
+                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{% url 'blog:ajouter_categorie' %}">
                                 <i class="fas fa-folder me-2"></i>{% trans "Nouvelle catégorie" %}
                             </a></li>
                             <li><a class="dropdown-item" href="{% url 'blog:ajouter_tag' %}">
                                 <i class="fas fa-tag me-2"></i>{% trans "Nouveau tag" %}
                             </a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    {% endif %}
+                    
+                    <!-- Menu Administration - Visible uniquement pour les admins -->
+                    {% if user.is_authenticated and user.is_admin %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-warning" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-cog"></i> {% trans "Administration" %}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'users:manage_users' %}">
+                                <i class="fas fa-users me-2"></i>{% trans "Gestion des utilisateurs" %}
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/admin/" target="_blank">
+                                <i class="fas fa-database me-2"></i>{% trans "Interface Django Admin" %}
+                            </a></li>
                         </ul>
                     </li>
                     {% endif %}
                 </ul>
+                
                 <ul class="navbar-nav">
+                    <!-- Indicateur de rôle -->
+                    {% if user.is_authenticated %}
+                    <li class="nav-item me-2">
+                        <span class="navbar-text">
+                            {% if user.is_admin %}
+                                <span class="badge bg-danger"><i class="fas fa-user-shield"></i> {% trans "Admin" %}</span>
+                            {% elif user.is_auteur %}
+                                <span class="badge bg-primary"><i class="fas fa-pen"></i> {% trans "Auteur" %}</span>
+                            {% else %}
+                                <span class="badge bg-info"><i class="fas fa-eye"></i> {% trans "Visiteur" %}</span>
+                            {% endif %}
+                        </span>
+                    </li>
+                    {% endif %}
+                    
                     <!-- Sélecteur de langue -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">
@@ -67,16 +110,26 @@
                             {% endfor %}
                         </ul>
                     </li>
+                    
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users:profile' %}">
-                            <i class="fas fa-user"></i> {{ user.username }}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            {% if user.avatar %}
+                                <img src="{{ user.avatar.url }}" alt="Avatar" class="rounded-circle me-1" width="24" height="24">
+                            {% else %}
+                                <i class="fas fa-user"></i>
+                            {% endif %}
+                            {{ user.username }}
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users:logout' %}">
-                            <i class="fas fa-sign-out-alt"></i> {% trans "Déconnexion" %}
-                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'users:profile' %}">
+                                <i class="fas fa-user-circle me-2"></i>{% trans "Mon profil" %}
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'users:logout' %}">
+                                <i class="fas fa-sign-out-alt me-2"></i>{% trans "Déconnexion" %}
+                            </a></li>
+                        </ul>
                     </li>
                     {% else %}
                     <li class="nav-item">

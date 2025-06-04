@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,7 +15,6 @@
     <meta property="og:type" content="article">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    {% load i18n %}
 </head>
 <body>
 <div class="container mt-4">
@@ -100,14 +100,16 @@
                 
                 <!-- Boutons d'action -->
                 {% if user.is_authenticated %}
-                <div class="btn-group">
-                    <a href="{% url 'blog:modifier_article' article.id %}" class="btn btn-outline-primary">
-                        <i class="fas fa-edit"></i> {% trans "Modifier" %}
-                    </a>
-                    <a href="{% url 'blog:supprimer_article' article.id %}" class="btn btn-outline-danger">
-                        <i class="fas fa-trash"></i> {% trans "Supprimer" %}
-                    </a>
-                </div>
+                    {% if user.is_admin or article.author == user %}
+                    <div class="btn-group">
+                        <a href="{% url 'blog:modifier_article' article.id %}" class="btn btn-outline-primary">
+                            <i class="fas fa-edit"></i> {% trans "Modifier" %}
+                        </a>
+                        <a href="{% url 'blog:supprimer_article' article.id %}" class="btn btn-outline-danger">
+                            <i class="fas fa-trash"></i> {% trans "Supprimer" %}
+                        </a>
+                    </div>
+                    {% endif %}
                 {% endif %}
             </div>
             
@@ -204,12 +206,39 @@
                     <div class="flex-grow-1 ms-3">
                         <div class="d-flex justify-content-between align-items-center mb-1">
                             <strong>{{ comment.author.username }}</strong>
-                            <small class="text-muted">
-                                <i class="fas fa-clock me-1"></i>
-                                {{ comment.created_at|date:"d/m/Y à H:i" }}
-                            </small>
+                            <div class="d-flex align-items-center">
+                                <small class="text-muted me-2">
+                                    <i class="fas fa-clock me-1"></i>
+                                    {{ comment.created_at|date:"d/m/Y à H:i" }}
+                                </small>
+                                <!-- Boutons de modification/suppression pour les commentaires -->
+                                {% if user.is_authenticated %}
+                                    {% if user.is_admin or comment.author == user %}
+                                    <div class="btn-group btn-group-sm">
+                                        <button class="btn btn-outline-primary btn-sm" onclick="editComment({{ comment.id }})" title="{% trans 'Modifier le commentaire' %}">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-outline-danger btn-sm" onclick="deleteComment({{ comment.id }})" title="{% trans 'Supprimer le commentaire' %}">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
                         </div>
-                        <p class="mb-0">{{ comment.comment|linebreaksbr }}</p>
+                        <p class="mb-0" id="comment-text-{{ comment.id }}">{{ comment.comment|linebreaksbr }}</p>
+                        <!-- Zone d'édition cachée -->
+                        <div id="edit-form-{{ comment.id }}" class="mt-2" style="display: none;">
+                            <textarea class="form-control mb-2" id="edit-textarea-{{ comment.id }}">{{ comment.comment }}</textarea>
+                            <div class="btn-group btn-group-sm">
+                                <button class="btn btn-success" onclick="saveComment({{ comment.id }})">
+                                    <i class="fas fa-save"></i> {% trans "Sauvegarder" %}
+                                </button>
+                                <button class="btn btn-secondary" onclick="cancelEdit({{ comment.id }})">
+                                    <i class="fas fa-times"></i> {% trans "Annuler" %}
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
@@ -329,6 +358,66 @@ function copyToClipboard() {
     .catch(err => {
         console.error('Erreur lors de la copie dans le presse-papiers: ', err);
     });
+}
+
+// Fonctions pour la gestion des commentaires
+function editComment(commentId) {
+    // Afficher la zone d'édition pour le commentaire
+    document.getElementById('edit-form-' + commentId).style.display = 'block';
+    document.getElementById('comment-text-' + commentId).style.display = 'none';
+}
+
+function cancelEdit(commentId) {
+    // Annuler l'édition et cacher la zone d'édition
+    document.getElementById('edit-form-' + commentId).style.display = 'none';
+    document.getElementById('comment-text-' + commentId).style.display = 'block';
+}
+
+function saveComment(commentId) {
+    var newText = document.getElementById('edit-textarea-' + commentId).value;
+
+    // Ici vous pouvez ajouter un appel AJAX pour sauvegarder le commentaire
+    fetch(`/comment/${commentId}/edit/`, {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ comment: newText }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Mettre à jour le texte du commentaire et cacher la zone d'édition
+            document.getElementById('comment-text-' + commentId).innerHTML = newText.replace(/(?:\r\n|\r|\n)/g, '<br>');
+            cancelEdit(commentId);
+        } else {
+            alert('Erreur lors de la sauvegarde du commentaire.');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function deleteComment(commentId) {
+    if (confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?')) {
+        // Ici vous pouvez ajouter un appel AJAX pour supprimer le commentaire
+        fetch(`/comment/${commentId}/delete/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Supprimer le commentaire de l'interface
+                document.getElementById('comment-' + commentId).remove();
+            } else {
+                alert('Erreur lors de la suppression du commentaire.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
 }
 </script>
 </body>

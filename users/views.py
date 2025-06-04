@@ -1,10 +1,13 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth import login, authenticate, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.utils.translation import gettext as _
-from .forms import UserRegistrationForm, UserLoginForm, UserProfileForm
+from django.core.paginator import Paginator
+from django.db.models import Q
+from .forms import UserRegistrationForm, UserLoginForm, UserProfileForm, AdminUserForm, UserPasswordChangeForm, AdminUserCreationForm, AdminPasswordResetForm
 from .models import User
+from .decorators import admin_required
 
 def register(request):
     if request.method == 'POST':
@@ -93,4 +96,165 @@ def profile(request):
             'total_views': total_views,
             'total_likes': total_likes,
         }
+    })
+
+@admin_required
+def manage_users(request):
+    """Vue pour que les administrateurs gèrent les utilisateurs"""
+    search_query = request.GET.get('search', '').strip()
+    role_filter = request.GET.get('role', '')
+    
+    users = User.objects.all().order_by('-date_joined')
+    
+    # Filtrage par recherche
+    if search_query:
+        users = users.filter(
+            Q(username__icontains=search_query) |
+            Q(email__icontains=search_query) |
+            Q(first_name__icontains=search_query) |
+            Q(last_name__icontains=search_query)
+        )
+    
+    # Filtrage par rôle
+    if role_filter and role_filter in ['admin', 'auteur', 'visiteur']:
+        users = users.filter(role=role_filter)
+    
+    # Pagination
+    paginator = Paginator(users, 20)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    
+    # Statistiques
+    stats = {
+        'total_users': User.objects.count(),
+        'admin_count': User.objects.filter(role='admin').count(),
+        'auteur_count': User.objects.filter(role='auteur').count(),
+        'visiteur_count': User.objects.filter(role='visiteur').count(),
+        'active_users': User.objects.filter(is_active=True).count(),
+    }
+    
+    return render(request, 'users/manage_users.html', {
+        'page_obj': page_obj,
+        'users': page_obj.object_list,
+        'search_query': search_query,
+        'role_filter': role_filter,
+        'stats': stats,
+        'role_choices': User.ROLE_CHOICES,
+    })
+
+@admin_required
+def edit_user(request, user_id):
+    """Vue pour modifier un utilisateur"""
+    user = get_object_or_404(User, id=user_id)
+    
+    if request.method == 'POST':
+        form = AdminUserForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _('Utilisateur modifié avec succès !'))
+            return redirect('users:manage_users')
+        else:
+            messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
+    else:
+        form = AdminUserForm(instance=user)
+    
+    return render(request, 'users/edit_user.html', {
+        'form': form,
+        'user_to_edit': user,
+    })
+
+@admin_required
+def toggle_user_status(request, user_id):
+    """Vue pour activer/désactiver un utilisateur"""
+    user = get_object_or_404(User, id=user_id)
+    
+    if request.method == 'POST':
+        user.is_active = not user.is_active
+        user.save()
+        
+        status = _('activé') if user.is_active else _('désactivé')
+        messages.success(request, _('Utilisateur %(username)s %(status)s avec succès !') % {
+            'username': user.username,
+            'status': status
+        })
+    
+    return redirect('users:manage_users')
+
+@admin_required
+def delete_user(request, user_id):
+    """Vue pour supprimer un utilisateur"""
+    user = get_object_or_404(User, id=user_id)
+    
+    # Empêcher la suppression de son propre compte
+    if user == request.user:
+        messages.error(request, _('Vous ne pouvez pas supprimer votre propre compte.'))
+        return redirect('users:manage_users')
+    
+    if request.method == 'POST':
+        username = user.username
+        user.delete()
+        messages.success(request, _('Utilisateur %(username)s supprimé avec succès !') % {
+            'username': username
+        })
+        return redirect('users:manage_users')
+    
+    return render(request, 'users/delete_user.html', {'user_to_delete': user})
+
+@login_required
+def change_password(request):
+    """Vue pour changer le mot de passe de l'utilisateur connecté"""
+    if request.method == 'POST':
+        form = UserPasswordChangeForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            user = form.save()
+            # Important: maintenir la session après changement de mot de passe
+            update_session_auth_hash(request, user)
+            messages.success(request, _('Votre mot de passe a été modifié avec succès !'))
+            return redirect('users:profile')
+        else:
+            messages.error(request, _('Veuillez corriger les erreurs ci-dessous.'))
+    else:
+        form = UserPasswordChangeForm(user=request.user)
+    
+    return render(request, 'users/change_password.html', {'form': form})
+
+@admin_required
+def add_user(request):
+    """Vue pour ajouter un nouvel utilisateur"""
+    if request.method == 'POST':
+        form = AdminUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            messages.success(request, _('Utilisateur %(username)s créé avec succès !') % {
+                'username': user.username
+            })
+            return redirect('users:manage_users')
+        else:
+            messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
+    else:
+        form = AdminUserCreationForm()
+    
+    return render(request, 'users/add_user.html', {'form': form})
+
+@admin_required
+def admin_change_password(request, user_id):
+    """Vue pour qu'un administrateur change le mot de passe d'un utilisateur"""
+    user = get_object_or_404(User, id=user_id)
+    
+    if request.method == 'POST':
+        form = AdminPasswordResetForm(user=user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _('Mot de passe de %(username)s modifié avec succès !') % {
+                'username': user.username
+            })
+            return redirect('users:manage_users')
+        else:
+            messages.error(request, _('Veuillez corriger les erreurs ci-dessous.'))
+    else:
+        form = AdminPasswordResetForm(user=user)
+    
+    return render(request, 'users/admin_change_password.html', {
+        'form': form,
+        'user_to_edit': user
     })
