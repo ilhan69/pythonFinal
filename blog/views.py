@@ -14,8 +14,13 @@ from comments.models import Comment
 from comments.forms import CommentForm
 from stats.models import Like, Share, View
 from users.decorators import admin_required, auteur_required, article_owner_required
+from pythonFinal.logging_utils import (
+    log_content_action, log_admin_action, log_error, 
+    log_view_access, log_security_event
+)
 
 # Create your views here.
+@log_view_access('blog')
 def home(request):
     # Articles récents (5 derniers articles publiés)
     recent_articles = Article.objects.filter(status='published').order_by('-created_at')[:5]
@@ -55,6 +60,7 @@ def home(request):
     })
 
 @auteur_required
+@log_view_access('blog')
 def ajouter_article(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
@@ -64,11 +70,20 @@ def ajouter_article(request):
                 article.author = request.user
                 article.save()
                 form.save_m2m()
+                
+                # Log de la création d'article
+                log_content_action(request, 'CREATION', 'Article', article.id, 
+                                 f"Titre: {article.title}, Statut: {article.status}")
+                
                 messages.success(request, _("L'article a été créé avec succès !"))
                 return redirect('blog:home')
             except Exception as e:
+                log_error(request, e, "Erreur lors de la création d'article")
                 messages.error(request, _("Erreur lors de l'enregistrement : %(error)s") % {'error': str(e)})
         else:
+            # Log des erreurs de création d'article
+            log_content_action(request, 'ECHEC_CREATION', 'Article', None, 
+                             "Erreurs de validation du formulaire")
             for field, errors in form.errors.items():
                 for error in errors:
                     messages.error(request, _("Erreur dans le champ '%(field)s': %(error)s") % {'field': field, 'error': error})
@@ -77,105 +92,251 @@ def ajouter_article(request):
     return render(request, 'blog/ajouter_article.html', {'form': form})
 
 @article_owner_required
+@log_view_access('blog')
 def modifier_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
     # Vérification supplémentaire des permissions
     if not request.user.can_edit_article(article):
+        log_security_event(request, 'TENTATIVE_MODIFICATION_ARTICLE_NON_AUTORISEE', 'WARNING',
+                         f"Article ID: {article_id}, Titre: {article.title}")
         messages.error(request, _('Vous n\'avez pas les permissions pour modifier cet article.'))
         return redirect('blog:home')
     
     if request.method == 'POST':
+        # Sauvegarder l'état précédent pour le log
+        old_title = article.title
+        old_status = article.status
+        
         form = PostForm(request.POST, request.FILES, instance=article)
         if form.is_valid():
-            form.save()
-            messages.success(request, _("L'article a été modifié avec succès !"))
-            return redirect('blog:article_detail', article_id=article.id)
+            try:
+                form.save()
+                
+                # Log de la modification d'article
+                changes = []
+                if article.title != old_title:
+                    changes.append(f"Titre: {old_title} -> {article.title}")
+                if article.status != old_status:
+                    changes.append(f"Statut: {old_status} -> {article.status}")
+                
+                log_content_action(request, 'MODIFICATION', 'Article', article.id,
+                                 f"Changements: {', '.join(changes) if changes else 'Mise à jour générale'}")
+                
+                messages.success(request, _("L'article a été modifié avec succès !"))
+                return redirect('blog:article_detail', article_id=article.id)
+            except Exception as e:
+                log_error(request, e, f"Erreur lors de la modification de l'article {article_id}")
+                messages.error(request, _("Une erreur est survenue lors de la modification."))
+        else:
+            log_content_action(request, 'ECHEC_MODIFICATION', 'Article', article_id,
+                             "Erreurs de validation du formulaire")
     else:
         form = PostForm(instance=article)
     return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
 
 @article_owner_required
+@log_view_access('blog')
 def supprimer_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
     # Vérification supplémentaire des permissions
     if not request.user.can_delete_article(article):
+        log_security_event(request, 'TENTATIVE_SUPPRESSION_ARTICLE_NON_AUTORISEE', 'WARNING',
+                         f"Article ID: {article_id}, Titre: {article.title}")
         messages.error(request, _('Vous n\'avez pas les permissions pour supprimer cet article.'))
         return redirect('blog:home')
     
     if request.method == 'POST':
-        article.delete()
-        messages.success(request, _("L'article a été supprimé avec succès !"))
-        return redirect('blog:home')
+        article_title = article.title
+        article_status = article.status
+        
+        try:
+            article.delete()
+            
+            # Log de la suppression d'article
+            log_content_action(request, 'SUPPRESSION', 'Article', article_id,
+                             f"Titre supprimé: {article_title}, Statut: {article_status}")
+            log_security_event(request, 'SUPPRESSION_ARTICLE', 'INFO',
+                             f"Article supprimé: {article_title} (ID: {article_id})")
+            
+            messages.success(request, _("L'article a été supprimé avec succès !"))
+            return redirect('blog:home')
+        except Exception as e:
+            log_error(request, e, f"Erreur lors de la suppression de l'article {article_id}")
+            messages.error(request, _("Une erreur est survenue lors de la suppression."))
+            
     return render(request, 'blog/supprimer_article.html', {'article': article})
 
 @admin_required
+@log_view_access('blog')
 def ajouter_categorie(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, _("La catégorie a été créée avec succès !"))
-            return redirect('blog:home')
+            try:
+                category = form.save()
+                
+                # Log de la création de catégorie
+                log_admin_action(request, "CREATION_CATEGORIE", f"Catégorie {category.name}",
+                               f"Slug: {category.slug}")
+                
+                messages.success(request, _("La catégorie a été créée avec succès !"))
+                return redirect('blog:home')
+            except Exception as e:
+                log_error(request, e, "Erreur lors de la création de catégorie")
+                messages.error(request, _("Une erreur est survenue lors de la création."))
+        else:
+            log_admin_action(request, "ECHEC_CREATION_CATEGORIE", "Nouvelle catégorie",
+                           "Erreurs de validation du formulaire")
     else:
         form = CategoryForm()
     return render(request, 'blog/ajouter_categorie.html', {'form': form})
 
 @admin_required
+@log_view_access('blog')
 def modifier_categorie(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     if request.method == 'POST':
+        old_name = category.name
+        old_slug = category.slug
+        
         form = CategoryForm(request.POST, instance=category)
         if form.is_valid():
-            form.save()
-            messages.success(request, _("La catégorie a été modifiée avec succès !"))
-            return redirect('blog:home')
+            try:
+                form.save()
+                
+                # Log de la modification de catégorie
+                changes = []
+                if category.name != old_name:
+                    changes.append(f"Nom: {old_name} -> {category.name}")
+                if category.slug != old_slug:
+                    changes.append(f"Slug: {old_slug} -> {category.slug}")
+                
+                log_admin_action(request, "MODIFICATION_CATEGORIE", f"Catégorie {category.name}",
+                               f"Changements: {', '.join(changes) if changes else 'Mise à jour générale'}")
+                
+                messages.success(request, _("La catégorie a été modifiée avec succès !"))
+                return redirect('blog:home')
+            except Exception as e:
+                log_error(request, e, f"Erreur lors de la modification de la catégorie {category_id}")
+                messages.error(request, _("Une erreur est survenue lors de la modification."))
+        else:
+            log_admin_action(request, "ECHEC_MODIFICATION_CATEGORIE", f"Catégorie {category.name}",
+                           "Erreurs de validation du formulaire")
     else:
         form = CategoryForm(instance=category)
     return render(request, 'blog/modifier_categorie.html', {'form': form, 'category': category})
 
 @admin_required
+@log_view_access('blog')
 def supprimer_categorie(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     if request.method == 'POST':
-        category.delete()
-        messages.success(request, _("La catégorie a été supprimée avec succès !"))
-        return redirect('blog:home')
+        category_name = category.name
+        articles_count = category.articles.count()
+        
+        try:
+            category.delete()
+            
+            # Log de la suppression de catégorie
+            log_admin_action(request, "SUPPRESSION_CATEGORIE", f"Catégorie {category_name}",
+                           f"Articles affectés: {articles_count}")
+            log_security_event(request, 'SUPPRESSION_CATEGORIE', 'WARNING',
+                             f"Catégorie supprimée: {category_name} (ID: {category_id})")
+            
+            messages.success(request, _("La catégorie a été supprimée avec succès !"))
+            return redirect('blog:home')
+        except Exception as e:
+            log_error(request, e, f"Erreur lors de la suppression de la catégorie {category_id}")
+            messages.error(request, _("Une erreur est survenue lors de la suppression."))
+            
     return render(request, 'blog/supprimer_categorie.html', {'category': category})
 
 @admin_required
+@log_view_access('blog')
 def ajouter_tag(request):
     if request.method == 'POST':
         form = TagForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, _("Le tag a été créé avec succès !"))
-            return redirect('blog:home')
+            try:
+                tag = form.save()
+                
+                # Log de la création de tag
+                log_admin_action(request, "CREATION_TAG", f"Tag {tag.name}",
+                               f"Slug: {tag.slug}")
+                
+                messages.success(request, _("Le tag a été créé avec succès !"))
+                return redirect('blog:home')
+            except Exception as e:
+                log_error(request, e, "Erreur lors de la création de tag")
+                messages.error(request, _("Une erreur est survenue lors de la création."))
+        else:
+            log_admin_action(request, "ECHEC_CREATION_TAG", "Nouveau tag",
+                           "Erreurs de validation du formulaire")
     else:
         form = TagForm()
     return render(request, 'blog/ajouter_tag.html', {'form': form})
 
 @admin_required
+@log_view_access('blog')
 def modifier_tag(request, tag_id):
     tag = get_object_or_404(Tag, id=tag_id)
     if request.method == 'POST':
+        old_name = tag.name
+        old_slug = tag.slug
+        
         form = TagForm(request.POST, instance=tag)
         if form.is_valid():
-            form.save()
-            messages.success(request, _("Le tag a été modifié avec succès !"))
-            return redirect('blog:home')
+            try:
+                form.save()
+                
+                # Log de la modification de tag
+                changes = []
+                if tag.name != old_name:
+                    changes.append(f"Nom: {old_name} -> {tag.name}")
+                if tag.slug != old_slug:
+                    changes.append(f"Slug: {old_slug} -> {tag.slug}")
+                
+                log_admin_action(request, "MODIFICATION_TAG", f"Tag {tag.name}",
+                               f"Changements: {', '.join(changes) if changes else 'Mise à jour générale'}")
+                
+                messages.success(request, _("Le tag a été modifié avec succès !"))
+                return redirect('blog:home')
+            except Exception as e:
+                log_error(request, e, f"Erreur lors de la modification du tag {tag_id}")
+                messages.error(request, _("Une erreur est survenue lors de la modification."))
+        else:
+            log_admin_action(request, "ECHEC_MODIFICATION_TAG", f"Tag {tag.name}",
+                           "Erreurs de validation du formulaire")
     else:
         form = TagForm(instance=tag)
     return render(request, 'blog/modifier_tag.html', {'form': form, 'tag': tag})
 
 @admin_required
+@log_view_access('blog')
 def supprimer_tag(request, tag_id):
     tag = get_object_or_404(Tag, id=tag_id)
     if request.method == 'POST':
-        tag.delete()
-        messages.success(request, _("Le tag a été supprimé avec succès !"))
-        return redirect('blog:home')
+        tag_name = tag.name
+        articles_count = tag.articles.count()
+        
+        try:
+            tag.delete()
+            
+            # Log de la suppression de tag
+            log_admin_action(request, "SUPPRESSION_TAG", f"Tag {tag_name}",
+                           f"Articles affectés: {articles_count}")
+            log_security_event(request, 'SUPPRESSION_TAG', 'INFO',
+                             f"Tag supprimé: {tag_name} (ID: {tag_id})")
+            
+            messages.success(request, _("Le tag a été supprimé avec succès !"))
+            return redirect('blog:home')
+        except Exception as e:
+            log_error(request, e, f"Erreur lors de la suppression du tag {tag_id}")
+            messages.error(request, _("Une erreur est survenue lors de la suppression."))
+            
     return render(request, 'blog/supprimer_tag.html', {'tag': tag})
 
+@log_view_access('blog')
 def article_detail(request, article_id):
     article = get_object_or_404(Article, id=article_id)
     
@@ -185,17 +346,25 @@ def article_detail(request, article_id):
         ip_address = request.META.get('REMOTE_ADDR')
         user_agent = request.META.get('HTTP_USER_AGENT', '')
         
-        View.objects.create(
-            user=request.user if request.user.is_authenticated else None,
-            content_type=content_type,
-            object_id=article.id,
-            ip_address=ip_address,
-            user_agent=user_agent
-        )
-        
-        # Mettre à jour le compteur de vues
-        article.views_count = article.views.count()
-        article.save(update_fields=['views_count'])
+        try:
+            View.objects.create(
+                user=request.user if request.user.is_authenticated else None,
+                content_type=content_type,
+                object_id=article.id,
+                ip_address=ip_address,
+                user_agent=user_agent
+            )
+            
+            # Mettre à jour le compteur de vues
+            article.views_count = article.views.count()
+            article.save(update_fields=['views_count'])
+            
+            # Log de la consultation d'article (niveau DEBUG pour éviter trop de logs)
+            from pythonFinal.logging_utils import blog_logger
+            blog_logger.debug(f"[CONSULTATION] Article '{article.title}' (ID: {article_id}) "
+                            f"consulté par {request.user.username if request.user.is_authenticated else 'anonyme'}")
+        except Exception as e:
+            log_error(request, e, f"Erreur lors de l'enregistrement de vue pour l'article {article_id}")
     
     # Récupérer les commentaires via la relation générique
     comments = article.comments.filter(is_active=True).order_by('-created_at')
@@ -203,13 +372,25 @@ def article_detail(request, article_id):
     if request.method == 'POST' and request.user.is_authenticated:
         form = CommentForm(request.POST)
         if form.is_valid():
-            comment = form.save(commit=False)
-            comment.author = request.user
-            comment.content_type = ContentType.objects.get_for_model(Article)
-            comment.object_id = article.id
-            comment.save()
-            messages.success(request, _("Votre commentaire a été ajouté avec succès !"))
-            return redirect('blog:article_detail', article_id=article.id)
+            try:
+                comment = form.save(commit=False)
+                comment.author = request.user
+                comment.content_type = ContentType.objects.get_for_model(Article)
+                comment.object_id = article.id
+                comment.save()
+                
+                # Log de l'ajout de commentaire
+                log_content_action(request, 'CREATION', 'Commentaire', comment.id,
+                                 f"Sur l'article: {article.title}")
+                
+                messages.success(request, _("Votre commentaire a été ajouté avec succès !"))
+                return redirect('blog:article_detail', article_id=article.id)
+            except Exception as e:
+                log_error(request, e, f"Erreur lors de l'ajout de commentaire sur l'article {article_id}")
+                messages.error(request, _("Une erreur est survenue lors de l'ajout du commentaire."))
+        else:
+            log_content_action(request, 'ECHEC_CREATION', 'Commentaire', None,
+                             f"Erreurs de validation sur l'article: {article.title}")
     else:
         form = CommentForm()
     
@@ -219,6 +400,7 @@ def article_detail(request, article_id):
         'form': form
     })
 
+@log_view_access('blog')
 def category_posts(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     posts = Article.objects.filter(category=category, status='published').order_by('-created_at')
@@ -227,6 +409,7 @@ def category_posts(request, category_id):
         'posts': posts
     })
 
+@log_view_access('blog')
 def tag_posts(request, tag_slug):
     tag = get_object_or_404(Tag, slug=tag_slug)
     posts = Article.objects.filter(tags=tag, status='published').order_by('-created_at')
@@ -235,6 +418,7 @@ def tag_posts(request, tag_slug):
         'posts': posts
     })
 
+@log_view_access('blog')
 def liste_articles(request):
     """
     Vue pour afficher la liste des articles avec pagination, filtrage, tri et recherche PostgreSQL optimisée
@@ -266,6 +450,7 @@ def liste_articles(request):
                 rank=SearchRank(search_vector, search_query_obj)
             ).filter(search=search_query_obj).order_by('-rank', '-created_at')
         except Exception as e:
+            log_error(request, e, f"Erreur lors de la recherche PostgreSQL: {search_query}")
             articles = articles.filter(
                 Q(title__icontains=search_query) |
                 Q(content__icontains=search_query) |

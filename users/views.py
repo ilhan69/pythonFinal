@@ -8,21 +8,40 @@ from django.db.models import Q
 from .forms import UserRegistrationForm, UserLoginForm, UserProfileForm, AdminUserForm, UserPasswordChangeForm, AdminUserCreationForm, AdminPasswordResetForm
 from .models import User
 from .decorators import admin_required
+from pythonFinal.logging_utils import (
+    log_auth_event, log_admin_action, log_security_event, 
+    log_error, log_view_access
+)
 
+@log_view_access('users')
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST, request.FILES)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, _('Votre compte a été créé avec succès !'))
-            return redirect('blog:home')
+            try:
+                user = form.save()
+                login(request, user)
+                
+                # Log de l'inscription réussie
+                log_auth_event(request, 'INSCRIPTION', user.username, success=True, 
+                              extra_info=f"Nouveau compte créé avec le rôle {user.role}")
+                
+                messages.success(request, _('Votre compte a été créé avec succès !'))
+                return redirect('blog:home')
+            except Exception as e:
+                log_error(request, e, "Erreur lors de l'inscription")
+                messages.error(request, _('Une erreur est survenue lors de la création du compte.'))
         else:
+            # Log des tentatives d'inscription échouées
+            username = form.data.get('username', 'N/A')
+            log_auth_event(request, 'INSCRIPTION', username, success=False, 
+                          extra_info="Erreurs de validation du formulaire")
             messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
     else:
         form = UserRegistrationForm()
     return render(request, 'users/register.html', {'form': form})
 
+@log_view_access('users')
 def user_login(request):
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
@@ -31,33 +50,72 @@ def user_login(request):
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None:
-                login(request, user)
-                messages.success(request, _('Vous êtes maintenant connecté !'))
-                return redirect('blog:home')
+                if user.is_active:
+                    login(request, user)
+                    
+                    # Log de la connexion réussie
+                    log_auth_event(request, 'CONNEXION', username, success=True,
+                                  extra_info=f"Rôle: {user.role}")
+                    
+                    messages.success(request, _('Vous êtes maintenant connecté !'))
+                    return redirect('blog:home')
+                else:
+                    # Log de tentative de connexion avec compte désactivé
+                    log_security_event(request, 'TENTATIVE_CONNEXION_COMPTE_DESACTIVE', 'WARNING',
+                                     f"Utilisateur: {username}")
+                    messages.error(request, _('Votre compte est désactivé.'))
             else:
+                # Log de tentative de connexion échouée
+                log_auth_event(request, 'CONNEXION', username, success=False,
+                              extra_info="Identifiants incorrects")
+                log_security_event(request, 'TENTATIVE_CONNEXION_ECHOUEE', 'WARNING',
+                                 f"Utilisateur: {username}")
                 messages.error(request, _('Nom d\'utilisateur ou mot de passe incorrect.'))
         else:
+            # Log des erreurs de formulaire de connexion
+            username = form.data.get('username', 'N/A')
+            log_auth_event(request, 'CONNEXION', username, success=False,
+                          extra_info="Erreurs de validation du formulaire")
             messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
     else:
         form = UserLoginForm()
     return render(request, 'users/login.html', {'form': form})
 
 @login_required
+@log_view_access('users')
 def user_logout(request):
+    username = request.user.username
+    
+    # Log de la déconnexion
+    log_auth_event(request, 'DECONNEXION', username, success=True)
+    
     logout(request)
     messages.success(request, _('Vous avez été déconnecté avec succès !'))
     return redirect('blog:home')
 
 @login_required
+@log_view_access('users')
 def profile(request):
     """Vue pour afficher et modifier le profil utilisateur"""
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
-            form.save()
-            messages.success(request, _('Votre profil a été mis à jour avec succès !'))
-            return redirect('users:profile')
+            try:
+                form.save()
+                
+                # Log de la modification de profil
+                log_auth_event(request, 'MODIFICATION_PROFIL', request.user.username, 
+                              success=True, extra_info="Profil mis à jour")
+                
+                messages.success(request, _('Votre profil a été mis à jour avec succès !'))
+                return redirect('users:profile')
+            except Exception as e:
+                log_error(request, e, "Erreur lors de la modification du profil")
+                messages.error(request, _('Une erreur est survenue lors de la modification.'))
         else:
+            # Log des erreurs de modification de profil
+            log_auth_event(request, 'MODIFICATION_PROFIL', request.user.username, 
+                          success=False, extra_info="Erreurs de validation")
             messages.error(request, _('Veuillez corriger les erreurs ci-dessous.'))
     else:
         form = UserProfileForm(instance=request.user)
@@ -99,8 +157,12 @@ def profile(request):
     })
 
 @admin_required
+@log_view_access('users')
 def manage_users(request):
     """Vue pour que les administrateurs gèrent les utilisateurs"""
+    # Log de l'accès à la gestion des utilisateurs
+    log_admin_action(request, "ACCES_GESTION_UTILISATEURS")
+    
     search_query = request.GET.get('search', '').strip()
     role_filter = request.GET.get('role', '')
     
@@ -143,6 +205,7 @@ def manage_users(request):
     })
 
 @admin_required
+@log_view_access('users')
 def edit_user(request, user_id):
     """Vue pour modifier un utilisateur"""
     user = get_object_or_404(User, id=user_id)
@@ -150,10 +213,31 @@ def edit_user(request, user_id):
     if request.method == 'POST':
         form = AdminUserForm(request.POST, instance=user)
         if form.is_valid():
-            form.save()
-            messages.success(request, _('Utilisateur modifié avec succès !'))
-            return redirect('users:manage_users')
+            try:
+                # Sauvegarder les changements précédents pour le log
+                old_role = user.role
+                old_active = user.is_active
+                
+                form.save()
+                
+                # Log de la modification utilisateur
+                changes = []
+                if user.role != old_role:
+                    changes.append(f"Rôle: {old_role} -> {user.role}")
+                if user.is_active != old_active:
+                    changes.append(f"Statut: {'actif' if old_active else 'inactif'} -> {'actif' if user.is_active else 'inactif'}")
+                
+                log_admin_action(request, "MODIFICATION_UTILISATEUR", f"Utilisateur {user.username}",
+                               f"Changements: {', '.join(changes) if changes else 'Informations générales'}")
+                
+                messages.success(request, _('Utilisateur modifié avec succès !'))
+                return redirect('users:manage_users')
+            except Exception as e:
+                log_error(request, e, f"Erreur lors de la modification de l'utilisateur {user.username}")
+                messages.error(request, _('Une erreur est survenue lors de la modification.'))
         else:
+            log_admin_action(request, "ECHEC_MODIFICATION_UTILISATEUR", f"Utilisateur {user.username}",
+                           "Erreurs de validation du formulaire")
             messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
     else:
         form = AdminUserForm(instance=user)
@@ -164,13 +248,25 @@ def edit_user(request, user_id):
     })
 
 @admin_required
+@log_view_access('users')
 def toggle_user_status(request, user_id):
     """Vue pour activer/désactiver un utilisateur"""
     user = get_object_or_404(User, id=user_id)
     
     if request.method == 'POST':
+        old_status = user.is_active
         user.is_active = not user.is_active
         user.save()
+        
+        # Log de l'action de changement de statut
+        action = "ACTIVATION_UTILISATEUR" if user.is_active else "DESACTIVATION_UTILISATEUR"
+        log_admin_action(request, action, f"Utilisateur {user.username}",
+                        f"Statut changé: {'inactif' if old_status else 'actif'} -> {'actif' if user.is_active else 'inactif'}")
+        
+        # Log de sécurité pour les désactivations
+        if not user.is_active:
+            log_security_event(request, 'DESACTIVATION_COMPTE', 'WARNING',
+                             f"Compte {user.username} désactivé par admin")
         
         status = _('activé') if user.is_active else _('désactivé')
         messages.success(request, _('Utilisateur %(username)s %(status)s avec succès !') % {
@@ -181,37 +277,66 @@ def toggle_user_status(request, user_id):
     return redirect('users:manage_users')
 
 @admin_required
+@log_view_access('users')
 def delete_user(request, user_id):
     """Vue pour supprimer un utilisateur"""
     user = get_object_or_404(User, id=user_id)
     
     # Empêcher la suppression de son propre compte
     if user == request.user:
+        log_security_event(request, 'TENTATIVE_SUPPRESSION_PROPRE_COMPTE', 'WARNING',
+                         f"Admin {request.user.username} a tenté de supprimer son propre compte")
         messages.error(request, _('Vous ne pouvez pas supprimer votre propre compte.'))
         return redirect('users:manage_users')
     
     if request.method == 'POST':
         username = user.username
-        user.delete()
-        messages.success(request, _('Utilisateur %(username)s supprimé avec succès !') % {
-            'username': username
-        })
-        return redirect('users:manage_users')
+        user_role = user.role
+        
+        try:
+            user.delete()
+            
+            # Log de la suppression d'utilisateur
+            log_admin_action(request, "SUPPRESSION_UTILISATEUR", f"Utilisateur {username}",
+                           f"Rôle supprimé: {user_role}")
+            log_security_event(request, 'SUPPRESSION_COMPTE', 'ERROR',
+                             f"Compte {username} (rôle: {user_role}) supprimé par admin")
+            
+            messages.success(request, _('Utilisateur %(username)s supprimé avec succès !') % {
+                'username': username
+            })
+            return redirect('users:manage_users')
+        except Exception as e:
+            log_error(request, e, f"Erreur lors de la suppression de l'utilisateur {username}")
+            messages.error(request, _('Une erreur est survenue lors de la suppression.'))
     
     return render(request, 'users/delete_user.html', {'user_to_delete': user})
 
 @login_required
+@log_view_access('users')
 def change_password(request):
     """Vue pour changer le mot de passe de l'utilisateur connecté"""
     if request.method == 'POST':
         form = UserPasswordChangeForm(user=request.user, data=request.POST)
         if form.is_valid():
-            user = form.save()
-            # Important: maintenir la session après changement de mot de passe
-            update_session_auth_hash(request, user)
-            messages.success(request, _('Votre mot de passe a été modifié avec succès !'))
-            return redirect('users:profile')
+            try:
+                user = form.save()
+                # Important: maintenir la session après changement de mot de passe
+                update_session_auth_hash(request, user)
+                
+                # Log du changement de mot de passe
+                log_auth_event(request, 'CHANGEMENT_MOT_DE_PASSE', user.username, success=True)
+                log_security_event(request, 'CHANGEMENT_MOT_DE_PASSE_UTILISATEUR', 'INFO',
+                                 f"Utilisateur {user.username} a changé son mot de passe")
+                
+                messages.success(request, _('Votre mot de passe a été modifié avec succès !'))
+                return redirect('users:profile')
+            except Exception as e:
+                log_error(request, e, f"Erreur lors du changement de mot de passe pour {request.user.username}")
+                messages.error(request, _('Une erreur est survenue lors du changement de mot de passe.'))
         else:
+            log_auth_event(request, 'CHANGEMENT_MOT_DE_PASSE', request.user.username, success=False,
+                          extra_info="Erreurs de validation")
             messages.error(request, _('Veuillez corriger les erreurs ci-dessous.'))
     else:
         form = UserPasswordChangeForm(user=request.user)
@@ -219,17 +344,30 @@ def change_password(request):
     return render(request, 'users/change_password.html', {'form': form})
 
 @admin_required
+@log_view_access('users')
 def add_user(request):
     """Vue pour ajouter un nouvel utilisateur"""
     if request.method == 'POST':
         form = AdminUserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            messages.success(request, _('Utilisateur %(username)s créé avec succès !') % {
-                'username': user.username
-            })
-            return redirect('users:manage_users')
+            try:
+                user = form.save()
+                
+                # Log de la création d'utilisateur par admin
+                log_admin_action(request, "CREATION_UTILISATEUR", f"Utilisateur {user.username}",
+                               f"Nouveau compte créé avec le rôle {user.role}")
+                
+                messages.success(request, _('Utilisateur %(username)s créé avec succès !') % {
+                    'username': user.username
+                })
+                return redirect('users:manage_users')
+            except Exception as e:
+                log_error(request, e, "Erreur lors de la création d'utilisateur par admin")
+                messages.error(request, _('Une erreur est survenue lors de la création.'))
         else:
+            username = form.data.get('username', 'N/A')
+            log_admin_action(request, "ECHEC_CREATION_UTILISATEUR", f"Tentative pour {username}",
+                           "Erreurs de validation du formulaire")
             messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
     else:
         form = AdminUserCreationForm()
@@ -237,6 +375,7 @@ def add_user(request):
     return render(request, 'users/add_user.html', {'form': form})
 
 @admin_required
+@log_view_access('users')
 def admin_change_password(request, user_id):
     """Vue pour qu'un administrateur change le mot de passe d'un utilisateur"""
     user = get_object_or_404(User, id=user_id)
@@ -244,12 +383,25 @@ def admin_change_password(request, user_id):
     if request.method == 'POST':
         form = AdminPasswordResetForm(user=user, data=request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, _('Mot de passe de %(username)s modifié avec succès !') % {
-                'username': user.username
-            })
-            return redirect('users:manage_users')
+            try:
+                form.save()
+                
+                # Log du changement de mot de passe par admin
+                log_admin_action(request, "RESET_MOT_DE_PASSE", f"Utilisateur {user.username}",
+                               "Mot de passe réinitialisé par administrateur")
+                log_security_event(request, 'RESET_MOT_DE_PASSE_PAR_ADMIN', 'WARNING',
+                                 f"Mot de passe de {user.username} réinitialisé par admin")
+                
+                messages.success(request, _('Mot de passe de %(username)s modifié avec succès !') % {
+                    'username': user.username
+                })
+                return redirect('users:manage_users')
+            except Exception as e:
+                log_error(request, e, f"Erreur lors du reset de mot de passe pour {user.username}")
+                messages.error(request, _('Une erreur est survenue lors de la modification.'))
         else:
+            log_admin_action(request, "ECHEC_RESET_MOT_DE_PASSE", f"Utilisateur {user.username}",
+                           "Erreurs de validation du formulaire")
             messages.error(request, _('Veuillez corriger les erreurs ci-dessous.'))
     else:
         form = AdminPasswordResetForm(user=user)
