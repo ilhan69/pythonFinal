@@ -151,7 +151,7 @@
                                         <button type="submit" class="btn btn-primary">
                                             <i class="fas fa-filter"></i> Filtrer
                                         </button>
-                                        <a href="{% url 'liste_articles' %}" class="btn btn-outline-secondary">
+                                        <a href="{% url 'blog:home' %}" class="btn btn-secondary">
                                             <i class="fas fa-times"></i> Réinitialiser
                                         </a>
                                     </div>
@@ -244,7 +244,7 @@
 
                             <!-- Titre -->
                             <h5 class="card-title">
-                                <a href="{% url 'article_detail' article.id %}" 
+                                <a href="{% url 'blog:article_detail' article.id %}" 
                                    class="text-decoration-none text-dark stretched-link">
                                     {{ article.title }}
                                 </a>
@@ -295,7 +295,7 @@
                         {% endif %}
                     </p>
                     {% if search_query or selected_category or selected_tag or selected_author %}
-                        <a href="{% url 'liste_articles' %}" class="btn btn-primary">
+                        <a href="{% url 'blog:liste_articles' %}" class="btn btn-primary">
                             <i class="fas fa-refresh"></i> Voir tous les articles
                         </a>
                     {% endif %}

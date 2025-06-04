@@ -27,11 +27,11 @@
                         </div>
                     </form>
                     <div class="text-center mt-3">
-                        <p>Pas encore de compte ? <a href="{% url 'register' %}">Inscrivez-vous</a></p>
+                        <p class="text-center">{% trans "Pas encore de compte ?" %} <a href="{% url 'users:register' %}">{% trans "Inscrivez-vous ici" %}</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{% endblock %} 
+{% endblock %}

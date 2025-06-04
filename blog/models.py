@@ -1,17 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.utils.text import slugify
+from django.contrib.contenttypes.fields import GenericRelation
 
-# Create your models here.
-class User(AbstractUser):
-    bio = models.TextField(_('biography'), blank=True)
-    avatar = models.ImageField(_('avatar'), upload_to='avatars/', null=True, blank=True)
-
-    class Meta:
-        verbose_name = _('user')
-        verbose_name_plural = _('users')
+User = get_user_model()
 
 class Category(models.Model):
     name = models.CharField(_('nom'), max_length=100, unique=True)
@@ -110,7 +104,7 @@ class Article(models.Model):
     created_at = models.DateTimeField(_('créé le'), auto_now_add=True)
     updated_at = models.DateTimeField(_('modifié le'), auto_now=True)
     
-    # Compteurs
+    # Compteurs (calculés dynamiquement)
     views_count = models.PositiveIntegerField(_('nombre de vues'), default=0)
     likes_count = models.PositiveIntegerField(_('nombre de likes'), default=0)
     shares_count = models.PositiveIntegerField(_('nombre de partages'), default=0)
@@ -118,6 +112,12 @@ class Article(models.Model):
     # Meta SEO
     meta_title = models.CharField(_('titre SEO'), max_length=60, blank=True, help_text=_('Titre pour le référencement (max 60 caractères)'))
     meta_description = models.CharField(_('description SEO'), max_length=160, blank=True, help_text=_('Description pour le référencement (max 160 caractères)'))
+
+    # Relations génériques pour les commentaires, likes, partages et vues
+    comments = GenericRelation('comments.Comment')
+    likes = GenericRelation('stats.Like')
+    shares = GenericRelation('stats.Share')
+    views = GenericRelation('stats.View')
 
     def save(self, *args, **kwargs):
         """Génère automatiquement le slug à partir du titre si non fourni"""
@@ -147,17 +147,17 @@ class Article(models.Model):
 
     def increment_views(self):
         """Incrémente le compteur de vues"""
-        self.views_count += 1
+        self.views_count = self.views.count()
         self.save(update_fields=['views_count'])
 
     def increment_likes(self):
         """Incrémente le compteur de likes"""
-        self.likes_count += 1
+        self.likes_count = self.likes.count()
         self.save(update_fields=['likes_count'])
 
     def increment_shares(self):
         """Incrémente le compteur de partages"""
-        self.shares_count += 1
+        self.shares_count = self.shares.count()
         self.save(update_fields=['shares_count'])
 
     def is_published(self):
@@ -189,46 +189,3 @@ class Article(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['slug'], name='unique_article_slug'),
         ]
-
-class ArticleComment(models.Model):
-    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='comments')
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
-    comment = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f'Comment by {self.author.username} on {self.article.title}'
-
-    class Meta:
-        ordering = ['-created_at']
-
-class ArticleLike(models.Model):
-    """Modèle pour gérer les likes individuels des utilisateurs"""
-    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='user_likes')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='liked_articles')
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        unique_together = ('article', 'user')  # Un utilisateur ne peut liker qu'une fois un article
-        verbose_name = 'Like'
-        verbose_name_plural = 'Likes'
-
-    def __str__(self):
-        return f'{self.user.username} likes {self.article.title}'
-
-class ArticleShare(models.Model):
-    """Modèle pour suivre les partages d'articles"""
-    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='user_shares')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='shared_articles', null=True, blank=True)
-    shared_at = models.DateTimeField(auto_now_add=True)
-    ip_address = models.GenericIPAddressField(null=True, blank=True)
-    user_agent = models.TextField(blank=True)
-
-    class Meta:
-        verbose_name = 'Partage'
-        verbose_name_plural = 'Partages'
-
-    def __str__(self):
-        if self.user:
-            return f'{self.user.username} shared {self.article.title}'
-        return f'Anonymous shared {self.article.title}'

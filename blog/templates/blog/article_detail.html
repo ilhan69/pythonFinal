@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class="container mt-4">
-    <a href="{% url 'home' %}" class="btn btn-secondary mb-3">
+    <a href="{% url 'blog:home' %}" class="btn btn-secondary mb-3">
         <i class="fas fa-arrow-left me-1"></i> {% trans "Retour à l'accueil" %}
     </a>
     
@@ -74,7 +74,7 @@
                     {% if article.tags.all %}
                     <div class="mb-3">
                         {% for tag in article.tags.all %}
-                        <a href="{% url 'tag_posts' tag.slug %}" class="badge text-decoration-none me-1" style="background-color: {{ tag.couleur }};">
+                        <a href="{% url 'blog:tag_posts' tag.slug %}" class="badge text-decoration-none me-1" style="background-color: {{ tag.couleur }};">
                             <i class="fas fa-tag me-1"></i>{{ tag.name }}
                         </a>
                         {% endfor %}
@@ -101,10 +101,10 @@
                 <!-- Boutons d'action -->
                 {% if user.is_authenticated %}
                 <div class="btn-group">
-                    <a href="{% url 'modifier_article' article.id %}" class="btn btn-outline-primary">
+                    <a href="{% url 'blog:modifier_article' article.id %}" class="btn btn-outline-primary">
                         <i class="fas fa-edit"></i> {% trans "Modifier" %}
                     </a>
-                    <a href="{% url 'supprimer_article' article.id %}" class="btn btn-outline-danger">
+                    <a href="{% url 'blog:supprimer_article' article.id %}" class="btn btn-outline-danger">
                         <i class="fas fa-trash"></i> {% trans "Supprimer" %}
                     </a>
                 </div>
@@ -251,7 +251,7 @@
     {% else %}
     <div class="alert alert-warning mt-3">
         <i class="fas fa-exclamation-triangle me-2"></i>
-        <a href="{% url 'login' %}" class="alert-link">{% trans "Connectez-vous" %}</a> {% trans "pour ajouter un commentaire." %}
+        <a href="{% url 'users:login' %}" class="alert-link">{% trans "Connectez-vous" %}</a> {% trans "pour ajouter un commentaire." %}
     </div>
     {% endif %}
 </div>

@@ -106,7 +106,7 @@
                                 {{ form.category }}
                                 {{ form.category.errors }}
                                 <div class="form-text">
-                                    <a href="{% url 'ajouter_categorie' %}" class="text-decoration-none">
+                                    <a href="{% url 'blog:ajouter_categorie' %}" class="text-decoration-none">
                                         ➕ {% trans "Ajouter une nouvelle catégorie" %}
                                     </a>
                                 </div>
@@ -162,7 +162,7 @@
                                     <div class="alert alert-info mb-0" role="alert">
                                         <i class="fas fa-info-circle me-2"></i>
                                         {% trans "Aucun tag disponible." %}
-                                        <a href="{% url 'ajouter_tag' %}" class="text-decoration-none">
+                                        <a href="{% url 'blog:ajouter_tag' %}" class="text-decoration-none">
                                             ➕ {% trans "Créer le premier tag" %}
                                         </a>
                                     </div>
@@ -170,7 +170,7 @@
                             </div>
                             {{ form.tags.errors }}
                             <div class="form-text">
-                                <a href="{% url 'ajouter_tag' %}" class="text-decoration-none">
+                                <a href="{% url 'blog:ajouter_tag' %}" class="text-decoration-none">
                                     ➕ {% trans "Ajouter un nouveau tag" %}
                                 </a>
                             </div>
@@ -216,7 +216,7 @@
                         </div>
 
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="{% url 'home' %}" class="btn btn-secondary me-md-2">
+                            <a href="{% url 'blog:home' %}" class="btn btn-secondary me-md-2">
                                 ❌ {% trans "Annuler" %}
                             </a>
                             <button type="submit" class="btn btn-primary">

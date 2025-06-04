@@ -29,6 +29,9 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
+    path('users/', include('users.urls')),
+    path('comments/', include('comments.urls')),
+    path('stats/', include('stats.urls')),
     prefix_default_language=True,  # Ajouter le préfixe pour toutes les langues, y compris la langue par défaut
 )
 

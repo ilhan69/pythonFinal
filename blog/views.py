@@ -2,17 +2,17 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate, logout
-from django.views.decorators.http import require_POST
-from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Count, Q, F
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
-from django.utils.translation import gettext as _, gettext_lazy
-from django.utils import translation
+from django.utils.translation import gettext as _
+from django.contrib.contenttypes.models import ContentType
 import json
-from .forms import PostForm, CommentForm, CategoryForm, TagForm, UserRegistrationForm, UserLoginForm, UserProfileForm
-from .models import Article, Category, Tag, User, ArticleLike, ArticleShare
+from .forms import PostForm, CategoryForm, TagForm
+from .models import Article, Category, Tag
+from comments.models import Comment
+from comments.forms import CommentForm
+from stats.models import Like, Share, View
 
 # Create your views here.
 def home(request):
@@ -31,6 +31,8 @@ def home(request):
     ).order_by('-articles_count')
     
     # Auteurs populaires (basés sur le nombre d'articles publiés et vues totales)
+    from django.contrib.auth import get_user_model
+    User = get_user_model()
     popular_authors = User.objects.annotate(
         published_articles_count=Count('articles', filter=Q(articles__status='published')),
         total_views=Count('articles__views_count', filter=Q(articles__status='published'))
@@ -51,17 +53,6 @@ def home(request):
         'tags': tags
     })
 
-def home_template(request):
-    # Afficher seulement les articles publiés
-    articles = Article.objects.filter(status='published').order_by('-created_at')
-    categories = Category.objects.all()
-    tags = Tag.objects.all().order_by('name')
-    return render(request, 'blog/home.html', {
-        'articles': articles,
-        'categories': categories,
-        'tags': tags
-    })
-
 @login_required
 def ajouter_article(request):
     if request.method == 'POST':
@@ -71,18 +62,15 @@ def ajouter_article(request):
                 article = form.save(commit=False)
                 article.author = request.user
                 article.save()
-                form.save_m2m()  # Important pour sauvegarder les relations many-to-many
+                form.save_m2m()
                 messages.success(request, _("L'article a été créé avec succès !"))
-                return redirect('home')
+                return redirect('blog:home')
             except Exception as e:
                 messages.error(request, _("Erreur lors de l'enregistrement : %(error)s") % {'error': str(e)})
-                print(f"Erreur détaillée : {e}")  # Pour le debug
         else:
-            # Afficher les erreurs du formulaire
             for field, errors in form.errors.items():
                 for error in errors:
                     messages.error(request, _("Erreur dans le champ '%(field)s': %(error)s") % {'field': field, 'error': error})
-            print(f"Erreurs du formulaire : {form.errors}")  # Pour le debug
     else:
         form = PostForm()
     return render(request, 'blog/ajouter_article.html', {'form': form})
@@ -95,7 +83,7 @@ def modifier_article(request, article_id):
         if form.is_valid():
             form.save()
             messages.success(request, _("L'article a été modifié avec succès !"))
-            return redirect('article_detail', article_id=article.id)
+            return redirect('blog:article_detail', article_id=article.id)
     else:
         form = PostForm(instance=article)
     return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
@@ -106,7 +94,7 @@ def supprimer_article(request, article_id):
     if request.method == 'POST':
         article.delete()
         messages.success(request, _("L'article a été supprimé avec succès !"))
-        return redirect('home')
+        return redirect('blog:home')
     return render(request, 'blog/supprimer_article.html', {'article': article})
 
 @login_required
@@ -116,7 +104,7 @@ def ajouter_categorie(request):
         if form.is_valid():
             form.save()
             messages.success(request, _("La catégorie a été créée avec succès !"))
-            return redirect('home')
+            return redirect('blog:home')
     else:
         form = CategoryForm()
     return render(request, 'blog/ajouter_categorie.html', {'form': form})
@@ -129,7 +117,7 @@ def modifier_categorie(request, category_id):
         if form.is_valid():
             form.save()
             messages.success(request, _("La catégorie a été modifiée avec succès !"))
-            return redirect('home')
+            return redirect('blog:home')
     else:
         form = CategoryForm(instance=category)
     return render(request, 'blog/modifier_categorie.html', {'form': form, 'category': category})
@@ -140,7 +128,7 @@ def supprimer_categorie(request, category_id):
     if request.method == 'POST':
         category.delete()
         messages.success(request, _("La catégorie a été supprimée avec succès !"))
-        return redirect('home')
+        return redirect('blog:home')
     return render(request, 'blog/supprimer_categorie.html', {'category': category})
 
 @login_required
@@ -150,7 +138,7 @@ def ajouter_tag(request):
         if form.is_valid():
             form.save()
             messages.success(request, _("Le tag a été créé avec succès !"))
-            return redirect('home')
+            return redirect('blog:home')
     else:
         form = TagForm()
     return render(request, 'blog/ajouter_tag.html', {'form': form})
@@ -163,7 +151,7 @@ def modifier_tag(request, tag_id):
         if form.is_valid():
             form.save()
             messages.success(request, _("Le tag a été modifié avec succès !"))
-            return redirect('home')
+            return redirect('blog:home')
     else:
         form = TagForm(instance=tag)
     return render(request, 'blog/modifier_tag.html', {'form': form, 'tag': tag})
@@ -174,164 +162,54 @@ def supprimer_tag(request, tag_id):
     if request.method == 'POST':
         tag.delete()
         messages.success(request, _("Le tag a été supprimé avec succès !"))
-        return redirect('home')
+        return redirect('blog:home')
     return render(request, 'blog/supprimer_tag.html', {'tag': tag})
 
 def article_detail(request, article_id):
     article = get_object_or_404(Article, id=article_id)
-    # Incrémenter le compteur de vues
-    article.increment_views()
     
-    comments = article.comments.all()
-    if request.method == 'POST':
+    # Enregistrer une vue
+    if request.method == 'GET':
+        content_type = ContentType.objects.get_for_model(Article)
+        ip_address = request.META.get('REMOTE_ADDR')
+        user_agent = request.META.get('HTTP_USER_AGENT', '')
+        
+        View.objects.create(
+            user=request.user if request.user.is_authenticated else None,
+            content_type=content_type,
+            object_id=article.id,
+            ip_address=ip_address,
+            user_agent=user_agent
+        )
+        
+        # Mettre à jour le compteur de vues
+        article.views_count = article.views.count()
+        article.save(update_fields=['views_count'])
+    
+    # Récupérer les commentaires via la relation générique
+    comments = article.comments.filter(is_active=True).order_by('-created_at')
+    
+    if request.method == 'POST' and request.user.is_authenticated:
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
-            comment.article = article
             comment.author = request.user
+            comment.content_type = ContentType.objects.get_for_model(Article)
+            comment.object_id = article.id
             comment.save()
             messages.success(request, _("Votre commentaire a été ajouté avec succès !"))
-            return redirect('article_detail', article_id=article.id)
+            return redirect('blog:article_detail', article_id=article.id)
     else:
         form = CommentForm()
+    
     return render(request, 'blog/article_detail.html', {
         'article': article,
         'comments': comments,
         'form': form
     })
 
-def register(request):
-    if request.method == 'POST':
-        form = UserRegistrationForm(request.POST, request.FILES)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, _('Votre compte a été créé avec succès !'))
-            return redirect('home')
-        else:
-            messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
-    else:
-        form = UserRegistrationForm()
-    return render(request, 'blog/register.html', {'form': form})
-
-def user_login(request):
-    if request.method == 'POST':
-        form = UserLoginForm(data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                messages.success(request, _('Vous êtes maintenant connecté !'))
-                return redirect('home')
-            else:
-                messages.error(request, _('Nom d\'utilisateur ou mot de passe incorrect.'))
-        else:
-            messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
-    else:
-        form = UserLoginForm()
-    return render(request, 'blog/login.html', {'form': form})
-
-@login_required
-def profile(request):
-    """Vue pour afficher et modifier le profil utilisateur"""
-    if request.method == 'POST':
-        form = UserProfileForm(request.POST, request.FILES, instance=request.user)
-        if form.is_valid():
-            form.save()
-            messages.success(request, _('Votre profil a été mis à jour avec succès !'))
-            return redirect('profile')
-        else:
-            messages.error(request, _('Veuillez corriger les erreurs ci-dessous.'))
-    else:
-        form = UserProfileForm(instance=request.user)
-    
-    # Récupérer les articles de l'utilisateur avec statistiques
-    user_posts = Article.objects.filter(author=request.user).order_by('-created_at')
-
-    # Articles favoris (likés)
-    favoris = Article.objects.filter(user_likes__user=request.user).distinct().order_by('-created_at')
-
-    # Statistiques utilisateur
-    total_articles = user_posts.count()
-    published_articles = user_posts.filter(status='published').count()
-    draft_articles = user_posts.filter(status='draft').count()
-    total_views = sum(post.views_count for post in user_posts)
-    total_likes = sum(post.likes_count for post in user_posts)
-    
-    return render(request, 'blog/profile.html', {
-        'user': request.user,
-        'posts': user_posts,
-        'favoris': favoris,
-        'form': form,
-        'stats': {
-            'total_articles': total_articles,
-            'published_articles': published_articles,
-            'draft_articles': draft_articles,
-            'total_views': total_views,
-            'total_likes': total_likes,
-        }
-    })
-
-def post_detail(request, post_id):
-    post = get_object_or_404(Article, id=post_id)
-    comments = post.comments.all().order_by('-created_at')
-    
-    if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.article = post  # Correction ici
-            comment.author = request.user
-            comment.save()
-            messages.success(request, _("Votre commentaire a été ajouté avec succès !"))
-            return redirect('post_detail', post_id=post.id)
-        else:
-            messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
-    else:
-        form = CommentForm()
-    
-    return render(request, 'blog/article_detail.html', {
-        'article': post,  # Adapter la clé pour le template
-        'comments': comments,
-        'form': form
-    })
-
-@login_required
-def create_post(request):
-    if request.method == 'POST':
-        form = PostForm(request.POST, request.FILES)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.save()
-            form.save_m2m()
-            messages.success(request, _("L'article a été créé avec succès !"))
-            return redirect('post_detail', post_id=post.id)
-        else:
-            messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
-    else:
-        form = PostForm()
-    return render(request, 'blog/ajouter_article.html', {'form': form})
-
-@login_required
-def create_category(request):
-    if request.method == 'POST':
-        form = CategoryForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, _("La catégorie a été créée avec succès !"))
-            return redirect('home')
-        else:
-            messages.error(request, _('Veuillez corriger les erreurs dans le formulaire.'))
-    else:
-        form = CategoryForm()
-    return render(request, 'blog/ajouter_categorie.html', {'form': form})
-
 def category_posts(request, category_id):
     category = get_object_or_404(Category, id=category_id)
-    # Afficher seulement les articles publiés de cette catégorie
     posts = Article.objects.filter(category=category, status='published').order_by('-created_at')
     return render(request, 'blog/home.html', {
         'category': category,
@@ -340,76 +218,10 @@ def category_posts(request, category_id):
 
 def tag_posts(request, tag_slug):
     tag = get_object_or_404(Tag, slug=tag_slug)
-    # Afficher seulement les articles publiés avec ce tag
     posts = Article.objects.filter(tags=tag, status='published').order_by('-created_at')
     return render(request, 'blog/home.html', {
         'tag': tag,
         'posts': posts
-    })
-
-@login_required
-def user_logout(request):
-    logout(request)
-    messages.success(request, _('Vous avez été déconnecté avec succès !'))
-    return redirect('home')
-
-@require_POST
-@login_required
-def like_article(request, article_id):
-    """Vue pour gérer les likes d'articles via AJAX"""
-    article = get_object_or_404(Article, id=article_id)
-    user = request.user
-    
-    # Vérifier si l'utilisateur a déjà liké cet article
-    like, created = ArticleLike.objects.get_or_create(
-        article=article,
-        user=user
-    )
-    
-    if created:
-        # Nouveau like
-        article.increment_likes()
-        liked = True
-        message = _('Article liké avec succès!')
-    else:
-        # Unlike - supprimer le like existant
-        like.delete()
-        article.likes_count = max(0, article.likes_count - 1)
-        article.save(update_fields=['likes_count'])
-        liked = False
-        message = _('Like retiré avec succès!')
-    
-    return JsonResponse({
-        'success': True,
-        'liked': liked,
-        'likes_count': article.likes_count,
-        'message': str(message)
-    })
-
-@require_POST  
-def share_article(request, article_id):
-    """Vue pour gérer les partages d'articles via AJAX"""
-    article = get_object_or_404(Article, id=article_id)
-    
-    # Récupérer l'adresse IP et le user agent
-    ip_address = request.META.get('REMOTE_ADDR')
-    user_agent = request.META.get('HTTP_USER_AGENT', '')
-    
-    # Créer un enregistrement de partage
-    share = ArticleShare.objects.create(
-        article=article,
-        user=request.user if request.user.is_authenticated else None,
-        ip_address=ip_address,
-        user_agent=user_agent
-    )
-    
-    # Incrémenter le compteur de partages
-    article.increment_shares()
-    
-    return JsonResponse({
-        'success': True,
-        'shares_count': article.shares_count,
-        'message': str(_('Article partagé avec succès!'))
     })
 
 def liste_articles(request):
@@ -424,12 +236,11 @@ def liste_articles(request):
     category_id = request.GET.get('category', '')
     tag_id = request.GET.get('tag', '')
     author_id = request.GET.get('author', '')
-    sort_by = request.GET.get('sort', 'recent')  # recent, popular, alphabetic
+    sort_by = request.GET.get('sort', 'recent')
     
     # Recherche full-text PostgreSQL optimisée
     if search_query:
         try:
-            # Configuration avancée de la recherche PostgreSQL avec pondération
             search_vector = (
                 SearchVector('title', weight='A', config='french') + 
                 SearchVector('content', weight='B', config='french') + 
@@ -444,41 +255,34 @@ def liste_articles(request):
                 rank=SearchRank(search_vector, search_query_obj)
             ).filter(search=search_query_obj).order_by('-rank', '-created_at')
         except Exception as e:
-            # Fallback vers une recherche simple si PostgreSQL search échoue
             articles = articles.filter(
                 Q(title__icontains=search_query) |
                 Q(content__icontains=search_query) |
                 Q(excerpt__icontains=search_query)
             ).order_by('-created_at')
     
-    # Filtrage par catégorie
+    # Filtrage par catégorie, tag et auteur
     if category_id:
         try:
-            category_id = int(category_id)
-            articles = articles.filter(category_id=category_id)
+            articles = articles.filter(category_id=int(category_id))
         except (ValueError, TypeError):
             pass
     
-    # Filtrage par tag
     if tag_id:
         try:
-            tag_id = int(tag_id)
-            articles = articles.filter(tags__id=tag_id).distinct()  # distinct() pour éviter les doublons
+            articles = articles.filter(tags__id=int(tag_id)).distinct()
         except (ValueError, TypeError):
             pass
     
-    # Filtrage par auteur
     if author_id:
         try:
-            author_id = int(author_id)
-            articles = articles.filter(author_id=author_id)
+            articles = articles.filter(author_id=int(author_id))
         except (ValueError, TypeError):
             pass
     
     # Tri des résultats
-    if not search_query:  # Si pas de recherche, appliquer le tri normal
+    if not search_query:
         if sort_by == 'popular':
-            # Tri par popularité optimisé avec annotation
             articles = articles.annotate(
                 popularity_score=F('views_count') + F('likes_count') * 2 + F('shares_count') * 3
             ).order_by('-popularity_score', '-created_at')
@@ -486,12 +290,12 @@ def liste_articles(request):
             articles = articles.order_by('title', '-created_at')
         elif sort_by == 'oldest':
             articles = articles.order_by('created_at')
-        else:  # recent par défaut
+        else:
             articles = articles.order_by('-created_at')
     
     # Pagination
     items_per_page = int(request.GET.get('per_page', 12))
-    items_per_page = min(max(items_per_page, 6), 24)  # Entre 6 et 24 articles par page
+    items_per_page = min(max(items_per_page, 6), 24)
     
     paginator = Paginator(articles, items_per_page)
     page_number = request.GET.get('page', 1)
@@ -510,6 +314,8 @@ def liste_articles(request):
         articles_count=Count('articles', filter=Q(articles__status='published'))
     ).filter(articles_count__gt=0).order_by('name')
     
+    from django.contrib.auth import get_user_model
+    User = get_user_model()
     authors = User.objects.annotate(
         articles_count=Count('articles', filter=Q(articles__status='published'))
     ).filter(articles_count__gt=0).order_by('username')
@@ -518,7 +324,7 @@ def liste_articles(request):
     total_articles = Article.objects.filter(status='published').count()
     filtered_count = paginator.count
     
-    # Catégorie et tag sélectionnés pour l'affichage
+    # Objets sélectionnés pour l'affichage
     selected_category_obj = None
     selected_tag_obj = None
     selected_author_obj = None

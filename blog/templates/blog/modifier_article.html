@@ -77,15 +77,49 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="{{ form.category.id_for_label }}" class="form-label">
-                                <i class="fas fa-folder me-2"></i>{% trans "Catégorie" %}
+                            <label for="{{ form.slug.id_for_label }}" class="form-label">
+                                <i class="fas fa-link me-2"></i>{% trans "Slug (URL)" %}
                             </label>
-                            {{ form.category }}
-                            {{ form.category.errors }}
+                            {{ form.slug }}
+                            {{ form.slug.errors }}
                             <div class="form-text">
-                                <a href="{% url 'ajouter_categorie' %}" class="text-decoration-none">
-                                    ➕ {% trans "Ajouter une nouvelle catégorie" %}
-                                </a>
+                                {% trans "Laissez vide pour générer automatiquement à partir du titre" %}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.excerpt.id_for_label }}" class="form-label">
+                                <i class="fas fa-quote-left me-2"></i>{% trans "Extrait/Résumé" %}
+                            </label>
+                            {{ form.excerpt }}
+                            {{ form.excerpt.errors }}
+                            <div class="form-text">
+                                {% trans "Résumé de l'article (max 300 caractères). Généré automatiquement si vide." %}
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="{{ form.category.id_for_label }}" class="form-label">
+                                    <i class="fas fa-folder me-2"></i>{% trans "Catégorie" %}
+                                </label>
+                                {{ form.category }}
+                                {{ form.category.errors }}
+                                <div class="form-text">
+                                    <a href="{% url 'blog:ajouter_categorie' %}" class="text-decoration-none">
+                                        ➕ {% trans "Ajouter une nouvelle catégorie" %}
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="{{ form.status.id_for_label }}" class="form-label">
+                                    <i class="fas fa-flag me-2"></i>{% trans "Statut de publication" %}
+                                </label>
+                                {{ form.status }}
+                                {{ form.status.errors }}
+                                <div class="form-text">
+                                    {% trans "Choisissez le statut de votre article" %}
+                                </div>
                             </div>
                         </div>
 
@@ -134,7 +168,7 @@
                                     <div class="alert alert-info mb-0" role="alert">
                                         <i class="fas fa-info-circle me-2"></i>
                                         {% trans "Aucun tag disponible." %}
-                                        <a href="{% url 'ajouter_tag' %}" class="text-decoration-none">
+                                        <a href="{% url 'blog:ajouter_tag' %}" class="text-decoration-none">
                                             ➕ {% trans "Créer le premier tag" %}
                                         </a>
                                     </div>
@@ -142,7 +176,7 @@
                             </div>
                             {{ form.tags.errors }}
                             <div class="form-text">
-                                <a href="{% url 'ajouter_tag' %}" class="text-decoration-none">
+                                <a href="{% url 'blog:ajouter_tag' %}" class="text-decoration-none">
                                     ➕ {% trans "Ajouter un nouveau tag" %}
                                 </a>
                             </div>
@@ -156,8 +190,39 @@
                             {{ form.content.errors }}
                         </div>
 
+                        <!-- Section SEO -->
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-search me-2"></i>{% trans "Options SEO (Référencement)" %}
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="{{ form.meta_title.id_for_label }}" class="form-label">
+                                        <i class="fas fa-heading me-2"></i>{% trans "Titre SEO" %}
+                                    </label>
+                                    {{ form.meta_title }}
+                                    {{ form.meta_title.errors }}
+                                    <div class="form-text">
+                                        {% trans "Titre pour les moteurs de recherche (max 60 caractères). Généré automatiquement si vide." %}
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="{{ form.meta_description.id_for_label }}" class="form-label">
+                                        <i class="fas fa-align-left me-2"></i>{% trans "Description SEO" %}
+                                    </label>
+                                    {{ form.meta_description }}
+                                    {{ form.meta_description.errors }}
+                                    <div class="form-text">
+                                        {% trans "Description pour les moteurs de recherche (max 160 caractères). Générée automatiquement si vide." %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="{% url 'article_detail' article.id %}" class="btn btn-secondary me-md-2">
+                            <a href="{% url 'blog:home' %}" class="btn btn-secondary me-md-2">
                                 ❌ {% trans "Annuler" %}
                             </a>
                             <button type="submit" class="btn btn-primary">

@@ -22,7 +22,7 @@
                     <form method="post">
                         {% csrf_token %}
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="{% url 'article_detail' article.id %}" class="btn btn-secondary me-md-2">
+                            <a href="{% url 'blog:home' %}" class="btn btn-secondary me-md-2">
                                 ❌ {% trans "Annuler" %}
                             </a>
                             <button type="submit" class="btn btn-danger">

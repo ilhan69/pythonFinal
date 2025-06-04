@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'users',
+    'comments',
+    'stats',
     'ckeditor',
 ]
 
@@ -147,9 +150,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # User model configuration
-AUTH_USER_MODEL = 'blog.User'
+AUTH_USER_MODEL = 'users.User'
 
 # Authentication URLs
-LOGIN_URL = 'login'  # URL vers laquelle rediriger les utilisateurs non connectés
-LOGIN_REDIRECT_URL = 'home'  # URL après connexion réussie
-LOGOUT_REDIRECT_URL = 'home'  # URL après déconnexion
+LOGIN_URL = 'users:login'  # URL vers laquelle rediriger les utilisateurs non connectés
+LOGIN_REDIRECT_URL = 'blog:home'  # URL après connexion réussie
+LOGOUT_REDIRECT_URL = 'blog:home'  # URL après déconnexion
