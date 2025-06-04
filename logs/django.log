@@ -1,0 +1,263 @@
+INFO 2025-06-04 14:05:18,277 autoreload 29106 8660082432 Watching for file changes with StatReloader
+WARNING 2025-06-04 14:05:23,033 basehttp 29106 6171553792 "GET /fr/analytics/tags/ HTTP/1.1" 404 8626
+WARNING 2025-06-04 14:05:23,824 basehttp 29106 6171553792 "GET /fr/analytics/tags/ HTTP/1.1" 404 8626
+INFO 2025-06-04 14:05:39,616 autoreload 29106 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-04 14:05:39,801 autoreload 29155 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 14:05:54,102 autoreload 29155 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/urls.py changed, reloading.
+INFO 2025-06-04 14:05:54,301 autoreload 29172 8660082432 Watching for file changes with StatReloader
+WARNING 2025-06-04 14:05:54,965 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:05:55,327 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:05:55,479 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:06:14,724 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:06:14,926 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:06:32,849 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:06:33,284 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:06:33,436 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:06:33,637 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:07:22,556 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:07:23,085 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:08:00,941 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:08:01,469 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:08:01,679 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:08:01,872 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:08:02,611 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:08:02,723 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:08:02,904 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:08:03,053 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+WARNING 2025-06-04 14:08:03,207 basehttp 29172 6166769664 "GET /fr/analytics/tags/ HTTP/1.1" 404 9002
+INFO 2025-06-04 14:08:05,029 logging_utils 29172 6166769664 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:08:05,060 logging_utils 29172 6166769664 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.06s
+INFO 2025-06-04 14:08:05,061 basehttp 29172 6166769664 "GET /fr/ HTTP/1.1" 200 10472
+INFO 2025-06-04 14:08:05,221 logging_utils 29172 6166769664 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:08:05,228 logging_utils 29172 6166769664 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:08:05,228 basehttp 29172 6166769664 "GET /fr/ HTTP/1.1" 200 10472
+INFO 2025-06-04 14:08:05,399 logging_utils 29172 6166769664 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:08:05,405 logging_utils 29172 6166769664 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:08:05,405 basehttp 29172 6166769664 "GET /fr/ HTTP/1.1" 200 10472
+INFO 2025-06-04 14:08:05,556 logging_utils 29172 6166769664 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:08:05,561 logging_utils 29172 6166769664 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:08:05,562 basehttp 29172 6166769664 "GET /fr/ HTTP/1.1" 200 10472
+WARNING 2025-06-04 14:08:07,740 basehttp 29172 6166769664 "GET /fr/admin/statistiques-tags/ HTTP/1.1" 404 9165
+INFO 2025-06-04 14:08:38,968 autoreload 29172 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/urls.py changed, reloading.
+INFO 2025-06-04 14:08:39,241 autoreload 29420 8660082432 Watching for file changes with StatReloader
+WARNING 2025-06-04 14:09:34,833 basehttp 29420 6138900480 "GET /fr/admin/statistiques-tags/ HTTP/1.1" 404 9165
+WARNING 2025-06-04 14:09:35,337 basehttp 29420 6138900480 "GET /fr/admin/statistiques-tags/ HTTP/1.1" 404 9165
+WARNING 2025-06-04 14:09:35,496 basehttp 29420 6138900480 "GET /fr/admin/statistiques-tags/ HTTP/1.1" 404 9165
+WARNING 2025-06-04 14:09:35,656 basehttp 29420 6138900480 "GET /fr/admin/statistiques-tags/ HTTP/1.1" 404 9165
+WARNING 2025-06-04 14:09:42,013 basehttp 29420 6138900480 "GET /fr/admin/statistiques-tags/ HTTP/1.1" 404 9165
+WARNING 2025-06-04 14:09:42,236 basehttp 29420 6138900480 "GET /fr/admin/statistiques-tags/ HTTP/1.1" 404 9165
+WARNING 2025-06-04 14:09:42,376 basehttp 29420 6138900480 "GET /fr/admin/statistiques-tags/ HTTP/1.1" 404 9165
+INFO 2025-06-04 14:09:42,898 logging_utils 29420 6138900480 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:09:42,930 logging_utils 29420 6138900480 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 14:09:42,931 basehttp 29420 6138900480 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:09:43,059 logging_utils 29420 6138900480 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:09:43,069 logging_utils 29420 6138900480 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:09:43,070 basehttp 29420 6138900480 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:09:43,207 logging_utils 29420 6138900480 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:09:43,220 logging_utils 29420 6138900480 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:09:43,220 basehttp 29420 6138900480 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:09:43,322 logging_utils 29420 6138900480 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:09:43,326 logging_utils 29420 6138900480 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:09:43,327 basehttp 29420 6138900480 "GET /fr/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:09:45,522 logging_utils 29420 6138900480 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 14:09:45,540 logging_utils 29420 6138900480 [ERREUR VUE] blog.views.statistiques_tags - Erreur: Invalid filter: 'mul' - Temps: 0.02s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 659, in statistiques_tags
+    return render(request, 'blog/admin/statistiques_tags.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 976, in do_if
+    nodelist = parser.parse(("endif",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 1540, in do_with
+    nodelist = parser.parse(("endwith",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'mul'
+ERROR 2025-06-04 14:09:45,608 basehttp 29420 6138900480 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 500 384871
+INFO 2025-06-04 14:10:29,141 autoreload 29420 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/templatetags/permissions.py changed, reloading.
+INFO 2025-06-04 14:10:29,417 autoreload 29540 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 14:11:12,256 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:11:12,287 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:11:12,288 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 18313
+INFO 2025-06-04 14:11:19,136 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.tag_posts - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:11:19,160 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.tag_posts - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:11:19,161 basehttp 29540 6204108800 "GET /fr/tag/l/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:11:22,115 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:11:22,139 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:11:22,140 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 18313
+INFO 2025-06-04 14:11:24,070 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.ajouter_tag - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:11:24,080 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.ajouter_tag - Status: 200 - Temps: 0.01s
+INFO 2025-06-04 14:11:24,081 basehttp 29540 6204108800 "GET /fr/ajouter-tag/ HTTP/1.1" 200 11661
+INFO 2025-06-04 14:11:30,126 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.ajouter_tag - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-04 14:11:30,135 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.ajouter_tag - Status: 302 - Temps: 0.01s
+INFO 2025-06-04 14:11:30,136 basehttp 29540 6204108800 "POST /fr/ajouter-tag/ HTTP/1.1" 302 0
+INFO 2025-06-04 14:11:30,160 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:11:30,169 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:11:30,170 basehttp 29540 6204108800 "GET /fr/ HTTP/1.1" 200 10768
+INFO 2025-06-04 14:11:32,374 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:11:32,405 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:11:32,405 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 18411
+INFO 2025-06-04 14:11:35,181 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.tag_posts - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:11:35,269 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.tag_posts - Status: 200 - Temps: 0.30s
+INFO 2025-06-04 14:11:35,270 basehttp 29540 6204108800 "GET /fr/tag/l/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:11:44,022 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.ajouter_tag - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:11:44,027 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.ajouter_tag - Status: 200 - Temps: 0.01s
+INFO 2025-06-04 14:11:44,028 basehttp 29540 6204108800 "GET /fr/ajouter-tag/ HTTP/1.1" 200 11661
+INFO 2025-06-04 14:11:46,109 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.ajouter_tag - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-04 14:11:46,116 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.ajouter_tag - Status: 302 - Temps: 0.01s
+INFO 2025-06-04 14:11:46,117 basehttp 29540 6204108800 "POST /fr/ajouter-tag/ HTTP/1.1" 302 0
+INFO 2025-06-04 14:11:46,141 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:11:46,156 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:11:46,157 basehttp 29540 6204108800 "GET /fr/ HTTP/1.1" 200 10768
+INFO 2025-06-04 14:11:48,041 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:11:48,073 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:11:48,075 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 18512
+INFO 2025-06-04 14:13:23,974 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:13:23,998 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:13:23,999 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 18512
+INFO 2025-06-04 14:13:24,952 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:13:24,979 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:13:24,980 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 18512
+INFO 2025-06-04 14:13:25,589 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:13:25,612 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:13:25,613 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 18512
+INFO 2025-06-04 14:13:26,169 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:13:26,193 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:13:26,194 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 18512
+INFO 2025-06-04 14:15:06,669 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:06,704 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:15:06,705 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:15:07,581 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:07,605 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:15:07,606 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:15:12,642 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:12,665 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:15:12,666 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:15:13,102 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:13,119 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:15:13,119 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:15:14,228 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.modifier_tag - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:14,232 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.modifier_tag - Status: 200 - Temps: 0.00s
+INFO 2025-06-04 14:15:14,232 basehttp 29540 6204108800 "GET /fr/tag/1/modifier/ HTTP/1.1" 200 3998
+INFO 2025-06-04 14:15:15,556 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.tag_posts - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:15,577 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.tag_posts - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:15:15,578 basehttp 29540 6204108800 "GET /fr/tag/l/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:15:19,176 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:19,199 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:15:19,200 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:15:19,666 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:19,693 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:15:19,694 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:15:21,560 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.tag_posts - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:21,573 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.tag_posts - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:15:21,574 basehttp 29540 6204108800 "GET /fr/tag/l/ HTTP/1.1" 200 10481
+INFO 2025-06-04 14:15:25,469 logging_utils 29540 6204108800 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:25,493 logging_utils 29540 6204108800 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:15:25,494 basehttp 29540 6204108800 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:15:30,176 autoreload 29540 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/urls.py changed, reloading.
+INFO 2025-06-04 14:15:30,435 autoreload 29916 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 14:15:33,563 logging_utils 29916 6133608448 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:33,606 logging_utils 29916 6133608448 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:15:33,606 basehttp 29916 6133608448 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:15:34,078 logging_utils 29916 6133608448 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:34,097 logging_utils 29916 6133608448 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:15:34,098 basehttp 29916 6133608448 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:15:35,009 logging_utils 29916 6133608448 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:15:35,050 logging_utils 29916 6133608448 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 14:15:35,051 basehttp 29916 6133608448 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:18:10,191 logging_utils 29916 6133608448 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:18:10,217 logging_utils 29916 6133608448 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:18:10,218 basehttp 29916 6133608448 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:18:10,624 logging_utils 29916 6133608448 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:18:10,651 logging_utils 29916 6133608448 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 14:18:10,652 basehttp 29916 6133608448 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611
+INFO 2025-06-04 14:18:10,801 logging_utils 29916 6133608448 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 14:18:10,826 logging_utils 29916 6133608448 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 14:18:10,827 basehttp 29916 6133608448 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 20611

@@ -1,0 +1,640 @@
+{% extends 'blog/base.html' %}
+{% load i18n %}
+{% load permissions %}
+
+{% block title %}{% trans "Statistiques Tags" %} - {% trans "Administration" %}{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Variables CSS pour thème cohérent */
+    :root {
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --success-gradient: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+        --warning-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        --danger-gradient: linear-gradient(135deg, #ff8a80 0%, #ff5722 100%);
+        --info-gradient: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    }
+
+    .wordcloud-container {
+        min-height: 450px;
+        border: 2px solid #e9ecef;
+        border-radius: 15px;
+        padding: 30px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .tag-cloud-item {
+        display: inline-block;
+        margin: 8px;
+        padding: 12px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border: 2px solid rgba(255,255,255,0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .tag-cloud-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        transition: left 0.5s;
+    }
+    
+    .tag-cloud-item:hover::before {
+        left: 100%;
+    }
+    
+    .tag-cloud-item:hover {
+        transform: scale(1.15) rotate(-2deg);
+        text-decoration: none;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        z-index: 10;
+    }
+
+    .stats-card {
+        background: var(--primary-gradient);
+        color: white;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        transition: transform 0.3s ease;
+    }
+    
+    .stats-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+    }
+    
+    .stats-card.success {
+        background: var(--success-gradient);
+        box-shadow: 0 8px 25px rgba(86, 171, 47, 0.3);
+    }
+    
+    .stats-card.warning {
+        background: var(--warning-gradient);
+        color: #333;
+        box-shadow: 0 8px 25px rgba(255, 193, 7, 0.3);
+    }
+    
+    .stats-card.danger {
+        background: var(--danger-gradient);
+        box-shadow: 0 8px 25px rgba(244, 67, 54, 0.3);
+    }
+
+    .table-tag-badge {
+        padding: 8px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        border: 2px solid rgba(255,255,255,0.3);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .combination-badge {
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-weight: 600;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+    
+    .unused-tag {
+        background-color: #6c757d !important;
+        color: white !important;
+        opacity: 0.8;
+        padding: 6px 12px;
+        border-radius: 15px;
+    }
+    
+    .low-usage-tag {
+        background: linear-gradient(45deg, #ffc107, #ff8f00) !important;
+        color: #212529 !important;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 15px;
+        border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .progress-tag {
+        height: 28px;
+        border-radius: 14px;
+        background-color: #e9ecef;
+        overflow: hidden;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .progress-bar {
+        border-radius: 14px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .progress-bar::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+        border-radius: 14px 14px 0 0;
+    }
+
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        border: none;
+        transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+    
+    .card-header {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        border-bottom: 2px solid #dee2e6;
+        border-radius: 15px 15px 0 0 !important;
+    }
+
+    .empty-state {
+        padding: 60px 20px;
+        text-align: center;
+        color: #6c757d;
+    }
+    
+    .empty-state i {
+        margin-bottom: 20px;
+        opacity: 0.5;
+    }
+
+    /* Animations améliorées */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+    
+    .animate-fade-in {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .animate-pulse {
+        animation: pulse 2s infinite;
+    }
+
+    /* Responsive design amélioré */
+    @media (max-width: 768px) {
+        .wordcloud-container {
+            min-height: 300px;
+            padding: 20px;
+        }
+        
+        .tag-cloud-item {
+            margin: 4px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+        
+        .stats-card {
+            margin-bottom: 20px;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+    <!-- Vérification des permissions -->
+    {% if not user.is_admin %}
+    <div class="alert alert-danger">
+        <i class="fas fa-exclamation-triangle me-2"></i>
+        {% trans "Vous n'avez pas les permissions nécessaires pour accéder aux statistiques d'administration." %}
+        <a href="{% url 'blog:home' %}" class="btn btn-sm btn-outline-danger ms-2">
+            {% trans "Retour à l'accueil" %}
+        </a>
+    </div>
+    {% else %}
+    
+    <!-- En-tête amélioré -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="mb-3 animate-fade-in">
+                        <i class="fas fa-tags text-primary me-3"></i> 
+                        {% trans "Tableau de Bord - Tags" %}
+                    </h1>
+                    <p class="text-muted mb-0 fs-5">
+                        {% trans "Analyse complète de l'utilisation des tags avec nuage de mots interactif" %}
+                    </p>
+                </div>
+                <div>
+                    <a href="{% url 'blog:ajouter_tag' %}" class="btn btn-warning btn-lg me-2 shadow">
+                        <i class="fas fa-plus me-2"></i>{% trans "Nouveau tag" %}
+                    </a>
+                    <a href="{% url 'blog:home' %}" class="btn btn-outline-secondary btn-lg shadow">
+                        <i class="fas fa-arrow-left me-2"></i>{% trans "Retour" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistiques générales améliorées -->
+    <div class="row mb-5">
+        <div class="col-md-3 mb-3">
+            <div class="card stats-card animate-fade-in">
+                <div class="card-body text-center">
+                    <i class="fas fa-tags fa-3x mb-3 animate-pulse"></i>
+                    <h2 class="card-title fw-bold">{{ total_tags }}</h2>
+                    <p class="card-text fs-5">{% trans "Total Tags" %}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card stats-card success animate-fade-in">
+                <div class="card-body text-center">
+                    <i class="fas fa-check-circle fa-3x mb-3"></i>
+                    <h2 class="card-title fw-bold">{{ used_tags }}</h2>
+                    <p class="card-text fs-5">{% trans "Tags Utilisés" %}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card stats-card danger animate-fade-in">
+                <div class="card-body text-center">
+                    <i class="fas fa-times-circle fa-3x mb-3"></i>
+                    <h2 class="card-title fw-bold">{{ unused_tags_count }}</h2>
+                    <p class="card-text fs-5">{% trans "Tags Inutilisés" %}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card stats-card warning animate-fade-in">
+                <div class="card-body text-center">
+                    <i class="fas fa-newspaper fa-3x mb-3"></i>
+                    <h2 class="card-title fw-bold">{{ total_articles }}</h2>
+                    <p class="card-text fs-5">{% trans "Articles Publiés" %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nuage de mots interactif amélioré -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="mb-0 fw-bold">
+                        <i class="fas fa-cloud text-primary me-2"></i>
+                        {% trans "Nuage de Mots Interactif" %}
+                    </h3>
+                    <small class="text-muted">{% trans "Cliquez sur un tag pour voir ses articles" %}</small>
+                </div>
+                <div class="card-body p-0">
+                    <div class="wordcloud-container" id="wordcloud">
+                        {% if popular_tags %}
+                            {% for tag in popular_tags %}
+                                {% with size=tag.articles_count|add:10 %}
+                                <a href="{% url 'blog:tag_posts' tag.slug %}" 
+                                   class="tag-cloud-item animate-fade-in"
+                                   style="
+                                       font-size: {{ size }}px;
+                                       background: {% if tag.couleur and tag.couleur != '#ffffff' and tag.couleur != '#fff' %}{{ tag.couleur }}{% else %}linear-gradient(45deg, #007bff, #6610f2){% endif %};
+                                       color: {% if tag.couleur and tag.couleur != '#ffffff' and tag.couleur != '#fff' %}{% if tag.couleur|slice:':4' == '#fff' or tag.couleur|slice:':7' == '#ffffff' %}#333{% else %}white{% endif %}{% else %}white{% endif %};
+                                   "
+                                   title="{{ tag.name }} - {{ tag.articles_count }} article{{ tag.articles_count|pluralize }}"
+                                   data-popularity="{{ tag.articles_count }}">
+                                    {{ tag.name }}
+                                    <small class="ms-1">({{ tag.articles_count }})</small>
+                                </a>
+                                {% endwith %}
+                            {% endfor %}
+                        {% else %}
+                            <div class="empty-state">
+                                <i class="fas fa-cloud fa-5x"></i>
+                                <h4 class="mt-3">{% trans "Aucun tag populaire" %}</h4>
+                                <p class="mb-4">{% trans "Commencez par créer et associer des tags à vos articles pour voir le nuage de mots." %}</p>
+                                <a href="{% url 'blog:ajouter_tag' %}" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-plus me-2"></i>{% trans "Créer le premier tag" %}
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tableau détaillé des statistiques -->
+    <div class="row mb-5">
+        <div class="col-lg-8 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="mb-0 fw-bold">
+                        <i class="fas fa-chart-bar text-success me-2"></i>
+                        {% trans "Analyse Détaillée par Tag" %}
+                    </h3>
+                </div>
+                <div class="card-body">
+                    {% if tags_stats %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>{% trans "Tag" %}</th>
+                                        <th class="text-center">{% trans "Articles" %}</th>
+                                        <th class="text-center">{% trans "Vues" %}</th>
+                                        <th class="text-center">{% trans "Likes" %}</th>
+                                        <th class="text-center">{% trans "Partages" %}</th>
+                                        <th class="text-center">{% trans "Popularité" %}</th>
+                                        <th class="text-center">{% trans "Actions" %}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for tag in tags_stats %}
+                                    <tr class="animate-fade-in">
+                                        <td>
+                                            <span class="table-tag-badge" 
+                                                  style="background: {% if tag.couleur and tag.couleur != '#ffffff' and tag.couleur != '#fff' %}{{ tag.couleur }}{% else %}linear-gradient(45deg, #007bff, #6610f2){% endif %}; 
+                                                         color: {% if tag.couleur and tag.couleur != '#ffffff' and tag.couleur != '#fff' %}{% if tag.couleur|slice:':4' == '#fff' or tag.couleur|slice:':7' == '#ffffff' %}#333{% else %}white{% endif %}{% else %}white{% endif %};">
+                                                {{ tag.name }}
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-primary fs-6">{{ tag.articles_count }}</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <strong>{{ tag.total_views|default:0|floatformat:0 }}</strong>
+                                        </td>
+                                        <td class="text-center">
+                                            <strong class="text-danger">{{ tag.total_likes|default:0 }}</strong>
+                                        </td>
+                                        <td class="text-center">
+                                            <strong class="text-success">{{ tag.total_shares|default:0 }}</strong>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="progress progress-tag">
+                                                {% with max_articles=tags_stats.0.articles_count %}
+                                                <div class="progress-bar" 
+                                                     style="width: {{ tag.articles_count|percentage:max_articles }}%; 
+                                                            background: {% if tag.couleur and tag.couleur != '#ffffff' and tag.couleur != '#fff' %}{{ tag.couleur }}{% else %}linear-gradient(45deg, #007bff, #6610f2){% endif %};"
+                                                     data-width="{{ tag.articles_count|percentage:max_articles }}">
+                                                </div>
+                                                {% endwith %}
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="{% url 'blog:tag_posts' tag.slug %}" 
+                                                   class="btn btn-outline-primary" 
+                                                   title="{% trans 'Voir les articles' %}">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <a href="{% url 'blog:modifier_tag' tag.id %}" 
+                                                   class="btn btn-outline-warning" 
+                                                   title="{% trans 'Modifier' %}">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <div class="empty-state">
+                            <i class="fas fa-chart-bar fa-4x"></i>
+                            <h5 class="mt-3">{% trans "Aucune statistique disponible" %}</h5>
+                            <p>{% trans "Aucun tag n'est actuellement utilisé dans des articles publiés." %}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Panneau latéral amélioré -->
+        <div class="col-lg-4">
+            <!-- Combinaisons de tags fréquentes -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="mb-0 fw-bold">
+                        <i class="fas fa-lightbulb text-warning me-2"></i>
+                        {% trans "Combinaisons Populaires" %}
+                    </h4>
+                </div>
+                <div class="card-body">
+                    {% if suggested_combinations %}
+                        {% for combination, count in suggested_combinations %}
+                            <div class="d-flex justify-content-between align-items-center mb-3 p-2 rounded bg-light">
+                                <div>
+                                    <span class="combination-badge me-2">{{ combination.0 }}</span>
+                                    <span class="text-muted fw-bold">+</span>
+                                    <span class="combination-badge ms-2">{{ combination.1 }}</span>
+                                </div>
+                                <span class="badge bg-info fs-6">{{ count }}×</span>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="text-center text-muted py-3">
+                            <i class="fas fa-lightbulb fa-3x mb-3 opacity-50"></i>
+                            <p class="mb-0">{% trans "Pas encore de combinaisons détectées" %}</p>
+                            <small>{% trans "Créez plus d'articles avec plusieurs tags" %}</small>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Tags peu utilisés -->
+            {% if low_usage_tags %}
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="mb-0 fw-bold">
+                        <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                        {% trans "Tags Peu Utilisés" %}
+                    </h4>
+                </div>
+                <div class="card-body">
+                    {% for tag in low_usage_tags %}
+                        <span class="low-usage-tag me-2 mb-2 d-inline-block" 
+                              title="{{ tag.articles_count }} article{{ tag.articles_count|pluralize }}">
+                            {{ tag.name }} ({{ tag.articles_count }})
+                        </span>
+                    {% endfor %}
+                    <div class="mt-3 p-3 bg-warning bg-opacity-10 rounded">
+                        <small class="text-dark">
+                            <i class="fas fa-info-circle me-1"></i>
+                            {% trans "Ces tags pourraient être fusionnés ou mieux promus." %}
+                        </small>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Tags inutilisés -->
+            {% if unused_tags %}
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0 fw-bold">
+                        <i class="fas fa-times-circle text-danger me-2"></i>
+                        {% trans "Tags Inutilisés" %}
+                    </h4>
+                </div>
+                <div class="card-body">
+                    {% for tag in unused_tags %}
+                        <span class="unused-tag me-2 mb-2 d-inline-block">{{ tag.name }}</span>
+                    {% endfor %}
+                    <div class="mt-3 p-3 bg-danger bg-opacity-10 rounded">
+                        <small class="text-dark">
+                            <i class="fas fa-trash me-1"></i>
+                            {% trans "Ces tags ne sont associés à aucun article publié. Considérez les supprimer." %}
+                        </small>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    {% endif %}
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Animation séquentielle des éléments
+    const animatedElements = document.querySelectorAll('.animate-fade-in');
+    animatedElements.forEach(function(element, index) {
+        element.style.animationDelay = (index * 0.1) + 's';
+        element.style.opacity = '0';
+        setTimeout(() => {
+            element.style.opacity = '1';
+        }, index * 100);
+    });
+    
+    // Nuage de mots interactif amélioré
+    const tagCloudItems = document.querySelectorAll('.tag-cloud-item');
+    tagCloudItems.forEach(function(item) {
+        const popularity = parseInt(item.dataset.popularity);
+        
+        // Ajuster la taille en fonction de la popularité
+        const baseSize = 14;
+        const maxSize = 32;
+        const size = Math.min(baseSize + (popularity * 2), maxSize);
+        item.style.fontSize = size + 'px';
+        
+        // Effet de rotation aléatoire
+        const randomRotation = (Math.random() - 0.5) * 10;
+        item.style.transform = `rotate(${randomRotation}deg)`;
+        
+        // Animation au survol
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = `scale(1.2) rotate(0deg)`;
+            this.style.zIndex = '100';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = `scale(1) rotate(${randomRotation}deg)`;
+            this.style.zIndex = '1';
+        });
+    });
+    
+    // Animation des barres de progression
+    const progressBars = document.querySelectorAll('.progress-bar');
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const progressObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                const bar = entry.target;
+                const width = bar.dataset.width + '%';
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.transition = 'width 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                    bar.style.width = width;
+                }, 200);
+                progressObserver.unobserve(bar);
+            }
+        });
+    }, observerOptions);
+    
+    progressBars.forEach(bar => progressObserver.observe(bar));
+    
+    // Effet de parallaxe pour les cartes de statistiques
+    const statsCards = document.querySelectorAll('.stats-card');
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        statsCards.forEach(function(card, index) {
+            const rate = scrolled * -0.1;
+            card.style.transform = `translateY(${rate}px)`;
+        });
+    });
+    
+    // Tooltips améliorés pour les badges
+    const badges = document.querySelectorAll('.badge, .table-tag-badge');
+    badges.forEach(function(badge) {
+        badge.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            this.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)';
+        });
+        
+        badge.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = '';
+        });
+    });
+    
+    // Amélioration de l'accessibilité
+    tagCloudItems.forEach(function(item) {
+        item.setAttribute('role', 'button');
+        item.setAttribute('tabindex', '0');
+        
+        item.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+    });
+    
+    console.log('✅ Page de statistiques des tags initialisée avec succès');
+});
+</script>
+{% endblock %}

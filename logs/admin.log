@@ -1,0 +1,2 @@
+INFO 2025-06-04 14:11:30,135 logging_utils 29540 6204108800 [ACTION ADMIN] CREATION_TAG - Par: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Cible: Tag ppp - Info: Slug: p
+INFO 2025-06-04 14:11:46,115 logging_utils 29540 6204108800 [ACTION ADMIN] CREATION_TAG - Par: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Cible: Tag blabka - Info: Slug: b

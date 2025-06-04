@@ -2,11 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Count, Q, F
+from django.db.models import Count, Q, F, Sum
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.utils.translation import gettext as _
 from django.contrib.contenttypes.models import ContentType
+from django.urls import reverse
 import json
 from .forms import PostForm, CategoryForm, TagForm
 from .models import Article, Category, Tag
@@ -572,3 +573,87 @@ def liste_articles(request):
     }
     
     return render(request, 'blog/liste_articles.html', context)
+
+@admin_required
+@log_view_access('blog')
+def statistiques_tags(request):
+    """Affiche les statistiques des tags avec nuage de mots et suggestions"""
+    
+    # Statistiques générales des tags
+    tags_stats = Tag.objects.annotate(
+        articles_count=Count('articles', filter=Q(articles__status='published')),
+        total_views=Sum('articles__views_count', filter=Q(articles__status='published')),
+        total_likes=Sum('articles__likes_count', filter=Q(articles__status='published')),
+        total_shares=Sum('articles__shares_count', filter=Q(articles__status='published'))
+    ).filter(articles_count__gt=0).order_by('-articles_count')
+    
+    # Tags les plus populaires (pour le nuage de mots)
+    popular_tags = tags_stats[:20]  # Top 20 pour le nuage
+    
+    # Données pour le nuage de mots (format JSON)
+    wordcloud_data = []
+    for tag in popular_tags:
+        # Calcul d'un score de popularité basé sur articles, vues, likes
+        popularity_score = (
+            tag.articles_count * 10 +  # Poids fort pour le nombre d'articles
+            (tag.total_views or 0) * 0.1 +  # Poids moyen pour les vues
+            (tag.total_likes or 0) * 2   # Poids fort pour les likes
+        )
+        wordcloud_data.append({
+            'text': tag.name,
+            'size': max(10, min(50, int(popularity_score / 10))),  # Taille entre 10 et 50
+            'color': tag.couleur,
+            'articles_count': tag.articles_count,
+            'url': reverse('blog:tag_posts', args=[tag.slug])
+        })
+    
+    # Tags suggérés (combinaisons fréquentes)
+    # Recherche des tags qui apparaissent souvent ensemble
+    tag_combinations = {}
+    articles_with_multiple_tags = Article.objects.filter(
+        status='published',
+        tags__isnull=False
+    ).prefetch_related('tags').annotate(tag_count=Count('tags')).filter(tag_count__gte=2)
+    
+    for article in articles_with_multiple_tags:
+        article_tags = list(article.tags.all())
+        for i, tag1 in enumerate(article_tags):
+            for tag2 in article_tags[i+1:]:
+                combination = tuple(sorted([tag1.name, tag2.name]))
+                tag_combinations[combination] = tag_combinations.get(combination, 0) + 1
+    
+    # Trier les combinaisons par fréquence
+    suggested_combinations = sorted(
+        tag_combinations.items(), 
+        key=lambda x: x[1], 
+        reverse=True
+    )[:10]
+    
+    # Tags inutilisés ou peu utilisés
+    unused_tags = Tag.objects.annotate(
+        articles_count=Count('articles', filter=Q(articles__status='published'))
+    ).filter(articles_count=0)
+    
+    low_usage_tags = Tag.objects.annotate(
+        articles_count=Count('articles', filter=Q(articles__status='published'))
+    ).filter(articles_count__lte=2, articles_count__gt=0).order_by('articles_count')
+    
+    # Statistiques globales
+    total_tags = Tag.objects.count()
+    used_tags = tags_stats.count()
+    total_articles = Article.objects.filter(status='published').count()
+    
+    context = {
+        'tags_stats': tags_stats,
+        'popular_tags': popular_tags,
+        'wordcloud_data': json.dumps(wordcloud_data),
+        'suggested_combinations': suggested_combinations,
+        'unused_tags': unused_tags,
+        'low_usage_tags': low_usage_tags,
+        'total_tags': total_tags,
+        'used_tags': used_tags,
+        'unused_tags_count': total_tags - used_tags,
+        'total_articles': total_articles,
+    }
+    
+    return render(request, 'blog/admin/statistiques_tags.html', context)

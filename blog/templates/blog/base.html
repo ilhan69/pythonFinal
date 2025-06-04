@@ -64,6 +64,10 @@
                                 <i class="fas fa-users me-2"></i>{% trans "Gestion des utilisateurs" %}
                             </a></li>
                             <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'blog:statistiques_tags' %}">
+                                <i class="fas fa-chart-bar me-2"></i>{% trans "Statistiques Tags" %}
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="/admin/" target="_blank">
                                 <i class="fas fa-database me-2"></i>{% trans "Interface Django Admin" %}
                             </a></li>

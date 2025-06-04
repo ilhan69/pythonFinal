@@ -18,4 +18,5 @@ urlpatterns = [
     path('tag/<int:tag_id>/modifier/', views.modifier_tag, name='modifier_tag'),
     path('tag/<int:tag_id>/supprimer/', views.supprimer_tag, name='supprimer_tag'),
     path('tag/<slug:tag_slug>/', views.tag_posts, name='tag_posts'),
+    path('administration/statistiques-tags/', views.statistiques_tags, name='statistiques_tags'),
 ]

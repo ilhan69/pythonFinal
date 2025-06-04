@@ -5,6 +5,37 @@ register = template.Library()
 
 User = get_user_model()
 
+# Filtres mathématiques personnalisés
+@register.filter
+def mul(value, arg):
+    """Multiplie deux valeurs"""
+    try:
+        return float(value) * float(arg)
+    except (ValueError, TypeError):
+        return 0
+
+@register.filter
+def div(value, arg):
+    """Divise deux valeurs"""
+    try:
+        if float(arg) == 0:
+            return 0
+        return float(value) / float(arg)
+    except (ValueError, TypeError):
+        return 0
+
+@register.filter
+def percentage(value, total):
+    """Calcule le pourcentage"""
+    try:
+        if float(total) == 0:
+            return 0
+        return (float(value) / float(total)) * 100
+    except (ValueError, TypeError):
+        return 0
+
+User = get_user_model()
+
 @register.filter
 def can_edit_article(user, article):
     """Vérifie si l'utilisateur peut modifier un article"""
