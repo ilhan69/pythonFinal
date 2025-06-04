@@ -322,14 +322,14 @@ function shareArticle(articleId) {
             document.getElementById('shares-count').textContent = data.shares_count;
             // Copier le lien dans le presse-papiers
             navigator.clipboard.writeText(window.location.href);
-            alert('Lien copié dans le presse-papiers !');
+            alert('{% trans "Lien copié dans le presse-papiers !" %}');
         }
     })
     .catch(error => console.error('Error:', error));
 }
 
 function showLoginAlert() {
-    alert('Veuillez vous connecter pour aimer cet article.');
+    alert('{% trans "Veuillez vous connecter pour aimer cet article." %}');
 }
 
 function shareOnSocial(platform) {
@@ -353,10 +353,10 @@ function shareOnSocial(platform) {
 function copyToClipboard() {
     navigator.clipboard.writeText(window.location.href)
     .then(() => {
-        alert('URL copiée dans le presse-papiers !');
+        alert('{% trans "URL copiée dans le presse-papiers !" %}');
     })
     .catch(err => {
-        console.error('Erreur lors de la copie dans le presse-papiers: ', err);
+        console.error('{% trans "Erreur lors de la copie dans le presse-papiers" %}', err);
     });
 }
 
@@ -392,14 +392,14 @@ function saveComment(commentId) {
             document.getElementById('comment-text-' + commentId).innerHTML = newText.replace(/(?:\r\n|\r|\n)/g, '<br>');
             cancelEdit(commentId);
         } else {
-            alert('Erreur lors de la sauvegarde du commentaire.');
+            alert('{% trans "Erreur lors de la sauvegarde du commentaire." %}');
         }
     })
     .catch(error => console.error('Error:', error));
 }
 
 function deleteComment(commentId) {
-    if (confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?')) {
+    if (confirm('{% trans "Êtes-vous sûr de vouloir supprimer ce commentaire ?" %}')) {
         // Ici vous pouvez ajouter un appel AJAX pour supprimer le commentaire
         fetch(`/comment/${commentId}/delete/`, {
             method: 'POST',
@@ -413,7 +413,7 @@ function deleteComment(commentId) {
                 // Supprimer le commentaire de l'interface
                 document.getElementById('comment-' + commentId).remove();
             } else {
-                alert('Erreur lors de la suppression du commentaire.');
+                alert('{% trans "Erreur lors de la suppression du commentaire." %}');
             }
         })
         .catch(error => console.error('Error:', error));

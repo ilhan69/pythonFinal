@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blog Django 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-03 13:14+0200\n"
-"PO-Revision-Date: 2025-06-03 13:15+0200\n"
+"POT-Creation-Date: 2025-06-04 15:15+0200\n"
+"PO-Revision-Date: 2025-06-04 15:45+0200\n"
 "Last-Translator: Django Developer\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -17,566 +17,129 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# Models
-#: blog/models.py:9
-msgid "biography"
-msgstr "biography"
-
-#: blog/models.py:10
-msgid "avatar"
-msgstr "avatar"
-
-#: blog/models.py:13
-msgid "user"
-msgstr "user"
-
-#: blog/models.py:14
-msgid "users"
-msgstr "users"
-
-#: blog/models.py:17 blog/models.py:51
-msgid "nom"
-msgstr "name"
-
-#: blog/models.py:18
-msgid "description"
-msgstr "description"
-
-#: blog/models.py:19 blog/models.py:52 blog/models.py:94
-msgid "slug"
-msgstr "slug"
-
-#: blog/models.py:20 blog/models.py:53
-msgid "couleur"
-msgstr "color"
-
-#: blog/models.py:20
-msgid "Code couleur hexadécimal (ex: #007bff)"
-msgstr "Hexadecimal color code (e.g., #007bff)"
-
-#: blog/models.py:21
-msgid "icône"
-msgstr "icon"
-
-#: blog/models.py:21
-msgid "Nom de l'icône (ex: fas fa-tag)"
-msgstr "Icon name (e.g., fas fa-tag)"
-
-#: blog/models.py:42 blog/models.py:100
-msgid "catégorie"
-msgstr "category"
-
-#: blog/models.py:43
-msgid "catégories"
-msgstr "categories"
-
-#: blog/models.py:53
-msgid "Code couleur hexadécimal (ex: #6c757d)"
-msgstr "Hexadecimal color code (e.g., #6c757d)"
-
-#: blog/models.py:82
-msgid "tag"
-msgstr "tag"
-
-#: blog/models.py:83 blog/models.py:101
-msgid "tags"
-msgstr "tags"
-
-#: blog/models.py:88
-msgid "Brouillon"
-msgstr "Draft"
-
-#: blog/models.py:89
-msgid "Publié"
-msgstr "Published"
-
-#: blog/models.py:90
-msgid "Archivé"
-msgstr "Archived"
-
-#: blog/models.py:93
-msgid "titre"
-msgstr "title"
-
-#: blog/models.py:95
-msgid "contenu"
-msgstr "content"
-
-#: blog/models.py:96
-msgid "extrait"
-msgstr "excerpt"
-
-#: blog/models.py:96
-msgid "Résumé de l'article (max 300 caractères)"
-msgstr "Article summary (max 300 characters)"
-
-#: blog/models.py:99
-msgid "auteur"
-msgstr "author"
-
-#: blog/models.py:104
-msgid "statut"
-msgstr "status"
-
-#: blog/models.py:107
-msgid "image de couverture"
-msgstr "cover image"
-
-#: blog/models.py:110
-msgid "créé le"
-msgstr "created on"
-
-#: blog/models.py:111
-msgid "modifié le"
-msgstr "modified on"
-
-#: blog/models.py:114
-msgid "nombre de vues"
-msgstr "view count"
-
-#: blog/models.py:115
-msgid "nombre de likes"
-msgstr "like count"
-
-#: blog/models.py:116
-msgid "nombre de partages"
-msgstr "share count"
-
-#: blog/models.py:119
-msgid "titre SEO"
-msgstr "SEO title"
-
-#: blog/models.py:119
-msgid "Titre pour le référencement (max 60 caractères)"
-msgstr "Title for SEO (max 60 characters)"
-
-#: blog/models.py:120
-msgid "description SEO"
-msgstr "SEO description"
-
-#: blog/models.py:120
-msgid "Description pour le référencement (max 160 caractères)"
-msgstr "Description for SEO (max 160 characters)"
-
-#: blog/models.py:187
-msgid "article"
-msgstr "article"
-
-#: blog/models.py:188
-msgid "articles"
-msgstr "articles"
-
-# Templates
-#: blog/templates/blog/article_detail.html:22
-msgid "Retour à l'accueil"
-msgstr "Back to home"
-
-#: blog/templates/blog/article_detail.html:50
-msgid "Publié le"
-msgstr "Published on"
-
-#: blog/templates/blog/article_detail.html:56
-msgid "Modifié le"
-msgstr "Modified on"
-
-#: blog/templates/blog/article_detail.html:63 blog/templates/blog/home.html:50
-msgid "par"
-msgstr "by"
-
-#: blog/templates/blog/article_detail.html:69
-msgid "min de lecture"
-msgstr "min read"
-
-#: blog/templates/blog/article_detail.html:105 blog/templates/blog/home.html:69
-msgid "Modifier"
-msgstr "Edit"
-
-#: blog/templates/blog/article_detail.html:108 blog/templates/blog/home.html:72
-msgid "Supprimer"
-msgstr "Delete"
-
-#: blog/templates/blog/article_detail.html:118
-msgid "Résumé"
-msgstr "Summary"
-
-#: blog/templates/blog/article_detail.html:150
-msgid "Partager sur"
-msgstr "Share on"
-
-#: blog/templates/blog/article_detail.html:188
-msgid "Commentaires"
-msgstr "Comments"
-
-#: blog/templates/blog/article_detail.html:219
-msgid "Aucun commentaire pour cet article."
-msgstr "No comments for this article."
-
-#: blog/templates/blog/article_detail.html:220
-msgid "Soyez le premier à laisser votre avis !"
-msgstr "Be the first to leave your opinion!"
-
-#: blog/templates/blog/article_detail.html:232
-msgid "Ajouter un commentaire"
-msgstr "Add a comment"
-
-#: blog/templates/blog/article_detail.html:240
-msgid "Votre commentaire"
-msgstr "Your comment"
-
-#: blog/templates/blog/article_detail.html:246
-msgid "Publier le commentaire"
-msgstr "Post comment"
-
-#: blog/templates/blog/article_detail.html:254 blog/templates/blog/home.html:87
-msgid "Connectez-vous"
-msgstr "Log in"
-
-#: blog/templates/blog/article_detail.html:254
-msgid "pour ajouter un commentaire."
-msgstr "to add a comment."
-
-#: blog/templates/blog/base.html:7 blog/templates/blog/base.html:14
-#: blog/templates/blog/home.html:4
-msgid "Blog"
-msgstr "Blog"
-
-#: blog/templates/blog/base.html:21 blog/templates/blog/home.html:4
+# Navigation and interface
 msgid "Accueil"
 msgstr "Home"
 
-#: blog/templates/blog/base.html:25
-msgid "Articles"
-msgstr "Articles"
+msgid "Auteurs Actifs"
+msgstr "Active Authors"
 
-#: blog/templates/blog/base.html:31
 msgid "Créer"
 msgstr "Create"
 
-#: blog/templates/blog/base.html:35
-msgid "Nouvel article"
-msgstr "New article"
+msgid "Administration"
+msgstr "Administration"
 
-#: blog/templates/blog/base.html:38
-msgid "Nouvelle catégorie"
-msgstr "New category"
-
-#: blog/templates/blog/base.html:41
-msgid "Nouveau tag"
-msgstr "New tag"
-
-#: blog/templates/blog/base.html:78
-msgid "Déconnexion"
-msgstr "Logout"
-
-#: blog/templates/blog/base.html:84
 msgid "Connexion"
 msgstr "Login"
 
-#: blog/templates/blog/base.html:89
+msgid "Déconnexion"
+msgstr "Logout"
+
 msgid "Inscription"
 msgstr "Sign up"
 
-#: blog/templates/blog/home.html:8
-msgid "Mon Blog Django"
-msgstr "My Django Blog"
+msgid "Mon profil"
+msgstr "My profile"
 
-#: blog/templates/blog/home.html:14
-msgid "Ajouter un article"
-msgstr "Add an article"
+msgid "Blog"
+msgstr "Blog"
 
-#: blog/templates/blog/home.html:17
-msgid "Ajouter une catégorie"
-msgstr "Add a category"
+# Articles and content
+msgid "Articles"
+msgstr "Articles"
 
-#: blog/templates/blog/home.html:20
-msgid "Ajouter un tag"
-msgstr "Add a tag"
+msgid "article"
+msgstr "article"
 
-#: blog/templates/blog/home.html:26
-msgid "Tous les Articles"
-msgstr "All Articles"
+msgid "articles"
+msgstr "articles"
 
-#: blog/templates/blog/home.html:65
-msgid "Lire"
-msgstr "Read"
+msgid "titre"
+msgstr "title"
 
-#: blog/templates/blog/home.html:83
-msgid "Aucun article pour le moment"
-msgstr "No articles yet"
+msgid "contenu"
+msgstr "content"
 
-#: blog/templates/blog/home.html:85
-msgid "Commencez par"
-msgstr "Start by"
+msgid "extrait"
+msgstr "excerpt"
 
-#: blog/templates/blog/home.html:85
-msgid "ajouter votre premier article"
-msgstr "adding your first article"
+msgid "Résumé de l'article (max 300 caractères)"
+msgstr "Article summary (max 300 characters)"
 
-#: blog/templates/blog/home.html:87
-msgid "pour commencer à écrire des articles"
-msgstr "to start writing articles"
+msgid "auteur"
+msgstr "author"
 
-# Form templates - New translations
-msgid "Ajouter un Article"
-msgstr "Add an Article"
+msgid "créé le"
+msgstr "created on"
 
-msgid "Ajouter un Nouvel Article"
-msgstr "Add a New Article"
+msgid "modifié le"
+msgstr "modified on"
 
-msgid "Titre de l'article"
-msgstr "Article title"
+msgid "statut"
+msgstr "status"
 
-msgid "Slug (URL)"
-msgstr "Slug (URL)"
+msgid "Brouillon"
+msgstr "Draft"
 
-msgid "Laissez vide pour générer automatiquement à partir du titre"
-msgstr "Leave empty to generate automatically from title"
+msgid "Publié"
+msgstr "Published"
 
-msgid "Laissez vide pour générer automatiquement à partir du nom"
-msgstr "Leave empty to generate automatically from name"
+msgid "Archivé"
+msgstr "Archived"
 
-msgid "Extrait/Résumé"
-msgstr "Excerpt/Summary"
+msgid "slug"
+msgstr "slug"
 
-msgid "Résumé de l'article (max 300 caractères). Généré automatiquement si vide."
-msgstr "Article summary (max 300 characters). Generated automatically if empty."
+msgid "image de couverture"
+msgstr "cover image"
 
-msgid "Catégorie"
-msgstr "Category"
+# Categories and tags
+msgid "catégorie"
+msgstr "category"
 
-msgid "Ajouter une nouvelle catégorie"
-msgstr "Add a new category"
+msgid "catégories"
+msgstr "categories"
 
-msgid "Statut de publication"
-msgstr "Publication status"
+msgid "nom"
+msgstr "name"
 
-msgid "Choisissez le statut de votre article"
-msgstr "Choose your article status"
+msgid "description"
+msgstr "description"
 
-msgid "Image de couverture"
-msgstr "Cover image"
+msgid "couleur"
+msgstr "color"
 
-msgid "Formats acceptés : JPG, PNG, GIF (optionnel)"
-msgstr "Accepted formats: JPG, PNG, GIF (optional)"
+msgid "Code couleur hexadécimal (ex: #007bff)"
+msgstr "Hexadecimal color code (e.g. #007bff)"
+
+msgid "icône"
+msgstr "icon"
+
+msgid "Nom de l'icône (ex: fas fa-tag)"
+msgstr "Icon name (e.g. fas fa-tag)"
+
+msgid "tag"
+msgstr "tag"
+
+msgid "tags"
+msgstr "tags"
+
+msgid "Tag"
+msgstr "Tag"
 
 msgid "Tags"
 msgstr "Tags"
 
-msgid "Aucun tag disponible."
-msgstr "No tags available."
+# Statistics
+msgid "nombre de vues"
+msgstr "view count"
 
-msgid "Créer le premier tag"
-msgstr "Create the first tag"
+msgid "nombre de likes"
+msgstr "like count"
 
-msgid "Ajouter un nouveau tag"
-msgstr "Add a new tag"
-
-msgid "Contenu de l'article"
-msgstr "Article content"
-
-msgid "Options SEO (Référencement)"
-msgstr "SEO Options (Search Engine Optimization)"
-
-msgid "Titre SEO"
-msgstr "SEO Title"
-
-msgid "Titre pour les moteurs de recherche (max 60 caractères). Généré automatiquement si vide."
-msgstr "Title for search engines (max 60 characters). Generated automatically if empty."
-
-msgid "Description SEO"
-msgstr "SEO Description"
-
-msgid "Description pour les moteurs de recherche (max 160 caractères). Générée automatiquement si vide."
-msgstr "Description for search engines (max 160 characters). Generated automatically if empty."
-
-msgid "Annuler"
-msgstr "Cancel"
-
-msgid "Enregistrer"
-msgstr "Save"
-
-# Category templates
-msgid "Ajouter une Catégorie"
-msgstr "Add a Category"
-
-msgid "Ajouter une Nouvelle Catégorie"
-msgstr "Add a New Category"
-
-msgid "Nom de la catégorie"
-msgstr "Category name"
-
-msgid "Description"
-msgstr "Description"
-
-msgid "Couleur"
-msgstr "Color"
-
-msgid "Icône"
-msgstr "Icon"
-
-msgid "Exemples : fas fa-tag, bi bi-bookmark, fas fa-folder"
-msgstr "Examples: fas fa-tag, bi bi-bookmark, fas fa-folder"
-
-msgid "Modifier la catégorie"
-msgstr "Edit category"
-
-msgid "Enregistrer les modifications"
-msgstr "Save changes"
-
-# Tag templates
-msgid "Ajouter un Tag"
-msgstr "Add a Tag"
-
-msgid "Ajouter un Nouveau Tag"
-msgstr "Add a New Tag"
-
-msgid "Nom du tag"
-msgstr "Tag name"
-
-# Delete templates
-msgid "Supprimer l'article"
-msgstr "Delete article"
-
-msgid "Cette action est irréversible !"
-msgstr "This action is irreversible!"
-
-msgid "Confirmer la suppression"
-msgstr "Confirm deletion"
-
-# Edit templates
-msgid "Modifier l'article"
-msgstr "Edit article"
-
-msgid "Image actuelle"
-msgstr "Current image"
-
-# Registration templates
-msgid "S'inscrire"
-msgstr "Sign up"
-
-msgid "Déjà un compte ?"
-msgstr "Already have an account?"
-
-msgid "Se connecter"
-msgstr "Log in"
-
-# Views messages
-#: blog/views.py:75 blog/views.py:306
-msgid "L'article a été créé avec succès !"
-msgstr "Article created successfully!"
-
-#: blog/views.py:78
-#, python-format
-msgid "Erreur lors de l'enregistrement : %(error)s"
-msgstr "Error while saving: %(error)s"
-
-#: blog/views.py:84
-#, python-format
-msgid "Erreur dans le champ '%(field)s': %(error)s"
-msgstr "Error in field '%(field)s': %(error)s"
-
-#: blog/views.py:97
-msgid "L'article a été modifié avec succès !"
-msgstr "Article updated successfully!"
-
-#: blog/views.py:108
-msgid "L'article a été supprimé avec succès !"
-msgstr "Article deleted successfully!"
-
-#: blog/views.py:118 blog/views.py:320
-msgid "La catégorie a été créée avec succès !"
-msgstr "Category created successfully!"
-
-#: blog/views.py:131
-msgid "La catégorie a été modifiée avec succès !"
-msgstr "Category updated successfully!"
-
-#: blog/views.py:142
-msgid "La catégorie a été supprimée avec succès !"
-msgstr "Category deleted successfully!"
-
-#: blog/views.py:152
-msgid "Le tag a été créé avec succès !"
-msgstr "Tag created successfully!"
-
-#: blog/views.py:165
-msgid "Le tag a été modifié avec succès !"
-msgstr "Tag updated successfully!"
-
-#: blog/views.py:176
-msgid "Le tag a été supprimé avec succès !"
-msgstr "Tag deleted successfully!"
-
-#: blog/views.py:193 blog/views.py:284
-msgid "Votre commentaire a été ajouté avec succès !"
-msgstr "Your comment has been added successfully!"
-
-#: blog/views.py:209
-msgid "Votre compte a été créé avec succès !"
-msgstr "Your account has been created successfully!"
-
-#: blog/views.py:212 blog/views.py:231 blog/views.py:287 blog/views.py:309
-#: blog/views.py:323
-msgid "Veuillez corriger les erreurs dans le formulaire."
-msgstr "Please correct the errors in the form."
-
-#: blog/views.py:226
-msgid "Vous êtes maintenant connecté !"
-msgstr "You are now logged in!"
-
-#: blog/views.py:229
-msgid "Nom d'utilisateur ou mot de passe incorrect."
-msgstr "Incorrect username or password."
-
-#: blog/views.py:243
-msgid "Votre profil a été mis à jour avec succès !"
-msgstr "Your profile has been updated successfully!"
-
-#: blog/views.py:246
-msgid "Veuillez corriger les erreurs ci-dessous."
-msgstr "Please correct the errors below."
-
-#: blog/views.py:349
-msgid "Vous avez été déconnecté avec succès !"
-msgstr "You have been logged out successfully!"
-
-#: blog/views.py:369
-msgid "Article liké avec succès!"
-msgstr "Article liked successfully!"
-
-#: blog/views.py:376
-msgid "Like retiré avec succès!"
-msgstr "Like removed successfully!"
-
-#: blog/views.py:408
-msgid "Article partagé avec succès!"
-msgstr "Article shared successfully!"
-
-#: blog/views.py:560
-msgid "Plus récent"
-msgstr "Newest"
-
-#: blog/views.py:561
-msgid "Plus ancien"
-msgstr "Oldest"
-
-#: blog/views.py:562
-msgid "Plus populaire"
-msgstr "Most popular"
-
-#: blog/views.py:563
-msgid "Alphabétique"
-msgstr "Alphabetical"
-
-# Profile page translations
-msgid "Fermer"
-msgstr "Close"
-
-msgid "Avatar"
-msgstr "Avatar"
-
-msgid "Statistiques"
-msgstr "Statistics"
+msgid "nombre de partages"
+msgstr "share count"
 
 msgid "Vues"
 msgstr "Views"
@@ -584,15 +147,47 @@ msgstr "Views"
 msgid "Likes"
 msgstr "Likes"
 
-msgid "Publiés"
-msgstr "Published"
+msgid "Partages"
+msgstr "Shares"
 
-msgid "Brouillons"
-msgstr "Drafts"
+msgid "vue"
+msgstr "view"
 
-msgid "Modifier mon profil"
-msgstr "Edit my profile"
+msgid "vues"
+msgstr "views"
 
+msgid "like"
+msgstr "like"
+
+msgid "likes"
+msgstr "likes"
+
+msgid "partage"
+msgstr "share"
+
+msgid "partages"
+msgstr "shares"
+
+# Comments
+msgid "Commentaires"
+msgstr "Comments"
+
+msgid "commentaire"
+msgstr "comment"
+
+msgid "commentaires"
+msgstr "comments"
+
+msgid "Commentaire"
+msgstr "Comment"
+
+msgid "actif"
+msgstr "active"
+
+msgid "Écrivez votre commentaire..."
+msgstr "Write your comment..."
+
+# Users and profiles
 msgid "Nom d'utilisateur"
 msgstr "Username"
 
@@ -608,61 +203,293 @@ msgstr "Last name"
 msgid "Biographie"
 msgstr "Biography"
 
-#, python-format
-msgid "Avatar actuel: %(avatar_name)s"
-msgstr "Current avatar: %(avatar_name)s"
+msgid "Avatar"
+msgstr "Avatar"
 
-msgid "Mettre à jour le profil"
-msgstr "Update profile"
+msgid "Rôle"
+msgstr "Role"
 
-msgid "Mes articles"
-msgstr "My articles"
+msgid "Administrateur"
+msgstr "Administrator"
 
-#, python-format
-msgid "Créé le %(created_date)s"
-msgstr "Created on %(created_date)s"
+msgid "Auteur"
+msgstr "Author"
 
-#, python-format
-msgid "Modifié le %(updated_date)s"
-msgstr "Modified on %(updated_date)s"
+msgid "Visiteur"
+msgstr "Visitor"
 
-#, python-format
-msgid "%(views)s vue"
-msgid_plural "%(views)s vues"
-msgstr[0] "%(views)s view"
-msgstr[1] "%(views)s views"
+msgid "rôle"
+msgstr "role"
 
-#, python-format
-msgid "%(likes)s like"
-msgid_plural "%(likes)s likes"
-msgstr[0] "%(likes)s like"
-msgstr[1] "%(likes)s likes"
+msgid "user"
+msgstr "user"
 
-#, python-format
-msgid "Catégorie: %(category_name)s"
-msgstr "Category: %(category_name)s"
+msgid "users"
+msgstr "users"
+
+# Forms and actions
+msgid "Enregistrer"
+msgstr "Save"
+
+msgid "Modifier"
+msgstr "Edit"
+
+msgid "Supprimer"
+msgstr "Delete"
+
+msgid "Annuler"
+msgstr "Cancel"
+
+msgid "Retour"
+msgstr "Back"
+
+msgid "Fermer"
+msgstr "Close"
 
 msgid "Voir"
 msgstr "View"
 
-msgid "Pagination des articles"
-msgstr "Article pagination"
+msgid "Lire"
+msgstr "Read"
 
+msgid "Actions"
+msgstr "Actions"
+
+# JavaScript messages
+msgid "Lien copié dans le presse-papiers !"
+msgstr "Link copied to clipboard!"
+
+msgid "Veuillez vous connecter pour aimer cet article."
+msgstr "Please log in to like this article."
+
+msgid "URL copiée dans le presse-papiers !"
+msgstr "URL copied to clipboard!"
+
+msgid "Erreur lors de la copie dans le presse-papiers"
+msgstr "Error copying to clipboard"
+
+msgid "Erreur lors de la sauvegarde du commentaire."
+msgstr "Error saving comment."
+
+msgid "Êtes-vous sûr de vouloir supprimer ce commentaire ?"
+msgstr "Are you sure you want to delete this comment?"
+
+msgid "Erreur lors de la suppression du commentaire."
+msgstr "Error deleting comment."
+
+msgid "Seuls les 50 premiers auteurs sont affichés pour optimiser les performances."
+msgstr "Only the first 50 authors are displayed to optimize performance."
+
+msgid "Fonctionnalité de suivi à implémenter"
+msgstr "Follow functionality to be implemented"
+
+# Forms labels and help text
+msgid "Titre de l'article"
+msgstr "Article title"
+
+msgid "Slug (URL)"
+msgstr "Slug (URL)"
+
+msgid "Laissez vide pour générer automatiquement à partir du titre"
+msgstr "Leave blank to generate automatically from title"
+
+msgid "Extrait/Résumé"
+msgstr "Excerpt/Summary"
+
+msgid "Catégorie"
+msgstr "Category"
+
+msgid "Statut de publication"
+msgstr "Publication status"
+
+msgid "Image de couverture"
+msgstr "Cover image"
+
+msgid "Formats acceptés : JPG, PNG, GIF (optionnel)"
+msgstr "Accepted formats: JPG, PNG, GIF (optional)"
+
+msgid "Contenu de l'article"
+msgstr "Article content"
+
+# SEO
+msgid "titre SEO"
+msgstr "SEO title"
+
+msgid "Titre pour le référencement (max 60 caractères)"
+msgstr "Title for SEO (max 60 characters)"
+
+msgid "description SEO"
+msgstr "SEO description"
+
+msgid "Description pour le référencement (max 160 caractères)"
+msgstr "Description for SEO (max 160 characters)"
+
+msgid "Titre SEO"
+msgstr "SEO Title"
+
+msgid "Description SEO"
+msgstr "SEO Description"
+
+msgid "Options SEO (Référencement)"
+msgstr "SEO Options (Search Engine Optimization)"
+
+# Success and error messages
+msgid "L'article a été créé avec succès !"
+msgstr "Article created successfully!"
+
+msgid "L'article a été modifié avec succès !"
+msgstr "Article updated successfully!"
+
+msgid "L'article a été supprimé avec succès !"
+msgstr "Article deleted successfully!"
+
+msgid "La catégorie a été créée avec succès !"
+msgstr "Category created successfully!"
+
+msgid "La catégorie a été modifiée avec succès !"
+msgstr "Category updated successfully!"
+
+msgid "La catégorie a été supprimée avec succès !"
+msgstr "Category deleted successfully!"
+
+msgid "Le tag a été créé avec succès !"
+msgstr "Tag created successfully!"
+
+msgid "Le tag a été modifié avec succès !"
+msgstr "Tag updated successfully!"
+
+msgid "Le tag a été supprimé avec succès !"
+msgstr "Tag deleted successfully!"
+
+msgid "Une erreur est survenue lors de la modification."
+msgstr "An error occurred during modification."
+
+msgid "Une erreur est survenue lors de la suppression."
+msgstr "An error occurred during deletion."
+
+msgid "Une erreur est survenue lors de la création."
+msgstr "An error occurred during creation."
+
+# Passwords
+msgid "Mot de passe"
+msgstr "Password"
+
+msgid "Mot de passe actuel"
+msgstr "Current password"
+
+msgid "Nouveau mot de passe"
+msgstr "New password"
+
+msgid "Confirmation du nouveau mot de passe"
+msgstr "Confirm new password"
+
+msgid "Changer le mot de passe"
+msgstr "Change password"
+
+# Time and dates
+msgid "Publié le"
+msgstr "Published on"
+
+msgid "Modifié le"
+msgstr "Modified on"
+
+msgid "par"
+msgstr "by"
+
+msgid "min de lecture"
+msgstr "min read"
+
+# User management
+msgid "Gestion des utilisateurs"
+msgstr "User management"
+
+msgid "Ajouter un utilisateur"
+msgstr "Add user"
+
+msgid "Modifier l'utilisateur"
+msgstr "Edit user"
+
+msgid "Supprimer l'utilisateur"
+msgstr "Delete user"
+
+msgid "Actif"
+msgstr "Active"
+
+msgid "Inactif"
+msgstr "Inactive"
+
+msgid "Compte actif"
+msgstr "Active account"
+
+# Statistics and analytics
+msgid "Statistiques"
+msgstr "Statistics"
+
+msgid "Total Tags"
+msgstr "Total Tags"
+
+msgid "Tags Utilisés"
+msgstr "Used Tags"
+
+msgid "Tags Inutilisés"
+msgstr "Unused Tags"
+
+msgid "Articles Publiés"
+msgstr "Published Articles"
+
+msgid "Popularité"
+msgstr "Popularity"
+
+# Pagination
 msgid "Précédent"
 msgstr "Previous"
 
 msgid "Suivant"
 msgstr "Next"
 
-msgid "Aucun article"
-msgstr "No articles"
+# Empty states
+msgid "Aucun article pour le moment"
+msgstr "No articles yet"
 
-msgid "Vous n'avez pas encore publié d'articles."
-msgstr "You haven't published any articles yet."
+msgid "Aucun commentaire pour cet article."
+msgstr "No comments for this article."
 
-msgid "Créer mon premier article"
-msgstr "Create my first article"
+msgid "Aucun auteur actif"
+msgstr "No active authors"
 
-#, python-format
-msgid "Êtes-vous sûr de vouloir supprimer l'article \"%(title)s\" ?"
-msgstr "Are you sure you want to delete the article \"%(title)s\"?"
+msgid "Aucun utilisateur trouvé."
+msgstr "No users found."
+
+# Other common terms
+msgid "optionnel"
+msgstr "optional"
+
+msgid "Optionnel"
+msgstr "Optional"
+
+msgid "Rechercher"
+msgstr "Search"
+
+msgid "Filtrer"
+msgstr "Filter"
+
+msgid "Trier par"
+msgstr "Sort by"
+
+msgid "Tous les Articles"
+msgstr "All Articles"
+
+msgid "Mes articles"
+msgstr "My articles"
+
+msgid "Ajouter un article"
+msgstr "Add article"
+
+msgid "Nouvel article"
+msgstr "New article"
+
+msgid "Nouvelle catégorie"
+msgstr "New category"
+
+msgid "Nouveau tag"
+msgstr "New tag"

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE|default:'fr' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>{% block title %}Mon Blog{% endblock %}</title>
+    <meta name="description" content="{% block description %}Un blog moderne et interactif{% endblock %}">
+    
+    {% load static %}
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <!-- CSS supplémentaires pour les pages spécifiques -->
+    {% block extra_css %}{% endblock %}
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+    
+    <!-- Meta pour le partage social -->
+    <meta property="og:title" content="{% block og_title %}{% block title %}Mon Blog{% endblock %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{% block description %}Un blog moderne et interactif{% endblock %}{% endblock %}">
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{% block og_image %}{% static 'img/default-og-image.jpg' %}{% endblock %}">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}{% block title %}Mon Blog{% endblock %}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{% block description %}Un blog moderne et interactif{% endblock %}{% endblock %}">
+    <meta name="twitter:image" content="{% block twitter_image %}{% static 'img/default-og-image.jpg' %}{% endblock %}">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="{% url 'blog:home' %}" class="navbar-brand">
+                {% block site_name %}Mon Blog{% endblock %}
+            </a>
+            
+            <ul class="navbar-nav">
+                <li><a href="{% url 'blog:home' %}" class="nav-link">Accueil</a></li>
+                <li><a href="{% url 'blog:article_list' %}" class="nav-link">Articles</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'blog:create_article' %}" class="nav-link">Écrire</a></li>
+                    <li><a href="{% url 'users:profile' %}" class="nav-link">Profil</a></li>
+                    <li><a href="{% url 'users:logout' %}" class="nav-link">Déconnexion</a></li>
+                {% else %}
+                    <li><a href="{% url 'users:login' %}" class="nav-link">Connexion</a></li>
+                    <li><a href="{% url 'users:register' %}" class="nav-link">Inscription</a></li>
+                {% endif %}
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" title="Basculer entre mode clair et sombre">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Messages d'alerte -->
+    {% if messages %}
+        <div class="container">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Contenu principal -->
+    <main>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <!-- Sidebar optionnelle -->
+    {% block sidebar %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; {% now "Y" %} {% block site_name_footer %}Mon Blog{% endblock %}. Tous droits réservés.</p>
+            {% block footer_links %}
+            <p>
+                <a href="{% url 'blog:home' %}" class="text-white">Accueil</a> |
+                <a href="#" class="text-white">À propos</a> |
+                <a href="#" class="text-white">Contact</a> |
+                <a href="#" class="text-white">Mentions légales</a>
+            </p>
+            {% endblock %}
+        </div>
+    </footer>
+
+    <!-- JavaScript Principal -->
+    <script src="{% static 'js/main.js' %}"></script>
+    
+    <!-- JavaScript pour le blog -->
+    <script src="{% static 'js/blog.js' %}"></script>
+    
+    <!-- JavaScript supplémentaires pour les pages spécifiques -->
+    {% block extra_js %}{% endblock %}
+    
+    <!-- Script pour le CSRF Token -->
+    <script>
+        // Définir le token CSRF globalement pour les requêtes AJAX
+        window.csrfToken = '{{ csrf_token }}';
+    </script>
+</body>
+</html>

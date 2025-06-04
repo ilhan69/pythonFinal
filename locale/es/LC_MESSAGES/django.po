@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blog Django 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-03 13:14+0200\n"
-"PO-Revision-Date: 2025-06-03 13:15+0200\n"
+"POT-Creation-Date: 2025-06-04 15:15+0200\n"
+"PO-Revision-Date: 2025-06-04 15:45+0200\n"
 "Last-Translator: Django Developer\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
@@ -17,566 +17,129 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# Models
-#: blog/models.py:9
-msgid "biography"
-msgstr "biografía"
-
-#: blog/models.py:10
-msgid "avatar"
-msgstr "avatar"
-
-#: blog/models.py:13
-msgid "user"
-msgstr "usuario"
-
-#: blog/models.py:14
-msgid "users"
-msgstr "usuarios"
-
-#: blog/models.py:17 blog/models.py:51
-msgid "nom"
-msgstr "nombre"
-
-#: blog/models.py:18
-msgid "description"
-msgstr "descripción"
-
-#: blog/models.py:19 blog/models.py:52 blog/models.py:94
-msgid "slug"
-msgstr "slug"
-
-#: blog/models.py:20 blog/models.py:53
-msgid "couleur"
-msgstr "color"
-
-#: blog/models.py:20
-msgid "Code couleur hexadécimal (ex: #007bff)"
-msgstr "Código de color hexadecimal (ej: #007bff)"
-
-#: blog/models.py:21
-msgid "icône"
-msgstr "icono"
-
-#: blog/models.py:21
-msgid "Nom de l'icône (ex: fas fa-tag)"
-msgstr "Nombre del icono (ej: fas fa-tag)"
-
-#: blog/models.py:42 blog/models.py:100
-msgid "catégorie"
-msgstr "categoría"
-
-#: blog/models.py:43
-msgid "catégories"
-msgstr "categorías"
-
-#: blog/models.py:53
-msgid "Code couleur hexadécimal (ex: #6c757d)"
-msgstr "Código de color hexadecimal (ej: #6c757d)"
-
-#: blog/models.py:82
-msgid "tag"
-msgstr "etiqueta"
-
-#: blog/models.py:83 blog/models.py:101
-msgid "tags"
-msgstr "etiquetas"
-
-#: blog/models.py:88
-msgid "Brouillon"
-msgstr "Borrador"
-
-#: blog/models.py:89
-msgid "Publié"
-msgstr "Publicado"
-
-#: blog/models.py:90
-msgid "Archivé"
-msgstr "Archivado"
-
-#: blog/models.py:93
-msgid "titre"
-msgstr "título"
-
-#: blog/models.py:95
-msgid "contenu"
-msgstr "contenido"
-
-#: blog/models.py:96
-msgid "extrait"
-msgstr "extracto"
-
-#: blog/models.py:96
-msgid "Résumé de l'article (max 300 caractères)"
-msgstr "Resumen del artículo (máx 300 caracteres)"
-
-#: blog/models.py:99
-msgid "auteur"
-msgstr "autor"
-
-#: blog/models.py:104
-msgid "statut"
-msgstr "estado"
-
-#: blog/models.py:107
-msgid "image de couverture"
-msgstr "imagen de portada"
-
-#: blog/models.py:110
-msgid "créé le"
-msgstr "creado el"
-
-#: blog/models.py:111
-msgid "modifié le"
-msgstr "modificado el"
-
-#: blog/models.py:114
-msgid "nombre de vues"
-msgstr "número de vistas"
-
-#: blog/models.py:115
-msgid "nombre de likes"
-msgstr "número de me gusta"
-
-#: blog/models.py:116
-msgid "nombre de partages"
-msgstr "número de compartidos"
-
-#: blog/models.py:119
-msgid "titre SEO"
-msgstr "título SEO"
-
-#: blog/models.py:119
-msgid "Titre pour le référencement (max 60 caractères)"
-msgstr "Título para SEO (máx 60 caracteres)"
-
-#: blog/models.py:120
-msgid "description SEO"
-msgstr "descripción SEO"
-
-#: blog/models.py:120
-msgid "Description pour le référencement (max 160 caractères)"
-msgstr "Descripción para SEO (máx 160 caracteres)"
-
-#: blog/models.py:187
-msgid "article"
-msgstr "artículo"
-
-#: blog/models.py:188
-msgid "articles"
-msgstr "artículos"
-
-# Templates
-#: blog/templates/blog/article_detail.html:22
-msgid "Retour à l'accueil"
-msgstr "Volver al inicio"
-
-#: blog/templates/blog/article_detail.html:50
-msgid "Publié le"
-msgstr "Publicado el"
-
-#: blog/templates/blog/article_detail.html:56
-msgid "Modifié le"
-msgstr "Modificado el"
-
-#: blog/templates/blog/article_detail.html:63 blog/templates/blog/home.html:50
-msgid "par"
-msgstr "por"
-
-#: blog/templates/blog/article_detail.html:69
-msgid "min de lecture"
-msgstr "min de lectura"
-
-#: blog/templates/blog/article_detail.html:105 blog/templates/blog/home.html:69
-msgid "Modifier"
-msgstr "Editar"
-
-#: blog/templates/blog/article_detail.html:108 blog/templates/blog/home.html:72
-msgid "Supprimer"
-msgstr "Eliminar"
-
-#: blog/templates/blog/article_detail.html:118
-msgid "Résumé"
-msgstr "Resumen"
-
-#: blog/templates/blog/article_detail.html:150
-msgid "Partager sur"
-msgstr "Compartir en"
-
-#: blog/templates/blog/article_detail.html:188
-msgid "Commentaires"
-msgstr "Comentarios"
-
-#: blog/templates/blog/article_detail.html:219
-msgid "Aucun commentaire pour cet article."
-msgstr "No hay comentarios para este artículo."
-
-#: blog/templates/blog/article_detail.html:220
-msgid "Soyez le premier à laisser votre avis !"
-msgstr "¡Sé el primero en dejar tu opinión!"
-
-#: blog/templates/blog/article_detail.html:232
-msgid "Ajouter un commentaire"
-msgstr "Añadir un comentario"
-
-#: blog/templates/blog/article_detail.html:240
-msgid "Votre commentaire"
-msgstr "Tu comentario"
-
-#: blog/templates/blog/article_detail.html:246
-msgid "Publier le commentaire"
-msgstr "Publicar comentario"
-
-#: blog/templates/blog/article_detail.html:254 blog/templates/blog/home.html:87
-msgid "Connectez-vous"
-msgstr "Iniciar sesión"
-
-#: blog/templates/blog/article_detail.html:254
-msgid "pour ajouter un commentaire."
-msgstr "para añadir un comentario."
-
-#: blog/templates/blog/base.html:7 blog/templates/blog/base.html:14
-#: blog/templates/blog/home.html:4
-msgid "Blog"
-msgstr "Blog"
-
-#: blog/templates/blog/base.html:21 blog/templates/blog/home.html:4
+# Navigation and interface
 msgid "Accueil"
 msgstr "Inicio"
 
-#: blog/templates/blog/base.html:25
-msgid "Articles"
-msgstr "Artículos"
+msgid "Auteurs Actifs"
+msgstr "Autores Activos"
 
-#: blog/templates/blog/base.html:31
 msgid "Créer"
 msgstr "Crear"
 
-#: blog/templates/blog/base.html:35
-msgid "Nouvel article"
-msgstr "Nuevo artículo"
+msgid "Administration"
+msgstr "Administración"
 
-#: blog/templates/blog/base.html:38
-msgid "Nouvelle catégorie"
-msgstr "Nueva categoría"
-
-#: blog/templates/blog/base.html:41
-msgid "Nouveau tag"
-msgstr "Nueva etiqueta"
-
-#: blog/templates/blog/base.html:78
-msgid "Déconnexion"
-msgstr "Cerrar sesión"
-
-#: blog/templates/blog/base.html:84
 msgid "Connexion"
 msgstr "Iniciar sesión"
 
-#: blog/templates/blog/base.html:89
+msgid "Déconnexion"
+msgstr "Cerrar sesión"
+
 msgid "Inscription"
-msgstr "Registro"
+msgstr "Registrarse"
 
-#: blog/templates/blog/home.html:8
-msgid "Mon Blog Django"
-msgstr "Mi Blog Django"
+msgid "Mon profil"
+msgstr "Mi perfil"
 
-#: blog/templates/blog/home.html:14
-msgid "Ajouter un article"
-msgstr "Añadir un artículo"
+msgid "Blog"
+msgstr "Blog"
 
-#: blog/templates/blog/home.html:17
-msgid "Ajouter une catégorie"
-msgstr "Añadir una categoría"
+# Articles and content
+msgid "Articles"
+msgstr "Artículos"
 
-#: blog/templates/blog/home.html:20
-msgid "Ajouter un tag"
-msgstr "Añadir una etiqueta"
+msgid "article"
+msgstr "artículo"
 
-#: blog/templates/blog/home.html:26
-msgid "Tous les Articles"
-msgstr "Todos los Artículos"
+msgid "articles"
+msgstr "artículos"
 
-#: blog/templates/blog/home.html:65
-msgid "Lire"
-msgstr "Leer"
+msgid "titre"
+msgstr "título"
 
-#: blog/templates/blog/home.html:83
-msgid "Aucun article pour le moment"
-msgstr "No hay artículos por el momento"
+msgid "contenu"
+msgstr "contenido"
 
-#: blog/templates/blog/home.html:85
-msgid "Commencez par"
-msgstr "Comience por"
+msgid "extrait"
+msgstr "extracto"
 
-#: blog/templates/blog/home.html:85
-msgid "ajouter votre premier article"
-msgstr "añadir su primer artículo"
+msgid "Résumé de l'article (max 300 caractères)"
+msgstr "Resumen del artículo (máx 300 caracteres)"
 
-#: blog/templates/blog/home.html:87
-msgid "pour commencer à écrire des articles"
-msgstr "para empezar a escribir artículos"
+msgid "auteur"
+msgstr "autor"
 
-# Form templates - New translations
-msgid "Ajouter un Article"
-msgstr "Añadir un Artículo"
+msgid "créé le"
+msgstr "creado el"
 
-msgid "Ajouter un Nouvel Article"
-msgstr "Añadir un Nuevo Artículo"
+msgid "modifié le"
+msgstr "modificado el"
 
-msgid "Titre de l'article"
-msgstr "Título del artículo"
+msgid "statut"
+msgstr "estado"
 
-msgid "Slug (URL)"
-msgstr "Slug (URL)"
+msgid "Brouillon"
+msgstr "Borrador"
 
-msgid "Laissez vide pour générer automatiquement à partir du titre"
-msgstr "Deje vacío para generar automáticamente desde el título"
+msgid "Publié"
+msgstr "Publicado"
 
-msgid "Laissez vide pour générer automatiquement à partir du nom"
-msgstr "Deje vacío para generar automáticamente desde el nombre"
+msgid "Archivé"
+msgstr "Archivado"
 
-msgid "Extrait/Résumé"
-msgstr "Extracto/Resumen"
+msgid "slug"
+msgstr "slug"
 
-msgid "Résumé de l'article (max 300 caractères). Généré automatiquement si vide."
-msgstr "Resumen del artículo (máx 300 caracteres). Generado automáticamente si está vacío."
+msgid "image de couverture"
+msgstr "imagen de portada"
 
-msgid "Catégorie"
-msgstr "Categoría"
+# Categories and tags
+msgid "catégorie"
+msgstr "categoría"
 
-msgid "Ajouter une nouvelle catégorie"
-msgstr "Añadir una nueva categoría"
+msgid "catégories"
+msgstr "categorías"
 
-msgid "Statut de publication"
-msgstr "Estado de publicación"
+msgid "nom"
+msgstr "nombre"
 
-msgid "Choisissez le statut de votre article"
-msgstr "Elija el estado de su artículo"
+msgid "description"
+msgstr "descripción"
 
-msgid "Image de couverture"
-msgstr "Imagen de portada"
+msgid "couleur"
+msgstr "color"
 
-msgid "Formats acceptés : JPG, PNG, GIF (optionnel)"
-msgstr "Formatos aceptados: JPG, PNG, GIF (opcional)"
+msgid "Code couleur hexadécimal (ex: #007bff)"
+msgstr "Código de color hexadecimal (ej: #007bff)"
+
+msgid "icône"
+msgstr "icono"
+
+msgid "Nom de l'icône (ex: fas fa-tag)"
+msgstr "Nombre del icono (ej: fas fa-tag)"
+
+msgid "tag"
+msgstr "etiqueta"
+
+msgid "tags"
+msgstr "etiquetas"
+
+msgid "Tag"
+msgstr "Etiqueta"
 
 msgid "Tags"
 msgstr "Etiquetas"
 
-msgid "Aucun tag disponible."
-msgstr "No hay etiquetas disponibles."
+# Statistics
+msgid "nombre de vues"
+msgstr "número de vistas"
 
-msgid "Créer le premier tag"
-msgstr "Crear la primera etiqueta"
+msgid "nombre de likes"
+msgstr "número de me gusta"
 
-msgid "Ajouter un nouveau tag"
-msgstr "Añadir una nueva etiqueta"
-
-msgid "Contenu de l'article"
-msgstr "Contenido del artículo"
-
-msgid "Options SEO (Référencement)"
-msgstr "Opciones SEO (Posicionamiento)"
-
-msgid "Titre SEO"
-msgstr "Título SEO"
-
-msgid "Titre pour les moteurs de recherche (max 60 caractères). Généré automatiquement si vide."
-msgstr "Título para motores de búsqueda (máx 60 caracteres). Generado automáticamente si está vacío."
-
-msgid "Description SEO"
-msgstr "Descripción SEO"
-
-msgid "Description pour les moteurs de recherche (max 160 caractères). Générée automatiquement si vide."
-msgstr "Descripción para motores de búsqueda (máx 160 caracteres). Generada automáticamente si está vacía."
-
-msgid "Annuler"
-msgstr "Cancelar"
-
-msgid "Enregistrer"
-msgstr "Guardar"
-
-# Category templates
-msgid "Ajouter une Catégorie"
-msgstr "Añadir una Categoría"
-
-msgid "Ajouter une Nouvelle Catégorie"
-msgstr "Añadir una Nueva Categoría"
-
-msgid "Nom de la catégorie"
-msgstr "Nombre de la categoría"
-
-msgid "Description"
-msgstr "Descripción"
-
-msgid "Couleur"
-msgstr "Color"
-
-msgid "Icône"
-msgstr "Icono"
-
-msgid "Exemples : fas fa-tag, bi bi-bookmark, fas fa-folder"
-msgstr "Ejemplos: fas fa-tag, bi bi-bookmark, fas fa-folder"
-
-msgid "Modifier la catégorie"
-msgstr "Editar categoría"
-
-msgid "Enregistrer les modifications"
-msgstr "Guardar cambios"
-
-# Tag templates
-msgid "Ajouter un Tag"
-msgstr "Añadir una Etiqueta"
-
-msgid "Ajouter un Nouveau Tag"
-msgstr "Añadir una Nueva Etiqueta"
-
-msgid "Nom du tag"
-msgstr "Nombre de la etiqueta"
-
-# Delete templates
-msgid "Supprimer l'article"
-msgstr "Eliminar artículo"
-
-msgid "Cette action est irréversible !"
-msgstr "¡Esta acción es irreversible!"
-
-msgid "Confirmer la suppression"
-msgstr "Confirmar eliminación"
-
-# Edit templates
-msgid "Modifier l'article"
-msgstr "Editar artículo"
-
-msgid "Image actuelle"
-msgstr "Imagen actual"
-
-# Registration templates
-msgid "S'inscrire"
-msgstr "Registrarse"
-
-msgid "Déjà un compte ?"
-msgstr "¿Ya tienes una cuenta?"
-
-msgid "Se connecter"
-msgstr "Iniciar sesión"
-
-# Views messages
-#: blog/views.py:75 blog/views.py:306
-msgid "L'article a été créé avec succès !"
-msgstr "¡El artículo se creó con éxito!"
-
-#: blog/views.py:78
-#, python-format
-msgid "Erreur lors de l'enregistrement : %(error)s"
-msgstr "Error al guardar: %(error)s"
-
-#: blog/views.py:84
-#, python-format
-msgid "Erreur dans le champ '%(field)s': %(error)s"
-msgstr "Error en el campo '%(field)s': %(error)s"
-
-#: blog/views.py:97
-msgid "L'article a été modifié avec succès !"
-msgstr "¡El artículo se modificó con éxito!"
-
-#: blog/views.py:108
-msgid "L'article a été supprimé avec succès !"
-msgstr "¡El artículo se eliminó con éxito!"
-
-#: blog/views.py:118 blog/views.py:320
-msgid "La catégorie a été créée avec succès !"
-msgstr "¡La categoría se creó con éxito!"
-
-#: blog/views.py:131
-msgid "La catégorie a été modifiée avec succès !"
-msgstr "¡La categoría se modificó con éxito!"
-
-#: blog/views.py:142
-msgid "La catégorie a été supprimée avec succès !"
-msgstr "¡La categoría se eliminó con éxito!"
-
-#: blog/views.py:152
-msgid "Le tag a été créé avec succès !"
-msgstr "¡La etiqueta se creó con éxito!"
-
-#: blog/views.py:165
-msgid "Le tag a été modifié avec succès !"
-msgstr "¡La etiqueta se modificó con éxito!"
-
-#: blog/views.py:176
-msgid "Le tag a été supprimé avec succès !"
-msgstr "¡La etiqueta se eliminó con éxito!"
-
-#: blog/views.py:193 blog/views.py:284
-msgid "Votre commentaire a été ajouté avec succès !"
-msgstr "¡Su comentario se añadió con éxito!"
-
-#: blog/views.py:209
-msgid "Votre compte a été créé avec succès !"
-msgstr "¡Su cuenta se creó con éxito!"
-
-#: blog/views.py:212 blog/views.py:231 blog/views.py:287 blog/views.py:309
-#: blog/views.py:323
-msgid "Veuillez corriger les erreurs dans le formulaire."
-msgstr "Por favor corrija los errores en el formulario."
-
-#: blog/views.py:226
-msgid "Vous êtes maintenant connecté !"
-msgstr "¡Ahora está conectado!"
-
-#: blog/views.py:229
-msgid "Nom d'utilisateur ou mot de passe incorrect."
-msgstr "Nombre de usuario o contraseña incorrectos."
-
-#: blog/views.py:243
-msgid "Votre profil a été mis à jour avec succès !"
-msgstr "¡Su perfil se actualizó con éxito!"
-
-#: blog/views.py:246
-msgid "Veuillez corriger les erreurs ci-dessous."
-msgstr "Por favor corrija los errores a continuación."
-
-#: blog/views.py:349
-msgid "Vous avez été déconnecté avec succès !"
-msgstr "¡Se desconectó con éxito!"
-
-#: blog/views.py:369
-msgid "Article liké avec succès!"
-msgstr "¡Artículo marcado como me gusta con éxito!"
-
-#: blog/views.py:376
-msgid "Like retiré avec succès!"
-msgstr "¡Me gusta eliminado con éxito!"
-
-#: blog/views.py:408
-msgid "Article partagé avec succès!"
-msgstr "¡Artículo compartido con éxito!"
-
-#: blog/views.py:560
-msgid "Plus récent"
-msgstr "Más reciente"
-
-#: blog/views.py:561
-msgid "Plus ancien"
-msgstr "Más antiguo"
-
-#: blog/views.py:562
-msgid "Plus populaire"
-msgstr "Más popular"
-
-#: blog/views.py:563
-msgid "Alphabétique"
-msgstr "Alfabético"
-
-# Profile page translations
-msgid "Fermer"
-msgstr "Cerrar"
-
-msgid "Avatar"
-msgstr "Avatar"
-
-msgid "Statistiques"
-msgstr "Estadísticas"
+msgid "nombre de partages"
+msgstr "número de compartidos"
 
 msgid "Vues"
 msgstr "Vistas"
@@ -584,20 +147,52 @@ msgstr "Vistas"
 msgid "Likes"
 msgstr "Me gusta"
 
-msgid "Publiés"
-msgstr "Publicados"
+msgid "Partages"
+msgstr "Compartidos"
 
-msgid "Brouillons"
-msgstr "Borradores"
+msgid "vue"
+msgstr "vista"
 
-msgid "Modifier mon profil"
-msgstr "Editar mi perfil"
+msgid "vues"
+msgstr "vistas"
 
+msgid "like"
+msgstr "me gusta"
+
+msgid "likes"
+msgstr "me gusta"
+
+msgid "partage"
+msgstr "compartir"
+
+msgid "partages"
+msgstr "compartidos"
+
+# Comments
+msgid "Commentaires"
+msgstr "Comentarios"
+
+msgid "commentaire"
+msgstr "comentario"
+
+msgid "commentaires"
+msgstr "comentarios"
+
+msgid "Commentaire"
+msgstr "Comentario"
+
+msgid "actif"
+msgstr "activo"
+
+msgid "Écrivez votre commentaire..."
+msgstr "Escriba su comentario..."
+
+# Users and profiles
 msgid "Nom d'utilisateur"
 msgstr "Nombre de usuario"
 
 msgid "Email"
-msgstr "Email"
+msgstr "Correo electrónico"
 
 msgid "Prénom"
 msgstr "Nombre"
@@ -608,61 +203,293 @@ msgstr "Apellido"
 msgid "Biographie"
 msgstr "Biografía"
 
-#, python-format
-msgid "Avatar actuel: %(avatar_name)s"
-msgstr "Avatar actual: %(avatar_name)s"
+msgid "Avatar"
+msgstr "Avatar"
 
-msgid "Mettre à jour le profil"
-msgstr "Actualizar perfil"
+msgid "Rôle"
+msgstr "Rol"
 
-msgid "Mes articles"
-msgstr "Mis artículos"
+msgid "Administrateur"
+msgstr "Administrador"
 
-#, python-format
-msgid "Créé le %(created_date)s"
-msgstr "Creado el %(created_date)s"
+msgid "Auteur"
+msgstr "Autor"
 
-#, python-format
-msgid "Modifié le %(updated_date)s"
-msgstr "Modificado el %(updated_date)s"
+msgid "Visiteur"
+msgstr "Visitante"
 
-#, python-format
-msgid "%(views)s vue"
-msgid_plural "%(views)s vues"
-msgstr[0] "%(views)s vista"
-msgstr[1] "%(views)s vistas"
+msgid "rôle"
+msgstr "rol"
 
-#, python-format
-msgid "%(likes)s like"
-msgid_plural "%(likes)s likes"
-msgstr[0] "%(likes)s me gusta"
-msgstr[1] "%(likes)s me gusta"
+msgid "user"
+msgstr "usuario"
 
-#, python-format
-msgid "Catégorie: %(category_name)s"
-msgstr "Categoría: %(category_name)s"
+msgid "users"
+msgstr "usuarios"
+
+# Forms and actions
+msgid "Enregistrer"
+msgstr "Guardar"
+
+msgid "Modifier"
+msgstr "Modificar"
+
+msgid "Supprimer"
+msgstr "Eliminar"
+
+msgid "Annuler"
+msgstr "Cancelar"
+
+msgid "Retour"
+msgstr "Volver"
+
+msgid "Fermer"
+msgstr "Cerrar"
 
 msgid "Voir"
 msgstr "Ver"
 
-msgid "Pagination des articles"
-msgstr "Paginación de artículos"
+msgid "Lire"
+msgstr "Leer"
 
+msgid "Actions"
+msgstr "Acciones"
+
+# JavaScript messages
+msgid "Lien copié dans le presse-papiers !"
+msgstr "¡Enlace copiado al portapapeles!"
+
+msgid "Veuillez vous connecter pour aimer cet article."
+msgstr "Por favor inicie sesión para dar me gusta a este artículo."
+
+msgid "URL copiée dans le presse-papiers !"
+msgstr "¡URL copiada al portapapeles!"
+
+msgid "Erreur lors de la copie dans le presse-papiers"
+msgstr "Error al copiar al portapapeles"
+
+msgid "Erreur lors de la sauvegarde du commentaire."
+msgstr "Error al guardar el comentario."
+
+msgid "Êtes-vous sûr de vouloir supprimer ce commentaire ?"
+msgstr "¿Está seguro de que desea eliminar este comentario?"
+
+msgid "Erreur lors de la suppression du commentaire."
+msgstr "Error al eliminar el comentario."
+
+msgid "Seuls les 50 premiers auteurs sont affichés pour optimiser les performances."
+msgstr "Solo se muestran los primeros 50 autores para optimizar el rendimiento."
+
+msgid "Fonctionnalité de suivi à implémenter"
+msgstr "Funcionalidad de seguimiento por implementar"
+
+# Forms labels and help text
+msgid "Titre de l'article"
+msgstr "Título del artículo"
+
+msgid "Slug (URL)"
+msgstr "Slug (URL)"
+
+msgid "Laissez vide pour générer automatiquement à partir du titre"
+msgstr "Deje en blanco para generar automáticamente desde el título"
+
+msgid "Extrait/Résumé"
+msgstr "Extracto/Resumen"
+
+msgid "Catégorie"
+msgstr "Categoría"
+
+msgid "Statut de publication"
+msgstr "Estado de publicación"
+
+msgid "Image de couverture"
+msgstr "Imagen de portada"
+
+msgid "Formats acceptés : JPG, PNG, GIF (optionnel)"
+msgstr "Formatos aceptados: JPG, PNG, GIF (opcional)"
+
+msgid "Contenu de l'article"
+msgstr "Contenido del artículo"
+
+# SEO
+msgid "titre SEO"
+msgstr "título SEO"
+
+msgid "Titre pour le référencement (max 60 caractères)"
+msgstr "Título para SEO (máx 60 caracteres)"
+
+msgid "description SEO"
+msgstr "descripción SEO"
+
+msgid "Description pour le référencement (max 160 caractères)"
+msgstr "Descripción para SEO (máx 160 caracteres)"
+
+msgid "Titre SEO"
+msgstr "Título SEO"
+
+msgid "Description SEO"
+msgstr "Descripción SEO"
+
+msgid "Options SEO (Référencement)"
+msgstr "Opciones SEO (Posicionamiento en buscadores)"
+
+# Success and error messages
+msgid "L'article a été créé avec succès !"
+msgstr "¡Artículo creado con éxito!"
+
+msgid "L'article a été modifié avec succès !"
+msgstr "¡Artículo modificado con éxito!"
+
+msgid "L'article a été supprimé avec succès !"
+msgstr "¡Artículo eliminado con éxito!"
+
+msgid "La catégorie a été créée avec succès !"
+msgstr "¡Categoría creada con éxito!"
+
+msgid "La catégorie a été modifiée avec succès !"
+msgstr "¡Categoría modificada con éxito!"
+
+msgid "La catégorie a été supprimée avec succès !"
+msgstr "¡Categoría eliminada con éxito!"
+
+msgid "Le tag a été créé avec succès !"
+msgstr "¡Etiqueta creada con éxito!"
+
+msgid "Le tag a été modifié avec succès !"
+msgstr "¡Etiqueta modificada con éxito!"
+
+msgid "Le tag a été supprimé avec succès !"
+msgstr "¡Etiqueta eliminada con éxito!"
+
+msgid "Une erreur est survenue lors de la modification."
+msgstr "Ocurrió un error durante la modificación."
+
+msgid "Une erreur est survenue lors de la suppression."
+msgstr "Ocurrió un error durante la eliminación."
+
+msgid "Une erreur est survenue lors de la création."
+msgstr "Ocurrió un error durante la creación."
+
+# Passwords
+msgid "Mot de passe"
+msgstr "Contraseña"
+
+msgid "Mot de passe actuel"
+msgstr "Contraseña actual"
+
+msgid "Nouveau mot de passe"
+msgstr "Nueva contraseña"
+
+msgid "Confirmation du nouveau mot de passe"
+msgstr "Confirmación de la nueva contraseña"
+
+msgid "Changer le mot de passe"
+msgstr "Cambiar contraseña"
+
+# Time and dates
+msgid "Publié le"
+msgstr "Publicado el"
+
+msgid "Modifié le"
+msgstr "Modificado el"
+
+msgid "par"
+msgstr "por"
+
+msgid "min de lecture"
+msgstr "min de lectura"
+
+# User management
+msgid "Gestion des utilisateurs"
+msgstr "Gestión de usuarios"
+
+msgid "Ajouter un utilisateur"
+msgstr "Agregar usuario"
+
+msgid "Modifier l'utilisateur"
+msgstr "Modificar usuario"
+
+msgid "Supprimer l'utilisateur"
+msgstr "Eliminar usuario"
+
+msgid "Actif"
+msgstr "Activo"
+
+msgid "Inactif"
+msgstr "Inactivo"
+
+msgid "Compte actif"
+msgstr "Cuenta activa"
+
+# Statistics and analytics
+msgid "Statistiques"
+msgstr "Estadísticas"
+
+msgid "Total Tags"
+msgstr "Total Etiquetas"
+
+msgid "Tags Utilisés"
+msgstr "Etiquetas Utilizadas"
+
+msgid "Tags Inutilisés"
+msgstr "Etiquetas No Utilizadas"
+
+msgid "Articles Publiés"
+msgstr "Artículos Publicados"
+
+msgid "Popularité"
+msgstr "Popularidad"
+
+# Pagination
 msgid "Précédent"
 msgstr "Anterior"
 
 msgid "Suivant"
 msgstr "Siguiente"
 
-msgid "Aucun article"
-msgstr "Ningún artículo"
+# Empty states
+msgid "Aucun article pour le moment"
+msgstr "No hay artículos por el momento"
 
-msgid "Vous n'avez pas encore publié d'articles."
-msgstr "Aún no has publicado ningún artículo."
+msgid "Aucun commentaire pour cet article."
+msgstr "No hay comentarios para este artículo."
 
-msgid "Créer mon premier article"
-msgstr "Crear mi primer artículo"
+msgid "Aucun auteur actif"
+msgstr "No hay autores activos"
 
-#, python-format
-msgid "Êtes-vous sûr de vouloir supprimer l'article \"%(title)s\" ?"
-msgstr "¿Está seguro de que desea eliminar el artículo \"%(title)s\"?"
+msgid "Aucun utilisateur trouvé."
+msgstr "No se encontraron usuarios."
+
+# Other common terms
+msgid "optionnel"
+msgstr "opcional"
+
+msgid "Optionnel"
+msgstr "Opcional"
+
+msgid "Rechercher"
+msgstr "Buscar"
+
+msgid "Filtrer"
+msgstr "Filtrar"
+
+msgid "Trier par"
+msgstr "Ordenar por"
+
+msgid "Tous les Articles"
+msgstr "Todos los Artículos"
+
+msgid "Mes articles"
+msgstr "Mis artículos"
+
+msgid "Ajouter un article"
+msgstr "Agregar artículo"
+
+msgid "Nouvel article"
+msgstr "Nuevo artículo"
+
+msgid "Nouvelle catégorie"
+msgstr "Nueva categoría"
+
+msgid "Nouveau tag"
+msgstr "Nueva etiqueta"

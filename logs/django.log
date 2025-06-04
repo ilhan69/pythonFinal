@@ -1490,3 +1490,28 @@ INFO 2025-06-04 15:07:32,621 basehttp 32019 6197325824 "GET /fr/ HTTP/1.1" 200 1
 INFO 2025-06-04 15:07:45,496 logging_utils 32019 6197325824 [ACCÈS VUE] blog.views.liste_articles - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
 INFO 2025-06-04 15:07:45,531 logging_utils 32019 6197325824 [VUE TERMINÉE] blog.views.liste_articles - Status: 200 - Temps: 0.06s
 INFO 2025-06-04 15:07:45,531 basehttp 32019 6197325824 "GET /fr/articles/ HTTP/1.1" 200 31295
+INFO 2025-06-04 15:30:13,317 logging_utils 32019 6197325824 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 15:30:13,335 logging_utils 32019 6197325824 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 15:30:13,335 basehttp 32019 6197325824 "GET /fr/ HTTP/1.1" 200 16501
+INFO 2025-06-04 15:30:15,426 basehttp 32019 6197325824 "POST /i18n/setlang/ HTTP/1.1" 302 0
+INFO 2025-06-04 15:30:15,437 basehttp 32019 6197325824 "GET / HTTP/1.1" 302 0
+INFO 2025-06-04 15:30:15,457 logging_utils 32019 6214152192 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 15:30:15,478 logging_utils 32019 6214152192 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 15:30:15,479 basehttp 32019 6214152192 "GET /en/ HTTP/1.1" 200 16440
+INFO 2025-06-04 15:30:16,620 logging_utils 32019 6214152192 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 15:30:16,640 logging_utils 32019 6214152192 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 15:30:16,641 basehttp 32019 6214152192 "GET /en/auteurs-actifs/ HTTP/1.1" 200 30323
+INFO 2025-06-04 15:30:20,306 basehttp 32019 6214152192 "POST /i18n/setlang/ HTTP/1.1" 302 0
+INFO 2025-06-04 15:30:20,321 basehttp 32019 6214152192 "GET / HTTP/1.1" 302 0
+INFO 2025-06-04 15:30:20,340 logging_utils 32019 6197325824 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 15:30:20,358 logging_utils 32019 6197325824 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 15:30:20,358 basehttp 32019 6197325824 "GET /es/ HTTP/1.1" 200 16503
+INFO 2025-06-04 15:30:21,726 logging_utils 32019 6197325824 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 15:30:21,739 logging_utils 32019 6197325824 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 15:30:21,740 basehttp 32019 6197325824 "GET /es/auteurs-actifs/ HTTP/1.1" 200 30377
+INFO 2025-06-04 15:30:23,822 logging_utils 32019 6197325824 [ACCÈS VUE] blog.views.liste_articles - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 15:30:23,855 logging_utils 32019 6197325824 [VUE TERMINÉE] blog.views.liste_articles - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 15:30:23,855 basehttp 32019 6197325824 "GET /es/articles/ HTTP/1.1" 200 31296
+INFO 2025-06-04 15:30:26,800 logging_utils 32019 6197325824 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 15:30:26,809 logging_utils 32019 6197325824 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 15:30:26,810 basehttp 32019 6197325824 "GET /es/auteurs-actifs/ HTTP/1.1" 200 30377

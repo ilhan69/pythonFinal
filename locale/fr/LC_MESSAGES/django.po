@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blog Django 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-03 13:44+0200\n"
-"PO-Revision-Date: 2025-06-03 13:45+0200\n"
+"POT-Creation-Date: 2025-06-04 15:15+0200\n"
+"PO-Revision-Date: 2025-06-04 15:30+0200\n"
 "Last-Translator: Django Developer\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -17,143 +17,127 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: blog/models.py:9
-msgid "biography"
-msgstr "biographie"
-
-#: blog/models.py:10
-msgid "avatar"
-msgstr "avatar"
-
-#: blog/models.py:13
-msgid "user"
-msgstr "utilisateur"
-
-#: blog/models.py:14
-msgid "users"
-msgstr "utilisateurs"
-
-#: blog/models.py:17 blog/models.py:51
+#: blog/models.py:11 blog/models.py:45
 msgid "nom"
 msgstr "nom"
 
-#: blog/models.py:18
+#: blog/models.py:12
 msgid "description"
 msgstr "description"
 
-#: blog/models.py:19 blog/models.py:52 blog/models.py:94
+#: blog/models.py:13 blog/models.py:46 blog/models.py:88
 msgid "slug"
 msgstr "slug"
 
-#: blog/models.py:20 blog/models.py:53
+#: blog/models.py:14 blog/models.py:47
 msgid "couleur"
 msgstr "couleur"
 
-#: blog/models.py:20
+#: blog/models.py:14
 msgid "Code couleur hexadécimal (ex: #007bff)"
 msgstr "Code couleur hexadécimal (ex: #007bff)"
 
-#: blog/models.py:21
+#: blog/models.py:15
 msgid "icône"
 msgstr "icône"
 
-#: blog/models.py:21
+#: blog/models.py:15
 msgid "Nom de l'icône (ex: fas fa-tag)"
 msgstr "Nom de l'icône (ex: fas fa-tag)"
 
-#: blog/models.py:42 blog/models.py:100
+#: blog/models.py:36 blog/models.py:94
 msgid "catégorie"
 msgstr "catégorie"
 
-#: blog/models.py:43
+#: blog/models.py:37
 msgid "catégories"
 msgstr "catégories"
 
-#: blog/models.py:53
+#: blog/models.py:47
 msgid "Code couleur hexadécimal (ex: #6c757d)"
 msgstr "Code couleur hexadécimal (ex: #6c757d)"
 
-#: blog/models.py:82
+#: blog/models.py:76
 msgid "tag"
 msgstr "tag"
 
-#: blog/models.py:83 blog/models.py:101
+#: blog/models.py:77 blog/models.py:95
 msgid "tags"
 msgstr "tags"
 
-#: blog/models.py:88
+#: blog/models.py:82
 msgid "Brouillon"
 msgstr "Brouillon"
 
-#: blog/models.py:89
+#: blog/models.py:83
 msgid "Publié"
 msgstr "Publié"
 
-#: blog/models.py:90
+#: blog/models.py:84
 msgid "Archivé"
 msgstr "Archivé"
 
-#: blog/models.py:93
+#: blog/models.py:87
 msgid "titre"
 msgstr "titre"
 
-#: blog/models.py:95
+#: blog/models.py:89 comments/models.py:10
 msgid "contenu"
 msgstr "contenu"
 
-#: blog/models.py:96
+#: blog/models.py:90
 msgid "extrait"
 msgstr "extrait"
 
-#: blog/models.py:96
+#: blog/models.py:90
 msgid "Résumé de l'article (max 300 caractères)"
 msgstr "Résumé de l'article (max 300 caractères)"
 
-#: blog/models.py:99
+#: blog/models.py:93 comments/models.py:11
 msgid "auteur"
 msgstr "auteur"
 
-#: blog/models.py:104
+#: blog/models.py:98
 msgid "statut"
 msgstr "statut"
 
-#: blog/models.py:107
+#: blog/models.py:101
 msgid "image de couverture"
 msgstr "image de couverture"
 
-#: blog/models.py:110
+#: blog/models.py:104 comments/models.py:12
 msgid "créé le"
 msgstr "créé le"
 
-#: blog/models.py:111
+#: blog/models.py:105 comments/models.py:13
 msgid "modifié le"
 msgstr "modifié le"
 
-#: blog/models.py:114
+#: blog/models.py:108
 msgid "nombre de vues"
 msgstr "nombre de vues"
 
-#: blog/models.py:115
+#: blog/models.py:109
 msgid "nombre de likes"
 msgstr "nombre de likes"
 
-#: blog/models.py:116
+#: blog/models.py:110
 msgid "nombre de partages"
 msgstr "nombre de partages"
 
-#: blog/models.py:119
+#: blog/models.py:113
 msgid "titre SEO"
 msgstr "titre SEO"
 
-#: blog/models.py:119
+#: blog/models.py:113
 msgid "Titre pour le référencement (max 60 caractères)"
 msgstr "Titre pour le référencement (max 60 caractères)"
 
-#: blog/models.py:120
+#: blog/models.py:114
 msgid "description SEO"
 msgstr "description SEO"
 
-#: blog/models.py:120
+#: blog/models.py:114
 msgid "Description pour le référencement (max 160 caractères)"
 msgstr "Description pour le référencement (max 160 caractères)"
 
@@ -165,230 +149,375 @@ msgstr "article"
 msgid "articles"
 msgstr "articles"
 
+#: blog/templates/blog/admin/statistiques_tags.html:5
+#: blog/templates/blog/base.html:136
+msgid "Statistiques Tags"
+msgstr "Statistiques Tags"
+
+#: blog/templates/blog/admin/statistiques_tags.html:5
+#: blog/templates/blog/base.html:128
+msgid "Administration"
+msgstr "Administration"
+
+#: blog/templates/blog/admin/statistiques_tags.html:242
+msgid ""
+"Vous n'avez pas les permissions nécessaires pour accéder aux statistiques "
+"d'administration."
+msgstr "Vous n'avez pas les permissions nécessaires pour accéder aux statistiques d'administration."
+
+#: blog/templates/blog/admin/statistiques_tags.html:244
+#: blog/templates/blog/ajouter_categorie.html:14
+#: blog/templates/blog/ajouter_tag.html:14
+#: blog/templates/blog/article_detail.html:22
+#: blog/templates/blog/modifier_article.html:14
+#: blog/templates/blog/supprimer_article.html:14
+#: users/templates/users/register.html:147
+msgid "Retour à l'accueil"
+msgstr "Retour à l'accueil"
+
+#: blog/templates/blog/admin/statistiques_tags.html:256
+msgid "Tableau de Bord - Tags"
+msgstr "Tableau de Bord - Tags"
+
+#: blog/templates/blog/admin/statistiques_tags.html:259
+msgid ""
+"Analyse complète de l'utilisation des tags avec nuage de mots interactif"
+msgstr "Analyse complète de l'utilisation des tags avec nuage de mots interactif"
+
+#: blog/templates/blog/admin/statistiques_tags.html:264
+#: blog/templates/blog/base.html:117
+msgid "Nouveau tag"
+msgstr "Nouveau tag"
+
+#: blog/templates/blog/admin/statistiques_tags.html:267
+#: blog/templates/blog/ajouter_categorie.html:102
+#: blog/templates/blog/ajouter_tag.html:73
+#: users/templates/users/edit_user.html:130
+msgid "Retour"
+msgstr "Retour"
+
+#: blog/templates/blog/admin/statistiques_tags.html:281
+msgid "Total Tags"
+msgstr "Total Tags"
+
+#: blog/templates/blog/admin/statistiques_tags.html:290
+msgid "Tags Utilisés"
+msgstr "Tags Utilisés"
+
+#: blog/templates/blog/admin/statistiques_tags.html:299
+#: blog/templates/blog/admin/statistiques_tags.html:512
+msgid "Tags Inutilisés"
+msgstr "Tags Inutilisés"
+
+#: blog/templates/blog/admin/statistiques_tags.html:308
+msgid "Articles Publiés"
+msgstr "Articles Publiés"
+
+#: blog/templates/blog/admin/statistiques_tags.html:321
+msgid "Nuage de Mots Interactif"
+msgstr "Nuage de Mots Interactif"
+
+#: blog/templates/blog/admin/statistiques_tags.html:323
+msgid "Cliquez sur un tag pour voir ses articles"
+msgstr "Cliquez sur un tag pour voir ses articles"
+
+#: blog/templates/blog/admin/statistiques_tags.html:347
+msgid "Aucun tag populaire"
+msgstr "Aucun tag populaire"
+
+#: blog/templates/blog/admin/statistiques_tags.html:348
+msgid ""
+"Commencez par créer et associer des tags à vos articles pour voir le nuage "
+"de mots."
+msgstr ""
+
+#: blog/templates/blog/admin/statistiques_tags.html:350
+#: blog/templates/blog/ajouter_article.html:166
+#: blog/templates/blog/modifier_article.html:146
+msgid "Créer le premier tag"
+msgstr "Créer le premier tag"
+
+#: blog/templates/blog/admin/statistiques_tags.html:367
+msgid "Analyse Détaillée par Tag"
+msgstr "Analyse Détaillée par Tag"
+
+#: blog/templates/blog/admin/statistiques_tags.html:376
+msgid "Tag"
+msgstr "Tag"
+
+#: blog/templates/blog/admin/statistiques_tags.html:377
+#: blog/templates/blog/auteurs_actifs.html:32
+#: blog/templates/blog/auteurs_actifs.html:141 blog/templates/blog/base.html:92
+#: blog/templates/blog/profile.html:41 users/templates/users/profile.html:41
+msgid "Articles"
+msgstr "Articles"
+
+#: blog/templates/blog/admin/statistiques_tags.html:378
+#: blog/templates/blog/auteurs_actifs.html:40
+#: blog/templates/blog/auteurs_actifs.html:147
+#: blog/templates/blog/profile.html:45 users/templates/users/profile.html:45
+msgid "Vues"
+msgstr "Vues"
+
+#: blog/templates/blog/admin/statistiques_tags.html:379
+#: blog/templates/blog/profile.html:49 users/templates/users/profile.html:49
+msgid "Likes"
+msgstr "Likes"
+
+#: blog/templates/blog/admin/statistiques_tags.html:380
+msgid "Partages"
+msgstr "Partages"
+
+#: blog/templates/blog/admin/statistiques_tags.html:381
+#: blog/templates/blog/auteurs_actifs.html:195
+msgid "Popularité"
+msgstr "Popularité"
+
+#: blog/templates/blog/admin/statistiques_tags.html:382
+#: users/templates/users/manage_users.html:121
+msgid "Actions"
+msgstr "Actions"
+
+#: blog/templates/blog/admin/statistiques_tags.html:422
+msgid "Voir les articles"
+msgstr "Voir les articles"
+
+#: blog/templates/blog/admin/statistiques_tags.html:427
+#: blog/templates/blog/article_detail.html:106 blog/templates/blog/home.html:74
+#: blog/templates/blog/profile.html:182
+#: users/templates/users/manage_users.html:165
+#: users/templates/users/profile.html:191
+msgid "Modifier"
+msgstr "Modifier"
+
+#: blog/templates/blog/admin/statistiques_tags.html:440
+msgid "Aucune statistique disponible"
+msgstr "Aucune statistique disponible"
+
+#: blog/templates/blog/admin/statistiques_tags.html:441
+msgid "Aucun tag n'est actuellement utilisé dans des articles publiés."
+msgstr "Aucun tag n'est actuellement utilisé dans des articles publiés."
+
+#: blog/templates/blog/admin/statistiques_tags.html:455
+msgid "Combinaisons Populaires"
+msgstr "Combinaisons Populaires"
+
+#: blog/templates/blog/admin/statistiques_tags.html:473
+msgid "Pas encore de combinaisons détectées"
+msgstr "Pas encore de combinaisons détectées"
+
+#: blog/templates/blog/admin/statistiques_tags.html:474
+msgid "Créez plus d'articles avec plusieurs tags"
+msgstr "Créez plus d'articles avec plusieurs tags"
+
+#: blog/templates/blog/admin/statistiques_tags.html:486
+msgid "Tags Peu Utilisés"
+msgstr "Tags Peu Utilisés"
+
+#: blog/templates/blog/admin/statistiques_tags.html:499
+msgid "Ces tags pourraient être fusionnés ou mieux promus."
+msgstr "Ces tags pourraient être fusionnés ou mieux promus."
+
+#: blog/templates/blog/admin/statistiques_tags.html:522
+msgid ""
+"Ces tags ne sont associés à aucun article publié. Considérez les supprimer."
+msgstr ""
+
 #: blog/templates/blog/ajouter_article.html:7
-#, fuzzy
-#| msgid "Ajouter un article"
 msgid "Ajouter un Article"
-msgstr "Ajouter un article"
+msgstr "Ajouter un Article"
 
 #: blog/templates/blog/ajouter_article.html:64
-#, fuzzy
-#| msgid "Ajouter un article"
 msgid "Ajouter un Nouvel Article"
-msgstr "Ajouter un article"
+msgstr "Ajouter un Nouvel Article"
 
 #: blog/templates/blog/ajouter_article.html:73
-#: blog/templates/blog/modifier_article.html:73
-#, fuzzy
-#| msgid "Ajouter un article"
+#: blog/templates/blog/modifier_article.html:44
 msgid "Titre de l'article"
-msgstr "Ajouter un article"
+msgstr "Titre de l'article"
 
 #: blog/templates/blog/ajouter_article.html:81
-#: blog/templates/blog/ajouter_categorie.html:42
-#: blog/templates/blog/ajouter_tag.html:34
+#: blog/templates/blog/ajouter_categorie.html:60
+#: blog/templates/blog/ajouter_tag.html:52
+#: blog/templates/blog/modifier_article.html:52
 #: blog/templates/blog/modifier_categorie.html:42
+#: blog/templates/blog/modifier_tag.html:34
 msgid "Slug (URL)"
-msgstr ""
+msgstr "Slug (URL)"
 
 #: blog/templates/blog/ajouter_article.html:86
+#: blog/templates/blog/modifier_article.html:57
 msgid "Laissez vide pour générer automatiquement à partir du titre"
-msgstr ""
+msgstr "Laissez vide pour générer automatiquement à partir du titre"
 
 #: blog/templates/blog/ajouter_article.html:92
-#, fuzzy
-#| msgid "Résumé"
+#: blog/templates/blog/modifier_article.html:63
 msgid "Extrait/Résumé"
-msgstr "Résumé"
+msgstr "Extrait/Résumé"
 
 #: blog/templates/blog/ajouter_article.html:97
-#, fuzzy
-#| msgid "Résumé de l'article (max 300 caractères)"
+#: blog/templates/blog/modifier_article.html:68
 msgid ""
 "Résumé de l'article (max 300 caractères). Généré automatiquement si vide."
-msgstr "Résumé de l'article (max 300 caractères)"
+msgstr ""
 
 #: blog/templates/blog/ajouter_article.html:104
-#: blog/templates/blog/modifier_article.html:81
-#, fuzzy
-#| msgid "catégorie"
+#: blog/templates/blog/modifier_article.html:75
 msgid "Catégorie"
-msgstr "catégorie"
+msgstr "Catégorie"
 
 #: blog/templates/blog/ajouter_article.html:110
-#: blog/templates/blog/modifier_article.html:87
-#, fuzzy
-#| msgid "Ajouter une catégorie"
+#: blog/templates/blog/modifier_article.html:82
 msgid "Ajouter une nouvelle catégorie"
-msgstr "Ajouter une catégorie"
+msgstr "Ajouter une nouvelle catégorie"
 
 #: blog/templates/blog/ajouter_article.html:116
+#: blog/templates/blog/modifier_article.html:89
 msgid "Statut de publication"
-msgstr ""
+msgstr "Statut de publication"
 
 #: blog/templates/blog/ajouter_article.html:121
+#: blog/templates/blog/modifier_article.html:94
 msgid "Choisissez le statut de votre article"
-msgstr ""
+msgstr "Choisissez le statut de votre article"
 
 #: blog/templates/blog/ajouter_article.html:128
-#: blog/templates/blog/modifier_article.html:94
-#, fuzzy
-#| msgid "image de couverture"
+#: blog/templates/blog/modifier_article.html:101
 msgid "Image de couverture"
-msgstr "image de couverture"
+msgstr "Image de couverture"
 
 #: blog/templates/blog/ajouter_article.html:133
-#: blog/templates/blog/modifier_article.html:105
+#: blog/templates/blog/modifier_article.html:112
 msgid "Formats acceptés : JPG, PNG, GIF (optionnel)"
-msgstr ""
+msgstr "Formats acceptés : JPG, PNG, GIF (optionnel)"
 
 #: blog/templates/blog/ajouter_article.html:139
-#: blog/templates/blog/modifier_article.html:111
+#: blog/templates/blog/modifier_article.html:118
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 #: blog/templates/blog/ajouter_article.html:164
-#: blog/templates/blog/modifier_article.html:136
+#: blog/templates/blog/modifier_article.html:143
 msgid "Aucun tag disponible."
-msgstr ""
-
-#: blog/templates/blog/ajouter_article.html:166
-#: blog/templates/blog/modifier_article.html:138
-msgid "Créer le premier tag"
-msgstr ""
+msgstr "Aucun tag disponible."
 
 #: blog/templates/blog/ajouter_article.html:174
-#: blog/templates/blog/modifier_article.html:146
-#, fuzzy
-#| msgid "Ajouter un tag"
+#: blog/templates/blog/modifier_article.html:156
 msgid "Ajouter un nouveau tag"
-msgstr "Ajouter un tag"
+msgstr "Ajouter un nouveau tag"
 
 #: blog/templates/blog/ajouter_article.html:181
-#: blog/templates/blog/modifier_article.html:153
-#, fuzzy
-#| msgid "Nouvel article"
+#: blog/templates/blog/modifier_article.html:164
 msgid "Contenu de l'article"
-msgstr "Nouvel article"
+msgstr "Contenu de l'article"
 
 #: blog/templates/blog/ajouter_article.html:191
+#: blog/templates/blog/modifier_article.html:174
 msgid "Options SEO (Référencement)"
-msgstr ""
+msgstr "Options SEO (Référencement)"
 
 #: blog/templates/blog/ajouter_article.html:197
-#, fuzzy
-#| msgid "titre SEO"
+#: blog/templates/blog/modifier_article.html:180
 msgid "Titre SEO"
-msgstr "titre SEO"
+msgstr "Titre SEO"
 
 #: blog/templates/blog/ajouter_article.html:202
+#: blog/templates/blog/modifier_article.html:185
 msgid ""
 "Titre pour les moteurs de recherche (max 60 caractères). Généré "
 "automatiquement si vide."
 msgstr ""
 
 #: blog/templates/blog/ajouter_article.html:207
-#, fuzzy
-#| msgid "description SEO"
+#: blog/templates/blog/modifier_article.html:190
 msgid "Description SEO"
-msgstr "description SEO"
+msgstr "Description SEO"
 
 #: blog/templates/blog/ajouter_article.html:212
-#, fuzzy
-#| msgid "Description pour le référencement (max 160 caractères)"
+#: blog/templates/blog/modifier_article.html:195
 msgid ""
 "Description pour les moteurs de recherche (max 160 caractères). Générée "
 "automatiquement si vide."
-msgstr "Description pour le référencement (max 160 caractères)"
+msgstr ""
 
 #: blog/templates/blog/ajouter_article.html:220
-#: blog/templates/blog/ajouter_categorie.html:83
-#: blog/templates/blog/ajouter_tag.html:54
-#: blog/templates/blog/modifier_article.html:161
+#: blog/templates/blog/article_detail.html:238
+#: blog/templates/blog/modifier_article.html:204
 #: blog/templates/blog/modifier_categorie.html:87
-#: blog/templates/blog/supprimer_article.html:26
+#: blog/templates/blog/modifier_tag.html:54
+#: blog/templates/blog/supprimer_article.html:106
+#: users/templates/users/delete_user.html:51
 msgid "Annuler"
-msgstr ""
+msgstr "Annuler"
 
 #: blog/templates/blog/ajouter_article.html:223
-#: blog/templates/blog/ajouter_categorie.html:86
-#: blog/templates/blog/ajouter_tag.html:57
+#: blog/templates/blog/ajouter_categorie.html:106
+#: blog/templates/blog/ajouter_tag.html:77
 msgid "Enregistrer"
-msgstr ""
+msgstr "Enregistrer"
 
-#: blog/templates/blog/ajouter_categorie.html:7
-#, fuzzy
-#| msgid "Ajouter une catégorie"
+#: blog/templates/blog/ajouter_categorie.html:4
 msgid "Ajouter une Catégorie"
-msgstr "Ajouter une catégorie"
+msgstr "Ajouter une Catégorie"
 
-#: blog/templates/blog/ajouter_categorie.html:17
-#, fuzzy
-#| msgid "Ajouter une catégorie"
+#: blog/templates/blog/ajouter_categorie.html:12
+msgid "Vous n'avez pas les permissions nécessaires pour gérer les catégories."
+msgstr "Vous n'avez pas les permissions nécessaires pour gérer les catégories."
+
+#: blog/templates/blog/ajouter_categorie.html:24
 msgid "Ajouter une Nouvelle Catégorie"
-msgstr "Ajouter une catégorie"
+msgstr "Ajouter une Nouvelle Catégorie"
 
-#: blog/templates/blog/ajouter_categorie.html:26
+#: blog/templates/blog/ajouter_categorie.html:44
 #: blog/templates/blog/modifier_categorie.html:26
-#, fuzzy
-#| msgid "Nouvelle catégorie"
 msgid "Nom de la catégorie"
-msgstr "Nouvelle catégorie"
+msgstr "Nom de la catégorie"
 
-#: blog/templates/blog/ajouter_categorie.html:34
+#: blog/templates/blog/ajouter_categorie.html:52
 #: blog/templates/blog/modifier_categorie.html:34
-#, fuzzy
-#| msgid "description"
 msgid "Description"
-msgstr "description"
+msgstr "Description"
 
-#: blog/templates/blog/ajouter_categorie.html:45
-#: blog/templates/blog/ajouter_tag.html:37
+#: blog/templates/blog/ajouter_categorie.html:63
+#: blog/templates/blog/ajouter_tag.html:55
 #: blog/templates/blog/modifier_categorie.html:45
+#: blog/templates/blog/modifier_tag.html:37
 msgid "Laissez vide pour générer automatiquement à partir du nom"
-msgstr ""
+msgstr "Laissez vide pour générer automatiquement à partir du nom"
 
-#: blog/templates/blog/ajouter_categorie.html:53
-#: blog/templates/blog/ajouter_tag.html:43
+#: blog/templates/blog/ajouter_categorie.html:71
+#: blog/templates/blog/ajouter_tag.html:61
 #: blog/templates/blog/modifier_categorie.html:53
-#, fuzzy
-#| msgid "couleur"
+#: blog/templates/blog/modifier_tag.html:43
 msgid "Couleur"
-msgstr "couleur"
+msgstr "Couleur"
 
-#: blog/templates/blog/ajouter_categorie.html:65
+#: blog/templates/blog/ajouter_categorie.html:83
 #: blog/templates/blog/modifier_categorie.html:65
-#, fuzzy
-#| msgid "icône"
 msgid "Icône"
-msgstr "icône"
+msgstr "Icône"
 
-#: blog/templates/blog/ajouter_categorie.html:74
+#: blog/templates/blog/ajouter_categorie.html:92
 #: blog/templates/blog/modifier_categorie.html:78
 msgid "Exemples : fas fa-tag, bi bi-bookmark, fas fa-folder"
-msgstr ""
+msgstr "Exemples : fas fa-tag, bi bi-bookmark, fas fa-folder"
 
-#: blog/templates/blog/ajouter_tag.html:7
-#, fuzzy
-#| msgid "Ajouter un tag"
+#: blog/templates/blog/ajouter_tag.html:4
 msgid "Ajouter un Tag"
-msgstr "Ajouter un tag"
+msgstr "Ajouter un Tag"
 
-#: blog/templates/blog/ajouter_tag.html:17
-#, fuzzy
-#| msgid "Ajouter un tag"
+#: blog/templates/blog/ajouter_tag.html:12
+msgid "Vous n'avez pas les permissions nécessaires pour gérer les tags."
+msgstr "Vous n'avez pas les permissions nécessaires pour gérer les tags."
+
+#: blog/templates/blog/ajouter_tag.html:24
 msgid "Ajouter un Nouveau Tag"
-msgstr "Ajouter un tag"
+msgstr "Ajouter un Nouveau Tag"
 
-#: blog/templates/blog/ajouter_tag.html:26
-#, fuzzy
-#| msgid "Nouveau tag"
+#: blog/templates/blog/ajouter_tag.html:44
+#: blog/templates/blog/modifier_tag.html:26
 msgid "Nom du tag"
-msgstr "Nouveau tag"
-
-#: blog/templates/blog/article_detail.html:22
-msgid "Retour à l'accueil"
-msgstr "Retour à l'accueil"
+msgstr "Nom du tag"
 
 #: blog/templates/blog/article_detail.html:50
 msgid "Publié le"
@@ -398,7 +527,8 @@ msgstr "Publié le"
 msgid "Modifié le"
 msgstr "Modifié le"
 
-#: blog/templates/blog/article_detail.html:63 blog/templates/blog/home.html:50
+#: blog/templates/blog/article_detail.html:63 blog/templates/blog/home.html:54
+#: blog/templates/blog/supprimer_article.html:61
 msgid "par"
 msgstr "par"
 
@@ -406,419 +536,1147 @@ msgstr "par"
 msgid "min de lecture"
 msgstr "min de lecture"
 
-#: blog/templates/blog/article_detail.html:105 blog/templates/blog/home.html:69
-#: blog/templates/blog/profile.html:180
-msgid "Modifier"
-msgstr "Modifier"
-
-#: blog/templates/blog/article_detail.html:108 blog/templates/blog/home.html:72
-#: blog/templates/blog/profile.html:183
+#: blog/templates/blog/article_detail.html:109 blog/templates/blog/home.html:77
+#: blog/templates/blog/profile.html:185
+#: users/templates/users/manage_users.html:179
+#: users/templates/users/profile.html:194
 msgid "Supprimer"
 msgstr "Supprimer"
 
-#: blog/templates/blog/article_detail.html:118
+#: blog/templates/blog/article_detail.html:120
 msgid "Résumé"
 msgstr "Résumé"
 
-#: blog/templates/blog/article_detail.html:150
+#: blog/templates/blog/article_detail.html:152
 msgid "Partager sur"
 msgstr "Partager sur"
 
-#: blog/templates/blog/article_detail.html:188
+#: blog/templates/blog/article_detail.html:190
 msgid "Commentaires"
 msgstr "Commentaires"
 
-#: blog/templates/blog/article_detail.html:219
+#: blog/templates/blog/article_detail.html:218
+msgid "Modifier le commentaire"
+msgstr "Modifier le commentaire"
+
+#: blog/templates/blog/article_detail.html:221
+msgid "Supprimer le commentaire"
+msgstr "Supprimer le commentaire"
+
+#: blog/templates/blog/article_detail.html:235
+msgid "Sauvegarder"
+msgstr "Sauvegarder"
+
+#: blog/templates/blog/article_detail.html:248
 msgid "Aucun commentaire pour cet article."
 msgstr "Aucun commentaire pour cet article."
 
-#: blog/templates/blog/article_detail.html:220
+#: blog/templates/blog/article_detail.html:249
 msgid "Soyez le premier à laisser votre avis !"
 msgstr "Soyez le premier à laisser votre avis !"
 
-#: blog/templates/blog/article_detail.html:232
+#: blog/templates/blog/article_detail.html:261
 msgid "Ajouter un commentaire"
 msgstr "Ajouter un commentaire"
 
-#: blog/templates/blog/article_detail.html:240
+#: blog/templates/blog/article_detail.html:269
 msgid "Votre commentaire"
 msgstr "Votre commentaire"
 
-#: blog/templates/blog/article_detail.html:246
+#: blog/templates/blog/article_detail.html:275
 msgid "Publier le commentaire"
 msgstr "Publier le commentaire"
 
-#: blog/templates/blog/article_detail.html:254 blog/templates/blog/home.html:87
+#: blog/templates/blog/article_detail.html:283 blog/templates/blog/home.html:93
 msgid "Connectez-vous"
 msgstr "Connectez-vous"
 
-#: blog/templates/blog/article_detail.html:254
+#: blog/templates/blog/article_detail.html:283
 msgid "pour ajouter un commentaire."
 msgstr "pour ajouter un commentaire."
 
-#: blog/templates/blog/base.html:7 blog/templates/blog/base.html:14
-#: blog/templates/blog/home.html:4
+#: blog/templates/blog/article_detail.html:325
+msgid "Lien copié dans le presse-papiers !"
+msgstr "Lien copié dans le presse-papiers !"
+
+#: blog/templates/blog/article_detail.html:332
+msgid "Veuillez vous connecter pour aimer cet article."
+msgstr "Veuillez vous connecter pour aimer cet article."
+
+#: blog/templates/blog/article_detail.html:356
+msgid "URL copiée dans le presse-papiers !"
+msgstr "URL copiée dans le presse-papiers !"
+
+#: blog/templates/blog/article_detail.html:359
+msgid "Erreur lors de la copie dans le presse-papiers"
+msgstr "Erreur lors de la copie dans le presse-papiers"
+
+#: blog/templates/blog/article_detail.html:395
+msgid "Erreur lors de la sauvegarde du commentaire."
+msgstr "Erreur lors de la sauvegarde du commentaire."
+
+#: blog/templates/blog/article_detail.html:402
+msgid "Êtes-vous sûr de vouloir supprimer ce commentaire ?"
+msgstr "Êtes-vous sûr de vouloir supprimer ce commentaire ?"
+
+#: blog/templates/blog/article_detail.html:416
+msgid "Erreur lors de la suppression du commentaire."
+msgstr "Erreur lors de la suppression du commentaire."
+
+#: blog/templates/blog/auteurs_actifs.html:4
+#: blog/templates/blog/auteurs_actifs.html:14 blog/templates/blog/base.html:97
+msgid "Auteurs Actifs"
+msgstr "Auteurs Actifs"
+
+#: blog/templates/blog/auteurs_actifs.html:4 blog/templates/blog/base.html:7
+#: blog/templates/blog/base.html:78 blog/templates/blog/home.html:4
 msgid "Blog"
 msgstr "Blog"
 
-#: blog/templates/blog/base.html:21 blog/templates/blog/home.html:4
+#: blog/templates/blog/auteurs_actifs.html:16
+msgid "Découvrez les contributeurs les plus actifs de notre communauté"
+msgstr "Découvrez les contributeurs les plus actifs de notre communauté"
+
+#: blog/templates/blog/auteurs_actifs.html:24
+#: users/templates/users/manage_users.html:42
+msgid "Auteurs"
+msgstr "Auteurs"
+
+#: blog/templates/blog/auteurs_actifs.html:58
+msgid "Trier par"
+msgstr "Trier par"
+
+#: blog/templates/blog/auteurs_actifs.html:73
+msgid "Triés par nombre d'articles"
+msgstr "Triés par nombre d'articles"
+
+#: blog/templates/blog/auteurs_actifs.html:75
+msgid "Triés par vues totales"
+msgstr "Triés par vues totales"
+
+#: blog/templates/blog/auteurs_actifs.html:77
+msgid "Triés par likes totaux"
+msgstr "Triés par likes totaux"
+
+#: blog/templates/blog/auteurs_actifs.html:79
+msgid "Triés par activité récente"
+msgstr "Triés par activité récente"
+
+#: blog/templates/blog/auteurs_actifs.html:81
+msgid "Triés alphabétiquement"
+msgstr "Triés alphabétiquement"
+
+#: blog/templates/blog/auteurs_actifs.html:124
+#: blog/templates/blog/base.html:160 users/templates/users/edit_user.html:71
+msgid "Admin"
+msgstr "Admin"
+
+#: blog/templates/blog/auteurs_actifs.html:128
+#: blog/templates/blog/base.html:162 users/forms.py:11 users/models.py:8
+#: users/templates/users/edit_user.html:72
+#: users/templates/users/register.html:99
+msgid "Auteur"
+msgstr "Auteur"
+
+#: blog/templates/blog/auteurs_actifs.html:185
+msgid "Dernière publication"
+msgstr "Dernière publication"
+
+#: blog/templates/blog/auteurs_actifs.html:214
+msgid "Voir articles"
+msgstr "Voir articles"
+
+#: blog/templates/blog/auteurs_actifs.html:219
+msgid "Suivre cet auteur"
+msgstr "Suivre cet auteur"
+
+#: blog/templates/blog/auteurs_actifs.html:233
+msgid "Aucun auteur actif"
+msgstr "Aucun auteur actif"
+
+#: blog/templates/blog/auteurs_actifs.html:234
+msgid "Il n'y a actuellement aucun auteur avec des articles publiés."
+msgstr "Il n'y a actuellement aucun auteur avec des articles publiés."
+
+#: blog/templates/blog/auteurs_actifs.html:247
+msgid ""
+"Seuls les 50 premiers auteurs sont affichés pour optimiser les performances."
+msgstr ""
+
+#: blog/templates/blog/auteurs_actifs.html:311
+msgid "Fonctionnalité de suivi à implémenter"
+msgstr ""
+
+#: blog/templates/blog/base.html:87 blog/templates/blog/home.html:4
 msgid "Accueil"
 msgstr "Accueil"
 
-#: blog/templates/blog/base.html:25 blog/templates/blog/profile.html:41
-msgid "Articles"
-msgstr "Articles"
-
-#: blog/templates/blog/base.html:31
+#: blog/templates/blog/base.html:105
 msgid "Créer"
 msgstr "Créer"
 
-#: blog/templates/blog/base.html:35 blog/templates/blog/profile.html:136
+#: blog/templates/blog/base.html:109 blog/templates/blog/profile.html:137
+#: users/templates/users/profile.html:145
 msgid "Nouvel article"
 msgstr "Nouvel article"
 
-#: blog/templates/blog/base.html:38
+#: blog/templates/blog/base.html:114
 msgid "Nouvelle catégorie"
 msgstr "Nouvelle catégorie"
 
-#: blog/templates/blog/base.html:41
-msgid "Nouveau tag"
-msgstr "Nouveau tag"
+#: blog/templates/blog/base.html:132 users/templates/users/manage_users.html:4
+#: users/templates/users/manage_users.html:11
+msgid "Gestion des utilisateurs"
+msgstr "Gestion des utilisateurs"
 
-#: blog/templates/blog/base.html:78
+#: blog/templates/blog/base.html:140
+msgid "Interface Django Admin"
+msgstr "Interface Django Admin"
+
+#: blog/templates/blog/base.html:150
+msgid "Basculer entre mode clair et sombre"
+msgstr "Basculer entre mode clair et sombre"
+
+#: blog/templates/blog/base.html:164 users/forms.py:11 users/models.py:9
+#: users/templates/users/edit_user.html:73
+#: users/templates/users/register.html:87
+msgid "Visiteur"
+msgstr "Visiteur"
+
+#: blog/templates/blog/base.html:205
+msgid "Mon profil"
+msgstr "Mon profil"
+
+#: blog/templates/blog/base.html:209
 msgid "Déconnexion"
 msgstr "Déconnexion"
 
-#: blog/templates/blog/base.html:84
+#: blog/templates/blog/base.html:216
 msgid "Connexion"
 msgstr "Connexion"
 
-#: blog/templates/blog/base.html:89 blog/templates/blog/register.html:10
+#: blog/templates/blog/base.html:221 blog/templates/blog/register.html:10
+#: users/templates/users/manage_users.html:120
+#: users/templates/users/register.html:4 users/templates/users/register.html:12
 msgid "Inscription"
 msgstr "Inscription"
+
+#: blog/templates/blog/base.html:257
+msgid "Passer au mode clair"
+msgstr "Passer au mode clair"
+
+#: blog/templates/blog/base.html:260
+msgid "Passer au mode sombre"
+msgstr "Passer au mode sombre"
 
 #: blog/templates/blog/home.html:8
 msgid "Mon Blog Django"
 msgstr "Mon Blog Django"
 
-#: blog/templates/blog/home.html:14
+#: blog/templates/blog/home.html:15
 msgid "Ajouter un article"
 msgstr "Ajouter un article"
 
-#: blog/templates/blog/home.html:17
+#: blog/templates/blog/home.html:20
 msgid "Ajouter une catégorie"
 msgstr "Ajouter une catégorie"
 
-#: blog/templates/blog/home.html:20
+#: blog/templates/blog/home.html:23
 msgid "Ajouter un tag"
 msgstr "Ajouter un tag"
 
-#: blog/templates/blog/home.html:26
+#: blog/templates/blog/home.html:30
 msgid "Tous les Articles"
 msgstr "Tous les Articles"
 
-#: blog/templates/blog/home.html:65
+#: blog/templates/blog/home.html:69
 msgid "Lire"
 msgstr "Lire"
 
-#: blog/templates/blog/home.html:83
+#: blog/templates/blog/home.html:89
 msgid "Aucun article pour le moment"
 msgstr "Aucun article pour le moment"
 
-#: blog/templates/blog/home.html:85
+#: blog/templates/blog/home.html:91
 msgid "Commencez par"
 msgstr "Commencez par"
 
-#: blog/templates/blog/home.html:85
+#: blog/templates/blog/home.html:91
 msgid "ajouter votre premier article"
 msgstr "ajouter votre premier article"
 
-#: blog/templates/blog/home.html:87
+#: blog/templates/blog/home.html:93
 msgid "pour commencer à écrire des articles"
 msgstr "pour commencer à écrire des articles"
 
-#: blog/templates/blog/modifier_article.html:7
-#: blog/templates/blog/modifier_article.html:64
-#, fuzzy
-#| msgid "Nouvel article"
+#: blog/templates/blog/login.html:30 users/templates/users/login.html:31
+msgid "Pas encore de compte ?"
+msgstr "Pas encore de compte ?"
+
+#: blog/templates/blog/login.html:30 users/templates/users/login.html:31
+msgid "Inscrivez-vous ici"
+msgstr "Inscrivez-vous ici"
+
+#: blog/templates/blog/modifier_article.html:4
+#: blog/templates/blog/modifier_article.html:24
 msgid "Modifier l'article"
-msgstr "Nouvel article"
+msgstr "Modifier l'article"
 
-#: blog/templates/blog/modifier_article.html:98
-#: blog/templates/blog/modifier_article.html:99
+#: blog/templates/blog/modifier_article.html:12
+msgid "Vous n'avez pas les permissions nécessaires pour modifier cet article."
+msgstr "Vous n'avez pas les permissions nécessaires pour modifier cet article."
+
+#: blog/templates/blog/modifier_article.html:105
+#: blog/templates/blog/modifier_article.html:106
 msgid "Image actuelle"
-msgstr ""
+msgstr "Image actuelle"
 
-#: blog/templates/blog/modifier_article.html:164
+#: blog/templates/blog/modifier_article.html:208
 #: blog/templates/blog/modifier_categorie.html:90
+#: blog/templates/blog/modifier_tag.html:57
+#: users/templates/users/edit_user.html:133
 msgid "Enregistrer les modifications"
-msgstr ""
+msgstr "Enregistrer les modifications"
 
 #: blog/templates/blog/modifier_categorie.html:7
 #: blog/templates/blog/modifier_categorie.html:17
-#, fuzzy
-#| msgid "Nouvelle catégorie"
 msgid "Modifier la catégorie"
-msgstr "Nouvelle catégorie"
+msgstr "Modifier la catégorie"
 
-#: blog/templates/blog/profile.html:11
+#: blog/templates/blog/modifier_tag.html:7
+#: blog/templates/blog/modifier_tag.html:17
+msgid "Modifier le Tag"
+msgstr "Modifier le Tag"
+
+#: blog/templates/blog/profile.html:11 users/templates/users/add_user.html:23
+#: users/templates/users/admin_change_password.html:23
+#: users/templates/users/change_password.html:23
+#: users/templates/users/profile.html:11
 msgid "Fermer"
 msgstr "Fermer"
 
 #: blog/templates/blog/profile.html:22 blog/templates/blog/profile.html:24
-#: blog/templates/blog/profile.html:116
+#: blog/templates/blog/profile.html:116 users/templates/users/profile.html:22
+#: users/templates/users/profile.html:24 users/templates/users/profile.html:116
 msgid "Avatar"
 msgstr "Avatar"
 
-#: blog/templates/blog/profile.html:37
+#: blog/templates/blog/profile.html:37 users/templates/users/profile.html:37
 msgid "Statistiques"
 msgstr "Statistiques"
 
-#: blog/templates/blog/profile.html:45
-msgid "Vues"
-msgstr "Vues"
-
-#: blog/templates/blog/profile.html:49
-msgid "Likes"
-msgstr "Likes"
-
-#: blog/templates/blog/profile.html:55
+#: blog/templates/blog/profile.html:55 users/templates/users/profile.html:55
 msgid "Publiés"
 msgstr "Publiés"
 
-#: blog/templates/blog/profile.html:59
+#: blog/templates/blog/profile.html:59 users/templates/users/profile.html:59
 msgid "Brouillons"
 msgstr "Brouillons"
 
-#: blog/templates/blog/profile.html:69
+#: blog/templates/blog/profile.html:69 users/templates/users/profile.html:69
 msgid "Modifier mon profil"
 msgstr "Modifier mon profil"
 
-#: blog/templates/blog/profile.html:76
+#: blog/templates/blog/profile.html:76 users/templates/users/add_user.html:36
+#: users/templates/users/edit_user.html:21
+#: users/templates/users/profile.html:76
 msgid "Nom d'utilisateur"
 msgstr "Nom d'utilisateur"
 
-#: blog/templates/blog/profile.html:84
+#: blog/templates/blog/profile.html:84 users/templates/users/add_user.html:52
+#: users/templates/users/edit_user.html:30
+#: users/templates/users/manage_users.html:117
+#: users/templates/users/profile.html:84
 msgid "Email"
 msgstr "Email"
 
-#: blog/templates/blog/profile.html:92
+#: blog/templates/blog/profile.html:92 users/templates/users/add_user.html:71
+#: users/templates/users/edit_user.html:42
+#: users/templates/users/profile.html:92
 msgid "Prénom"
 msgstr "Prénom"
 
-#: blog/templates/blog/profile.html:100
+#: blog/templates/blog/profile.html:100 users/templates/users/add_user.html:87
+#: users/templates/users/edit_user.html:51
+#: users/templates/users/profile.html:100
 msgid "Nom"
 msgstr "Nom"
 
-#: blog/templates/blog/profile.html:108
+#: blog/templates/blog/profile.html:108 users/templates/users/add_user.html:157
+#: users/templates/users/edit_user.html:97
+#: users/templates/users/profile.html:108
 msgid "Biographie"
 msgstr "Biographie"
 
-#: blog/templates/blog/profile.html:122
+#: blog/templates/blog/profile.html:122 users/templates/users/profile.html:122
 #, python-format
 msgid "Avatar actuel: %(avatar_name)s"
 msgstr "Avatar actuel: %(avatar_name)s"
 
-#: blog/templates/blog/profile.html:126
+#: blog/templates/blog/profile.html:126 users/templates/users/profile.html:126
 msgid "Mettre à jour le profil"
 msgstr "Mettre à jour le profil"
 
-#: blog/templates/blog/profile.html:135
+#: blog/templates/blog/profile.html:135 users/templates/users/profile.html:143
 msgid "Mes articles"
 msgstr "Mes articles"
 
-#: blog/templates/blog/profile.html:161
+#: blog/templates/blog/profile.html:163 users/templates/users/profile.html:171
 #, python-format
 msgid "Créé le %(created_date)s"
 msgstr "Créé le %(created_date)s"
 
-#: blog/templates/blog/profile.html:163
+#: blog/templates/blog/profile.html:165 users/templates/users/profile.html:173
 #, python-format
 msgid "Modifié le %(updated_date)s"
 msgstr "Modifié le %(updated_date)s"
 
-#: blog/templates/blog/profile.html:168
+#: blog/templates/blog/profile.html:170 users/templates/users/profile.html:178
 #, python-format
 msgid "%(views)s vue"
 msgid_plural "%(views)s vues"
 msgstr[0] "%(views)s vue"
 msgstr[1] "%(views)s vues"
 
-#: blog/templates/blog/profile.html:168
+#: blog/templates/blog/profile.html:170 users/templates/users/profile.html:178
 #, python-format
 msgid "%(likes)s like"
 msgid_plural "%(likes)s likes"
 msgstr[0] "%(likes)s like"
 msgstr[1] "%(likes)s likes"
 
-#: blog/templates/blog/profile.html:170
+#: blog/templates/blog/profile.html:172 users/templates/users/profile.html:180
 #, python-format
 msgid "Catégorie: %(category_name)s"
 msgstr "Catégorie: %(category_name)s"
 
-#: blog/templates/blog/profile.html:177
+#: blog/templates/blog/profile.html:179 users/templates/users/profile.html:187
 msgid "Voir"
 msgstr "Voir"
 
-#: blog/templates/blog/profile.html:195
+#: blog/templates/blog/profile.html:197 users/templates/users/profile.html:207
 msgid "Pagination des articles"
 msgstr "Pagination des articles"
 
-#: blog/templates/blog/profile.html:198
+#: blog/templates/blog/profile.html:200
+#: users/templates/users/manage_users.html:210
+#: users/templates/users/profile.html:210
 msgid "Précédent"
 msgstr "Précédent"
 
-#: blog/templates/blog/profile.html:206
+#: blog/templates/blog/profile.html:208
+#: users/templates/users/manage_users.html:230
+#: users/templates/users/profile.html:218
 msgid "Suivant"
 msgstr "Suivant"
 
-#: blog/templates/blog/profile.html:217
+#: blog/templates/blog/profile.html:219 users/templates/users/profile.html:229
 msgid "Aucun article"
 msgstr "Aucun article"
 
-#: blog/templates/blog/profile.html:218
+#: blog/templates/blog/profile.html:220 users/templates/users/profile.html:230
 msgid "Vous n'avez pas encore publié d'articles."
 msgstr "Vous n'avez pas encore publié d'articles."
 
-#: blog/templates/blog/profile.html:219
+#: blog/templates/blog/profile.html:221 users/templates/users/profile.html:232
 msgid "Créer mon premier article"
 msgstr "Créer mon premier article"
 
+#: blog/templates/blog/profile.html:227 users/templates/users/profile.html:239
+msgid "Mes favoris"
+msgstr "Mes favoris"
+
+#: blog/templates/blog/profile.html:255 users/templates/users/profile.html:267
+msgid "Vous n'avez pas encore de favoris."
+msgstr "Vous n'avez pas encore de favoris."
+
 #: blog/templates/blog/register.html:27
 msgid "S'inscrire"
-msgstr ""
+msgstr "S'inscrire"
 
-#: blog/templates/blog/register.html:31
-msgid "Déjà un compte ?"
-msgstr ""
-
-#: blog/templates/blog/register.html:31
-msgid "Se connecter"
-msgstr ""
-
-#: blog/templates/blog/supprimer_article.html:7
-#: blog/templates/blog/supprimer_article.html:16
-#, fuzzy
-#| msgid "Supprimer"
+#: blog/templates/blog/supprimer_article.html:4
 msgid "Supprimer l'article"
-msgstr "Supprimer"
+msgstr "Supprimer l'article"
 
-#: blog/templates/blog/supprimer_article.html:19
-#, python-format
-msgid "Êtes-vous sûr de vouloir supprimer l'article \"%(title)s\" ?"
-msgstr ""
+#: blog/templates/blog/supprimer_article.html:12
+msgid "Vous n'avez pas les permissions nécessaires pour supprimer cet article."
+msgstr "Vous n'avez pas les permissions nécessaires pour supprimer cet article."
 
-#: blog/templates/blog/supprimer_article.html:20
+#: blog/templates/blog/supprimer_article.html:24
+#: users/templates/users/delete_user.html:12
+msgid "Confirmation de suppression"
+msgstr "Confirmation de suppression"
+
+#: blog/templates/blog/supprimer_article.html:31
+#: users/templates/users/delete_user.html:16
+msgid "Attention !"
+msgstr "Attention !"
+
+#: blog/templates/blog/supprimer_article.html:33
+msgid "Vous êtes sur le point de supprimer définitivement l'article suivant :"
+msgstr "Vous êtes sur le point de supprimer définitivement l'article suivant :"
+
+#: blog/templates/blog/supprimer_article.html:90
+#: users/templates/users/delete_user.html:39
 msgid "Cette action est irréversible !"
-msgstr ""
+msgstr "Cette action est irréversible !"
 
-#: blog/templates/blog/supprimer_article.html:29
-msgid "Confirmer la suppression"
-msgstr ""
+#: blog/templates/blog/supprimer_article.html:93
+msgid "L'article sera définitivement supprimé de la base de données"
+msgstr "L'article sera définitivement supprimé de la base de données"
 
-#: blog/views.py:75 blog/views.py:306
+#: blog/templates/blog/supprimer_article.html:94
+msgid "Tous les commentaires associés seront également supprimés"
+msgstr "Tous les commentaires associés seront également supprimés"
+
+#: blog/templates/blog/supprimer_article.html:95
+msgid "Les statistiques de vues et d'interactions seront perdues"
+msgstr "Les statistiques de vues et d'interactions seront perdues"
+
+#: blog/templates/blog/supprimer_article.html:96
+msgid "Les fichiers d'images associés seront supprimés du serveur"
+msgstr "Les fichiers d'images associés seront supprimés du serveur"
+
+#: blog/templates/blog/supprimer_article.html:97
+#: users/templates/users/delete_user.html:44
+msgid "Cette action ne peut pas être annulée"
+msgstr "Cette action ne peut pas être annulée"
+
+#: blog/templates/blog/supprimer_article.html:110
+#: users/templates/users/delete_user.html:54
+msgid "Supprimer définitivement"
+msgstr "Supprimer définitivement"
+
+#: blog/views.py:79
 msgid "L'article a été créé avec succès !"
 msgstr "L'article a été créé avec succès !"
 
-#: blog/views.py:78
+#: blog/views.py:83
 #, python-format
 msgid "Erreur lors de l'enregistrement : %(error)s"
 msgstr "Erreur lors de l'enregistrement : %(error)s"
 
-#: blog/views.py:84
+#: blog/views.py:90
 #, python-format
 msgid "Erreur dans le champ '%(field)s': %(error)s"
 msgstr "Erreur dans le champ '%(field)s': %(error)s"
 
-#: blog/views.py:97
+#: blog/views.py:103 users/decorators.py:56
+msgid "Vous n'avez pas les permissions pour modifier cet article."
+msgstr "Vous n'avez pas les permissions pour modifier cet article."
+
+#: blog/views.py:126
 msgid "L'article a été modifié avec succès !"
 msgstr "L'article a été modifié avec succès !"
 
-#: blog/views.py:108
+#: blog/views.py:130 blog/views.py:222 blog/views.py:307 comments/views.py:144
+#: users/views.py:114 users/views.py:237 users/views.py:401
+msgid "Une erreur est survenue lors de la modification."
+msgstr "Une erreur est survenue lors de la modification."
+
+#: blog/views.py:146
+msgid "Vous n'avez pas les permissions pour supprimer cet article."
+msgstr "Vous n'avez pas les permissions pour supprimer cet article."
+
+#: blog/views.py:162
 msgid "L'article a été supprimé avec succès !"
 msgstr "L'article a été supprimé avec succès !"
 
-#: blog/views.py:118 blog/views.py:320
+#: blog/views.py:166 blog/views.py:251 blog/views.py:336 users/views.py:311
+msgid "Une erreur est survenue lors de la suppression."
+msgstr "Une erreur est survenue lors de la suppression."
+
+#: blog/views.py:183
 msgid "La catégorie a été créée avec succès !"
 msgstr "La catégorie a été créée avec succès !"
 
-#: blog/views.py:131
+#: blog/views.py:187 blog/views.py:272 users/views.py:366
+msgid "Une erreur est survenue lors de la création."
+msgstr "Une erreur est survenue lors de la création."
+
+#: blog/views.py:218
 msgid "La catégorie a été modifiée avec succès !"
 msgstr "La catégorie a été modifiée avec succès !"
 
-#: blog/views.py:142
+#: blog/views.py:247
 msgid "La catégorie a été supprimée avec succès !"
 msgstr "La catégorie a été supprimée avec succès !"
 
-#: blog/views.py:152
+#: blog/views.py:268
 msgid "Le tag a été créé avec succès !"
 msgstr "Le tag a été créé avec succès !"
 
-#: blog/views.py:165
+#: blog/views.py:303
 msgid "Le tag a été modifié avec succès !"
 msgstr "Le tag a été modifié avec succès !"
 
-#: blog/views.py:176
+#: blog/views.py:332
 msgid "Le tag a été supprimé avec succès !"
 msgstr "Le tag a été supprimé avec succès !"
 
-#: blog/views.py:193 blog/views.py:284
+#: blog/views.py:387
 msgid "Votre commentaire a été ajouté avec succès !"
 msgstr "Votre commentaire a été ajouté avec succès !"
 
-#: blog/views.py:209
-msgid "Votre compte a été créé avec succès !"
-msgstr "Votre compte a été créé avec succès !"
+#: blog/views.py:391
+msgid "Une erreur est survenue lors de l'ajout du commentaire."
+msgstr "Une erreur est survenue lors de l'ajout du commentaire."
 
-#: blog/views.py:212 blog/views.py:231 blog/views.py:287 blog/views.py:309
-#: blog/views.py:323
-msgid "Veuillez corriger les erreurs dans le formulaire."
-msgstr "Veuillez corriger les erreurs dans le formulaire."
-
-#: blog/views.py:226
-msgid "Vous êtes maintenant connecté !"
-msgstr "Vous êtes maintenant connecté !"
-
-#: blog/views.py:229
-msgid "Nom d'utilisateur ou mot de passe incorrect."
-msgstr "Nom d'utilisateur ou mot de passe incorrect."
-
-#: blog/views.py:243
-msgid "Votre profil a été mis à jour avec succès !"
-msgstr "Votre profil a été mis à jour avec succès !"
-
-#: blog/views.py:246
-msgid "Veuillez corriger les erreurs ci-dessous."
-msgstr "Veuillez corriger les erreurs ci-dessous."
-
-#: blog/views.py:349
-msgid "Vous avez été déconnecté avec succès !"
-msgstr "Vous avez été déconnecté avec succès !"
-
-#: blog/views.py:369
-msgid "Article liké avec succès!"
-msgstr "Article liké avec succès !"
-
-#: blog/views.py:376
-msgid "Like retiré avec succès!"
-msgstr "Like retiré avec succès !"
-
-#: blog/views.py:408
-msgid "Article partagé avec succès!"
-msgstr "Article partagé avec succès !"
-
-#: blog/views.py:560
+#: blog/views.py:567
 msgid "Plus récent"
 msgstr "Plus récent"
 
-#: blog/views.py:561
+#: blog/views.py:568
 msgid "Plus ancien"
 msgstr "Plus ancien"
 
-#: blog/views.py:562
+#: blog/views.py:569
 msgid "Plus populaire"
 msgstr "Plus populaire"
 
-#: blog/views.py:563
+#: blog/views.py:570 blog/views.py:710
 msgid "Alphabétique"
 msgstr "Alphabétique"
+
+#: blog/views.py:706
+msgid "Nombre d'articles"
+msgstr "Nombre d'articles"
+
+#: blog/views.py:707
+msgid "Vues totales"
+msgstr "Vues totales"
+
+#: blog/views.py:708
+msgid "Likes totaux"
+msgstr "Likes totaux"
+
+#: blog/views.py:709
+msgid "Activité récente"
+msgstr "Activité récente"
+
+#: comments/forms.py:9
+msgid "Écrivez votre commentaire..."
+msgstr "Écrivez votre commentaire..."
+
+#: comments/forms.py:12
+msgid "Commentaire"
+msgstr "Commentaire"
+
+#: comments/models.py:14
+msgid "actif"
+msgstr "actif"
+
+#: comments/models.py:22
+msgid "commentaire"
+msgstr "commentaire"
+
+#: comments/models.py:23
+msgid "commentaires"
+msgstr "commentaires"
+
+#: comments/views.py:41
+msgid "Commentaire ajouté avec succès !"
+msgstr "Commentaire ajouté avec succès !"
+
+#: comments/views.py:54
+msgid "Erreur lors de l'ajout du commentaire."
+msgstr "Erreur lors de l'ajout du commentaire."
+
+#: comments/views.py:60
+msgid "Une erreur est survenue."
+msgstr "Une erreur est survenue."
+
+#: comments/views.py:68 comments/views.py:152 users/views.py:39
+#: users/views.py:79 users/views.py:241 users/views.py:371
+msgid "Veuillez corriger les erreurs dans le formulaire."
+msgstr "Veuillez corriger les erreurs dans le formulaire."
+
+#: comments/views.py:82
+msgid "Vous n'avez pas le droit de supprimer ce commentaire."
+msgstr "Vous n'avez pas le droit de supprimer ce commentaire."
+
+#: comments/views.py:98
+msgid "Commentaire supprimé avec succès !"
+msgstr "Commentaire supprimé avec succès !"
+
+#: comments/views.py:102
+msgid "Erreur lors de la suppression."
+msgstr "Erreur lors de la suppression."
+
+#: comments/views.py:116
+msgid "Vous n'avez pas le droit de modifier ce commentaire."
+msgstr "Vous n'avez pas le droit de modifier ce commentaire."
+
+#: comments/views.py:133
+msgid "Commentaire modifié avec succès !"
+msgstr "Commentaire modifié avec succès !"
+
+#: stats/models.py:21
+msgid "like"
+msgstr "like"
+
+#: stats/models.py:22
+msgid "likes"
+msgstr "likes"
+
+#: stats/models.py:44
+msgid "partage"
+msgstr "partage"
+
+#: stats/models.py:45
+msgid "partages"
+msgstr "partages"
+
+#: stats/models.py:69
+msgid "vue"
+msgstr "vue"
+
+#: stats/models.py:70
+msgid "vues"
+msgstr "vues"
+
+#: stats/views.py:32
+msgid "Contenu liké avec succès!"
+msgstr "Contenu liké avec succès!"
+
+#: stats/views.py:37
+msgid "Like retiré avec succès!"
+msgstr "Like retiré avec succès!"
+
+#: stats/views.py:60 stats/views.py:106 stats/views.py:150
+msgid "Objet non trouvé."
+msgstr "Objet non trouvé."
+
+#: stats/views.py:100
+msgid "Contenu partagé avec succès!"
+msgstr "Contenu partagé avec succès!"
+
+#: users/decorators.py:13 users/decorators.py:29 users/decorators.py:45
+#: users/decorators.py:68
+msgid "Vous devez être connecté pour accéder à cette page."
+msgstr "Vous devez être connecté pour accéder à cette page."
+
+#: users/decorators.py:17
+msgid "Vous n'avez pas les permissions nécessaires pour accéder à cette page."
+msgstr "Vous n'avez pas les permissions nécessaires pour accéder à cette page."
+
+#: users/decorators.py:33
+msgid "Vous devez être auteur ou administrateur pour accéder à cette page."
+msgstr "Vous devez être auteur ou administrateur pour accéder à cette page."
+
+#: users/decorators.py:79
+msgid "Vous n'avez pas les permissions pour modifier ce commentaire."
+msgstr "Vous n'avez pas les permissions pour modifier ce commentaire."
+
+#: users/forms.py:14
+msgid ""
+"Les visiteurs peuvent uniquement lire le contenu. Les auteurs peuvent créer "
+"des articles."
+msgstr ""
+
+#: users/forms.py:99
+msgid "Mot de passe actuel"
+msgstr "Mot de passe actuel"
+
+#: users/forms.py:106 users/forms.py:173
+msgid "Nouveau mot de passe"
+msgstr "Nouveau mot de passe"
+
+#: users/forms.py:111
+msgid "Votre mot de passe doit contenir au moins 8 caractères."
+msgstr "Votre mot de passe doit contenir au moins 8 caractères."
+
+#: users/forms.py:114 users/forms.py:181
+msgid "Confirmation du nouveau mot de passe"
+msgstr "Confirmation du nouveau mot de passe"
+
+#: users/forms.py:125
+msgid "Veuillez saisir votre mot de passe actuel."
+msgstr "Veuillez saisir votre mot de passe actuel."
+
+#: users/forms.py:128 users/forms.py:192
+msgid "Veuillez saisir un nouveau mot de passe."
+msgstr "Veuillez saisir un nouveau mot de passe."
+
+#: users/forms.py:131
+msgid "Veuillez confirmer votre nouveau mot de passe."
+msgstr "Veuillez confirmer votre nouveau mot de passe."
+
+#: users/forms.py:178
+msgid "Le mot de passe doit contenir au moins 8 caractères."
+msgstr "Le mot de passe doit contenir au moins 8 caractères."
+
+#: users/forms.py:195
+msgid "Veuillez confirmer le nouveau mot de passe."
+msgstr "Veuillez confirmer le nouveau mot de passe."
+
+#: users/models.py:7
+msgid "Administrateur"
+msgstr "Administrateur"
+
+#: users/models.py:12
+msgid "biography"
+msgstr "biography"
+
+#: users/models.py:13
+msgid "avatar"
+msgstr "avatar"
+
+#: users/models.py:14
+msgid "rôle"
+msgstr "rôle"
+
+#: users/models.py:17
+msgid "user"
+msgstr "user"
+
+#: users/models.py:18
+msgid "users"
+msgstr "users"
+
+#: users/templates/users/add_user.html:4 users/templates/users/add_user.html:14
+#: users/templates/users/manage_users.html:15
+msgid "Ajouter un utilisateur"
+msgstr "Ajouter un utilisateur"
+
+#: users/templates/users/add_user.html:104
+#: users/templates/users/edit_user.html:63
+#: users/templates/users/manage_users.html:118
+msgid "Rôle"
+msgstr "Rôle"
+
+#: users/templates/users/add_user.html:121
+msgid "Mot de passe"
+msgstr "Mot de passe"
+
+#: users/templates/users/add_user.html:140
+msgid "Confirmation du mot de passe"
+msgstr "Confirmation du mot de passe"
+
+#: users/templates/users/add_user.html:157
+msgid "optionnel"
+msgstr "optionnel"
+
+#: users/templates/users/add_user.html:172
+msgid "Créer l'utilisateur"
+msgstr "Créer l'utilisateur"
+
+#: users/templates/users/add_user.html:176
+#: users/templates/users/admin_change_password.html:76
+msgid "Retour à la gestion des utilisateurs"
+msgstr "Retour à la gestion des utilisateurs"
+
+#: users/templates/users/admin_change_password.html:4
+#: users/templates/users/admin_change_password.html:14
+msgid "Changer le mot de passe de"
+msgstr "Changer le mot de passe de"
+
+#: users/templates/users/admin_change_password.html:30
+#, python-format
+msgid ""
+"Vous êtes sur le point de changer le mot de passe de l'utilisateur "
+"<strong>%(username)s</strong>. Cette action ne nécessite pas le mot de passe "
+"actuel."
+msgstr ""
+
+#: users/templates/users/admin_change_password.html:72
+#: users/templates/users/change_password.html:4
+#: users/templates/users/change_password.html:14
+#: users/templates/users/change_password.html:82
+#: users/templates/users/manage_users.html:168
+#: users/templates/users/profile.html:133
+msgid "Changer le mot de passe"
+msgstr "Changer le mot de passe"
+
+#: users/templates/users/admin_change_password.html:88
+#: users/templates/users/change_password.html:98
+msgid "Conseils de sécurité"
+msgstr "Conseils de sécurité"
+
+#: users/templates/users/admin_change_password.html:93
+#: users/templates/users/change_password.html:103
+msgid "Utilisez un mot de passe d'au moins 8 caractères"
+msgstr "Utilisez un mot de passe d'au moins 8 caractères"
+
+#: users/templates/users/admin_change_password.html:94
+#: users/templates/users/change_password.html:104
+msgid "Mélangez majuscules, minuscules, chiffres et caractères spéciaux"
+msgstr "Mélangez majuscules, minuscules, chiffres et caractères spéciaux"
+
+#: users/templates/users/admin_change_password.html:95
+#: users/templates/users/change_password.html:105
+msgid "Évitez d'utiliser des informations personnelles"
+msgstr "Évitez d'utiliser des informations personnelles"
+
+#: users/templates/users/admin_change_password.html:96
+msgid "Informez l'utilisateur du changement de mot de passe"
+msgstr "Informez l'utilisateur du changement de mot de passe"
+
+#: users/templates/users/change_password.html:86
+msgid "Retour au profil"
+msgstr "Retour au profil"
+
+#: users/templates/users/change_password.html:106
+msgid "Ne réutilisez pas le même mot de passe sur plusieurs sites"
+msgstr "Ne réutilisez pas le même mot de passe sur plusieurs sites"
+
+#: users/templates/users/delete_user.html:4
+msgid "Supprimer l'utilisateur"
+msgstr "Supprimer l'utilisateur"
+
+#: users/templates/users/delete_user.html:17
+msgid ""
+"Vous êtes sur le point de supprimer définitivement l'utilisateur suivant :"
+msgstr ""
+
+#: users/templates/users/delete_user.html:41
+msgid "Tous les articles de cet utilisateur seront également supprimés"
+msgstr "Tous les articles de cet utilisateur seront également supprimés"
+
+#: users/templates/users/delete_user.html:42
+msgid "Tous les commentaires de cet utilisateur seront supprimés"
+msgstr "Tous les commentaires de cet utilisateur seront supprimés"
+
+#: users/templates/users/delete_user.html:43
+msgid "Toutes les statistiques liées seront perdues"
+msgstr "Toutes les statistiques liées seront perdues"
+
+#: users/templates/users/edit_user.html:4
+#: users/templates/users/edit_user.html:12
+msgid "Modifier l'utilisateur"
+msgstr "Modifier l'utilisateur"
+
+#: users/templates/users/edit_user.html:71
+msgid "Accès complet au système"
+msgstr "Accès complet au système"
+
+#: users/templates/users/edit_user.html:72
+msgid "Peut créer et gérer ses articles"
+msgstr "Peut créer et gérer ses articles"
+
+#: users/templates/users/edit_user.html:73
+msgid "Lecture seule"
+msgstr "Lecture seule"
+
+#: users/templates/users/edit_user.html:83
+msgid "Compte actif"
+msgstr "Compte actif"
+
+#: users/templates/users/edit_user.html:89
+msgid "Décocher pour désactiver le compte utilisateur"
+msgstr "Décocher pour désactiver le compte utilisateur"
+
+#: users/templates/users/edit_user.html:108
+msgid "Informations"
+msgstr "Informations"
+
+#: users/templates/users/edit_user.html:109
+msgid "Date d'inscription"
+msgstr "Date d'inscription"
+
+#: users/templates/users/edit_user.html:110
+msgid "Dernière connexion"
+msgstr "Dernière connexion"
+
+#: users/templates/users/edit_user.html:114
+msgid "Jamais connecté"
+msgstr "Jamais connecté"
+
+#: users/templates/users/edit_user.html:117
+msgid "Statut actuel"
+msgstr "Statut actuel"
+
+#: users/templates/users/edit_user.html:119
+#: users/templates/users/manage_users.html:156
+msgid "Actif"
+msgstr "Actif"
+
+#: users/templates/users/edit_user.html:121
+#: users/templates/users/manage_users.html:158
+msgid "Inactif"
+msgstr "Inactif"
+
+#: users/templates/users/manage_users.html:17
+msgid "utilisateurs"
+msgstr "utilisateurs"
+
+#: users/templates/users/manage_users.html:29
+msgid "Administrateurs"
+msgstr "Administrateurs"
+
+#: users/templates/users/manage_users.html:55
+msgid "Visiteurs"
+msgstr "Visiteurs"
+
+#: users/templates/users/manage_users.html:68
+msgid "Actifs"
+msgstr "Actifs"
+
+#: users/templates/users/manage_users.html:82
+msgid "Rechercher"
+msgstr "Rechercher"
+
+#: users/templates/users/manage_users.html:84
+msgid "Nom, email, prénom..."
+msgstr "Nom, email, prénom..."
+
+#: users/templates/users/manage_users.html:87
+msgid "Filtrer par rôle"
+msgstr "Filtrer par rôle"
+
+#: users/templates/users/manage_users.html:89
+msgid "Tous les rôles"
+msgstr "Tous les rôles"
+
+#: users/templates/users/manage_users.html:99
+msgid "Filtrer"
+msgstr "Filtrer"
+
+#: users/templates/users/manage_users.html:109
+msgid "Liste des utilisateurs"
+msgstr "Liste des utilisateurs"
+
+#: users/templates/users/manage_users.html:116
+msgid "Utilisateur"
+msgstr "Utilisateur"
+
+#: users/templates/users/manage_users.html:119
+msgid "Statut"
+msgstr "Statut"
+
+#: users/templates/users/manage_users.html:175
+msgid "Désactiver"
+msgstr "Désactiver"
+
+#: users/templates/users/manage_users.html:175
+msgid "Activer"
+msgstr "Activer"
+
+#: users/templates/users/manage_users.html:184
+msgid "Accès restreint"
+msgstr "Accès restreint"
+
+#: users/templates/users/manage_users.html:193
+msgid "Aucun utilisateur trouvé."
+msgstr "Aucun utilisateur trouvé."
+
+#: users/templates/users/manage_users.html:205
+msgid "Pagination des utilisateurs"
+msgstr "Pagination des utilisateurs"
+
+#: users/templates/users/register.html:89
+msgid "Lecture des articles"
+msgstr "Lecture des articles"
+
+#: users/templates/users/register.html:90
+msgid "Ajout de commentaires"
+msgstr "Ajout de commentaires"
+
+#: users/templates/users/register.html:91
+msgid "Mise en favori"
+msgstr "Mise en favori"
+
+#: users/templates/users/register.html:101
+msgid "Toutes les fonctions Visiteur"
+msgstr "Toutes les fonctions Visiteur"
+
+#: users/templates/users/register.html:102
+msgid "Création d'articles"
+msgstr "Création d'articles"
+
+#: users/templates/users/register.html:103
+msgid "Gestion de ses articles"
+msgstr "Gestion de ses articles"
+
+#: users/templates/users/register.html:114
+#: users/templates/users/register.html:124
+msgid "Optionnel"
+msgstr "Optionnel"
+
+#: users/templates/users/register.html:134
+msgid "Créer mon compte"
+msgstr "Créer mon compte"
+
+#: users/templates/users/register.html:140
+msgid "Déjà un compte ?"
+msgstr "Déjà un compte ?"
+
+#: users/templates/users/register.html:142
+msgid "Se connecter"
+msgstr "Se connecter"
+
+#: users/views.py:29
+msgid "Votre compte a été créé avec succès !"
+msgstr "Votre compte a été créé avec succès !"
+
+#: users/views.py:33
+msgid "Une erreur est survenue lors de la création du compte."
+msgstr "Une erreur est survenue lors de la création du compte."
+
+#: users/views.py:60
+msgid "Vous êtes maintenant connecté !"
+msgstr "Vous êtes maintenant connecté !"
+
+#: users/views.py:66
+msgid "Votre compte est désactivé."
+msgstr "Votre compte est désactivé."
+
+#: users/views.py:73
+msgid "Nom d'utilisateur ou mot de passe incorrect."
+msgstr "Nom d'utilisateur ou mot de passe incorrect."
+
+#: users/views.py:93
+msgid "Vous avez été déconnecté avec succès !"
+msgstr "Vous avez été déconnecté avec succès !"
+
+#: users/views.py:110
+msgid "Votre profil a été mis à jour avec succès !"
+msgstr "Votre profil a été mis à jour avec succès !"
+
+#: users/views.py:119 users/views.py:340 users/views.py:405
+msgid "Veuillez corriger les erreurs ci-dessous."
+msgstr "Veuillez corriger les erreurs ci-dessous."
+
+#: users/views.py:233
+msgid "Utilisateur modifié avec succès !"
+msgstr "Utilisateur modifié avec succès !"
+
+#: users/views.py:271
+msgid "activé"
+msgstr "activé"
+
+#: users/views.py:271
+msgid "désactivé"
+msgstr "désactivé"
+
+#: users/views.py:272
+#, python-format
+msgid "Utilisateur %(username)s %(status)s avec succès !"
+msgstr "Utilisateur %(username)s %(status)s avec succès !"
+
+#: users/views.py:289
+msgid "Vous ne pouvez pas supprimer votre propre compte."
+msgstr "Vous ne pouvez pas supprimer votre propre compte."
+
+#: users/views.py:305
+#, python-format
+msgid "Utilisateur %(username)s supprimé avec succès !"
+msgstr "Utilisateur %(username)s supprimé avec succès !"
+
+#: users/views.py:332
+msgid "Votre mot de passe a été modifié avec succès !"
+msgstr "Votre mot de passe a été modifié avec succès !"
+
+#: users/views.py:336
+msgid "Une erreur est survenue lors du changement de mot de passe."
+msgstr "Une erreur est survenue lors du changement de mot de passe."
+
+#: users/views.py:360
+#, python-format
+msgid "Utilisateur %(username)s créé avec succès !"
+msgstr "Utilisateur %(username)s créé avec succès !"
+
+#: users/views.py:395
+#, python-format
+msgid "Mot de passe de %(username)s modifié avec succès !"
+msgstr "Mot de passe de %(username)s modifié avec succès !"

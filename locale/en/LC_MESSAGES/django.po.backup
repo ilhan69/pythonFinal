@@ -1,0 +1,872 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Blog Django 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-03 13:14+0200\n"
+"PO-Revision-Date: 2025-06-04 10:00+0200\n"
+"Last-Translator: Django Developer\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Models
+#: blog/models.py:9
+msgid "biography"
+msgstr "biography"
+
+#: blog/models.py:10
+msgid "avatar"
+msgstr "avatar"
+
+#: blog/models.py:13
+msgid "user"
+msgstr "user"
+
+#: blog/models.py:14
+msgid "users"
+msgstr "users"
+
+#: blog/models.py:17 blog/models.py:51
+msgid "nom"
+msgstr "name"
+
+#: blog/models.py:18
+msgid "description"
+msgstr "description"
+
+#: blog/models.py:19 blog/models.py:52 blog/models.py:94
+msgid "slug"
+msgstr "slug"
+
+#: blog/models.py:20 blog/models.py:53
+msgid "couleur"
+msgstr "color"
+
+#: blog/models.py:20
+msgid "Code couleur hexadécimal (ex: #007bff)"
+msgstr "Hexadecimal color code (e.g., #007bff)"
+
+#: blog/models.py:21
+msgid "icône"
+msgstr "icon"
+
+#: blog/models.py:21
+msgid "Nom de l'icône (ex: fas fa-tag)"
+msgstr "Icon name (e.g., fas fa-tag)"
+
+#: blog/models.py:42 blog/models.py:100
+msgid "catégorie"
+msgstr "category"
+
+#: blog/models.py:43
+msgid "catégories"
+msgstr "categories"
+
+#: blog/models.py:53
+msgid "Code couleur hexadécimal (ex: #6c757d)"
+msgstr "Hexadecimal color code (e.g., #6c757d)"
+
+#: blog/models.py:82
+msgid "tag"
+msgstr "tag"
+
+#: blog/models.py:83 blog/models.py:101
+msgid "tags"
+msgstr "tags"
+
+#: blog/models.py:88
+msgid "Brouillon"
+msgstr "Draft"
+
+#: blog/models.py:89
+msgid "Publié"
+msgstr "Published"
+
+#: blog/models.py:90
+msgid "Archivé"
+msgstr "Archived"
+
+#: blog/models.py:93
+msgid "titre"
+msgstr "title"
+
+#: blog/models.py:95
+msgid "contenu"
+msgstr "content"
+
+#: blog/models.py:96
+msgid "extrait"
+msgstr "excerpt"
+
+#: blog/models.py:96
+msgid "Résumé de l'article (max 300 caractères)"
+msgstr "Article summary (max 300 characters)"
+
+#: blog/models.py:99
+msgid "auteur"
+msgstr "author"
+
+#: blog/models.py:104
+msgid "statut"
+msgstr "status"
+
+#: blog/models.py:107
+msgid "image de couverture"
+msgstr "cover image"
+
+#: blog/models.py:110
+msgid "créé le"
+msgstr "created on"
+
+#: blog/models.py:111
+msgid "modifié le"
+msgstr "modified on"
+
+#: blog/models.py:114
+msgid "nombre de vues"
+msgstr "view count"
+
+#: blog/models.py:115
+msgid "nombre de likes"
+msgstr "like count"
+
+#: blog/models.py:116
+msgid "nombre de partages"
+msgstr "share count"
+
+#: blog/models.py:119
+msgid "titre SEO"
+msgstr "SEO title"
+
+#: blog/models.py:119
+msgid "Titre pour le référencement (max 60 caractères)"
+msgstr "Title for SEO (max 60 characters)"
+
+#: blog/models.py:120
+msgid "description SEO"
+msgstr "SEO description"
+
+#: blog/models.py:120
+msgid "Description pour le référencement (max 160 caractères)"
+msgstr "Description for SEO (max 160 characters)"
+
+#: blog/models.py:187
+msgid "article"
+msgstr "article"
+
+#: blog/models.py:188
+msgid "articles"
+msgstr "articles"
+
+# Templates
+#: blog/templates/blog/article_detail.html:22
+msgid "Retour à l'accueil"
+msgstr "Back to home"
+
+#: blog/templates/blog/article_detail.html:50
+msgid "Publié le"
+msgstr "Published on"
+
+#: blog/templates/blog/article_detail.html:56
+msgid "Modifié le"
+msgstr "Modified on"
+
+#: blog/templates/blog/article_detail.html:63 blog/templates/blog/home.html:50
+msgid "par"
+msgstr "by"
+
+#: blog/templates/blog/article_detail.html:69
+msgid "min de lecture"
+msgstr "min read"
+
+#: blog/templates/blog/article_detail.html:105 blog/templates/blog/home.html:69
+msgid "Modifier"
+msgstr "Edit"
+
+#: blog/templates/blog/article_detail.html:108 blog/templates/blog/home.html:72
+msgid "Supprimer"
+msgstr "Delete"
+
+#: blog/templates/blog/article_detail.html:118
+msgid "Résumé"
+msgstr "Summary"
+
+#: blog/templates/blog/article_detail.html:150
+msgid "Partager sur"
+msgstr "Share on"
+
+#: blog/templates/blog/article_detail.html:188
+msgid "Commentaires"
+msgstr "Comments"
+
+#: blog/templates/blog/article_detail.html:219
+msgid "Aucun commentaire pour cet article."
+msgstr "No comments for this article."
+
+#: blog/templates/blog/article_detail.html:220
+msgid "Soyez le premier à laisser votre avis !"
+msgstr "Be the first to leave your opinion!"
+
+#: blog/templates/blog/article_detail.html:232
+msgid "Ajouter un commentaire"
+msgstr "Add a comment"
+
+#: blog/templates/blog/article_detail.html:240
+msgid "Votre commentaire"
+msgstr "Your comment"
+
+#: blog/templates/blog/article_detail.html:246
+msgid "Publier le commentaire"
+msgstr "Post comment"
+
+#: blog/templates/blog/article_detail.html:254 blog/templates/blog/home.html:87
+msgid "Connectez-vous"
+msgstr "Log in"
+
+#: blog/templates/blog/article_detail.html:254
+msgid "pour ajouter un commentaire."
+msgstr "to add a comment."
+
+#: blog/templates/blog/base.html:7 blog/templates/blog/base.html:14
+#: blog/templates/blog/home.html:4
+msgid "Blog"
+msgstr "Blog"
+
+#: blog/templates/blog/base.html:21 blog/templates/blog/home.html:4
+msgid "Accueil"
+msgstr "Home"
+
+#: blog/templates/blog/base.html:25
+msgid "Articles"
+msgstr "Articles"
+
+#: blog/templates/blog/base.html:31
+msgid "Créer"
+msgstr "Create"
+
+#: blog/templates/blog/base.html:35
+msgid "Nouvel article"
+msgstr "New article"
+
+#: blog/templates/blog/base.html:38
+msgid "Nouvelle catégorie"
+msgstr "New category"
+
+#: blog/templates/blog/base.html:41
+msgid "Nouveau tag"
+msgstr "New tag"
+
+#: blog/templates/blog/base.html:78
+msgid "Déconnexion"
+msgstr "Logout"
+
+#: blog/templates/blog/base.html:84
+msgid "Connexion"
+msgstr "Login"
+
+#: blog/templates/blog/base.html:89
+msgid "Inscription"
+msgstr "Sign up"
+
+#: blog/templates/blog/home.html:8
+msgid "Mon Blog Django"
+msgstr "My Django Blog"
+
+#: blog/templates/blog/home.html:14
+msgid "Ajouter un article"
+msgstr "Add an article"
+
+#: blog/templates/blog/home.html:17
+msgid "Ajouter une catégorie"
+msgstr "Add a category"
+
+#: blog/templates/blog/home.html:20
+msgid "Ajouter un tag"
+msgstr "Add a tag"
+
+#: blog/templates/blog/home.html:26
+msgid "Tous les Articles"
+msgstr "All Articles"
+
+#: blog/templates/blog/home.html:65
+msgid "Lire"
+msgstr "Read"
+
+#: blog/templates/blog/home.html:83
+msgid "Aucun article pour le moment"
+msgstr "No articles yet"
+
+#: blog/templates/blog/home.html:85
+msgid "Commencez par"
+msgstr "Start by"
+
+#: blog/templates/blog/home.html:85
+msgid "ajouter votre premier article"
+msgstr "adding your first article"
+
+#: blog/templates/blog/home.html:87
+msgid "pour commencer à écrire des articles"
+msgstr "to start writing articles"
+
+# Form templates - New translations
+msgid "Ajouter un Article"
+msgstr "Add an Article"
+
+msgid "Ajouter un Nouvel Article"
+msgstr "Add a New Article"
+
+msgid "Titre de l'article"
+msgstr "Article title"
+
+msgid "Slug (URL)"
+msgstr "Slug (URL)"
+
+msgid "Laissez vide pour générer automatiquement à partir du titre"
+msgstr "Leave empty to generate automatically from title"
+
+msgid "Laissez vide pour générer automatiquement à partir du nom"
+msgstr "Leave empty to generate automatically from name"
+
+msgid "Extrait/Résumé"
+msgstr "Excerpt/Summary"
+
+msgid "Résumé de l'article (max 300 caractères). Généré automatiquement si vide."
+msgstr "Article summary (max 300 characters). Generated automatically if empty."
+
+msgid "Catégorie"
+msgstr "Category"
+
+msgid "Ajouter une nouvelle catégorie"
+msgstr "Add a new category"
+
+msgid "Statut de publication"
+msgstr "Publication status"
+
+msgid "Choisissez le statut de votre article"
+msgstr "Choose your article status"
+
+msgid "Image de couverture"
+msgstr "Cover image"
+
+msgid "Formats acceptés : JPG, PNG, GIF (optionnel)"
+msgstr "Accepted formats: JPG, PNG, GIF (optional)"
+
+msgid "Tags"
+msgstr "Tags"
+
+msgid "Aucun tag disponible."
+msgstr "No tags available."
+
+msgid "Créer le premier tag"
+msgstr "Create the first tag"
+
+msgid "Ajouter un nouveau tag"
+msgstr "Add a new tag"
+
+msgid "Contenu de l'article"
+msgstr "Article content"
+
+msgid "Options SEO (Référencement)"
+msgstr "SEO Options (Search Engine Optimization)"
+
+msgid "Titre SEO"
+msgstr "SEO Title"
+
+msgid "Titre pour les moteurs de recherche (max 60 caractères). Généré automatiquement si vide."
+msgstr "Title for search engines (max 60 characters). Generated automatically if empty."
+
+msgid "Description SEO"
+msgstr "SEO Description"
+
+msgid "Description pour les moteurs de recherche (max 160 caractères). Générée automatiquement si vide."
+msgstr "Description for search engines (max 160 characters). Generated automatically if empty."
+
+msgid "Annuler"
+msgstr "Cancel"
+
+msgid "Enregistrer"
+msgstr "Save"
+
+# Category templates
+msgid "Ajouter une Catégorie"
+msgstr "Add a Category"
+
+msgid "Ajouter une Nouvelle Catégorie"
+msgstr "Add a New Category"
+
+msgid "Nom de la catégorie"
+msgstr "Category name"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Couleur"
+msgstr "Color"
+
+msgid "Icône"
+msgstr "Icon"
+
+msgid "Exemples : fas fa-tag, bi bi-bookmark, fas fa-folder"
+msgstr "Examples: fas fa-tag, bi bi-bookmark, fas fa-folder"
+
+msgid "Modifier la catégorie"
+msgstr "Edit category"
+
+msgid "Enregistrer les modifications"
+msgstr "Save changes"
+
+# Tag templates
+msgid "Ajouter un Tag"
+msgstr "Add a Tag"
+
+msgid "Ajouter un Nouveau Tag"
+msgstr "Add a New Tag"
+
+msgid "Nom du tag"
+msgstr "Tag name"
+
+# Delete templates
+msgid "Supprimer l'article"
+msgstr "Delete article"
+
+msgid "Cette action est irréversible !"
+msgstr "This action is irreversible!"
+
+msgid "Confirmer la suppression"
+msgstr "Confirm deletion"
+
+# Edit templates
+msgid "Modifier l'article"
+msgstr "Edit article"
+
+msgid "Image actuelle"
+msgstr "Current image"
+
+# Registration templates
+msgid "S'inscrire"
+msgstr "Sign up"
+
+msgid "Déjà un compte ?"
+msgstr "Already have an account?"
+
+msgid "Se connecter"
+msgstr "Log in"
+
+# Views messages
+#: blog/views.py:75 blog/views.py:306
+msgid "L'article a été créé avec succès !"
+msgstr "Article created successfully!"
+
+#: blog/views.py:78
+#, python-format
+msgid "Erreur lors de l'enregistrement : %(error)s"
+msgstr "Error while saving: %(error)s"
+
+#: blog/views.py:84
+#, python-format
+msgid "Erreur dans le champ '%(field)s': %(error)s"
+msgstr "Error in field '%(field)s': %(error)s"
+
+#: blog/views.py:97
+msgid "L'article a été modifié avec succès !"
+msgstr "Article updated successfully!"
+
+#: blog/views.py:108
+msgid "L'article a été supprimé avec succès !"
+msgstr "Article deleted successfully!"
+
+#: blog/views.py:118 blog/views.py:320
+msgid "La catégorie a été créée avec succès !"
+msgstr "Category created successfully!"
+
+#: blog/views.py:131
+msgid "La catégorie a été modifiée avec succès !"
+msgstr "Category updated successfully!"
+
+#: blog/views.py:142
+msgid "La catégorie a été supprimée avec succès !"
+msgstr "Category deleted successfully!"
+
+#: blog/views.py:152
+msgid "Le tag a été créé avec succès !"
+msgstr "Tag created successfully!"
+
+#: blog/views.py:165
+msgid "Le tag a été modifié avec succès !"
+msgstr "Tag updated successfully!"
+
+#: blog/views.py:176
+msgid "Le tag a été supprimé avec succès !"
+msgstr "Tag deleted successfully!"
+
+#: blog/views.py:193 blog/views.py:284
+msgid "Votre commentaire a été ajouté avec succès !"
+msgstr "Your comment has been added successfully!"
+
+#: blog/views.py:209
+msgid "Votre compte a été créé avec succès !"
+msgstr "Your account has been created successfully!"
+
+#: blog/views.py:212 blog/views.py:231 blog/views.py:287 blog/views.py:309
+#: blog/views.py:323
+msgid "Veuillez corriger les erreurs dans le formulaire."
+msgstr "Please correct the errors in the form."
+
+#: blog/views.py:226
+msgid "Vous êtes maintenant connecté !"
+msgstr "You are now logged in!"
+
+#: blog/views.py:229
+msgid "Nom d'utilisateur ou mot de passe incorrect."
+msgstr "Incorrect username or password."
+
+#: blog/views.py:243
+msgid "Votre profil a été mis à jour avec succès !"
+msgstr "Your profile has been updated successfully!"
+
+#: blog/views.py:246
+msgid "Veuillez corriger les erreurs ci-dessous."
+msgstr "Please correct the errors below."
+
+#: blog/views.py:349
+msgid "Vous avez été déconnecté avec succès !"
+msgstr "You have been logged out successfully!"
+
+#: blog/views.py:369
+msgid "Article liké avec succès!"
+msgstr "Article liked successfully!"
+
+#: blog/views.py:376
+msgid "Like retiré avec succès!"
+msgstr "Like removed successfully!"
+
+#: blog/views.py:408
+msgid "Article partagé avec succès!"
+msgstr "Article shared successfully!"
+
+#: blog/views.py:560
+msgid "Plus récent"
+msgstr "Newest"
+
+#: blog/views.py:561
+msgid "Plus ancien"
+msgstr "Oldest"
+
+#: blog/views.py:562
+msgid "Plus populaire"
+msgstr "Most popular"
+
+#: blog/views.py:563
+msgid "Alphabétique"
+msgstr "Alphabetical"
+
+# Profile page translations
+msgid "Fermer"
+msgstr "Close"
+
+msgid "Avatar"
+msgstr "Avatar"
+
+msgid "Statistiques"
+msgstr "Statistics"
+
+msgid "Vues"
+msgstr "Views"
+
+msgid "Likes"
+msgstr "Likes"
+
+msgid "Publiés"
+msgstr "Published"
+
+msgid "Brouillons"
+msgstr "Drafts"
+
+msgid "Modifier mon profil"
+msgstr "Edit my profile"
+
+msgid "Nom d'utilisateur"
+msgstr "Username"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Prénom"
+msgstr "First name"
+
+msgid "Nom"
+msgstr "Last name"
+
+msgid "Biographie"
+msgstr "Biography"
+
+#, python-format
+msgid "Avatar actuel: %(avatar_name)s"
+msgstr "Current avatar: %(avatar_name)s"
+
+msgid "Mettre à jour le profil"
+msgstr "Update profile"
+
+msgid "Mes articles"
+msgstr "My articles"
+
+#, python-format
+msgid "Créé le %(created_date)s"
+msgstr "Created on %(created_date)s"
+
+#, python-format
+msgid "Modifié le %(updated_date)s"
+msgstr "Modified on %(updated_date)s"
+
+#, python-format
+msgid "%(views)s vue"
+msgid_plural "%(views)s vues"
+msgstr[0] "%(views)s view"
+msgstr[1] "%(views)s views"
+
+#, python-format
+msgid "%(likes)s like"
+msgid_plural "%(likes)s likes"
+msgstr[0] "%(likes)s like"
+msgstr[1] "%(likes)s likes"
+
+#, python-format
+msgid "Catégorie: %(category_name)s"
+msgstr "Category: %(category_name)s"
+
+msgid "Voir"
+msgstr "View"
+
+msgid "Pagination des articles"
+msgstr "Article pagination"
+
+msgid "Précédent"
+msgstr "Previous"
+
+msgid "Suivant"
+msgstr "Next"
+
+msgid "Aucun article"
+msgstr "No articles"
+
+msgid "Vous n'avez pas encore publié d'articles."
+msgstr "You haven't published any articles yet."
+
+msgid "Créer mon premier article"
+msgstr "Create my first article"
+
+#, python-format
+msgid "Êtes-vous sûr de vouloir supprimer l'article \"%(title)s\" ?"
+msgstr "Are you sure you want to delete the article \"%(title)s\"?"
+
+# Nouvelles traductions pour les chaînes JavaScript manquantes
+msgid "Lien copié dans le presse-papiers !"
+msgstr "Link copied to clipboard!"
+
+msgid "URL copiée dans le presse-papiers !"
+msgstr "URL copied to clipboard!"
+
+msgid "Veuillez vous connecter pour aimer cet article."
+msgstr "Please log in to like this article."
+
+msgid "Erreur lors de la sauvegarde du commentaire."
+msgstr "Error saving comment."
+
+msgid "Erreur lors de la suppression du commentaire."
+msgstr "Error deleting comment."
+
+msgid "Fonctionnalité de suivi à implémenter"
+msgstr "Follow functionality to be implemented"
+
+msgid "Erreur lors de la copie dans le presse-papiers"
+msgstr "Error copying to clipboard"
+
+# Traductions pour les statistiques
+msgid "Total Tags"
+msgstr "Total Tags"
+
+msgid "Tags Utilisés"
+msgstr "Used Tags"
+
+msgid "Tags Inutilisés"
+msgstr "Unused Tags"
+
+msgid "Articles Publiés"
+msgstr "Published Articles"
+
+msgid "Nuage de Mots Interactif"
+msgstr "Interactive Word Cloud"
+
+msgid "Cliquez sur un tag pour voir ses articles"
+msgstr "Click on a tag to see its articles"
+
+msgid "Analyse Détaillée par Tag"
+msgstr "Detailed Tag Analysis"
+
+msgid "Popularité"
+msgstr "Popularity"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Voir les articles"
+msgstr "View articles"
+
+msgid "Aucune statistique disponible"
+msgstr "No statistics available"
+
+msgid "Aucun tag populaire"
+msgstr "No popular tags"
+
+msgid "Commencez par créer et associer des tags à vos articles pour voir le nuage de mots."
+msgstr "Start by creating and associating tags to your articles to see the word cloud."
+
+msgid "Combinaisons Populaires"
+msgstr "Popular Combinations"
+
+msgid "Tags Peu Utilisés"
+msgstr "Underused Tags"
+
+msgid "Ces tags pourraient être fusionnés ou mieux promus."
+msgstr "These tags could be merged or better promoted."
+
+msgid "Ces tags ne sont associés à aucun article publié. Considérez les supprimer."
+msgstr "These tags are not associated with any published article. Consider removing them."
+
+msgid "Pas encore de combinaisons détectées"
+msgstr "No combinations detected yet"
+
+msgid "Créez plus d'articles avec plusieurs tags"
+msgstr "Create more articles with multiple tags"
+
+msgid "Vous n'avez pas les permissions nécessaires pour accéder aux statistiques d'administration."
+msgstr "You don't have the necessary permissions to access administration statistics."
+
+msgid "Retour à l'accueil"
+msgstr "Back to home"
+
+msgid "Tableau de Bord - Tags"
+msgstr "Dashboard - Tags"
+
+msgid "Analyse complète de l'utilisation des tags avec nuage de mots interactif"
+msgstr "Complete analysis of tag usage with interactive word cloud"
+
+msgid "Aucun tag n'est actuellement utilisé dans des articles publiés."
+msgstr "No tags are currently used in published articles."
+
+# Traductions pour la gestion des utilisateurs
+msgid "Changer le mot de passe de"
+msgstr "Change password for"
+
+msgid "Changer le mot de passe"
+msgstr "Change password"
+
+msgid "Conseils de sécurité"
+msgstr "Security tips"
+
+msgid "Utilisez un mot de passe d'au moins 8 caractères"
+msgstr "Use a password of at least 8 characters"
+
+msgid "Mélangez majuscules, minuscules, chiffres et caractères spéciaux"
+msgstr "Mix uppercase, lowercase, numbers and special characters"
+
+msgid "Évitez d'utiliser des informations personnelles"
+msgstr "Avoid using personal information"
+
+msgid "Informez l'utilisateur du changement de mot de passe"
+msgstr "Inform the user of the password change"
+
+msgid "Ne réutilisez pas le même mot de passe sur plusieurs sites"
+msgstr "Don't reuse the same password on multiple sites"
+
+# Traductions pour les types d'utilisateurs
+msgid "Visiteur"
+msgstr "Visitor"
+
+msgid "Auteur"
+msgstr "Author"
+
+msgid "Admin"
+msgstr "Admin"
+
+msgid "Lecture des articles"
+msgstr "Reading articles"
+
+msgid "Ajout de commentaires"
+msgstr "Adding comments"
+
+msgid "Mise en favori"
+msgstr "Bookmarking"
+
+msgid "Toutes les fonctions Visiteur"
+msgstr "All Visitor functions"
+
+msgid "Création d'articles"
+msgstr "Creating articles"
+
+msgid "Gestion de ses articles"
+msgstr "Managing their articles"
+
+# Traductions pour la recherche et filtres
+msgid "Rechercher"
+msgstr "Search"
+
+msgid "Recherche full-text dans le titre, contenu et description"
+msgstr "Full-text search in title, content and description"
+
+msgid "Trier par"
+msgstr "Sort by"
+
+msgid "Toutes les catégories"
+msgstr "All categories"
+
+msgid "Tous les tags"
+msgstr "All tags"
+
+msgid "Tous les auteurs"
+msgstr "All authors"
+
+msgid "Appliquer les filtres"
+msgstr "Apply filters"
+
+msgid "Réinitialiser"
+msgstr "Reset"
+
+# Autres traductions manquantes
+msgid "Visiteurs"
+msgstr "Visitors"
+
+msgid "Actifs"
+msgstr "Active"
+
+msgid "Partages"
+msgstr "Shares"
+
+msgid "Contenu liké avec succès!"
+msgstr "Content liked successfully!"
+
+msgid "Like retiré avec succès!"
+msgstr "Like removed successfully!"
+
+msgid "Objet non trouvé."
+msgstr "Object not found."
+
+msgid "Retour"
+msgstr "Back"
+
+msgid "L'article sera définitivement supprimé de la base de données"
+msgstr "The article will be permanently deleted from the database"
+
+msgid "Tous les commentaires associés seront également supprimés"
+msgstr "All associated comments will also be deleted"
+
+msgid "Les statistiques de vues et d'interactions seront perdues"
+msgstr "View and interaction statistics will be lost"
