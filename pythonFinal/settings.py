@@ -290,3 +290,35 @@ LOGGING = {
 LOGS_DIR = BASE_DIR / 'logs'
 if not LOGS_DIR.exists():
     LOGS_DIR.mkdir(exist_ok=True)
+
+# Configuration Email pour récupération de mot de passe
+# Pour le développement - affichage dans la console (plus simple)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'noreply@votresite.com'
+
+# Configuration Mailtrap pour les tests (décommentez pour utiliser Mailtrap)
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+# EMAIL_PORT = 2525
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
+# EMAIL_HOST_USER = '9e30ac53017642'
+# EMAIL_HOST_PASSWORD = '7019bd64326d50'
+# DEFAULT_FROM_EMAIL = 'noreply@votresite.com'
+
+# Configuration SSL/TLS pour contourner les problèmes de certificat en développement
+import ssl
+EMAIL_SSL_CERTFILE = None
+EMAIL_SSL_KEYFILE = None
+EMAIL_TIMEOUT = 60
+
+# Créer un contexte SSL non vérifié pour le développement (uniquement avec Mailtrap)
+if DEBUG and 'smtp' in globals().get('EMAIL_BACKEND', ''):  # Seulement en mode développement avec SMTP
+    import ssl
+    ssl_context = ssl.create_default_context()
+    ssl_context.check_hostname = False
+    ssl_context.verify_mode = ssl.CERT_NONE
+    
+    # Patch pour Django
+    import django.core.mail.backends.smtp
+    django.core.mail.backends.smtp.EmailBackend.ssl_context = ssl_context

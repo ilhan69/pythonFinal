@@ -27,7 +27,14 @@
                             <button type="submit" class="btn btn-primary">Se connecter</button>
                         </div>
                     </form>
+                    
                     <div class="text-center mt-3">
+                        <p class="mb-2">
+                            <a href="{% url 'users:password_reset' %}" class="text-decoration-none">
+                                <i class="fas fa-key me-1"></i>
+                                {% trans "Mot de passe oublié ?" %}
+                            </a>
+                        </p>
                         <p class="text-center">{% trans "Pas encore de compte ?" %} <a href="{% url 'users:register' %}">{% trans "Inscrivez-vous ici" %}</a></p>
                     </div>
                 </div>

@@ -1515,3 +1515,972 @@ INFO 2025-06-04 15:30:23,855 basehttp 32019 6197325824 "GET /es/articles/ HTTP/1
 INFO 2025-06-04 15:30:26,800 logging_utils 32019 6197325824 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
 INFO 2025-06-04 15:30:26,809 logging_utils 32019 6197325824 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.03s
 INFO 2025-06-04 15:30:26,810 basehttp 32019 6197325824 "GET /es/auteurs-actifs/ HTTP/1.1" 200 30377
+INFO 2025-06-04 16:57:54,380 autoreload 39310 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 16:57:55,120 basehttp 39310 6200815616 "GET / HTTP/1.1" 302 0
+INFO 2025-06-04 16:57:55,134 logging_utils 39310 6217641984 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 16:57:55,147 logging_utils 39310 6217641984 [ERREUR VUE] blog.views.home - Erreur: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+ - Temps: 0.03s
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 54, in home
+    return render(request, 'blog/home.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 398, in __bool__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+ERROR 2025-06-04 16:57:55,187 basehttp 39310 6217641984 "GET /en/ HTTP/1.1" 500 206298
+INFO 2025-06-04 16:57:55,765 logging_utils 39310 6217641984 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 16:57:55,768 logging_utils 39310 6217641984 [ERREUR VUE] blog.views.home - Erreur: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+ - Temps: 0.02s
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 54, in home
+    return render(request, 'blog/home.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 398, in __bool__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+ERROR 2025-06-04 16:57:55,804 basehttp 39310 6217641984 "GET /en/ HTTP/1.1" 500 206298
+INFO 2025-06-04 16:57:55,933 logging_utils 39310 6217641984 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 16:57:55,935 logging_utils 39310 6217641984 [ERREUR VUE] blog.views.home - Erreur: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+ - Temps: 0.01s
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 54, in home
+    return render(request, 'blog/home.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 398, in __bool__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+ERROR 2025-06-04 16:57:55,970 basehttp 39310 6217641984 "GET /en/ HTTP/1.1" 500 206298
+INFO 2025-06-04 16:57:56,089 logging_utils 39310 6217641984 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 16:57:56,091 logging_utils 39310 6217641984 [ERREUR VUE] blog.views.home - Erreur: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+ - Temps: 0.01s
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 54, in home
+    return render(request, 'blog/home.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 398, in __bool__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+ERROR 2025-06-04 16:57:56,124 basehttp 39310 6217641984 "GET /en/ HTTP/1.1" 500 206297
+INFO 2025-06-04 16:57:56,312 logging_utils 39310 6217641984 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 16:57:56,316 logging_utils 39310 6217641984 [ERREUR VUE] blog.views.home - Erreur: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+ - Temps: 0.02s
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 54, in home
+    return render(request, 'blog/home.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 398, in __bool__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+ERROR 2025-06-04 16:57:56,354 basehttp 39310 6217641984 "GET /en/ HTTP/1.1" 500 206298
+INFO 2025-06-04 16:57:56,468 logging_utils 39310 6217641984 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 16:57:56,471 logging_utils 39310 6217641984 [ERREUR VUE] blog.views.home - Erreur: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+ - Temps: 0.01s
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 54, in home
+    return render(request, 'blog/home.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 398, in __bool__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+ERROR 2025-06-04 16:57:56,508 basehttp 39310 6217641984 "GET /en/ HTTP/1.1" 500 206298
+INFO 2025-06-04 16:57:56,647 logging_utils 39310 6217641984 [ACCÈS VUE] blog.views.home - Utilisateur: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-04 16:57:56,652 logging_utils 39310 6217641984 [ERREUR VUE] blog.views.home - Erreur: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+ - Temps: 0.02s
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 54, in home
+    return render(request, 'blog/home.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 398, in __bool__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column blog_article.title does not exist
+LINE 1: SELECT "blog_article"."id", "blog_article"."title", "blog_ar...
+                                    ^
+
+ERROR 2025-06-04 16:57:56,687 basehttp 39310 6217641984 "GET /en/ HTTP/1.1" 500 206298
+INFO 2025-06-04 16:58:05,644 autoreload 39310 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/users/forms.py changed, reloading.
+INFO 2025-06-04 16:58:05,832 autoreload 39371 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 17:00:45,592 autoreload 39371 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/stats/migrations/0001_initial.py changed, reloading.
+INFO 2025-06-04 17:00:45,772 autoreload 39536 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 17:01:22,594 autoreload 39623 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 17:01:24,173 logging_utils 39623 6130823168 [ACCÈS VUE] blog.views.home - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:01:24,192 logging_utils 39623 6130823168 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 17:01:24,193 basehttp 39623 6130823168 "GET /en/ HTTP/1.1" 200 9372
+INFO 2025-06-04 17:01:24,758 logging_utils 39623 6130823168 [ACCÈS VUE] blog.views.home - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:01:24,772 logging_utils 39623 6130823168 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.01s
+INFO 2025-06-04 17:01:24,773 basehttp 39623 6130823168 "GET /en/ HTTP/1.1" 200 9372
+INFO 2025-06-04 17:01:25,006 logging_utils 39623 6130823168 [ACCÈS VUE] blog.views.home - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:01:25,027 logging_utils 39623 6130823168 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 17:01:25,028 basehttp 39623 6130823168 "GET /en/ HTTP/1.1" 200 9372
+INFO 2025-06-04 17:01:25,140 logging_utils 39623 6130823168 [ACCÈS VUE] blog.views.home - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:01:25,161 logging_utils 39623 6130823168 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 17:01:25,162 basehttp 39623 6130823168 "GET /en/ HTTP/1.1" 200 9372
+INFO 2025-06-04 17:01:27,488 basehttp 39623 6130823168 "POST /i18n/setlang/ HTTP/1.1" 302 0
+INFO 2025-06-04 17:01:27,499 basehttp 39623 6130823168 "GET / HTTP/1.1" 302 0
+INFO 2025-06-04 17:01:27,501 logging_utils 39623 6147649536 [ACCÈS VUE] blog.views.home - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:01:27,527 logging_utils 39623 6147649536 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 17:01:27,528 basehttp 39623 6147649536 "GET /fr/ HTTP/1.1" 200 9402
+INFO 2025-06-04 17:01:29,527 logging_utils 39623 6147649536 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:01:29,536 logging_utils 39623 6147649536 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.01s
+INFO 2025-06-04 17:01:29,537 basehttp 39623 6147649536 "GET /fr/users/login/ HTTP/1.1" 200 10864
+INFO 2025-06-04 17:01:38,264 logging_utils 39623 6147649536 [ACCÈS VUE] users.views.register - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:01:38,290 logging_utils 39623 6147649536 [VUE TERMINÉE] users.views.register - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 17:01:38,291 basehttp 39623 6147649536 "GET /fr/users/register/ HTTP/1.1" 200 16501
+INFO 2025-06-04 17:01:55,265 logging_utils 39623 6147649536 [ACCÈS VUE] users.views.register - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-04 17:01:55,523 logging_utils 39623 6147649536 [INSCRIPTION] SUCCÈS - Utilisateur: ilhan - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Nouveau compte créé avec le rôle visiteur
+INFO 2025-06-04 17:01:55,523 logging_utils 39623 6147649536 [VUE TERMINÉE] users.views.register - Status: 302 - Temps: 0.26s
+INFO 2025-06-04 17:01:55,524 basehttp 39623 6147649536 "POST /fr/users/register/ HTTP/1.1" 302 0
+INFO 2025-06-04 17:01:55,539 logging_utils 39623 6147649536 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan (ID: 1, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:01:55,542 logging_utils 39623 6147649536 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.01s
+INFO 2025-06-04 17:01:55,543 basehttp 39623 6147649536 "GET /fr/ HTTP/1.1" 200 10539
+INFO 2025-06-04 17:01:58,614 logging_utils 39623 6147649536 [ACCÈS VUE] users.views.user_logout - Utilisateur: ilhan (ID: 1, Role: visiteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:01:58,614 logging_utils 39623 6147649536 [DECONNEXION] SUCCÈS - Utilisateur: ilhan - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.
+INFO 2025-06-04 17:01:58,617 logging_utils 39623 6147649536 [VUE TERMINÉE] users.views.user_logout - Status: 302 - Temps: 0.00s
+INFO 2025-06-04 17:01:58,618 basehttp 39623 6147649536 "GET /fr/users/logout/ HTTP/1.1" 302 0
+INFO 2025-06-04 17:01:58,621 logging_utils 39623 6147649536 [ACCÈS VUE] blog.views.home - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:01:58,646 logging_utils 39623 6147649536 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 17:01:58,647 basehttp 39623 6147649536 "GET /fr/ HTTP/1.1" 200 9696
+INFO 2025-06-04 17:01:59,993 logging_utils 39623 6147649536 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:01:59,997 logging_utils 39623 6147649536 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.00s
+INFO 2025-06-04 17:01:59,997 basehttp 39623 6147649536 "GET /fr/users/login/ HTTP/1.1" 200 10864
+ERROR 2025-06-04 17:02:00,997 basehttp 39623 6147649536 "GET /fr/users/password-reset/ HTTP/1.1" 500 191392
+ERROR 2025-06-04 17:05:25,141 basehttp 39623 6147649536 "GET /fr/users/password-reset/ HTTP/1.1" 500 227697
+ERROR 2025-06-04 17:05:25,557 basehttp 39623 6147649536 "GET /fr/users/password-reset/ HTTP/1.1" 500 227697
+ERROR 2025-06-04 17:05:25,707 basehttp 39623 6147649536 "GET /fr/users/password-reset/ HTTP/1.1" 500 227697
+ERROR 2025-06-04 17:05:25,856 basehttp 39623 6147649536 "GET /fr/users/password-reset/ HTTP/1.1" 500 227697
+ERROR 2025-06-04 17:05:25,995 basehttp 39623 6147649536 "GET /fr/users/password-reset/ HTTP/1.1" 500 227697
+ERROR 2025-06-04 17:05:26,289 basehttp 39623 6147649536 "GET /fr/users/password-reset/ HTTP/1.1" 500 227697
+ERROR 2025-06-04 17:05:26,394 basehttp 39623 6147649536 "GET /fr/users/password-reset/ HTTP/1.1" 500 227697
+INFO 2025-06-04 17:06:53,295 basehttp 39623 6147649536 "GET /fr/users/password-reset/ HTTP/1.1" 200 11255
+INFO 2025-06-04 17:07:50,178 logging_utils 39623 6147649536 [DEMANDE_RECUPERATION_MOT_DE_PASSE] SUCCÈS - Utilisateur: admin@admin.fr - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Email de récupération envoyé à admin@admin.fr
+ERROR 2025-06-04 17:07:50,229 basehttp 39623 6147649536 "POST /fr/users/password-reset/ HTTP/1.1" 500 206596
+INFO 2025-06-04 17:08:30,465 logging_utils 39623 6147649536 [DEMANDE_RECUPERATION_MOT_DE_PASSE] SUCCÈS - Utilisateur: admin@admin.fr - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Email de récupération envoyé à admin@admin.fr
+ERROR 2025-06-04 17:08:30,681 forms 39623 6147649536 Failed to send password reset email to 2
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/contrib/auth/forms.py", line 434, in send_mail
+    email_message.send()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/mail/message.py", line 307, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/mail/backends/smtp.py", line 93, in open
+    self.connection.starttls(context=self.ssl_context)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/smtplib.py", line 779, in starttls
+    self.sock = context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1041, in _create
+    self.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1319, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)
+INFO 2025-06-04 17:08:30,687 basehttp 39623 6147649536 "POST /fr/users/password-reset/ HTTP/1.1" 302 0
+INFO 2025-06-04 17:08:30,696 basehttp 39623 6147649536 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-04 17:08:37,634 logging_utils 39623 6147649536 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:08:37,666 logging_utils 39623 6147649536 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 17:08:37,667 basehttp 39623 6147649536 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 15396
+INFO 2025-06-04 17:08:41,317 logging_utils 39623 6147649536 [ACCÈS VUE] blog.views.liste_articles - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:08:41,365 logging_utils 39623 6147649536 [VUE TERMINÉE] blog.views.liste_articles - Status: 200 - Temps: 0.05s
+INFO 2025-06-04 17:08:41,366 basehttp 39623 6147649536 "GET /fr/articles/ HTTP/1.1" 200 19646
+INFO 2025-06-04 17:08:42,065 logging_utils 39623 6147649536 [ACCÈS VUE] blog.views.home - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:08:42,091 logging_utils 39623 6147649536 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-04 17:08:42,092 basehttp 39623 6147649536 "GET /fr/ HTTP/1.1" 200 9402
+INFO 2025-06-04 17:11:15,737 autoreload 39623 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-04 17:11:16,012 autoreload 40231 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 17:11:17,394 logging_utils 40231 6202241024 [ACCÈS VUE] blog.views.home - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:11:17,436 logging_utils 40231 6202241024 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-04 17:11:17,437 basehttp 40231 6202241024 "GET /fr/ HTTP/1.1" 200 9402
+INFO 2025-06-04 17:11:18,245 logging_utils 40231 6202241024 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:11:18,251 logging_utils 40231 6202241024 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.01s
+INFO 2025-06-04 17:11:18,251 basehttp 40231 6202241024 "GET /fr/users/login/ HTTP/1.1" 200 10864
+INFO 2025-06-04 17:11:19,039 basehttp 40231 6202241024 "GET /fr/users/password-reset/ HTTP/1.1" 200 11255
+INFO 2025-06-04 17:11:23,929 logging_utils 40231 6202241024 [DEMANDE_RECUPERATION_MOT_DE_PASSE] SUCCÈS - Utilisateur: admin@admin.fr - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Email de récupération envoyé à admin@admin.fr
+ERROR 2025-06-04 17:11:24,534 forms 40231 6202241024 Failed to send password reset email to 2
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/contrib/auth/forms.py", line 434, in send_mail
+    email_message.send()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/mail/message.py", line 307, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/mail/backends/smtp.py", line 93, in open
+    self.connection.starttls(context=self.ssl_context)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/smtplib.py", line 779, in starttls
+    self.sock = context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1041, in _create
+    self.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1319, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)
+INFO 2025-06-04 17:11:24,542 basehttp 40231 6202241024 "POST /fr/users/password-reset/ HTTP/1.1" 302 0
+INFO 2025-06-04 17:11:24,552 basehttp 40231 6202241024 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-04 17:13:52,607 autoreload 40231 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-04 17:13:52,814 autoreload 40344 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 17:14:00,979 basehttp 40344 6189559808 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-04 17:14:01,358 basehttp 40344 6189559808 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-04 17:14:01,520 basehttp 40344 6189559808 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-04 17:14:01,669 basehttp 40344 6189559808 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-04 17:14:01,795 basehttp 40344 6189559808 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-04 17:14:02,179 logging_utils 40344 6189559808 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:14:02,186 logging_utils 40344 6189559808 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.01s
+INFO 2025-06-04 17:14:02,187 basehttp 40344 6189559808 "GET /fr/users/login/ HTTP/1.1" 200 10864
+INFO 2025-06-04 17:14:03,266 basehttp 40344 6189559808 "GET /fr/users/password-reset/ HTTP/1.1" 200 11255
+INFO 2025-06-04 17:14:08,344 logging_utils 40344 6189559808 [DEMANDE_RECUPERATION_MOT_DE_PASSE] SUCCÈS - Utilisateur: admin@admin.fr - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Email de récupération envoyé à admin@admin.fr
+INFO 2025-06-04 17:14:08,363 basehttp 40344 6189559808 "POST /fr/users/password-reset/ HTTP/1.1" 302 0
+INFO 2025-06-04 17:14:08,366 basehttp 40344 6189559808 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-04 17:14:40,715 autoreload 40344 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-04 17:14:40,977 autoreload 40442 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 17:15:08,543 autoreload 40442 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-04 17:15:08,743 autoreload 40507 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 17:15:11,342 autoreload 40516 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-04 17:15:15,935 logging_utils 40516 6203584512 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-04 17:15:15,957 logging_utils 40516 6203584512 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.02s
+INFO 2025-06-04 17:15:15,959 basehttp 40516 6203584512 "GET /fr/users/login/ HTTP/1.1" 200 10864
+INFO 2025-06-04 17:15:17,476 basehttp 40516 6203584512 "GET /fr/users/password-reset/ HTTP/1.1" 200 11255
+INFO 2025-06-04 17:15:22,145 logging_utils 40516 6203584512 [DEMANDE_RECUPERATION_MOT_DE_PASSE] SUCCÈS - Utilisateur: admin@admin.fr - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Email de récupération envoyé à admin@admin.fr
+ERROR 2025-06-04 17:15:22,748 forms 40516 6203584512 Failed to send password reset email to 2
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/contrib/auth/forms.py", line 434, in send_mail
+    email_message.send()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/mail/message.py", line 307, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/mail/backends/smtp.py", line 93, in open
+    self.connection.starttls(context=self.ssl_context)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/smtplib.py", line 779, in starttls
+    self.sock = context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1041, in _create
+    self.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1319, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)
+INFO 2025-06-04 17:15:22,752 basehttp 40516 6203584512 "POST /fr/users/password-reset/ HTTP/1.1" 302 0
+INFO 2025-06-04 17:15:22,757 basehttp 40516 6203584512 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-05 09:34:37,993 autoreload 43090 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:34:38,907 logging_utils 43090 6130135040 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:34:38,925 logging_utils 43090 6130135040 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 09:34:38,926 basehttp 43090 6130135040 "GET /fr/users/login/ HTTP/1.1" 200 10864
+INFO 2025-06-05 09:34:40,286 basehttp 43090 6130135040 "GET /fr/users/password-reset/ HTTP/1.1" 200 11255
+INFO 2025-06-05 09:34:43,802 logging_utils 43090 6130135040 [DEMANDE_RECUPERATION_MOT_DE_PASSE] SUCCÈS - Utilisateur: zeffze@ergrg.fr - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Email de récupération envoyé à zeffze@ergrg.fr
+INFO 2025-06-05 09:34:43,817 basehttp 43090 6130135040 "POST /fr/users/password-reset/ HTTP/1.1" 302 0
+INFO 2025-06-05 09:34:43,821 basehttp 43090 6130135040 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-05 09:35:20,377 logging_utils 43090 6130135040 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:35:20,381 logging_utils 43090 6130135040 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.00s
+INFO 2025-06-05 09:35:20,382 basehttp 43090 6130135040 "GET /fr/users/login/ HTTP/1.1" 200 10864
+INFO 2025-06-05 09:35:21,608 basehttp 43090 6130135040 "GET /fr/users/password-reset/ HTTP/1.1" 200 11255
+INFO 2025-06-05 09:35:23,190 logging_utils 43090 6130135040 [DEMANDE_RECUPERATION_MOT_DE_PASSE] SUCCÈS - Utilisateur: ilhan@ilhan.fr - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Email de récupération envoyé à ilhan@ilhan.fr
+INFO 2025-06-05 09:35:23,217 basehttp 43090 6130135040 "POST /fr/users/password-reset/ HTTP/1.1" 302 0
+INFO 2025-06-05 09:35:23,221 basehttp 43090 6130135040 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-05 09:41:41,943 autoreload 43090 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:41:42,237 autoreload 43409 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:41:46,069 logging_utils 43409 6131576832 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:41:46,093 logging_utils 43409 6131576832 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 09:41:46,094 basehttp 43409 6131576832 "GET /fr/users/login/ HTTP/1.1" 200 10864
+INFO 2025-06-05 09:41:51,752 basehttp 43409 6131576832 "GET /fr/users/password-reset/ HTTP/1.1" 200 11255
+INFO 2025-06-05 09:41:54,325 logging_utils 43409 6131576832 [DEMANDE_RECUPERATION_MOT_DE_PASSE] SUCCÈS - Utilisateur: admin@admin.fr - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Email de récupération envoyé à admin@admin.fr
+INFO 2025-06-05 09:41:54,345 basehttp 43409 6131576832 "POST /fr/users/password-reset/ HTTP/1.1" 302 0
+INFO 2025-06-05 09:41:54,349 basehttp 43409 6131576832 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-05 09:44:59,488 autoreload 43409 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:44:59,683 autoreload 43551 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:45:04,820 autoreload 43551 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:45:05,010 autoreload 43567 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:45:20,306 autoreload 43567 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:45:20,493 autoreload 43581 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:45:22,824 logging_utils 43581 6203584512 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:45:22,847 logging_utils 43581 6203584512 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 09:45:22,848 basehttp 43581 6203584512 "GET /fr/users/login/ HTTP/1.1" 200 10864
+INFO 2025-06-05 09:45:23,945 basehttp 43581 6203584512 "GET /fr/users/password-reset/ HTTP/1.1" 200 11255
+INFO 2025-06-05 09:45:29,048 autoreload 43597 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:45:30,322 logging_utils 43597 6124007424 [DEMANDE_RECUPERATION_MOT_DE_PASSE] SUCCÈS - Utilisateur: admin@admin.fr - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Email de récupération envoyé à admin@admin.fr
+INFO 2025-06-05 09:45:30,346 basehttp 43597 6124007424 "POST /fr/users/password-reset/ HTTP/1.1" 302 0
+INFO 2025-06-05 09:45:30,353 basehttp 43597 6124007424 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-05 09:45:39,349 autoreload 43597 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:45:39,528 autoreload 43616 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:45:47,350 autoreload 43670 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:45:50,770 logging_utils 43670 6133149696 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:45:50,793 logging_utils 43670 6133149696 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 09:45:50,794 basehttp 43670 6133149696 "GET /fr/users/login/ HTTP/1.1" 200 10864
+INFO 2025-06-05 09:45:51,365 basehttp 43670 6133149696 "GET /fr/users/password-reset/ HTTP/1.1" 200 11255
+INFO 2025-06-05 09:45:52,418 logging_utils 43670 6133149696 [DEMANDE_RECUPERATION_MOT_DE_PASSE] SUCCÈS - Utilisateur: admin@admin.fr - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Email de récupération envoyé à admin@admin.fr
+INFO 2025-06-05 09:45:52,433 basehttp 43670 6133149696 "POST /fr/users/password-reset/ HTTP/1.1" 302 0
+INFO 2025-06-05 09:45:52,436 basehttp 43670 6133149696 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-05 09:46:08,894 autoreload 43670 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:46:09,094 autoreload 43693 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:46:32,583 autoreload 43693 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:46:32,782 autoreload 43709 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:46:41,011 autoreload 43709 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:46:41,197 autoreload 43737 8660082432 Watching for file changes with StatReloader
+ERROR 2025-06-05 09:47:04,246 forms 43773 8660082432 Failed to send password reset email to 1
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/contrib/auth/forms.py", line 434, in send_mail
+    email_message.send()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/mail/message.py", line 307, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/core/mail/backends/smtp.py", line 93, in open
+    self.connection.starttls(context=self.ssl_context)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/smtplib.py", line 779, in starttls
+    self.sock = context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1041, in _create
+    self.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1319, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1000)
+INFO 2025-06-05 09:47:21,808 autoreload 43737 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:47:22,018 autoreload 43787 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:47:26,173 autoreload 43787 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:47:26,369 autoreload 43796 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:48:31,728 logging_utils 43796 6132985856 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:48:31,740 logging_utils 43796 6132985856 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 09:48:31,740 basehttp 43796 6132985856 "GET /fr/users/login/ HTTP/1.1" 200 10864
+INFO 2025-06-05 09:48:32,315 basehttp 43796 6132985856 "GET /fr/users/password-reset/ HTTP/1.1" 200 11255
+INFO 2025-06-05 09:48:36,849 logging_utils 43796 6132985856 [DEMANDE_RECUPERATION_MOT_DE_PASSE] SUCCÈS - Utilisateur: admin@admin.fr - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Email de récupération envoyé à admin@admin.fr
+INFO 2025-06-05 09:48:38,327 basehttp 43796 6132985856 "POST /fr/users/password-reset/ HTTP/1.1" 302 0
+INFO 2025-06-05 09:48:38,331 basehttp 43796 6132985856 "GET /fr/users/password-reset/done/ HTTP/1.1" 200 10479
+INFO 2025-06-05 09:48:38,533 autoreload 43796 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:48:38,708 autoreload 43865 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:48:46,949 autoreload 43865 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:48:47,136 autoreload 43907 8660082432 Watching for file changes with StatReloader

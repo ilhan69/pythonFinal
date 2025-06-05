@@ -2,10 +2,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from django.utils.translation import gettext as _
 from django.core.paginator import Paginator
 from django.db.models import Q
-from .forms import UserRegistrationForm, UserLoginForm, UserProfileForm, AdminUserForm, UserPasswordChangeForm, AdminUserCreationForm, AdminPasswordResetForm
+from django.urls import reverse_lazy
+from .forms import (UserRegistrationForm, UserLoginForm, UserProfileForm, AdminUserForm, 
+                   UserPasswordChangeForm, AdminUserCreationForm, AdminPasswordResetForm,
+                   CustomPasswordResetForm, CustomSetPasswordForm)
 from .models import User
 from .decorators import admin_required
 from pythonFinal.logging_utils import (
@@ -410,3 +414,43 @@ def admin_change_password(request, user_id):
         'form': form,
         'user_to_edit': user
     })
+
+class CustomPasswordResetView(PasswordResetView):
+    """Vue personnalisée pour la demande de récupération de mot de passe"""
+    template_name = 'users/password_reset_form.html'
+    form_class = CustomPasswordResetForm
+    success_url = reverse_lazy('users:password_reset_done')
+    email_template_name = 'users/password_reset_email.html'
+    subject_template_name = 'users/password_reset_subject.txt'
+    
+    def form_valid(self, form):
+        """Log de la demande de récupération de mot de passe"""
+        email = form.cleaned_data['email']
+        log_auth_event(self.request, 'DEMANDE_RECUPERATION_MOT_DE_PASSE', email, success=True,
+                      extra_info=f"Email de récupération envoyé à {email}")
+        log_security_event(self.request, 'DEMANDE_RESET_MOT_DE_PASSE', 'INFO',
+                         f"Demande de récupération pour l'email: {email}")
+        return super().form_valid(form)
+
+class CustomPasswordResetDoneView(PasswordResetDoneView):
+    """Vue de confirmation d'envoi de l'email de récupération"""
+    template_name = 'users/password_reset_done.html'
+
+class CustomPasswordResetConfirmView(PasswordResetConfirmView):
+    """Vue pour confirmer et définir le nouveau mot de passe"""
+    template_name = 'users/password_reset_confirm.html'
+    form_class = CustomSetPasswordForm
+    success_url = reverse_lazy('users:password_reset_complete')
+    
+    def form_valid(self, form):
+        """Log de la réinitialisation réussie du mot de passe"""
+        user = form.user
+        log_auth_event(self.request, 'REINITIALISATION_MOT_DE_PASSE', user.username, success=True,
+                      extra_info=f"Mot de passe réinitialisé via email pour {user.username}")
+        log_security_event(self.request, 'RESET_MOT_DE_PASSE_REUSSI', 'WARNING',
+                         f"Mot de passe réinitialisé pour l'utilisateur: {user.username}")
+        return super().form_valid(form)
+
+class CustomPasswordResetCompleteView(PasswordResetCompleteView):
+    """Vue de confirmation de réinitialisation réussie"""
+    template_name = 'users/password_reset_complete.html'

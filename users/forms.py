@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm, SetPasswordForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm
 from django.utils.translation import gettext_lazy as _
 from .models import User
 
@@ -193,4 +193,59 @@ class AdminPasswordResetForm(SetPasswordForm):
         }
         self.fields['new_password2'].error_messages = {
             'required': _('Veuillez confirmer le nouveau mot de passe.'),
+        }
+
+class CustomPasswordResetForm(PasswordResetForm):
+    """Formulaire personnalisé pour la récupération de mot de passe"""
+    email = forms.EmailField(
+        label=_('Adresse email'),
+        max_length=254,
+        widget=forms.EmailInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Votre adresse email',
+            'autocomplete': 'email'
+        })
+    )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['email'].help_text = _('Entrez l\'adresse email associée à votre compte.')
+
+    def get_users(self, email):
+        """Retourne les utilisateurs actifs avec l'adresse email donnée"""
+        active_users = User.objects.filter(
+            email__iexact=email,
+            is_active=True
+        )
+        return (u for u in active_users if u.has_usable_password())
+
+class CustomSetPasswordForm(SetPasswordForm):
+    """Formulaire personnalisé pour définir un nouveau mot de passe"""
+    new_password1 = forms.CharField(
+        label=_('Nouveau mot de passe'),
+        widget=forms.PasswordInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Votre nouveau mot de passe',
+            'autocomplete': 'new-password'
+        }),
+        strip=False,
+        help_text=_('Votre mot de passe doit contenir au moins 8 caractères.')
+    )
+    new_password2 = forms.CharField(
+        label=_('Confirmation du nouveau mot de passe'),
+        strip=False,
+        widget=forms.PasswordInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Confirmez votre nouveau mot de passe',
+            'autocomplete': 'new-password'
+        })
+    )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['new_password1'].error_messages = {
+            'required': _('Ce champ est obligatoire.'),
+        }
+        self.fields['new_password2'].error_messages = {
+            'required': _('Ce champ est obligatoire.'),
         }
