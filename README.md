@@ -728,10 +728,6 @@ export EMAIL_USE_TLS=True
 # OpenAI (optionnel)
 export OPENAI_API_KEY='votre-clé-openai'
 
-# Médias (pour les services cloud)
-export AWS_ACCESS_KEY_ID='votre-clé-aws'
-export AWS_SECRET_ACCESS_KEY='votre-secret-aws'
-export AWS_STORAGE_BUCKET_NAME='votre-bucket'
 ```
 
 ### Configuration Nginx
@@ -773,66 +769,6 @@ server {
 }
 ```
 
-### Configuration Gunicorn
-
-```bash
-# Installation
-pip install gunicorn
-
-# Démarrage
-gunicorn pythonFinal.wsgi:application --bind 127.0.0.1:8000 --workers 3
-
-# Avec fichier de configuration
-gunicorn pythonFinal.wsgi:application -c gunicorn.conf.py
-```
-
-### Service Systemd
-
-```ini
-# /etc/systemd/system/pythonfinal.service
-[Unit]
-Description=PythonFinal Django App
-After=network.target
-
-[Service]
-Type=simple
-User=www-data
-WorkingDirectory=/path/to/your/pythonFinal
-Environment=PATH=/path/to/your/venv/bin
-EnvironmentFile=/path/to/your/.env
-ExecStart=/path/to/your/venv/bin/gunicorn pythonFinal.wsgi:application --bind 127.0.0.1:8000 --workers 3
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Commandes systemd :
-```bash
-# Activer et démarrer le service
-sudo systemctl enable pythonfinal
-sudo systemctl start pythonfinal
-
-# Vérifier le statut
-sudo systemctl status pythonfinal
-
-# Logs du service
-sudo journalctl -u pythonfinal -f
-```
-
-### Checklist de Déploiement
-
-- [ ] **Sécurité** : `DEBUG=False`, `SECRET_KEY` sécurisée
-- [ ] **Base de données** : PostgreSQL configurée et sauvegardée
-- [ ] **Fichiers statiques** : `collectstatic` exécuté
-- [ ] **Médias** : Dossier `media/` avec bonnes permissions
-- [ ] **HTTPS** : Certificat SSL configuré
-- [ ] **Email** : SMTP configuré pour les notifications
-- [ ] **Logs** : Rotation des logs configurée
-- [ ] **Sauvegarde** : Script de sauvegarde automatique
-- [ ] **Monitoring** : Surveillance des performances
-- [ ] **DNS** : Domaine pointant vers le serveur
-
 ### Commandes de Déploiement
 
 ```bash
@@ -855,25 +791,6 @@ python manage.py compilemessages
 sudo systemctl restart pythonfinal
 sudo systemctl restart nginx
 ```
-
-## 🤝 Contribution
-
-### Workflow de Contribution
-
-1. **Fork** du projet
-2. **Branche feature** : `git checkout -b feature/nouvelle-fonctionnalite`
-3. **Développement** avec tests
-4. **Commit** : `git commit -am 'Ajout nouvelle fonctionnalité'`
-5. **Push** : `git push origin feature/nouvelle-fonctionnalite`
-6. **Pull Request** avec description détaillée
-
-### Standards de Code
-
-- **PEP 8** pour le style Python
-- **Docstrings** pour toutes les fonctions
-- **Tests** pour toutes les nouvelles fonctionnalités
-- **Messages de commit** descriptifs
-- **Traductions** pour les nouveaux textes
 
 ### Tests Requis
 
