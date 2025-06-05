@@ -22,4 +22,5 @@ urlpatterns = [
     path('administration/statistiques-tags/', views.statistiques_tags, name='statistiques_tags'),
     path('api/generer-article-openai/', views.generer_article_openai, name='generer_article_openai'),
     path('api/sauvegarder-image-generee/', views.sauvegarder_image_generee, name='sauvegarder_image_generee'),
+    path('rss/', views.rss_page, name='rss_page'),
 ]

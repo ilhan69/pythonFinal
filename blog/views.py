@@ -1024,3 +1024,25 @@ def sauvegarder_image_generee(request):
         return JsonResponse({
             'error': 'Erreur lors de la sauvegarde de l\'image'
         }, status=500)
+
+@log_view_access('blog')
+def rss_page(request):
+    """
+    Vue pour afficher la page d'information sur les flux RSS disponibles - Multilingue
+    """
+    # Récupérer les catégories avec au moins un article publié
+    categories = Category.objects.annotate(
+        articles_count=Count('articles', filter=Q(articles__status='published'))
+    ).filter(articles_count__gt=0).order_by('name')
+    
+    # Récupérer les tags populaires avec au moins un article publié
+    popular_tags = Tag.objects.annotate(
+        articles_count=Count('articles', filter=Q(articles__status='published'))
+    ).filter(articles_count__gt=0).order_by('-articles_count')[:10]
+    
+    context = {
+        'categories': categories,
+        'popular_tags': popular_tags,
+    }
+    
+    return render(request, 'blog/rss_page.html', context)

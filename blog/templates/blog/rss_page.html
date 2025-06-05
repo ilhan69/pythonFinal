@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Flux RSS" %} - Mon Blog{% endblock %}
+{% block description %}{% trans "Abonnez-vous à nos flux RSS pour recevoir les derniers articles" %}{% endblock %}
+
+{% block content %}
+<div class="rss-page">
+    <div class="page-header">
+        <h1>📡 {% trans "Flux RSS" %}</h1>
+        <p class="lead">{% trans "Restez informé des dernières publications en vous abonnant à nos flux RSS" %}</p>
+    </div>
+
+    <div class="rss-section">
+        <h2>{% trans "Qu'est-ce qu'un flux RSS ?" %}</h2>
+        <p>{% trans "RSS (Really Simple Syndication) vous permet de recevoir automatiquement les nouveaux articles dans votre lecteur de flux préféré, sans avoir à visiter régulièrement le site." %}</p>
+    </div>
+
+    <div class="rss-feeds">
+        <h2>{% trans "Flux disponibles" %}</h2>
+        
+        <div class="feed-card">
+            <h3>📰 {% trans "Tous les articles" %}</h3>
+            <p>{% trans "Recevez tous les nouveaux articles publiés sur le blog" %}</p>
+            <div class="feed-links">
+                <a href="{% url 'articles_feed' %}" class="btn btn-primary" target="_blank">
+                    📡 {% trans "S'abonner au flux RSS" %}
+                </a>
+                <code class="feed-url">{{ request.scheme }}://{{ request.get_host }}{% url 'articles_feed' %}</code>
+            </div>
+        </div>
+
+        {% if categories %}
+        <div class="feed-card">
+            <h3>📂 {% trans "Par catégorie" %}</h3>
+            <p>{% trans "Suivez uniquement les articles d'une catégorie spécifique" %}</p>
+            <div class="category-feeds">
+                {% for category in categories %}
+                <div class="category-feed">
+                    <span class="category-name" style="color: {{ category.couleur }}">
+                        {% if category.icone %}<i class="{{ category.icone }}"></i>{% endif %}
+                        {{ category.name }}
+                        <small>({{ category.articles_count }} {% trans "articles" %})</small>
+                    </span>
+                    <a href="{% url 'category_feed' category.id %}" class="btn btn-sm btn-outline-primary" target="_blank">
+                        RSS
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if popular_tags %}
+        <div class="feed-card">
+            <h3>🏷️ {% trans "Par tag" %}</h3>
+            <p>{% trans "Suivez les articles associés à vos tags préférés" %}</p>
+            <div class="tag-feeds">
+                {% for tag in popular_tags %}
+                <div class="tag-feed">
+                    <span class="tag-name" style="color: {{ tag.couleur }}">
+                        #{{ tag.name }}
+                        <small>({{ tag.articles_count }} {% trans "articles" %})</small>
+                    </span>
+                    <a href="{% url 'tag_feed' tag.slug %}" class="btn btn-sm btn-outline-primary" target="_blank">
+                        RSS
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="rss-help">
+        <h2>{% trans "Comment utiliser ces flux ?" %}</h2>
+        <div class="help-content">
+            <div class="help-item">
+                <h4>1. {% trans "Choisissez un lecteur RSS" %}</h4>
+                <p>{% trans "Utilisez des applications comme Feedly, Inoreader, ou l'extension RSS de votre navigateur." %}</p>
+            </div>
+            <div class="help-item">
+                <h4>2. {% trans "Copiez l'URL du flux" %}</h4>
+                <p>{% trans "Cliquez sur le lien RSS du flux qui vous intéresse, ou copiez l'URL affichée." %}</p>
+            </div>
+            <div class="help-item">
+                <h4>3. {% trans "Ajoutez le flux à votre lecteur" %}</h4>
+                <p>{% trans "Collez l'URL dans votre lecteur RSS pour commencer à recevoir les articles." %}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="rss-info">
+        <h2>{% trans "Lecteurs RSS recommandés" %}</h2>
+        <div class="readers-list">
+            <div class="reader-item">
+                <strong>Feedly</strong> - {% trans "Service web populaire et gratuit" %}
+            </div>
+            <div class="reader-item">
+                <strong>Inoreader</strong> - {% trans "Lecteur avancé avec fonctionnalités premium" %}
+            </div>
+            <div class="reader-item">
+                <strong>NetNewsWire</strong> - {% trans "Application native pour Mac et iOS" %}
+            </div>
+            <div class="reader-item">
+                <strong>QuiteRSS</strong> - {% trans "Lecteur gratuit et open source" %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.rss-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary, #333);
+}
+
+.rss-section, .rss-help, .rss-info {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-secondary, #f8f9fa);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color, #007bff);
+}
+
+.feed-card {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color, #e9ecef);
+    border-radius: 8px;
+    background: var(--bg-primary, white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.feed-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary, #333);
+}
+
+.feed-links {
+    margin-top: 1rem;
+}
+
+.feed-url {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background: var(--bg-code, #f1f3f4);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    word-break: break-all;
+    border: 1px solid var(--border-color, #e9ecef);
+    font-family: 'Courier New', monospace;
+}
+
+.category-feeds, .tag-feeds {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.category-feed, .tag-feed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color, #e9ecef);
+    border-radius: 6px;
+    background: var(--bg-secondary, #f8f9fa);
+    transition: all 0.3s ease;
+}
+
+.category-feed:hover, .tag-feed:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.category-name, .tag-name {
+    font-weight: 500;
+    flex: 1;
+}
+
+.category-name small, .tag-name small {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-weight: normal;
+}
+
+.help-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.help-item {
+    padding: 1rem;
+    border-left: 4px solid var(--success-color, #28a745);
+    background: var(--bg-primary, white);
+    border-radius: 4px;
+}
+
+.help-item h4 {
+    margin-bottom: 0.5rem;
+    color: var(--success-color, #28a745);
+}
+
+.readers-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.reader-item {
+    padding: 1rem;
+    background: var(--bg-primary, white);
+    border-radius: 6px;
+    border: 1px solid var(--border-color, #e9ecef);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary-color, #007bff);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark, #0056b3);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+    border: 1px solid var(--primary-color, #007bff);
+    color: var(--primary-color, #007bff);
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-color, #007bff);
+    color: white;
+}
+
+.btn-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+    .feed-card {
+        background: var(--bg-dark-secondary, #2d3748);
+        border-color: var(--border-dark, #4a5568);
+    }
+    
+    .feed-url {
+        background: var(--bg-dark-tertiary, #1a202c);
+        border-color: var(--border-dark, #4a5568);
+        color: var(--text-dark, #e2e8f0);
+    }
+    
+    .category-feed, .tag-feed {
+        background: var(--bg-dark-secondary, #2d3748);
+        border-color: var(--border-dark, #4a5568);
+    }
+    
+    .help-item, .reader-item {
+        background: var(--bg-dark-secondary, #2d3748);
+        border-color: var(--border-dark, #4a5568);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .rss-page {
+        padding: 1rem 0.5rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .category-feeds, .tag-feeds {
+        grid-template-columns: 1fr;
+    }
+    
+    .help-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .readers-list {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %}

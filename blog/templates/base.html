@@ -31,6 +31,10 @@
     <meta name="twitter:title" content="{% block twitter_title %}{% block title %}Mon Blog{% endblock %}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{% block description %}Un blog moderne et interactif{% endblock %}{% endblock %}">
     <meta name="twitter:image" content="{% block twitter_image %}{% static 'img/default-og-image.jpg' %}{% endblock %}">
+
+    <!-- Flux RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Derniers articles - Mon Blog" href="{% url 'articles_feed' %}">
+    {% block extra_feeds %}{% endblock %}
 </head>
 <body>
     <!-- Header / Navigation -->

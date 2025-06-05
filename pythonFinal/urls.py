@@ -25,13 +25,17 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),  # Pour le changement de langue
 ]
 
-# URLs avec préfixe de langue
+# URLs avec préfixe de langue (incluant les flux RSS)
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
     path('users/', include('users.urls')),
     path('comments/', include('comments.urls')),
     path('stats/', include('stats.urls')),
+    
+    # Flux RSS avec préfixe de langue
+    path('feed/', include('blog.feeds_urls')),
+    
     prefix_default_language=True,  # Ajouter le préfixe pour toutes les langues, y compris la langue par défaut
 )
 
