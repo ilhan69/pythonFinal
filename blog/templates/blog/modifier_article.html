@@ -40,9 +40,14 @@
                         {{ form.non_field_errors }}
 
                         <div class="mb-3">
-                            <label for="{{ form.title.id_for_label }}" class="form-label">
-                                <i class="fas fa-heading me-2"></i>{% trans "Titre de l'article" %}
-                            </label>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label for="{{ form.title.id_for_label }}" class="form-label">
+                                    <i class="fas fa-heading me-2"></i>{% trans "Titre de l'article" %}
+                                </label>
+                                <button type="button" class="btn btn-outline-primary btn-sm" id="redaction-intelligente-btn">
+                                    <i class="fas fa-magic me-1"></i>{% trans "Rédaction intelligente" %}
+                                </button>
+                            </div>
                             {{ form.title }}
                             {{ form.title.errors }}
                         </div>
@@ -213,6 +218,332 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Rédaction Intelligente -->
+    <div class="modal fade" id="redactionInteligenteModal" tabindex="-1" aria-labelledby="redactionInteligenteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="redactionInteligenteModalLabel">
+                        <i class="fas fa-magic me-2"></i>{% trans "Rédaction intelligente avec IA" %}
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info">
+                        <i class="fas fa-lightbulb me-2"></i>
+                        {% trans "Décrivez le sujet de votre article et l'IA générera automatiquement un titre, un résumé et du contenu pour vous aider à démarrer." %}
+                    </div>
+                    
+                    <form id="geminiPromptForm">
+                        <div class="mb-3">
+                            <label for="promptInput" class="form-label">
+                                <i class="fas fa-comment-dots me-2"></i>{% trans "Sujet de l'article" %}
+                            </label>
+                            <textarea class="form-control" id="promptInput" rows="3" 
+                                      placeholder="{% trans 'Ex: Les bienfaits de la méditation pour la santé mentale, Comment débuter en programmation Python, Guide complet du jardinage urbain...' %}" 
+                                      required></textarea>
+                            <div class="form-text">
+                                {% trans "Soyez précis pour obtenir un meilleur résultat. Vous pouvez mentionner le style, le public cible, etc." %}
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between">
+                            <div class="text-muted small">
+                                <i class="fas fa-robot me-1"></i>{% trans "Powered by Google Gemini Flash" %}
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">
+                                    {% trans "Annuler" %}
+                                </button>
+                                <button type="submit" class="btn btn-primary" id="generateBtn">
+                                    <i class="fas fa-magic me-1"></i>{% trans "Générer l'article" %}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <!-- Loader -->
+                    <div id="loadingDiv" class="text-center mt-4" style="display: none;">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">{% trans "Génération en cours..." %}</span>
+                        </div>
+                        <p class="mt-2 text-muted">
+                            <i class="fas fa-brain me-1"></i>{% trans "L'IA rédige votre article..." %}
+                        </p>
+                    </div>
+                    
+                    <!-- Résultats -->
+                    <div id="resultsDiv" style="display: none;">
+                        <hr>
+                        <h6 class="text-success">
+                            <i class="fas fa-check-circle me-2"></i>{% trans "Article généré avec succès !" %}
+                        </h6>
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <label class="form-label fw-bold">{% trans "Titre généré :" %}</label>
+                                <div class="form-control" id="generatedTitle" readonly style="background-color: #f8f9fa;"></div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label class="form-label fw-bold">{% trans "Résumé généré :" %}</label>
+                                <div class="form-control" id="generatedExcerpt" readonly style="background-color: #f8f9fa; min-height: 60px;"></div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label class="form-label fw-bold">{% trans "Contenu généré :" %}</label>
+                                <div class="form-control" id="generatedContent" readonly style="background-color: #f8f9fa; min-height: 150px; overflow-y: auto;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-outline-secondary" id="regenerateBtn">
+                                <i class="fas fa-redo me-1"></i>{% trans "Régénérer" %}
+                            </button>
+                            <div>
+                                <button type="button" class="btn btn-outline-primary me-2" id="usePartialBtn">
+                                    <i class="fas fa-edit me-1"></i>{% trans "Utiliser partiellement" %}
+                                </button>
+                                <button type="button" class="btn btn-success" id="useAllBtn">
+                                    <i class="fas fa-check me-1"></i>{% trans "Utiliser tout" %}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Message d'erreur -->
+                    <div id="errorDiv" class="alert alert-danger mt-3" style="display: none;">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <span id="errorMessage"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     {% endif %}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Vérifier si nous sommes dans la section autorisée
+    if (document.getElementById('redaction-intelligente-btn')) {
+        const redactionBtn = document.getElementById('redaction-intelligente-btn');
+        const modal = new bootstrap.Modal(document.getElementById('redactionInteligenteModal'));
+        const promptForm = document.getElementById('geminiPromptForm');
+        const promptInput = document.getElementById('promptInput');
+        const generateBtn = document.getElementById('generateBtn');
+        const loadingDiv = document.getElementById('loadingDiv');
+        const resultsDiv = document.getElementById('resultsDiv');
+        const errorDiv = document.getElementById('errorDiv');
+        const regenerateBtn = document.getElementById('regenerateBtn');
+        const usePartialBtn = document.getElementById('usePartialBtn');
+        const useAllBtn = document.getElementById('useAllBtn');
+        
+        // Variables pour stocker les données générées
+        let generatedData = null;
+        
+        // Ouvrir la modal
+        redactionBtn.addEventListener('click', function() {
+            modal.show();
+            promptInput.focus();
+        });
+        
+        // Réinitialiser la modal lors de la fermeture
+        document.getElementById('redactionInteligenteModal').addEventListener('hidden.bs.modal', function() {
+            resetModal();
+        });
+        
+        // Gérer la soumission du formulaire
+        promptForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            generateArticle();
+        });
+        
+        // Régénérer
+        regenerateBtn.addEventListener('click', function() {
+            generateArticle();
+        });
+        
+        // Utiliser tout le contenu généré
+        useAllBtn.addEventListener('click', function() {
+            if (generatedData) {
+                document.getElementById('{{ form.title.id_for_label }}').value = generatedData.titre;
+                if (generatedData.resume && document.getElementById('{{ form.excerpt.id_for_label }}')) {
+                    document.getElementById('{{ form.excerpt.id_for_label }}').value = generatedData.resume;
+                }
+                // Pour CKEditor, il faut utiliser une méthode spéciale
+                if (typeof CKEDITOR !== 'undefined' && CKEDITOR.instances['{{ form.content.id_for_label }}']) {
+                    CKEDITOR.instances['{{ form.content.id_for_label }}'].setData(generatedData.contenu);
+                } else {
+                    document.getElementById('{{ form.content.id_for_label }}').value = generatedData.contenu;
+                }
+                modal.hide();
+                showSuccessMessage('{% trans "Contenu inséré avec succès !" %}');
+            }
+        });
+        
+        // Utiliser partiellement (permettre à l'utilisateur de choisir)
+        usePartialBtn.addEventListener('click', function() {
+            if (generatedData) {
+                showPartialUseOptions();
+            }
+        });
+        
+        function generateArticle() {
+            const prompt = promptInput.value.trim();
+            if (!prompt) {
+                showError('{% trans "Veuillez saisir un sujet pour votre article." %}');
+                return;
+            }
+            
+            // Afficher le loader
+            hideAllSections();
+            loadingDiv.style.display = 'block';
+            generateBtn.disabled = true;
+            
+            // Appel AJAX à l'API
+            fetch('{% url "blog:generer_article_gemini" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+                },
+                body: JSON.stringify({ prompt: prompt })
+            })
+            .then(response => response.json())
+            .then(data => {
+                generateBtn.disabled = false;
+                loadingDiv.style.display = 'none';
+                
+                if (data.success) {
+                    generatedData = data;
+                    showResults(data);
+                } else {
+                    showError(data.error || '{% trans "Une erreur est survenue lors de la génération." %}');
+                }
+            })
+            .catch(error => {
+                generateBtn.disabled = false;
+                loadingDiv.style.display = 'none';
+                console.error('Erreur:', error);
+                showError('{% trans "Erreur de connexion. Veuillez réessayer." %}');
+            });
+        }
+        
+        function showResults(data) {
+            document.getElementById('generatedTitle').textContent = data.titre;
+            document.getElementById('generatedExcerpt').textContent = data.resume || '{% trans "Aucun résumé généré" %}';
+            document.getElementById('generatedContent').innerHTML = data.contenu.replace(/\n/g, '<br>');
+            resultsDiv.style.display = 'block';
+        }
+        
+        function showError(message) {
+            document.getElementById('errorMessage').textContent = message;
+            errorDiv.style.display = 'block';
+        }
+        
+        function hideAllSections() {
+            resultsDiv.style.display = 'none';
+            errorDiv.style.display = 'none';
+            loadingDiv.style.display = 'none';
+        }
+        
+        function resetModal() {
+            promptInput.value = '';
+            generatedData = null;
+            generateBtn.disabled = false;
+            hideAllSections();
+        }
+        
+        function showSuccessMessage(message) {
+            // Créer une notification de succès temporaire
+            const alert = document.createElement('div');
+            alert.className = 'alert alert-success alert-dismissible fade show';
+            alert.innerHTML = `
+                <i class="fas fa-check-circle me-2"></i>${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.querySelector('.card-body').insertBefore(alert, document.querySelector('.card-body').firstChild);
+            
+            // Faire disparaître après 3 secondes
+            setTimeout(() => {
+                if (alert.parentNode) {
+                    alert.parentNode.removeChild(alert);
+                }
+            }, 3000);
+        }
+        
+        function showPartialUseOptions() {
+            // Créer une modal secondaire pour choisir quoi utiliser
+            const partialModal = document.createElement('div');
+            partialModal.className = 'modal fade';
+            partialModal.innerHTML = `
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">{% trans "Choisir le contenu à utiliser" %}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="useTitleCheck" checked>
+                                <label class="form-check-label" for="useTitleCheck">
+                                    <strong>{% trans "Utiliser le titre :" %}</strong> ${generatedData.titre}
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="useExcerptCheck" ${generatedData.resume ? 'checked' : ''}>
+                                <label class="form-check-label" for="useExcerptCheck">
+                                    <strong>{% trans "Utiliser le résumé :" %}</strong> ${generatedData.resume || '{% trans "Aucun résumé" %}'}
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="useContentCheck" checked>
+                                <label class="form-check-label" for="useContentCheck">
+                                    <strong>{% trans "Utiliser le contenu" %}</strong>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "Annuler" %}</button>
+                            <button type="button" class="btn btn-primary" id="applyPartialBtn">{% trans "Appliquer" %}</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(partialModal);
+            const partialModalInstance = new bootstrap.Modal(partialModal);
+            partialModalInstance.show();
+            
+            // Gérer l'application des choix
+            partialModal.querySelector('#applyPartialBtn').addEventListener('click', function() {
+                if (partialModal.querySelector('#useTitleCheck').checked) {
+                    document.getElementById('{{ form.title.id_for_label }}').value = generatedData.titre;
+                }
+                if (partialModal.querySelector('#useExcerptCheck').checked && generatedData.resume) {
+                    const excerptField = document.getElementById('{{ form.excerpt.id_for_label }}');
+                    if (excerptField) {
+                        excerptField.value = generatedData.resume;
+                    }
+                }
+                if (partialModal.querySelector('#useContentCheck').checked) {
+                    if (typeof CKEDITOR !== 'undefined' && CKEDITOR.instances['{{ form.content.id_for_label }}']) {
+                        CKEDITOR.instances['{{ form.content.id_for_label }}'].setData(generatedData.contenu);
+                    } else {
+                        document.getElementById('{{ form.content.id_for_label }}').value = generatedData.contenu;
+                    }
+                }
+                
+                partialModalInstance.hide();
+                modal.hide();
+                showSuccessMessage('{% trans "Contenu sélectionné inséré avec succès !" %}');
+            });
+            
+            // Nettoyer la modal après fermeture
+            partialModal.addEventListener('hidden.bs.modal', function() {
+                document.body.removeChild(partialModal);
+            });
+        }
+    }
+});
+</script>
 {% endblock %}

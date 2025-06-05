@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import ssl
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -163,8 +165,6 @@ LOGIN_REDIRECT_URL = 'blog:home'  # URL après connexion réussie
 LOGOUT_REDIRECT_URL = 'blog:home'  # URL après déconnexion
 
 # Logging Configuration
-import os
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -307,14 +307,12 @@ DEFAULT_FROM_EMAIL = 'noreply@votresite.com'
 # DEFAULT_FROM_EMAIL = 'noreply@votresite.com'
 
 # Configuration SSL/TLS pour contourner les problèmes de certificat en développement
-import ssl
 EMAIL_SSL_CERTFILE = None
 EMAIL_SSL_KEYFILE = None
 EMAIL_TIMEOUT = 60
 
 # Créer un contexte SSL non vérifié pour le développement (uniquement avec Mailtrap)
 if DEBUG and 'smtp' in globals().get('EMAIL_BACKEND', ''):  # Seulement en mode développement avec SMTP
-    import ssl
     ssl_context = ssl.create_default_context()
     ssl_context.check_hostname = False
     ssl_context.verify_mode = ssl.CERT_NONE
@@ -322,3 +320,19 @@ if DEBUG and 'smtp' in globals().get('EMAIL_BACKEND', ''):  # Seulement en mode 
     # Patch pour Django
     import django.core.mail.backends.smtp
     django.core.mail.backends.smtp.EmailBackend.ssl_context = ssl_context
+
+# Configuration API Gemini pour la rédaction intelligente
+# Obtenez votre clé API sur https://makersuite.google.com/app/apikey
+GEMINI_API_KEY = "AIzaSyD0K4HEdnAr7vOTIw5HaEnRs6X9ttaEH4w"
+
+# En développement, vous pouvez aussi définir directement la clé ici :
+# GEMINI_API_KEY = 'votre_cle_api_gemini_ici'
+
+# Configuration CKEditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': '100%',
+    },
+}

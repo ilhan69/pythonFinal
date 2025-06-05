@@ -3592,3 +3592,4 @@ Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/templatetags/i18n.py", line 581, in do_block_translate
     raise TemplateSyntaxError(
 django.template.exceptions.TemplateSyntaxError: 'blocktrans' doesn't allow other block tags (seen "url 'users:password_reset_confirm' uidb64=uid token=token") inside it
+ERROR 2025-06-05 09:58:37,352 log 44378 6138048512 Internal Server Error: /fr/api/generer-article-gemini/

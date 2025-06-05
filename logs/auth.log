@@ -49,3 +49,15 @@ INFO 2025-06-05 09:45:52,418 logging_utils 43670 6133149696 [DEMANDE_RECUPERATIO
 INFO 2025-06-05 09:48:31,728 logging_utils 43796 6132985856 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
 INFO 2025-06-05 09:48:31,740 logging_utils 43796 6132985856 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.01s
 INFO 2025-06-05 09:48:36,849 logging_utils 43796 6132985856 [DEMANDE_RECUPERATION_MOT_DE_PASSE] SUCCÈS - Utilisateur: admin@admin.fr - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Email de récupération envoyé à admin@admin.fr
+INFO 2025-06-05 09:50:05,047 logging_utils 43907 6159478784 [ACCÈS VUE] users.views.register - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:50:05,074 logging_utils 43907 6159478784 [VUE TERMINÉE] users.views.register - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 09:50:05,560 logging_utils 43907 6159478784 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:50:05,564 logging_utils 43907 6159478784 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.00s
+INFO 2025-06-05 09:50:07,214 logging_utils 43907 6159478784 [ACCÈS VUE] users.views.register - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:50:07,220 logging_utils 43907 6159478784 [VUE TERMINÉE] users.views.register - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 09:50:26,943 logging_utils 43907 6159478784 [ACCÈS VUE] users.views.register - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: POST
+WARNING 2025-06-05 09:50:26,996 logging_utils 43907 6159478784 [INSCRIPTION] ÉCHEC - Utilisateur: ilhan - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Erreurs de validation du formulaire
+INFO 2025-06-05 09:50:26,999 logging_utils 43907 6159478784 [VUE TERMINÉE] users.views.register - Status: 200 - Temps: 0.06s
+INFO 2025-06-05 09:50:33,432 logging_utils 43907 6159478784 [ACCÈS VUE] users.views.register - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-05 09:50:33,686 logging_utils 43907 6159478784 [INSCRIPTION] SUCCÈS - Utilisateur: ilhan1 - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Nouveau compte créé avec le rôle auteur
+INFO 2025-06-05 09:50:33,686 logging_utils 43907 6159478784 [VUE TERMINÉE] users.views.register - Status: 302 - Temps: 0.25s

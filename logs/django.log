@@ -2484,3 +2484,109 @@ INFO 2025-06-05 09:48:38,533 autoreload 43796 8660082432 /Users/ilhankoprulu/Pro
 INFO 2025-06-05 09:48:38,708 autoreload 43865 8660082432 Watching for file changes with StatReloader
 INFO 2025-06-05 09:48:46,949 autoreload 43865 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
 INFO 2025-06-05 09:48:47,136 autoreload 43907 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:49:56,688 logging_utils 43907 6159478784 [ACCÈS VUE] blog.views.home - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:49:56,730 logging_utils 43907 6159478784 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 09:49:56,731 basehttp 43907 6159478784 "GET /fr/ HTTP/1.1" 200 9402
+INFO 2025-06-05 09:50:00,834 logging_utils 43907 6159478784 [ACCÈS VUE] blog.views.liste_articles - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:50:00,876 logging_utils 43907 6159478784 [VUE TERMINÉE] blog.views.liste_articles - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 09:50:00,877 basehttp 43907 6159478784 "GET /fr/articles/ HTTP/1.1" 200 19646
+INFO 2025-06-05 09:50:05,047 logging_utils 43907 6159478784 [ACCÈS VUE] users.views.register - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:50:05,074 logging_utils 43907 6159478784 [VUE TERMINÉE] users.views.register - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 09:50:05,074 basehttp 43907 6159478784 "GET /fr/users/register/ HTTP/1.1" 200 16501
+INFO 2025-06-05 09:50:05,560 logging_utils 43907 6159478784 [ACCÈS VUE] users.views.user_login - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:50:05,564 logging_utils 43907 6159478784 [VUE TERMINÉE] users.views.user_login - Status: 200 - Temps: 0.00s
+INFO 2025-06-05 09:50:05,565 basehttp 43907 6159478784 "GET /fr/users/login/ HTTP/1.1" 200 10864
+INFO 2025-06-05 09:50:07,214 logging_utils 43907 6159478784 [ACCÈS VUE] users.views.register - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:50:07,220 logging_utils 43907 6159478784 [VUE TERMINÉE] users.views.register - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 09:50:07,221 basehttp 43907 6159478784 "GET /fr/users/register/ HTTP/1.1" 200 16501
+INFO 2025-06-05 09:50:26,943 logging_utils 43907 6159478784 [ACCÈS VUE] users.views.register - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: POST
+WARNING 2025-06-05 09:50:26,996 logging_utils 43907 6159478784 [INSCRIPTION] ÉCHEC - Utilisateur: ilhan - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Erreurs de validation du formulaire
+INFO 2025-06-05 09:50:26,999 logging_utils 43907 6159478784 [VUE TERMINÉE] users.views.register - Status: 200 - Temps: 0.06s
+INFO 2025-06-05 09:50:26,999 basehttp 43907 6159478784 "POST /fr/users/register/ HTTP/1.1" 200 17083
+INFO 2025-06-05 09:50:33,432 logging_utils 43907 6159478784 [ACCÈS VUE] users.views.register - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-05 09:50:33,686 logging_utils 43907 6159478784 [INSCRIPTION] SUCCÈS - Utilisateur: ilhan1 - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Nouveau compte créé avec le rôle auteur
+INFO 2025-06-05 09:50:33,686 logging_utils 43907 6159478784 [VUE TERMINÉE] users.views.register - Status: 302 - Temps: 0.25s
+INFO 2025-06-05 09:50:33,687 basehttp 43907 6159478784 "POST /fr/users/register/ HTTP/1.1" 302 0
+INFO 2025-06-05 09:50:33,704 logging_utils 43907 6159478784 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:50:33,707 logging_utils 43907 6159478784 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 09:50:33,707 basehttp 43907 6159478784 "GET /fr/ HTTP/1.1" 200 11312
+INFO 2025-06-05 09:51:09,353 logging_utils 43907 6159478784 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:51:09,363 logging_utils 43907 6159478784 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 09:51:09,364 basehttp 43907 6159478784 "GET /fr/ HTTP/1.1" 200 13034
+INFO 2025-06-05 09:51:09,936 logging_utils 43907 6159478784 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:51:09,941 logging_utils 43907 6159478784 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 09:51:09,942 basehttp 43907 6159478784 "GET /fr/ HTTP/1.1" 200 13034
+INFO 2025-06-05 09:51:11,004 logging_utils 43907 6159478784 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:51:11,021 logging_utils 43907 6159478784 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 09:51:11,022 basehttp 43907 6159478784 "GET /fr/ajouter/ HTTP/1.1" 200 11835
+WARNING 2025-06-05 09:51:23,524 basehttp 43907 6159478784 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 09:53:45,213 autoreload 43907 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-05 09:53:45,505 autoreload 44208 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:53:58,451 autoreload 44208 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/urls.py changed, reloading.
+INFO 2025-06-05 09:53:58,655 autoreload 44227 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:57:23,062 autoreload 44227 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:57:23,344 autoreload 44378 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:58:05,268 logging_utils 44378 6138048512 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:58:05,287 logging_utils 44378 6138048512 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 09:58:05,287 basehttp 44378 6138048512 "GET /fr/ajouter/ HTTP/1.1" 200 27253
+WARNING 2025-06-05 09:58:05,309 basehttp 44378 6138048512 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 09:58:23,349 basehttp 44378 6138048512 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 09:58:23,366 basehttp 44378 6138048512 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 09:58:23,845 basehttp 44378 6138048512 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 09:58:23,864 basehttp 44378 6138048512 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+ERROR 2025-06-05 09:58:37,353 basehttp 44378 6138048512 "POST /fr/api/generer-article-gemini/ HTTP/1.1" 500 102
+INFO 2025-06-05 09:59:03,956 autoreload 44378 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:59:04,236 autoreload 44531 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:59:12,502 autoreload 44531 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 09:59:12,903 autoreload 44550 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 09:59:21,581 logging_utils 44550 6123843584 [CONTENU] GENERATION_IA - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Prompt: comment débuter en python ?...
+INFO 2025-06-05 09:59:21,583 basehttp 44550 6123843584 "POST /fr/api/generer-article-gemini/ HTTP/1.1" 200 4568
+INFO 2025-06-05 09:59:32,160 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 09:59:32,199 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 09:59:32,200 basehttp 44550 6123843584 "GET /fr/ajouter/ HTTP/1.1" 200 27253
+WARNING 2025-06-05 09:59:32,222 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 09:59:45,070 logging_utils 44550 6123843584 [CONTENU] GENERATION_IA - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Prompt: comment débuter en python ?...
+INFO 2025-06-05 09:59:45,072 basehttp 44550 6123843584 "POST /fr/api/generer-article-gemini/ HTTP/1.1" 200 4593
+INFO 2025-06-05 10:00:03,923 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:00:03,936 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:00:03,937 basehttp 44550 6123843584 "GET /fr/ajouter/ HTTP/1.1" 200 27253
+WARNING 2025-06-05 10:00:03,955 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:00:28,084 logging_utils 44550 6123843584 [CONTENU] GENERATION_IA - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Prompt: Comment débuter en python ?...
+INFO 2025-06-05 10:00:28,085 basehttp 44550 6123843584 "POST /fr/api/generer-article-gemini/ HTTP/1.1" 200 4231
+INFO 2025-06-05 10:00:55,092 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.ajouter_categorie - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:00:55,100 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.ajouter_categorie - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:00:55,100 basehttp 44550 6123843584 "GET /fr/ajouter-categorie/ HTTP/1.1" 200 18077
+INFO 2025-06-05 10:00:58,156 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.ajouter_categorie - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-05 10:00:58,169 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.ajouter_categorie - Status: 302 - Temps: 0.01s
+INFO 2025-06-05 10:00:58,171 basehttp 44550 6123843584 "POST /fr/ajouter-categorie/ HTTP/1.1" 302 0
+INFO 2025-06-05 10:00:58,194 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:00:58,203 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:00:58,203 basehttp 44550 6123843584 "GET /fr/ HTTP/1.1" 200 13329
+INFO 2025-06-05 10:00:59,355 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:00:59,368 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:00:59,369 basehttp 44550 6123843584 "GET /fr/ajouter/ HTTP/1.1" 200 27289
+WARNING 2025-06-05 10:00:59,389 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:01:00,289 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.ajouter_categorie - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:01:00,297 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.ajouter_categorie - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:01:00,298 basehttp 44550 6123843584 "GET /fr/ajouter-categorie/ HTTP/1.1" 200 18077
+WARNING 2025-06-05 10:01:00,320 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:01:01,032 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:01:01,037 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:01:01,737 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:01:01,750 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:01:01,752 basehttp 44550 6123843584 "GET /fr/ajouter/ HTTP/1.1" 200 27289
+WARNING 2025-06-05 10:01:01,768 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:01:14,339 logging_utils 44550 6123843584 [CONTENU] GENERATION_IA - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Prompt: guide complet du jardinage...
+INFO 2025-06-05 10:01:14,340 basehttp 44550 6123843584 "POST /fr/api/generer-article-gemini/ HTTP/1.1" 200 4571
+INFO 2025-06-05 10:01:28,560 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-05 10:01:28,581 logging_utils 44550 6123843584 [CONTENU] CREATION - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - ID: 1 - Info: Titre: Devenez le roi (ou la reine) de votre jardin : Guide complet pour jardiniers débutants et expérimentés, Statut: published
+INFO 2025-06-05 10:01:28,581 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.ajouter_article - Status: 302 - Temps: 0.02s
+INFO 2025-06-05 10:01:28,582 basehttp 44550 6123843584 "POST /fr/ajouter/ HTTP/1.1" 302 0
+INFO 2025-06-05 10:01:28,602 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:01:28,615 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:01:28,615 basehttp 44550 6123843584 "GET /fr/ HTTP/1.1" 200 15322
+WARNING 2025-06-05 10:01:28,638 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:01:30,147 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.article_detail - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:01:30,182 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.05s
+INFO 2025-06-05 10:01:30,183 basehttp 44550 6123843584 "GET /fr/article/1/ HTTP/1.1" 200 18214
+WARNING 2025-06-05 10:01:30,204 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638

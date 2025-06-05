@@ -2,3 +2,4 @@ INFO 2025-06-04 14:11:30,135 logging_utils 29540 6204108800 [ACTION ADMIN] CREAT
 INFO 2025-06-04 14:11:46,115 logging_utils 29540 6204108800 [ACTION ADMIN] CREATION_TAG - Par: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Cible: Tag blabka - Info: Slug: b
 INFO 2025-06-04 14:33:08,143 logging_utils 30806 6163607552 [ACTION ADMIN] MODIFICATION_TAG - Par: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Cible: Tag letag - Info: Changements: Slug: l -> letag
 INFO 2025-06-04 14:33:25,407 logging_utils 30806 6163607552 [ACTION ADMIN] CREATION_TAG - Par: admin (ID: 3, Role: visiteur) - IP: 127.0.0.1 - Cible: Tag test - Info: Slug: templatedoesnotexist-at-frauteurs-actifs-baseh
+INFO 2025-06-05 10:00:58,168 logging_utils 44550 6123843584 [ACTION ADMIN] CREATION_CATEGORIE - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Cible: Catégorie ttttt - Info: Slug: t

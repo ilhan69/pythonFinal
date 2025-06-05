@@ -8,7 +8,10 @@ from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.utils.translation import gettext as _
 from django.contrib.contenttypes.models import ContentType
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 import json
+import requests
 from .forms import PostForm, CategoryForm, TagForm
 from .models import Article, Category, Tag
 from comments.models import Comment
@@ -712,3 +715,145 @@ def auteurs_actifs(request):
     }
     
     return render(request, 'blog/auteurs_actifs.html', context)
+
+@login_required
+@csrf_exempt
+def generer_article_gemini(request):
+    """
+    Vue pour générer du contenu d'article via l'API Gemini Flash
+    """
+    if request.method != 'POST':
+        return JsonResponse({'error': 'Méthode non autorisée'}, status=405)
+    
+    if not request.user.can_create_article():
+        return JsonResponse({'error': 'Permissions insuffisantes'}, status=403)
+    
+    try:
+        data = json.loads(request.body)
+        prompt = data.get('prompt', '').strip()
+        
+        if not prompt:
+            return JsonResponse({'error': 'Le prompt ne peut pas être vide'}, status=400)
+        
+        # Configuration de l'API Gemini (vous devrez ajouter votre clé API)
+        GEMINI_API_KEY = getattr(settings, 'GEMINI_API_KEY', None)
+        
+        if not GEMINI_API_KEY:
+            return JsonResponse({
+                'error': 'Configuration API Gemini manquante. Veuillez configurer GEMINI_API_KEY dans les settings.'
+            }, status=500)
+        
+        # Appel à l'API Gemini Flash
+        gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={GEMINI_API_KEY}"
+        
+        gemini_prompt = f"""
+        Écris un article de blog complet en français sur le sujet suivant : {prompt}
+        
+        L'article doit contenir :
+        1. Un titre accrocheur
+        2. Un résumé court (maximum 250 caractères)
+        3. Un contenu structuré avec des paragraphes, des sous-titres si nécessaire
+        4. Une longueur d'environ 500-800 mots
+        5. Un style engageant et informatif
+        
+        Format de réponse attendu (JSON) :
+        {{
+            "titre": "Titre de l'article",
+            "resume": "Résumé court de l'article",
+            "contenu": "Contenu complet de l'article avec formatage HTML basique"
+        }}
+        
+        Réponds uniquement avec le JSON demandé, sans texte supplémentaire.
+        """
+        
+        payload = {
+            "contents": [{
+                "parts": [{
+                    "text": gemini_prompt
+                }]
+            }],
+            "generationConfig": {
+                "temperature": 0.7,
+                "topK": 40,
+                "topP": 0.95,
+                "maxOutputTokens": 2048,
+            }
+        }
+        
+        headers = {
+            'Content-Type': 'application/json',
+        }
+        
+        response = requests.post(gemini_url, json=payload, headers=headers, timeout=30)
+        
+        if response.status_code == 200:
+            gemini_response = response.json()
+            
+            if 'candidates' in gemini_response and len(gemini_response['candidates']) > 0:
+                generated_text = gemini_response['candidates'][0]['content']['parts'][0]['text']
+                
+                try:
+                    # Nettoyer le texte pour extraire le JSON
+                    start_idx = generated_text.find('{')
+                    end_idx = generated_text.rfind('}') + 1
+                    
+                    if start_idx != -1 and end_idx > start_idx:
+                        json_text = generated_text[start_idx:end_idx]
+                        article_data = json.loads(json_text)
+                        
+                        # Log de l'action
+                        log_content_action(request, 'GENERATION_IA', 'Article', None,
+                                         f"Prompt: {prompt[:100]}...")
+                        
+                        return JsonResponse({
+                            'success': True,
+                            'titre': article_data.get('titre', ''),
+                            'resume': article_data.get('resume', ''),
+                            'contenu': article_data.get('contenu', ''),
+                            'message': 'Article généré avec succès !'
+                        })
+                    else:
+                        raise ValueError("Format JSON non trouvé dans la réponse")
+                        
+                except (json.JSONDecodeError, ValueError) as e:
+                    # Fallback : créer une structure basique à partir du texte brut
+                    lines = generated_text.strip().split('\n')
+                    titre = lines[0] if lines else "Article généré"
+                    contenu = generated_text
+                    
+                    return JsonResponse({
+                        'success': True,
+                        'titre': titre,
+                        'resume': '',
+                        'contenu': contenu,
+                        'message': 'Article généré avec succès (format simplifié) !'
+                    })
+            else:
+                raise Exception("Aucun contenu généré par l'API")
+        else:
+            error_message = f"Erreur API Gemini: {response.status_code}"
+            if response.text:
+                try:
+                    error_data = response.json()
+                    if 'error' in error_data:
+                        error_message = error_data['error'].get('message', error_message)
+                except:
+                    pass
+            
+            log_error(request, Exception(error_message), "Erreur lors de l'appel à l'API Gemini")
+            return JsonResponse({'error': error_message}, status=500)
+            
+    except requests.RequestException as e:
+        log_error(request, e, "Erreur de connexion à l'API Gemini")
+        return JsonResponse({
+            'error': 'Erreur de connexion à l\'API Gemini. Veuillez réessayer.'
+        }, status=500)
+        
+    except json.JSONDecodeError:
+        return JsonResponse({'error': 'Format de données invalide'}, status=400)
+        
+    except Exception as e:
+        log_error(request, e, "Erreur lors de la génération d'article avec Gemini")
+        return JsonResponse({
+            'error': 'Une erreur inattendue est survenue lors de la génération.'
+        }, status=500)
