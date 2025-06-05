@@ -4264,3 +4264,39 @@ ERROR 2025-06-05 12:30:25,952 basehttp 51521 6135836672 "GET /fr/rss/ HTTP/1.1" 
 INFO 2025-06-05 12:30:29,848 basehttp 51521 6135836672 "GET /fr/feed/ HTTP/1.1" 200 2716
 INFO 2025-06-05 12:30:32,736 autoreload 51521 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/feeds_urls.py changed, reloading.
 INFO 2025-06-05 12:30:32,929 autoreload 51611 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 14:31:24,858 basehttp 51611 6192115712 "GET / HTTP/1.1" 302 0
+INFO 2025-06-05 14:31:24,877 logging_utils 51611 6208942080 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 14:31:24,901 logging_utils 51611 6208942080 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 14:31:24,901 basehttp 51611 6208942080 "GET /fr/ HTTP/1.1" 200 21590
+INFO 2025-06-05 14:31:24,916 basehttp 51611 6208942080 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+INFO 2025-06-05 14:31:24,916 basehttp 51611 6192115712 "GET /media/articles/covers/ai_generated_image_f13qFvh.png HTTP/1.1" 304 0
+INFO 2025-06-05 14:31:27,505 logging_utils 51611 6192115712 [ACCÈS VUE] blog.views.article_detail - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 14:31:27,548 logging_utils 51611 6192115712 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.06s
+INFO 2025-06-05 14:31:27,548 basehttp 51611 6192115712 "GET /fr/article/4/ HTTP/1.1" 200 16237
+INFO 2025-06-05 14:38:56,767 autoreload 51611 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/urls.py changed, reloading.
+INFO 2025-06-05 14:38:57,058 autoreload 55043 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 14:40:15,111 autoreload 55043 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/api_views.py changed, reloading.
+INFO 2025-06-05 14:40:15,360 autoreload 55137 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 14:40:49,812 autoreload 55137 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/api_views.py changed, reloading.
+INFO 2025-06-05 14:40:50,005 autoreload 55180 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 14:42:24,954 logging_utils 55180 6166933504 [ACCÈS VUE] blog.views.article_detail - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 14:42:24,985 logging_utils 55180 6166933504 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.05s
+INFO 2025-06-05 14:42:24,985 basehttp 55180 6166933504 "GET /fr/article/4/ HTTP/1.1" 200 16237
+INFO 2025-06-05 14:42:25,193 logging_utils 55180 6166933504 [ACCÈS VUE] blog.views.article_detail - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 14:42:25,210 logging_utils 55180 6166933504 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 14:42:25,211 basehttp 55180 6166933504 "GET /fr/article/4/ HTTP/1.1" 200 16237
+INFO 2025-06-05 14:42:25,753 logging_utils 55180 6166933504 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 14:42:25,779 logging_utils 55180 6166933504 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 14:42:25,780 basehttp 55180 6166933504 "GET /fr/ HTTP/1.1" 200 21590
+INFO 2025-06-05 14:42:26,596 logging_utils 55180 6166933504 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 14:42:26,616 logging_utils 55180 6166933504 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 14:42:26,617 basehttp 55180 6166933504 "GET /fr/ HTTP/1.1" 200 21590
+INFO 2025-06-05 14:42:27,077 logging_utils 55180 6166933504 [ACCÈS VUE] blog.views.liste_articles - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 14:42:27,101 logging_utils 55180 6166933504 [VUE TERMINÉE] blog.views.liste_articles - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 14:42:27,102 basehttp 55180 6166933504 "GET /fr/articles/ HTTP/1.1" 200 36365
+INFO 2025-06-05 14:42:27,451 logging_utils 55180 6166933504 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 14:42:27,470 logging_utils 55180 6166933504 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 14:42:27,471 basehttp 55180 6166933504 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 24174
+WARNING 2025-06-05 14:42:29,435 basehttp 55180 6166933504 "GET /api HTTP/1.1" 404 2650
+INFO 2025-06-05 14:42:37,084 basehttp 55180 6166933504 "GET /api/articles HTTP/1.1" 301 0
+INFO 2025-06-05 14:42:37,127 basehttp 55180 6183759872 "GET /api/articles/ HTTP/1.1" 200 5192

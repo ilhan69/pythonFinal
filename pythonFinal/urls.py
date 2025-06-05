@@ -20,9 +20,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 
-# URLs sans préfixe de langue (pour le changement de langue)
+# URLs sans préfixe de langue (pour le changement de langue et l'API)
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),  # Pour le changement de langue
+    path('api/', include('blog.api_urls')),  # API REST sans préfixe de langue
 ]
 
 # URLs avec préfixe de langue (incluant les flux RSS)
