@@ -253,7 +253,7 @@
                     {% trans "Décrivez le sujet de votre article et l'IA générera automatiquement un titre, un résumé et du contenu pour vous aider à démarrer." %}
                 </div>
                 
-                <form id="geminiPromptForm">
+                <form id="openaiPromptForm">
                     <div class="mb-3">
                         <label for="promptInput" class="form-label">
                             <i class="fas fa-comment-dots me-2"></i>{% trans "Sujet de l'article" %}
@@ -266,9 +266,21 @@
                         </div>
                     </div>
                     
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="generateImageCheck" checked>
+                            <label class="form-check-label" for="generateImageCheck">
+                                <i class="fas fa-image me-2"></i>{% trans "Générer aussi une image de couverture avec DALL-E" %}
+                            </label>
+                        </div>
+                        <div class="form-text">
+                            {% trans "L'IA créera automatiquement une image de couverture adaptée au contenu de votre article." %}
+                        </div>
+                    </div>
+                    
                     <div class="d-flex justify-content-between">
                         <div class="text-muted small">
-                            <i class="fas fa-robot me-1"></i>{% trans "Powered by Google Gemini Flash" %}
+                            <i class="fas fa-robot me-1"></i>{% trans "Powered by OpenAI GPT-4 & DALL-E" %}
                         </div>
                         <div>
                             <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">
@@ -289,6 +301,9 @@
                     <p class="mt-2 text-muted">
                         <i class="fas fa-brain me-1"></i>{% trans "L'IA rédige votre article..." %}
                     </p>
+                    <div class="progress mt-2" style="height: 6px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                    </div>
                 </div>
                 
                 <!-- Résultats -->
@@ -310,6 +325,22 @@
                             <label class="form-label fw-bold">{% trans "Contenu généré :" %}</label>
                             <div class="form-control" id="generatedContent" readonly style="background-color: #f8f9fa; min-height: 150px; overflow-y: auto;"></div>
                         </div>
+                        <!-- Section pour l'image générée -->
+                        <div class="col-12 mb-3" id="generatedImageSection" style="display: none;">
+                            <label class="form-label fw-bold">{% trans "Image de couverture générée :" %}</label>
+                            <div class="text-center">
+                                <img id="generatedImage" src="" alt="Image générée" class="img-fluid rounded" style="max-height: 300px;">
+                                <div class="mt-2">
+                                    <small class="text-muted">{% trans "Image générée par DALL-E 3" %}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Message d'erreur pour l'image -->
+                    <div id="imageErrorDiv" class="alert alert-warning mt-2" style="display: none;">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>{% trans "Image :" %}</strong> <span id="imageErrorMessage"></span>
                     </div>
                     
                     <div class="d-flex justify-content-between">
@@ -341,7 +372,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const redactionBtn = document.getElementById('redaction-intelligente-btn');
     const modal = new bootstrap.Modal(document.getElementById('redactionInteligenteModal'));
-    const promptForm = document.getElementById('geminiPromptForm');
+    const promptForm = document.getElementById('openaiPromptForm');
     const promptInput = document.getElementById('promptInput');
     const generateBtn = document.getElementById('generateBtn');
     const loadingDiv = document.getElementById('loadingDiv');
@@ -389,41 +420,175 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 document.getElementById('{{ form.content.id_for_label }}').value = generatedData.contenu;
             }
+            
+            // Gérer l'image générée
+            if (generatedData.image_generated && generatedData.image_data) {
+                handleGeneratedImage(generatedData);
+            }
+            
             modal.hide();
-            showSuccessMessage('{% trans "Contenu inséré avec succès !" %}');
         }
     });
     
-    // Utiliser partiellement (permettre à l'utilisateur de choisir)
+    // Utiliser partiellement
     usePartialBtn.addEventListener('click', function() {
         if (generatedData) {
             showPartialUseOptions();
         }
     });
     
+    // Fonction pour gérer l'image générée
+    function handleGeneratedImage(data) {
+        if (data.image_data && data.image_filename) {
+            // Sauvegarder l'image générée sur le serveur
+            fetch('{% url "blog:sauvegarder_image_generee" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+                },
+                body: JSON.stringify({
+                    image_data: data.image_data,
+                    filename: data.image_filename
+                })
+            })
+            .then(response => response.json())
+            .then(saveData => {
+                if (saveData.success) {
+                    // Créer un aperçu de l'image sous le champ cover_image
+                    const coverImageField = document.getElementById('{{ form.cover_image.id_for_label }}');
+                    if (coverImageField) {
+                        // Créer un aperçu visuel
+                        let preview = document.getElementById('ai-image-preview');
+                        if (!preview) {
+                            preview = document.createElement('div');
+                            preview.id = 'ai-image-preview';
+                            preview.className = 'mt-2 p-2 border rounded bg-light';
+                            coverImageField.parentNode.appendChild(preview);
+                        }
+                        
+                        // Construire le HTML de façon sécurisée
+                        const previewHTML = '<div class="d-flex align-items-center">' +
+                            '<img src="' + data.image_data + '" alt="Image générée" class="me-3" style="width: 80px; height: 80px; object-fit: cover; border-radius: 4px;">' +
+                            '<div class="flex-grow-1">' +
+                                '<h6 class="mb-1 text-success">' +
+                                    '<i class="fas fa-magic me-1"></i>Image générée par IA' +
+                                '</h6>' +
+                                '<small class="text-muted">Fichier: ' + saveData.filename + '</small><br>' +
+                                '<small class="text-muted">URL: ' + saveData.file_url + '</small>' +
+                            '</div>' +
+                            '<button type="button" class="btn btn-sm btn-success" onclick="useGeneratedImage(\'' + saveData.file_path + '\', \'' + data.image_data + '\')">' +
+                                '<i class="fas fa-check me-1"></i>Utiliser' +
+                            '</button>' +
+                        '</div>';
+                        
+                        preview.innerHTML = previewHTML;
+                        showSuccessMessage('Image générée et sauvegardée avec succès !');
+                    }
+                } else {
+                    console.error('Erreur lors de la sauvegarde:', saveData.error);
+                    showSuccessMessage('Article généré, mais erreur lors de la sauvegarde de l\'image.');
+                }
+            })
+            .catch(error => {
+                console.error('Erreur sauvegarde image:', error);
+                showSuccessMessage('Article généré, mais erreur lors de la sauvegarde de l\'image.');
+            });
+        }
+    }
+    
+    // Fonction globale pour utiliser l'image générée (appelée depuis le bouton)
+    window.useGeneratedImage = function(filePath, imageData) {
+        // Créer un objet File à partir des données de l'image
+        fetch(imageData)
+            .then(res => res.blob())
+            .then(blob => {
+                // Créer un fichier à partir du blob
+                const file = new File([blob], 'ai_generated_image.png', { type: 'image/png' });
+                
+                // Créer un objet DataTransfer pour simuler un drop de fichier
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                
+                // Assigner au champ cover_image
+                const coverImageField = document.getElementById('{{ form.cover_image.id_for_label }}');
+                if (coverImageField) {
+                    coverImageField.files = dataTransfer.files;
+                    
+                    // Déclencher l'événement change pour mettre à jour l'interface
+                    const changeEvent = new Event('change', { bubbles: true });
+                    coverImageField.dispatchEvent(changeEvent);
+                    
+                    // Créer un aperçu visuel sous le champ
+                    let existingPreview = coverImageField.parentNode.querySelector('.image-preview');
+                    if (!existingPreview) {
+                        existingPreview = document.createElement('img');
+                        existingPreview.className = 'image-preview mt-2';
+                        existingPreview.style.cssText = 'max-width: 200px; max-height: 200px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);';
+                        coverImageField.parentNode.appendChild(existingPreview);
+                    }
+                    existingPreview.src = imageData;
+                    
+                    showSuccessMessage('Image assignée au formulaire avec succès ! Elle sera sauvegardée lors de la soumission.');
+                } else {
+                    showSuccessMessage('Erreur : Impossible de trouver le champ image de couverture.');
+                }
+            })
+            .catch(error => {
+                console.error('Erreur lors de l\'assignation de l\'image:', error);
+                showSuccessMessage('Erreur lors de l\'assignation de l\'image au formulaire.');
+            });
+        
+        // Masquer le preview AI et marquer comme utilisé
+        const preview = document.getElementById('ai-image-preview');
+        if (preview) {
+            preview.style.opacity = '0.7';
+            preview.querySelector('button').innerHTML = '<i class="fas fa-check me-1"></i>Assignée au formulaire';
+            preview.querySelector('button').disabled = true;
+            preview.querySelector('button').classList.remove('btn-success');
+            preview.querySelector('button').classList.add('btn-outline-success');
+        }
+    };
+    
     function generateArticle() {
         const prompt = promptInput.value.trim();
+        const generateImage = document.getElementById('generateImageCheck').checked;
+        
         if (!prompt) {
-            showError('{% trans "Veuillez saisir un sujet pour votre article." %}');
+            alert('Veuillez entrer un sujet pour générer l\'article.');
             return;
         }
         
-        // Afficher le loader
+        // Afficher le loader avec progression
         hideAllSections();
         loadingDiv.style.display = 'block';
         generateBtn.disabled = true;
         
-        // Appel AJAX à l'API
-        fetch('{% url "blog:generer_article_gemini" %}', {
+        // Animation de la barre de progression
+        const progressBar = loadingDiv.querySelector('.progress-bar');
+        let progress = 0;
+        const progressInterval = setInterval(function() {
+            progress += Math.random() * 15;
+            if (progress > 90) progress = 90;
+            progressBar.style.width = progress + '%';
+        }, 500);
+        
+        // Appel AJAX à l'API OpenAI
+        fetch('{% url "blog:generer_article_openai" %}', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
             },
-            body: JSON.stringify({ prompt: prompt })
+            body: JSON.stringify({ 
+                prompt: prompt,
+                generer_image: generateImage 
+            })
         })
         .then(response => response.json())
         .then(data => {
+            clearInterval(progressInterval);
+            progressBar.style.width = '100%';
             generateBtn.disabled = false;
             loadingDiv.style.display = 'none';
             
@@ -431,21 +596,45 @@ document.addEventListener('DOMContentLoaded', function() {
                 generatedData = data;
                 showResults(data);
             } else {
-                showError(data.error || '{% trans "Une erreur est survenue lors de la génération." %}');
+                showError(data.error || 'Une erreur est survenue lors de la génération.');
             }
         })
         .catch(error => {
+            clearInterval(progressInterval);
             generateBtn.disabled = false;
             loadingDiv.style.display = 'none';
             console.error('Erreur:', error);
-            showError('{% trans "Erreur de connexion. Veuillez réessayer." %}');
+            showError('Erreur de connexion. Veuillez réessayer.');
         });
     }
     
     function showResults(data) {
         document.getElementById('generatedTitle').textContent = data.titre;
-        document.getElementById('generatedExcerpt').textContent = data.resume || '{% trans "Aucun résumé généré" %}';
+        document.getElementById('generatedExcerpt').textContent = data.resume || 'Aucun résumé généré';
         document.getElementById('generatedContent').innerHTML = data.contenu.replace(/\n/g, '<br>');
+        
+        // Gérer l'affichage de l'image générée
+        const imageSection = document.getElementById('generatedImageSection');
+        const imageElement = document.getElementById('generatedImage');
+        const imageErrorDiv = document.getElementById('imageErrorDiv');
+        const imageErrorMessage = document.getElementById('imageErrorMessage');
+        
+        if (data.image_generated && data.image_data) {
+            imageElement.src = data.image_data;
+            imageSection.style.display = 'block';
+            imageErrorDiv.style.display = 'none';
+        } else {
+            imageSection.style.display = 'none';
+        }
+        
+        // Afficher les erreurs d'image si il y en a
+        if (data.image_error) {
+            imageErrorMessage.textContent = data.image_error;
+            imageErrorDiv.style.display = 'block';
+        } else {
+            imageErrorDiv.style.display = 'none';
+        }
+        
         resultsDiv.style.display = 'block';
     }
     
@@ -471,14 +660,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Créer une notification de succès temporaire
         const alert = document.createElement('div');
         alert.className = 'alert alert-success alert-dismissible fade show';
-        alert.innerHTML = `
-            <i class="fas fa-check-circle me-2"></i>${message}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        `;
+        alert.innerHTML = '<i class="fas fa-check-circle me-2"></i>' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
         document.querySelector('.card-body').insertBefore(alert, document.querySelector('.card-body').firstChild);
         
         // Faire disparaître après 3 secondes
-        setTimeout(() => {
+        setTimeout(function() {
             if (alert.parentNode) {
                 alert.parentNode.removeChild(alert);
             }
@@ -489,42 +675,62 @@ document.addEventListener('DOMContentLoaded', function() {
         // Créer une modal secondaire pour choisir quoi utiliser
         const partialModal = document.createElement('div');
         partialModal.className = 'modal fade';
-        partialModal.innerHTML = `
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">{% trans "Choisir le contenu à utiliser" %}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" id="useTitleCheck" checked>
-                            <label class="form-check-label" for="useTitleCheck">
-                                <strong>{% trans "Utiliser le titre :" %}</strong> ${generatedData.titre}
-                            </label>
-                        </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" id="useExcerptCheck" ${generatedData.resume ? 'checked' : ''}>
-                            <label class="form-check-label" for="useExcerptCheck">
-                                <strong>{% trans "Utiliser le résumé :" %}</strong> ${generatedData.resume || '{% trans "Aucun résumé" %}'}
-                            </label>
-                        </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" id="useContentCheck" checked>
-                            <label class="form-check-label" for="useContentCheck">
-                                <strong>{% trans "Utiliser le contenu" %}</strong>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "Annuler" %}</button>
-                        <button type="button" class="btn btn-primary" id="applyPartialBtn">{% trans "Appliquer" %}</button>
-                    </div>
-                </div>
-            </div>
-        `;
         
+        // Construire le HTML de façon sécurisée
+        const modalHTML = '<div class="modal-dialog">' +
+            '<div class="modal-content">' +
+                '<div class="modal-header">' +
+                    '<h5 class="modal-title">Choisir le contenu à utiliser</h5>' +
+                    '<button type="button" class="btn-close" data-bs-dismiss="modal"></button>' +
+                '</div>' +
+                '<div class="modal-body">' +
+                    '<div class="form-check mb-3">' +
+                        '<input class="form-check-input" type="checkbox" id="useTitleCheck" checked>' +
+                        '<label class="form-check-label" for="useTitleCheck">' +
+                            '<strong>Utiliser le titre :</strong> <span id="titleText"></span>' +
+                        '</label>' +
+                    '</div>' +
+                    '<div class="form-check mb-3">' +
+                        '<input class="form-check-input" type="checkbox" id="useExcerptCheck">' +
+                        '<label class="form-check-label" for="useExcerptCheck">' +
+                            '<strong>Utiliser le résumé :</strong> <span id="excerptText"></span>' +
+                        '</label>' +
+                    '</div>' +
+                    '<div class="form-check mb-3">' +
+                        '<input class="form-check-input" type="checkbox" id="useContentCheck" checked>' +
+                        '<label class="form-check-label" for="useContentCheck">' +
+                            '<strong>Utiliser le contenu</strong>' +
+                        '</label>' +
+                    '</div>' +
+                    '<div class="form-check mb-3" id="imageCheckDiv" style="display: none;">' +
+                        '<input class="form-check-input" type="checkbox" id="useImageCheck" checked>' +
+                        '<label class="form-check-label" for="useImageCheck">' +
+                            '<strong>Utiliser l\'image générée</strong>' +
+                        '</label>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="modal-footer">' +
+                    '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>' +
+                    '<button type="button" class="btn btn-primary" id="applyPartialBtn">Appliquer</button>' +
+                '</div>' +
+            '</div>' +
+        '</div>';
+        
+        partialModal.innerHTML = modalHTML;
         document.body.appendChild(partialModal);
+        
+        // Remplir les données de façon sécurisée
+        partialModal.querySelector('#titleText').textContent = generatedData.titre;
+        partialModal.querySelector('#excerptText').textContent = generatedData.resume || 'Aucun résumé';
+        
+        if (generatedData.resume) {
+            partialModal.querySelector('#useExcerptCheck').checked = true;
+        }
+        
+        if (generatedData.image_generated && generatedData.image_data) {
+            partialModal.querySelector('#imageCheckDiv').style.display = 'block';
+        }
+        
         const partialModalInstance = new bootstrap.Modal(partialModal);
         partialModalInstance.show();
         
@@ -546,10 +752,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('{{ form.content.id_for_label }}').value = generatedData.contenu;
                 }
             }
+            if (partialModal.querySelector('#useImageCheck') && partialModal.querySelector('#useImageCheck').checked && generatedData.image_generated) {
+                handleGeneratedImage(generatedData);
+            }
             
             partialModalInstance.hide();
             modal.hide();
-            showSuccessMessage('{% trans "Contenu sélectionné inséré avec succès !" %}');
+            showSuccessMessage('Contenu sélectionné inséré avec succès !');
         });
         
         // Nettoyer la modal après fermeture

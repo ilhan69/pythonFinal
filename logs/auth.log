@@ -61,3 +61,7 @@ INFO 2025-06-05 09:50:26,999 logging_utils 43907 6159478784 [VUE TERMINÉE] user
 INFO 2025-06-05 09:50:33,432 logging_utils 43907 6159478784 [ACCÈS VUE] users.views.register - Utilisateur: Utilisateur anonyme - IP: 127.0.0.1 - Méthode: POST
 INFO 2025-06-05 09:50:33,686 logging_utils 43907 6159478784 [INSCRIPTION] SUCCÈS - Utilisateur: ilhan1 - IP: 127.0.0.1 - User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0. - Info: Nouveau compte créé avec le rôle auteur
 INFO 2025-06-05 09:50:33,686 logging_utils 43907 6159478784 [VUE TERMINÉE] users.views.register - Status: 302 - Temps: 0.25s
+INFO 2025-06-05 10:03:44,124 logging_utils 44550 6123843584 [ACCÈS VUE] users.views.profile - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:03:44,156 logging_utils 44550 6123843584 [VUE TERMINÉE] users.views.profile - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:42:17,939 logging_utils 45907 6161461248 [ACCÈS VUE] users.views.profile - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:42:17,972 logging_utils 45907 6161461248 [VUE TERMINÉE] users.views.profile - Status: 200 - Temps: 0.03s

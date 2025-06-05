@@ -20,5 +20,6 @@ urlpatterns = [
     path('tag/<int:tag_id>/supprimer/', views.supprimer_tag, name='supprimer_tag'),
     path('tag/<slug:tag_slug>/', views.tag_posts, name='tag_posts'),
     path('administration/statistiques-tags/', views.statistiques_tags, name='statistiques_tags'),
-    path('api/generer-article-gemini/', views.generer_article_gemini, name='generer_article_gemini'),
+    path('api/generer-article-openai/', views.generer_article_openai, name='generer_article_openai'),
+    path('api/sauvegarder-image-generee/', views.sauvegarder_image_generee, name='sauvegarder_image_generee'),
 ]

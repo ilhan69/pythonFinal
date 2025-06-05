@@ -321,12 +321,12 @@ if DEBUG and 'smtp' in globals().get('EMAIL_BACKEND', ''):  # Seulement en mode 
     import django.core.mail.backends.smtp
     django.core.mail.backends.smtp.EmailBackend.ssl_context = ssl_context
 
-# Configuration API Gemini pour la rédaction intelligente
-# Obtenez votre clé API sur https://makersuite.google.com/app/apikey
-GEMINI_API_KEY = "AIzaSyD0K4HEdnAr7vOTIw5HaEnRs6X9ttaEH4w"
+# Configuration API OpenAI pour la rédaction intelligente et génération d'images
+# Obtenez votre clé API sur https://platform.openai.com/api-keys
+OPENAI_API_KEY = "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"
 
 # En développement, vous pouvez aussi définir directement la clé ici :
-# GEMINI_API_KEY = 'votre_cle_api_gemini_ici'
+# OPENAI_API_KEY = 'votre_cle_api_openai_ici'
 
 # Configuration CKEditor
 CKEDITOR_CONFIGS = {

@@ -2590,3 +2590,1456 @@ INFO 2025-06-05 10:01:30,147 logging_utils 44550 6123843584 [ACCÈS VUE] blog.vi
 INFO 2025-06-05 10:01:30,182 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.05s
 INFO 2025-06-05 10:01:30,183 basehttp 44550 6123843584 "GET /fr/article/1/ HTTP/1.1" 200 18214
 WARNING 2025-06-05 10:01:30,204 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:03:39,649 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:03:39,664 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 10:03:39,664 basehttp 44550 6123843584 "GET /fr/ HTTP/1.1" 200 15027
+WARNING 2025-06-05 10:03:39,686 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:03:44,124 logging_utils 44550 6123843584 [ACCÈS VUE] users.views.profile - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:03:44,156 logging_utils 44550 6123843584 [VUE TERMINÉE] users.views.profile - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:03:44,156 basehttp 44550 6123843584 "GET /fr/users/profile/ HTTP/1.1" 200 21493
+WARNING 2025-06-05 10:03:44,177 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:06:00,641 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.auteurs_actifs - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:06:00,663 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.auteurs_actifs - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 10:06:00,663 basehttp 44550 6123843584 "GET /fr/auteurs-actifs/ HTTP/1.1" 200 24172
+WARNING 2025-06-05 10:06:00,684 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:06:06,342 logging_utils 44550 6123843584 [ACCÈS VUE] blog.views.statistiques_tags - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:06:06,374 logging_utils 44550 6123843584 [VUE TERMINÉE] blog.views.statistiques_tags - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:06:06,375 basehttp 44550 6123843584 "GET /fr/administration/statistiques-tags/ HTTP/1.1" 200 18118
+WARNING 2025-06-05 10:06:06,401 basehttp 44550 6123843584 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:22:14,012 autoreload 44550 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-05 10:22:14,338 autoreload 45466 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 10:22:25,616 autoreload 45466 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/urls.py changed, reloading.
+INFO 2025-06-05 10:22:25,792 autoreload 45497 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 10:22:40,128 autoreload 45497 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 10:22:40,319 autoreload 45516 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 10:27:10,425 autoreload 45516 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-05 10:27:10,681 autoreload 45739 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 10:27:15,914 autoreload 45739 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/settings.py changed, reloading.
+INFO 2025-06-05 10:27:16,105 autoreload 45759 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 10:27:19,829 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.liste_articles - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:27:19,877 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.liste_articles - Status: 200 - Temps: 0.07s
+INFO 2025-06-05 10:27:19,877 basehttp 45759 6198226944 "GET /fr/articles/ HTTP/1.1" 200 26262
+WARNING 2025-06-05 10:27:19,897 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:27:22,686 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.liste_articles - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:27:22,710 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.liste_articles - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 10:27:22,711 basehttp 45759 6198226944 "GET /fr/articles/ HTTP/1.1" 200 26262
+WARNING 2025-06-05 10:27:22,729 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:27:24,670 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:27:24,686 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:27:24,686 basehttp 45759 6198226944 "GET /fr/ HTTP/1.1" 200 15027
+WARNING 2025-06-05 10:27:24,705 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:27:25,700 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:27:25,725 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:27:25,726 basehttp 45759 6198226944 "GET /fr/ajouter/ HTTP/1.1" 200 35005
+WARNING 2025-06-05 10:27:25,748 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:27:35,256 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:27:35,270 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:27:35,271 basehttp 45759 6198226944 "GET /fr/ajouter/ HTTP/1.1" 200 35005
+WARNING 2025-06-05 10:27:35,291 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:27:35,827 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:27:35,837 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:27:35,838 basehttp 45759 6198226944 "GET /fr/ajouter/ HTTP/1.1" 200 35005
+WARNING 2025-06-05 10:27:35,853 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:27:36,266 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:27:36,279 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:27:36,280 basehttp 45759 6198226944 "GET /fr/ajouter/ HTTP/1.1" 200 35005
+WARNING 2025-06-05 10:27:36,296 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:28:58,107 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:28:58,125 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:28:58,125 basehttp 45759 6198226944 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:28:58,149 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:28:58,900 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:28:58,911 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:28:58,911 basehttp 45759 6198226944 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:28:58,930 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:28:59,129 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:28:59,138 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:28:59,138 basehttp 45759 6198226944 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:28:59,153 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:28:59,329 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:28:59,337 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:28:59,337 basehttp 45759 6198226944 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:28:59,350 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:28:59,490 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:28:59,503 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:28:59,504 basehttp 45759 6198226944 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:28:59,519 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:29:00,321 basehttp 45759 6198226944 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:29:30,176 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:29:30,186 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:29:30,187 basehttp 45759 6198226944 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:29:30,203 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:29:30,579 logging_utils 45759 6198226944 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:29:30,592 logging_utils 45759 6198226944 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:29:30,593 basehttp 45759 6198226944 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:29:30,608 basehttp 45759 6198226944 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:29:30,714 basehttp 45759 6198226944 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:29:34,467 autoreload 45907 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 10:29:35,196 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:29:35,212 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:29:35,212 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:29:35,234 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:29:35,647 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:29:35,654 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:29:35,654 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:29:35,669 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:29:35,812 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:29:35,819 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:29:35,820 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:29:35,834 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:29:35,961 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:29:35,973 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:29:35,973 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:29:35,983 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:00,945 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:00,954 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:00,954 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:00,974 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:01,777 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:01,787 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:01,788 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:01,808 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:02,095 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:02,101 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:02,101 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:02,120 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:02,612 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:02,621 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:02,621 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:02,640 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:06,005 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:06,016 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:06,017 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:06,038 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:06,365 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:06,375 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:06,376 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:06,394 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:06,560 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:06,570 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:06,571 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:06,583 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:06,727 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:06,738 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:06,739 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:06,750 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:06,905 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:06,911 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:06,911 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:06,922 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:07,379 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:07,388 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:07,389 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:07,406 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:07,807 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:07,819 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:07,819 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:07,839 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:08,045 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:08,054 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:08,055 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:08,068 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:08,678 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:08,687 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:08,687 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:08,706 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:09,142 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:09,153 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:09,154 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:09,171 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:09,845 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:09,854 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:09,855 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:09,872 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:10,203 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:10,214 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:10,214 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:10,236 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:10,759 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:10,770 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:10,771 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:10,789 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:11,225 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:11,237 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:11,238 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:11,255 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:11,813 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:11,822 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:11,823 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:11,840 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:12,337 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:12,348 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:12,349 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:12,369 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:12,827 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:12,838 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:12,838 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:12,856 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:13,094 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:13,105 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:13,105 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:13,119 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:31:13,327 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:31:13,336 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:31:13,336 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 35880
+WARNING 2025-06-05 10:31:13,351 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:33:39,862 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:33:39,879 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:33:39,880 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:33:39,902 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:33:40,291 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:33:40,299 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:33:40,300 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:33:40,316 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:33:40,451 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:33:40,460 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:33:40,461 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:33:40,471 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:33:45,908 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:33:45,918 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:33:45,919 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:33:45,932 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:33:46,241 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:33:46,256 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:33:46,257 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:33:46,277 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:33:46,360 basehttp 45907 6161461248 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:33:46,379 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:33:46,389 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:33:46,389 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:33:46,402 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:33:46,527 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:33:46,537 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:33:46,537 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:33:46,551 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:33:46,632 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:33:46,643 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:33:46,644 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:33:46,658 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:33:46,748 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:33:46,757 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:33:46,757 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:33:46,770 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:33:47,007 basehttp 45907 6161461248 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:34:09,590 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:34:09,595 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:34:09,595 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:34:09,609 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:34:09,921 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:34:09,930 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:34:09,931 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:34:09,944 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:34:10,031 basehttp 45907 6161461248 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:34:10,087 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:34:10,098 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:34:10,100 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:34:10,112 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:34:10,273 basehttp 45907 6161461248 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:34:31,771 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:34:31,784 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:34:31,785 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:34:31,806 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:34:31,911 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:34:31,921 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:34:31,922 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:34:31,933 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:34:32,043 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:34:32,054 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:34:32,054 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:34:32,064 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:34:32,193 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:34:32,204 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:34:32,205 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36398
+WARNING 2025-06-05 10:34:32,218 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:36:17,390 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:17,401 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:17,402 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36498
+WARNING 2025-06-05 10:36:17,417 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:36:17,967 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:17,979 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:17,980 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36498
+WARNING 2025-06-05 10:36:17,998 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:36:18,217 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:18,228 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:18,228 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36498
+WARNING 2025-06-05 10:36:18,240 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:36:19,057 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:19,077 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:36:19,078 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 36498
+WARNING 2025-06-05 10:36:19,107 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:36:19,195 basehttp 45907 6161461248 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:36:19,210 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:19,223 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:19,223 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 36498
+WARNING 2025-06-05 10:36:19,234 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:36:19,428 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:19,439 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:19,439 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 36498
+WARNING 2025-06-05 10:36:19,451 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:36:19,526 basehttp 45907 6178287616 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:36:19,593 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:19,603 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:19,604 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 36498
+WARNING 2025-06-05 10:36:19,617 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:36:19,701 basehttp 45907 6178287616 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:36:19,794 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:19,804 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:19,805 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 36498
+WARNING 2025-06-05 10:36:19,818 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:36:19,900 basehttp 45907 6178287616 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:36:20,008 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:20,017 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:20,018 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 36498
+WARNING 2025-06-05 10:36:20,030 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:36:20,113 basehttp 45907 6178287616 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:36:20,191 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:20,200 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:20,201 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 36498
+WARNING 2025-06-05 10:36:20,213 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:36:20,307 basehttp 45907 6178287616 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:36:26,414 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:26,414 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.00s
+INFO 2025-06-05 10:36:26,414 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 0
+WARNING 2025-06-05 10:36:26,430 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:36:36,544 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:36,553 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:36,553 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 19917
+WARNING 2025-06-05 10:36:36,566 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:36:37,127 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:37,147 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:36:37,148 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 19917
+WARNING 2025-06-05 10:36:37,167 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:36:37,297 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:37,307 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:37,309 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 19917
+WARNING 2025-06-05 10:36:37,324 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:36:37,435 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:37,445 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:37,445 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 19917
+WARNING 2025-06-05 10:36:37,457 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:36:48,270 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:48,278 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:48,279 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 33183
+WARNING 2025-06-05 10:36:48,294 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:36:48,769 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:48,778 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:48,778 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 33183
+WARNING 2025-06-05 10:36:48,800 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:36:48,935 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:36:48,946 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:36:48,946 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 33183
+WARNING 2025-06-05 10:36:48,963 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:37:02,412 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:37:02,419 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:37:02,419 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 33861
+WARNING 2025-06-05 10:37:02,437 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:37:05,189 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:37:05,199 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:37:05,200 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 33861
+WARNING 2025-06-05 10:37:05,213 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:37:05,427 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:37:05,438 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:37:05,438 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 33861
+WARNING 2025-06-05 10:37:05,452 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:37:08,118 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:37:08,126 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:37:08,127 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 36498
+WARNING 2025-06-05 10:37:08,141 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:37:12,857 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:37:12,862 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:37:12,862 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 36498
+WARNING 2025-06-05 10:37:12,875 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:37:18,612 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:37:18,627 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:37:18,627 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 36468
+WARNING 2025-06-05 10:37:18,647 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:38:22,853 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:38:22,858 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.00s
+INFO 2025-06-05 10:38:22,859 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 36468
+WARNING 2025-06-05 10:38:22,871 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:38:23,343 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:38:23,363 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:38:23,363 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 35910
+WARNING 2025-06-05 10:38:23,381 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:38:23,491 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:38:23,503 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:38:23,503 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 35910
+WARNING 2025-06-05 10:38:23,516 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:38:32,626 basehttp 45907 6178287616 "POST /fr/ajouter/%7B%%20url%20%22blog:generer_article_openai HTTP/1.1" 404 10254
+INFO 2025-06-05 10:40:33,986 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:40:33,996 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:40:33,997 basehttp 45907 6178287616 "GET /fr/ajouter/ HTTP/1.1" 200 36505
+WARNING 2025-06-05 10:40:34,014 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+ERROR 2025-06-05 10:40:41,758 logging_utils 45907 6178287616 [ERREUR] HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)'))) - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Contexte: Erreur de connexion à l'API OpenAI
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connection.py", line 730, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connection.py", line 909, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/util/ssl_.py", line 469, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/util/ssl_.py", line 513, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1041, in _create
+    self.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1319, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 796, in generer_article_openai
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))
+ERROR 2025-06-05 10:40:41,769 basehttp 45907 6178287616 "POST /fr/api/generer-article-openai/ HTTP/1.1" 500 78
+INFO 2025-06-05 10:41:51,905 logging_utils 45907 6161461248 [CONTENU] GENERATION_IA_OPENAI - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Prompt: comment faire du python..., Image: True
+INFO 2025-06-05 10:41:51,914 basehttp 45907 6161461248 "POST /fr/api/generer-article-openai/ HTTP/1.1" 200 1950726
+INFO 2025-06-05 10:41:58,466 logging_utils 45907 6161461248 [CONTENU] SAUVEGARDE_IMAGE_IA - Image - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Fichier: ai_generated_6852538f_2bbb005f.png
+INFO 2025-06-05 10:41:58,467 basehttp 45907 6161461248 "POST /fr/api/sauvegarder-image-generee/ HTTP/1.1" 200 207
+INFO 2025-06-05 10:42:09,906 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-05 10:42:09,919 logging_utils 45907 6161461248 [CONTENU] CREATION - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - ID: 2 - Info: Titre: Plongez dans le monde de Python: Un guide complet pour les débutants, Statut: draft
+INFO 2025-06-05 10:42:09,919 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 302 - Temps: 0.01s
+INFO 2025-06-05 10:42:09,920 basehttp 45907 6161461248 "POST /fr/ajouter/ HTTP/1.1" 302 0
+INFO 2025-06-05 10:42:09,940 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:42:09,959 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 10:42:09,960 basehttp 45907 6161461248 "GET /fr/ HTTP/1.1" 200 15322
+WARNING 2025-06-05 10:42:09,985 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:42:12,137 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.article_detail - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:42:12,163 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.04s
+INFO 2025-06-05 10:42:12,164 basehttp 45907 6161461248 "GET /fr/article/1/ HTTP/1.1" 200 18215
+WARNING 2025-06-05 10:42:12,187 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:42:14,012 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:42:14,018 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:42:16,443 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:42:16,451 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:42:16,452 basehttp 45907 6161461248 "GET /fr/ HTTP/1.1" 200 15027
+WARNING 2025-06-05 10:42:16,467 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:42:17,939 logging_utils 45907 6161461248 [ACCÈS VUE] users.views.profile - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:42:17,972 logging_utils 45907 6161461248 [VUE TERMINÉE] users.views.profile - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:42:17,973 basehttp 45907 6161461248 "GET /fr/users/profile/ HTTP/1.1" 200 24496
+WARNING 2025-06-05 10:42:17,993 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:42:20,230 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.article_detail - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:42:20,246 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:42:20,247 basehttp 45907 6161461248 "GET /fr/article/2/ HTTP/1.1" 200 16490
+WARNING 2025-06-05 10:42:20,268 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:42:22,882 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:42:22,895 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:42:23,682 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:42:23,701 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:42:23,702 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 200 45398
+WARNING 2025-06-05 10:42:23,718 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:43:03,844 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:43:03,859 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:43:03,860 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 200 45398
+WARNING 2025-06-05 10:43:03,876 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:43:07,002 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-05 10:43:07,017 logging_utils 45907 6161461248 [CONTENU] MODIFICATION - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - ID: 2 - Info: Changements: Statut: draft -> published
+INFO 2025-06-05 10:43:07,017 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 302 - Temps: 0.01s
+INFO 2025-06-05 10:43:07,018 basehttp 45907 6161461248 "POST /fr/article/2/modifier/ HTTP/1.1" 302 0
+INFO 2025-06-05 10:43:07,033 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.article_detail - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:43:07,047 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:43:07,047 basehttp 45907 6161461248 "GET /fr/article/2/ HTTP/1.1" 200 16490
+WARNING 2025-06-05 10:43:07,067 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:44:18,925 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:44:18,941 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:44:18,942 basehttp 45907 6161461248 "GET /fr/ HTTP/1.1" 200 17417
+WARNING 2025-06-05 10:44:18,966 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:46:13,761 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:46:13,781 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:46:13,781 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:46:13,804 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:46:29,983 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:46:29,991 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:46:29,991 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+INFO 2025-06-05 10:46:30,160 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:46:30,168 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:46:30,169 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+INFO 2025-06-05 10:46:30,300 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:46:30,307 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:46:30,308 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:46:31,840 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:46:52,213 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:46:52,223 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:46:52,224 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:46:52,250 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:46:52,394 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:46:52,406 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:46:52,407 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:46:52,416 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:46:52,546 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:46:52,556 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:46:52,557 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:46:52,567 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:46:57,626 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:46:57,636 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:46:57,636 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:46:57,656 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:46:57,811 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:46:57,815 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.00s
+INFO 2025-06-05 10:46:57,816 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:46:57,825 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:46:58,047 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:46:58,055 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:46:58,056 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:46:58,068 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:12,960 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:12,979 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:50:12,980 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:50:13,003 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:13,457 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:13,471 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:50:13,472 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:50:13,490 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:13,643 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:13,653 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:50:13,654 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:50:13,666 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:13,891 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:13,913 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:50:13,913 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:50:13,928 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:17,040 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:17,049 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:50:17,049 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:50:17,063 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:17,726 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:17,730 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.00s
+INFO 2025-06-05 10:50:17,731 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:50:17,748 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:25,173 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:25,178 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.00s
+INFO 2025-06-05 10:50:25,178 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:50:25,204 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:25,725 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:25,731 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:50:25,732 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38680
+WARNING 2025-06-05 10:50:25,747 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:35,078 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:35,086 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:50:35,086 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38613
+WARNING 2025-06-05 10:50:35,114 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:35,484 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:35,496 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:50:35,497 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38613
+WARNING 2025-06-05 10:50:35,522 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:35,641 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:35,653 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:50:35,654 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38613
+WARNING 2025-06-05 10:50:35,680 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:35,797 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:35,809 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:50:35,809 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38613
+WARNING 2025-06-05 10:50:35,826 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:41,687 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:41,694 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:50:41,695 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38614
+WARNING 2025-06-05 10:50:41,716 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:42,133 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:42,143 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:50:42,143 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38614
+WARNING 2025-06-05 10:50:42,168 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:50:42,309 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:50:42,318 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:50:42,318 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38614
+WARNING 2025-06-05 10:50:42,334 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:51:23,515 logging_utils 45907 6161461248 [CONTENU] GENERATION_IA_OPENAI - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Prompt: python..., Image: True
+INFO 2025-06-05 10:51:23,527 basehttp 45907 6161461248 "POST /fr/api/generer-article-openai/ HTTP/1.1" 200 1697260
+INFO 2025-06-05 10:51:29,471 logging_utils 45907 6161461248 [CONTENU] SAUVEGARDE_IMAGE_IA - Image - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Fichier: ai_generated_9a9a7c91_5b4e35e3.png
+INFO 2025-06-05 10:51:29,472 basehttp 45907 6161461248 "POST /fr/api/sauvegarder-image-generee/ HTTP/1.1" 200 207
+INFO 2025-06-05 10:51:38,560 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-05 10:51:38,709 logging_utils 45907 6161461248 [CONTENU] CREATION - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - ID: 3 - Info: Titre: Python : La Clé de Votre Avenir en Programmation, Statut: published
+INFO 2025-06-05 10:51:38,709 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 302 - Temps: 0.15s
+INFO 2025-06-05 10:51:38,710 basehttp 45907 6161461248 "POST /fr/ajouter/ HTTP/1.1" 302 0
+INFO 2025-06-05 10:51:38,725 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:51:38,739 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:51:38,739 basehttp 45907 6161461248 "GET /fr/ HTTP/1.1" 200 19636
+WARNING 2025-06-05 10:51:38,768 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:51:38,801 basehttp 45907 6178287616 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 200 1271006
+INFO 2025-06-05 10:51:39,218 basehttp 45907 6178287616 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+INFO 2025-06-05 10:51:41,133 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.article_detail - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:51:41,163 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.05s
+INFO 2025-06-05 10:51:41,164 basehttp 45907 6178287616 "GET /fr/article/3/ HTTP/1.1" 200 16585
+WARNING 2025-06-05 10:51:41,187 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:51:41,187 basehttp 45907 6161461248 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+INFO 2025-06-05 10:51:45,678 basehttp 45907 6161461248 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+WARNING 2025-06-05 10:51:47,944 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 10:51:47,950 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:51:48,850 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:51:48,876 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:51:48,877 basehttp 45907 6161461248 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44440
+WARNING 2025-06-05 10:51:48,901 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:51:48,902 basehttp 45907 6178287616 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+INFO 2025-06-05 10:51:57,159 basehttp 45907 6178287616 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+INFO 2025-06-05 10:54:00,067 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:54:00,094 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 10:54:00,095 basehttp 45907 6178287616 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44440
+WARNING 2025-06-05 10:54:00,124 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:54:00,133 basehttp 45907 6161461248 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+INFO 2025-06-05 10:54:00,648 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:54:00,667 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:54:00,668 basehttp 45907 6161461248 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44440
+WARNING 2025-06-05 10:54:00,688 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:54:00,819 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:54:00,835 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:54:00,836 basehttp 45907 6161461248 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44440
+WARNING 2025-06-05 10:54:00,853 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:54:01,024 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:54:01,038 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:54:01,039 basehttp 45907 6161461248 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44440
+WARNING 2025-06-05 10:54:01,050 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:54:01,493 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:54:01,510 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:54:01,511 basehttp 45907 6161461248 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44440
+WARNING 2025-06-05 10:54:01,531 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:54:01,536 basehttp 45907 6178287616 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 200 1271006
+WARNING 2025-06-05 10:54:01,754 basehttp 45907 6178287616 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:54:02,029 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:54:02,044 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:54:02,044 basehttp 45907 6178287616 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44440
+WARNING 2025-06-05 10:54:02,064 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:54:02,067 basehttp 45907 6161461248 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 200 1271006
+WARNING 2025-06-05 10:54:02,193 basehttp 45907 6161461248 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:54:02,622 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:54:02,638 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:54:02,640 basehttp 45907 6161461248 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44440
+WARNING 2025-06-05 10:54:02,657 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:54:02,662 basehttp 45907 6178287616 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 200 1271006
+WARNING 2025-06-05 10:54:02,842 basehttp 45907 6178287616 "GET /favicon.ico HTTP/1.1" 404 2527
+INFO 2025-06-05 10:54:35,650 basehttp 45907 6178287616 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+INFO 2025-06-05 10:56:45,187 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:56:45,200 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:56:45,201 basehttp 45907 6178287616 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44901
+INFO 2025-06-05 10:56:45,218 basehttp 45907 6161461248 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+WARNING 2025-06-05 10:56:45,219 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:57:36,072 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:57:36,090 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 10:57:36,092 basehttp 45907 6178287616 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44901
+WARNING 2025-06-05 10:57:36,113 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:57:36,113 basehttp 45907 6161461248 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+INFO 2025-06-05 10:57:38,344 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:57:38,350 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:57:38,350 basehttp 45907 6178287616 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44901
+WARNING 2025-06-05 10:57:38,362 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:57:38,559 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:57:38,567 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:57:38,567 basehttp 45907 6178287616 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44901
+WARNING 2025-06-05 10:57:38,580 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:57:38,710 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:57:38,719 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:57:38,720 basehttp 45907 6178287616 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44901
+WARNING 2025-06-05 10:57:38,734 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:57:38,842 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:57:38,854 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:57:38,855 basehttp 45907 6178287616 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44901
+WARNING 2025-06-05 10:57:38,866 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 10:59:33,332 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 10:59:33,345 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 10:59:33,346 basehttp 45907 6178287616 "GET /fr/article/3/modifier/ HTTP/1.1" 200 44902
+INFO 2025-06-05 10:59:33,356 basehttp 45907 6178287616 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+WARNING 2025-06-05 10:59:33,367 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:00:02,880 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-05 11:00:02,893 logging_utils 45907 6178287616 [CONTENU] MODIFICATION - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - ID: 3 - Info: Changements: Titre: Python : La Clé de Votre Avenir en Programmation -> Python : La Clé de Votre Avenir en Programmation - Version améliorée
+INFO 2025-06-05 11:00:02,894 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.modifier_article - Status: 302 - Temps: 0.01s
+INFO 2025-06-05 11:00:02,894 basehttp 45907 6178287616 "POST /fr/article/3/modifier/ HTTP/1.1" 302 0
+INFO 2025-06-05 11:00:02,908 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.article_detail - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:00:02,922 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 11:00:02,922 basehttp 45907 6178287616 "GET /fr/article/3/ HTTP/1.1" 200 14855
+WARNING 2025-06-05 11:00:02,945 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:00:10,625 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:00:10,638 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 11:00:10,638 basehttp 45907 6178287616 "GET /fr/ HTTP/1.1" 200 19632
+WARNING 2025-06-05 11:00:10,655 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:00:12,822 logging_utils 45907 6178287616 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:00:12,847 logging_utils 45907 6178287616 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 11:00:12,848 basehttp 45907 6178287616 "GET /fr/article/3/modifier/ HTTP/1.1" 200 42913
+WARNING 2025-06-05 11:00:12,872 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 11:00:48,832 basehttp 45907 6178287616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:00:48,847 basehttp 45907 6178287616 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+WARNING 2025-06-05 11:00:48,853 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:00:52,222 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:00:52,243 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 11:00:52,244 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38614
+WARNING 2025-06-05 11:00:52,270 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:04:41,770 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:04:41,778 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:04:41,778 basehttp 45907 6161461248 "GET /fr/ajouter/ HTTP/1.1" 200 38614
+WARNING 2025-06-05 11:04:41,794 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 11:04:44,498 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 11:04:44,505 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:04:44,782 basehttp 45907 6161461248 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+INFO 2025-06-05 11:04:45,969 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:04:45,983 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:04:45,983 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 200 42292
+WARNING 2025-06-05 11:04:46,001 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:05:08,982 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:05:08,993 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:05:08,993 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 200 42451
+WARNING 2025-06-05 11:05:09,013 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:05:09,400 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:05:09,407 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:05:09,408 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 200 42451
+WARNING 2025-06-05 11:05:09,422 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:05:09,564 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:05:09,573 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:05:09,573 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 200 42451
+WARNING 2025-06-05 11:05:09,584 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:05:19,715 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:05:19,722 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:05:19,722 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 200 42451
+WARNING 2025-06-05 11:05:19,741 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:05:20,109 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:05:20,117 logging_utils 45907 6161461248 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:05:20,117 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 200 42451
+WARNING 2025-06-05 11:05:20,132 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:08:11,954 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-05 11:08:11,971 logging_utils 45907 6161461248 [ERREUR VUE] blog.views.modifier_article - Erreur: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name. - Temps: 0.02s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 143, in modifier_article
+    return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name.
+ERROR 2025-06-05 11:08:11,995 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 500 135763
+WARNING 2025-06-05 11:08:12,013 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:08:16,685 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-05 11:08:16,694 logging_utils 45907 6161461248 [ERREUR VUE] blog.views.modifier_article - Erreur: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name. - Temps: 0.01s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 143, in modifier_article
+    return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name.
+ERROR 2025-06-05 11:08:16,711 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 500 135762
+WARNING 2025-06-05 11:08:16,730 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:08:16,854 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-05 11:08:16,861 logging_utils 45907 6161461248 [ERREUR VUE] blog.views.modifier_article - Erreur: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name. - Temps: 0.01s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 143, in modifier_article
+    return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name.
+ERROR 2025-06-05 11:08:16,874 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 500 135762
+WARNING 2025-06-05 11:08:16,889 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:08:16,976 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-05 11:08:16,982 logging_utils 45907 6161461248 [ERREUR VUE] blog.views.modifier_article - Erreur: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name. - Temps: 0.01s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 143, in modifier_article
+    return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name.
+ERROR 2025-06-05 11:08:16,996 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 500 135762
+WARNING 2025-06-05 11:08:17,005 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:08:19,634 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-05 11:08:19,650 logging_utils 45907 6161461248 [ERREUR VUE] blog.views.modifier_article - Erreur: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name. - Temps: 0.02s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 143, in modifier_article
+    return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name.
+ERROR 2025-06-05 11:08:19,679 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 500 135763
+WARNING 2025-06-05 11:08:19,697 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:08:19,793 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-05 11:08:19,803 logging_utils 45907 6161461248 [ERREUR VUE] blog.views.modifier_article - Erreur: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name. - Temps: 0.01s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 143, in modifier_article
+    return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name.
+ERROR 2025-06-05 11:08:19,824 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 500 135763
+WARNING 2025-06-05 11:08:19,835 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:08:19,967 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-05 11:08:19,979 logging_utils 45907 6161461248 [ERREUR VUE] blog.views.modifier_article - Erreur: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name. - Temps: 0.01s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 143, in modifier_article
+    return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name.
+ERROR 2025-06-05 11:08:19,999 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 500 135763
+WARNING 2025-06-05 11:08:20,012 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:08:20,197 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-05 11:08:20,209 logging_utils 45907 6161461248 [ERREUR VUE] blog.views.modifier_article - Erreur: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name. - Temps: 0.01s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 143, in modifier_article
+    return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name.
+ERROR 2025-06-05 11:08:20,238 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 500 135763
+WARNING 2025-06-05 11:08:20,251 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:08:20,358 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-05 11:08:20,370 logging_utils 45907 6161461248 [ERREUR VUE] blog.views.modifier_article - Erreur: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name. - Temps: 0.01s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 143, in modifier_article
+    return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name.
+ERROR 2025-06-05 11:08:20,395 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 500 135763
+WARNING 2025-06-05 11:08:20,406 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:08:20,516 logging_utils 45907 6161461248 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+ERROR 2025-06-05 11:08:20,527 logging_utils 45907 6161461248 [ERREUR VUE] blog.views.modifier_article - Erreur: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name. - Temps: 0.01s
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/pythonFinal/logging_utils.py", line 126, in wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 143, in modifier_article
+    return render(request, 'blog/modifier_article.html', {'form': form, 'article': article})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'detail' not found. 'detail' is not a valid view function or pattern name.
+ERROR 2025-06-05 11:08:20,550 basehttp 45907 6161461248 "GET /fr/article/2/modifier/ HTTP/1.1" 500 135763
+WARNING 2025-06-05 11:08:20,562 basehttp 45907 6161461248 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:10:04,560 autoreload 45907 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/models.py changed, reloading.
+INFO 2025-06-05 11:10:04,862 autoreload 48089 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 11:10:10,588 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:10:10,608 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 11:10:10,609 basehttp 48089 6190477312 "GET /fr/article/2/modifier/ HTTP/1.1" 200 31837
+WARNING 2025-06-05 11:10:10,629 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:10:13,793 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:10:13,805 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:10:13,806 basehttp 48089 6190477312 "GET /fr/article/2/modifier/ HTTP/1.1" 200 31837
+WARNING 2025-06-05 11:10:13,824 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:10:14,124 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:10:14,131 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:10:14,132 basehttp 48089 6190477312 "GET /fr/article/2/modifier/ HTTP/1.1" 200 31837
+WARNING 2025-06-05 11:10:14,147 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:10:19,279 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:10:19,288 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:10:19,288 basehttp 48089 6190477312 "GET /fr/article/2/modifier/ HTTP/1.1" 200 31837
+WARNING 2025-06-05 11:10:19,304 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:10:19,457 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:10:19,463 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:10:19,464 basehttp 48089 6190477312 "GET /fr/article/2/modifier/ HTTP/1.1" 200 31837
+WARNING 2025-06-05 11:10:19,472 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:10:19,607 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:10:19,616 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:10:19,616 basehttp 48089 6190477312 "GET /fr/article/2/modifier/ HTTP/1.1" 200 31837
+WARNING 2025-06-05 11:10:19,639 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:12:16,850 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:12:16,858 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:12:16,859 basehttp 48089 6190477312 "GET /fr/article/2/modifier/ HTTP/1.1" 200 31837
+WARNING 2025-06-05 11:12:16,907 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:12:17,326 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:12:17,337 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:12:17,338 basehttp 48089 6190477312 "GET /fr/article/2/modifier/ HTTP/1.1" 200 31837
+WARNING 2025-06-05 11:12:17,356 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:12:17,463 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:12:17,474 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:12:17,475 basehttp 48089 6190477312 "GET /fr/article/2/modifier/ HTTP/1.1" 200 31837
+WARNING 2025-06-05 11:12:17,485 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:17:09,943 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:17:09,960 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 11:17:09,961 basehttp 48089 6190477312 "GET /fr/article/2/modifier/ HTTP/1.1" 200 31838
+WARNING 2025-06-05 11:17:09,993 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:17:59,355 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:17:59,374 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 11:17:59,375 basehttp 48089 6190477312 "GET /fr/article/2/modifier/ HTTP/1.1" 200 31838
+WARNING 2025-06-05 11:17:59,397 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:18:01,121 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:18:01,152 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.05s
+INFO 2025-06-05 11:18:01,152 basehttp 48089 6190477312 "GET /fr/ HTTP/1.1" 200 19335
+WARNING 2025-06-05 11:18:01,177 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:18:01,360 basehttp 48089 6190477312 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+INFO 2025-06-05 11:18:02,348 logging_utils 48089 6190477312 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:18:02,365 logging_utils 48089 6190477312 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 11:18:02,366 basehttp 48089 6190477312 "GET /fr/ajouter/ HTTP/1.1" 200 38617
+WARNING 2025-06-05 11:18:02,383 basehttp 48089 6190477312 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+ERROR 2025-06-05 11:18:36,904 logging_utils 48089 6190477312 [ERREUR] HTTPSConnectionPool(host='api.openai.com', port=443): Read timed out. (read timeout=30) - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Contexte: Erreur de connexion à l'API OpenAI
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 538, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 369, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.openai.com', port=443): Read timed out. (read timeout=30)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 796, in generer_article_openai
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.openai.com', port=443): Read timed out. (read timeout=30)
+ERROR 2025-06-05 11:18:36,920 basehttp 48089 6190477312 "POST /fr/api/generer-article-openai/ HTTP/1.1" 500 78
+INFO 2025-06-05 11:19:22,124 autoreload 48089 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/models.py changed, reloading.
+INFO 2025-06-05 11:19:22,525 autoreload 48535 8660082432 Watching for file changes with StatReloader
+ERROR 2025-06-05 11:19:55,346 logging_utils 48535 6194884608 [ERREUR] HTTPSConnectionPool(host='api.openai.com', port=443): Read timed out. (read timeout=30) - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Contexte: Erreur de connexion à l'API OpenAI
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 538, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py", line 369, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.openai.com', port=443): Read timed out. (read timeout=30)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py", line 796, in generer_article_openai
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.openai.com', port=443): Read timed out. (read timeout=30)
+ERROR 2025-06-05 11:19:55,358 basehttp 48535 6194884608 "POST /fr/api/generer-article-openai/ HTTP/1.1" 500 78
+INFO 2025-06-05 11:20:44,051 autoreload 48535 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-05 11:20:44,310 autoreload 48623 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 11:20:50,548 autoreload 48623 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-05 11:20:50,760 autoreload 48638 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 11:21:16,260 autoreload 48638 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-05 11:21:16,522 autoreload 48651 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 11:21:21,743 autoreload 48651 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-05 11:21:21,923 autoreload 48659 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 11:21:43,754 logging_utils 48659 6204633088 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:21:43,778 logging_utils 48659 6204633088 [VUE TERMINÉE] blog.views.ajouter_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 11:21:43,779 basehttp 48659 6204633088 "GET /fr/ajouter/ HTTP/1.1" 200 38617
+WARNING 2025-06-05 11:21:43,799 basehttp 48659 6204633088 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:22:07,894 logging_utils 48659 6204633088 [CONTENU] GENERATION_IA_OPENAI - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Prompt: jardin..., Image: True
+INFO 2025-06-05 11:22:07,912 basehttp 48659 6204633088 "POST /fr/api/generer-article-openai/ HTTP/1.1" 200 2544796
+INFO 2025-06-05 11:22:16,279 logging_utils 48659 6204633088 [CONTENU] SAUVEGARDE_IMAGE_IA - Image - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Fichier: ai_generated_f998291c_aa5bee74.png
+INFO 2025-06-05 11:22:16,280 basehttp 48659 6204633088 "POST /fr/api/sauvegarder-image-generee/ HTTP/1.1" 200 207
+INFO 2025-06-05 11:22:28,563 logging_utils 48659 6204633088 [ACCÈS VUE] blog.views.ajouter_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-05 11:22:28,617 logging_utils 48659 6204633088 [CONTENU] CREATION - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - ID: 4 - Info: Titre: Les bienfaits du jardinage pour la santé et le bien-être, Statut: published
+INFO 2025-06-05 11:22:28,618 logging_utils 48659 6204633088 [VUE TERMINÉE] blog.views.ajouter_article - Status: 302 - Temps: 0.05s
+INFO 2025-06-05 11:22:28,618 basehttp 48659 6204633088 "POST /fr/ajouter/ HTTP/1.1" 302 0
+INFO 2025-06-05 11:22:28,631 logging_utils 48659 6204633088 [ACCÈS VUE] blog.views.home - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:22:28,645 logging_utils 48659 6204633088 [VUE TERMINÉE] blog.views.home - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 11:22:28,645 basehttp 48659 6204633088 "GET /fr/ HTTP/1.1" 200 21837
+INFO 2025-06-05 11:22:28,668 basehttp 48659 6238285824 "GET /media/articles/covers/ai_generated_image.png HTTP/1.1" 304 0
+WARNING 2025-06-05 11:22:28,676 basehttp 48659 6221459456 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:22:28,684 basehttp 48659 6204633088 "GET /media/articles/covers/ai_generated_image_2QlJTIm.png HTTP/1.1" 200 1907197
+INFO 2025-06-05 11:22:29,179 basehttp 48659 6204633088 "GET /media/articles/covers/ai_generated_image_2QlJTIm.png HTTP/1.1" 304 0
+INFO 2025-06-05 11:22:30,858 logging_utils 48659 6204633088 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:22:30,884 logging_utils 48659 6204633088 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 11:22:30,885 basehttp 48659 6204633088 "GET /fr/article/4/modifier/ HTTP/1.1" 200 31383
+WARNING 2025-06-05 11:22:30,907 basehttp 48659 6204633088 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:22:30,907 basehttp 48659 6221459456 "GET /media/articles/covers/ai_generated_image_2QlJTIm.png HTTP/1.1" 304 0
+INFO 2025-06-05 11:24:30,441 autoreload 48659 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-05 11:24:30,711 autoreload 48816 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 11:25:05,445 autoreload 48816 8660082432 /Users/ilhankoprulu/Projets/Isitech/pythonFinal/blog/views.py changed, reloading.
+INFO 2025-06-05 11:25:05,667 autoreload 48852 8660082432 Watching for file changes with StatReloader
+INFO 2025-06-05 11:27:15,093 logging_utils 48852 6138458112 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:27:15,123 logging_utils 48852 6138458112 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 11:27:15,123 basehttp 48852 6138458112 "GET /fr/article/4/modifier/ HTTP/1.1" 200 41456
+INFO 2025-06-05 11:27:15,139 basehttp 48852 6138458112 "GET /media/articles/covers/ai_generated_image_2QlJTIm.png HTTP/1.1" 304 0
+WARNING 2025-06-05 11:27:15,144 basehttp 48852 6155284480 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:27:15,925 logging_utils 48852 6155284480 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:27:15,935 logging_utils 48852 6155284480 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:27:15,936 basehttp 48852 6155284480 "GET /fr/article/4/modifier/ HTTP/1.1" 200 41456
+WARNING 2025-06-05 11:27:15,952 basehttp 48852 6155284480 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:27:16,125 logging_utils 48852 6155284480 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:27:16,134 logging_utils 48852 6155284480 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:27:16,135 basehttp 48852 6155284480 "GET /fr/article/4/modifier/ HTTP/1.1" 200 41456
+WARNING 2025-06-05 11:27:16,149 basehttp 48852 6155284480 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:27:16,271 logging_utils 48852 6155284480 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:27:16,279 logging_utils 48852 6155284480 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:27:16,279 basehttp 48852 6155284480 "GET /fr/article/4/modifier/ HTTP/1.1" 200 41456
+WARNING 2025-06-05 11:27:16,297 basehttp 48852 6155284480 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:27:28,874 logging_utils 48852 6155284480 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:27:28,900 logging_utils 48852 6155284480 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 11:27:28,901 basehttp 48852 6155284480 "GET /fr/article/4/modifier/ HTTP/1.1" 200 41457
+WARNING 2025-06-05 11:27:28,939 basehttp 48852 6155284480 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:27:32,153 logging_utils 48852 6155284480 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:27:32,173 logging_utils 48852 6155284480 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.02s
+INFO 2025-06-05 11:27:32,174 basehttp 48852 6155284480 "GET /fr/article/4/modifier/ HTTP/1.1" 200 41457
+WARNING 2025-06-05 11:27:32,193 basehttp 48852 6155284480 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:27:40,313 basehttp 48852 6172110848 "GET /media/articles/covers/ai_generated_image_2QlJTIm.png HTTP/1.1" 200 1907197
+INFO 2025-06-05 11:27:54,208 logging_utils 48852 6155284480 [CONTENU] GENERATION_IA_OPENAI - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Prompt: israel..., Image: True
+INFO 2025-06-05 11:27:54,226 basehttp 48852 6155284480 "POST /fr/api/generer-article-openai/ HTTP/1.1" 200 2450990
+INFO 2025-06-05 11:27:59,298 logging_utils 48852 6155284480 [CONTENU] SAUVEGARDE_IMAGE_IA - Image - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Fichier: ai_generated_bac3963d_515b5a61.png
+INFO 2025-06-05 11:27:59,299 basehttp 48852 6155284480 "POST /fr/api/sauvegarder-image-generee/ HTTP/1.1" 200 207
+INFO 2025-06-05 11:28:03,867 logging_utils 48852 6155284480 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: POST
+INFO 2025-06-05 11:28:03,928 logging_utils 48852 6155284480 [CONTENU] MODIFICATION - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - ID: 4 - Info: Changements: Titre: Les bienfaits du jardinage pour la santé et le bien-être -> Découvrez Israël : entre histoire millénaire et modernité dynamique
+INFO 2025-06-05 11:28:03,928 logging_utils 48852 6155284480 [VUE TERMINÉE] blog.views.modifier_article - Status: 302 - Temps: 0.06s
+INFO 2025-06-05 11:28:03,928 basehttp 48852 6155284480 "POST /fr/article/4/modifier/ HTTP/1.1" 302 0
+INFO 2025-06-05 11:28:03,943 logging_utils 48852 6155284480 [ACCÈS VUE] blog.views.article_detail - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:28:03,961 logging_utils 48852 6155284480 [VUE TERMINÉE] blog.views.article_detail - Status: 200 - Temps: 0.03s
+INFO 2025-06-05 11:28:03,961 basehttp 48852 6155284480 "GET /fr/article/4/ HTTP/1.1" 200 16236
+WARNING 2025-06-05 11:28:03,985 basehttp 48852 6155284480 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:28:03,992 basehttp 48852 6138458112 "GET /media/articles/covers/ai_generated_image_f13qFvh.png HTTP/1.1" 200 1836525
+INFO 2025-06-05 11:28:04,041 basehttp 48852 6172110848 "GET /media/articles/covers/ai_generated_image_f13qFvh.png HTTP/1.1" 200 1836525
+INFO 2025-06-05 11:28:04,199 basehttp 48852 6138458112 "GET /media/articles/covers/ai_generated_image_f13qFvh.png HTTP/1.1" 304 0
+INFO 2025-06-05 11:28:05,537 logging_utils 48852 6138458112 [ACCÈS VUE] blog.views.modifier_article - Utilisateur: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Méthode: GET
+INFO 2025-06-05 11:28:05,550 logging_utils 48852 6138458112 [VUE TERMINÉE] blog.views.modifier_article - Status: 200 - Temps: 0.01s
+INFO 2025-06-05 11:28:05,551 basehttp 48852 6138458112 "GET /fr/article/4/modifier/ HTTP/1.1" 200 41837
+WARNING 2025-06-05 11:28:05,572 basehttp 48852 6138458112 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:28:05,573 basehttp 48852 6155284480 "GET /media/articles/covers/ai_generated_image_f13qFvh.png HTTP/1.1" 304 0
+INFO 2025-06-05 11:28:18,580 basehttp 48852 6155284480 "GET /media/articles/covers/ai_generated_image_f13qFvh.png HTTP/1.1" 304 0
+INFO 2025-06-05 11:28:42,611 logging_utils 48852 6155284480 [CONTENU] GENERATION_IA_OPENAI - Article - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Prompt: israel..., Image: True
+INFO 2025-06-05 11:28:42,624 basehttp 48852 6155284480 "POST /fr/api/generer-article-openai/ HTTP/1.1" 200 1844551
+INFO 2025-06-05 11:29:58,248 logging_utils 48852 6155284480 [CONTENU] SAUVEGARDE_IMAGE_IA - Image - Par: ilhan1 (ID: 3, Role: auteur) - IP: 127.0.0.1 - Info: Fichier: ai_generated_1577fc2d_8ef9e915.png
+INFO 2025-06-05 11:29:58,249 basehttp 48852 6155284480 "POST /fr/api/sauvegarder-image-generee/ HTTP/1.1" 200 207
+WARNING 2025-06-05 11:30:01,642 basehttp 48852 6155284480 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+WARNING 2025-06-05 11:30:01,677 basehttp 48852 6155284480 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2638
+INFO 2025-06-05 11:30:02,022 basehttp 48852 6155284480 "GET /media/articles/covers/ai_generated_image_f13qFvh.png HTTP/1.1" 304 0

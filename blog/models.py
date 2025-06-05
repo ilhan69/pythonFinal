@@ -143,7 +143,7 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         """Retourne l'URL absolue de l'article"""
-        return reverse('article_detail', kwargs={'slug': self.slug})
+        return reverse('blog:article_detail', kwargs={'slug': self.slug})
 
     def increment_views(self):
         """Incrémente le compteur de vues"""

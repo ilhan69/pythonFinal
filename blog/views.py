@@ -10,8 +10,12 @@ from django.contrib.contenttypes.models import ContentType
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
+from django.core.files.base import ContentFile
 import json
 import requests
+import base64
+from io import BytesIO
+from PIL import Image
 from .forms import PostForm, CategoryForm, TagForm
 from .models import Article, Category, Tag
 from comments.models import Comment
@@ -718,9 +722,9 @@ def auteurs_actifs(request):
 
 @login_required
 @csrf_exempt
-def generer_article_gemini(request):
+def generer_article_openai(request):
     """
-    Vue pour générer du contenu d'article via l'API Gemini Flash
+    Vue pour générer du contenu d'article et une image de couverture via l'API OpenAI
     """
     if request.method != 'POST':
         return JsonResponse({'error': 'Méthode non autorisée'}, status=405)
@@ -731,107 +735,96 @@ def generer_article_gemini(request):
     try:
         data = json.loads(request.body)
         prompt = data.get('prompt', '').strip()
+        generer_image = data.get('generer_image', False)
         
         if not prompt:
             return JsonResponse({'error': 'Le prompt ne peut pas être vide'}, status=400)
         
-        # Configuration de l'API Gemini (vous devrez ajouter votre clé API)
-        GEMINI_API_KEY = getattr(settings, 'GEMINI_API_KEY', None)
+        # Configuration de l'API OpenAI
+        OPENAI_API_KEY = getattr(settings, 'OPENAI_API_KEY', None)
         
-        if not GEMINI_API_KEY:
+        if not OPENAI_API_KEY:
             return JsonResponse({
-                'error': 'Configuration API Gemini manquante. Veuillez configurer GEMINI_API_KEY dans les settings.'
+                'error': 'Configuration API OpenAI manquante. Veuillez configurer OPENAI_API_KEY dans les settings.'
             }, status=500)
         
-        # Appel à l'API Gemini Flash
-        gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={GEMINI_API_KEY}"
-        
-        gemini_prompt = f"""
-        Écris un article de blog complet en français sur le sujet suivant : {prompt}
-        
-        L'article doit contenir :
-        1. Un titre accrocheur
-        2. Un résumé court (maximum 250 caractères)
-        3. Un contenu structuré avec des paragraphes, des sous-titres si nécessaire
-        4. Une longueur d'environ 500-800 mots
-        5. Un style engageant et informatif
-        
-        Format de réponse attendu (JSON) :
-        {{
-            "titre": "Titre de l'article",
-            "resume": "Résumé court de l'article",
-            "contenu": "Contenu complet de l'article avec formatage HTML basique"
-        }}
-        
-        Réponds uniquement avec le JSON demandé, sans texte supplémentaire.
-        """
-        
-        payload = {
-            "contents": [{
-                "parts": [{
-                    "text": gemini_prompt
-                }]
-            }],
-            "generationConfig": {
-                "temperature": 0.7,
-                "topK": 40,
-                "topP": 0.95,
-                "maxOutputTokens": 2048,
-            }
-        }
-        
+        # Génération du contenu textuel avec GPT-4
         headers = {
+            'Authorization': f'Bearer {OPENAI_API_KEY}',
             'Content-Type': 'application/json',
         }
         
-        response = requests.post(gemini_url, json=payload, headers=headers, timeout=30)
+        # Prompt optimisé pour la génération de contenu
+        content_prompt = f"""
+        Écris un article de blog en français sur : {prompt}
         
-        if response.status_code == 200:
-            gemini_response = response.json()
-            
-            if 'candidates' in gemini_response and len(gemini_response['candidates']) > 0:
-                generated_text = gemini_response['candidates'][0]['content']['parts'][0]['text']
+        Réponds UNIQUEMENT avec un JSON valide dans ce format exact :
+        {{
+            "titre": "Titre accrocheur de l'article",
+            "resume": "Résumé en une phrase (max 200 caractères)",
+            "contenu": "Contenu HTML structuré avec <p>, <h2>, <strong>, <em>, <ul>, <li>"
+        }}
+        
+        Contenu : 400-600 mots, style informatif et engageant.
+        """
+        
+        # Paramètres optimisés pour réduire le temps de génération
+        gpt_payload = {
+            "model": "gpt-3.5-turbo",  # Plus rapide que GPT-4
+            "messages": [
+                {
+                    "role": "system", 
+                    "content": "Tu es un rédacteur expert. Réponds UNIQUEMENT avec du JSON valide, sans texte supplémentaire."
+                },
+                {
+                    "role": "user", 
+                    "content": content_prompt
+                }
+            ],
+            "max_tokens": 1500,  # Réduit pour accélérer
+            "temperature": 0.7,
+            "top_p": 0.9,
+            "frequency_penalty": 0.1,
+            "presence_penalty": 0.1
+        }
+        
+        # Augmenter le timeout et ajouter des tentatives
+        max_retries = 2
+        timeout_duration = 60  # Augmenté à 60 secondes
+        
+        for attempt in range(max_retries):
+            try:
+                response = requests.post(
+                    'https://api.openai.com/v1/chat/completions',
+                    headers=headers,
+                    json=gpt_payload,
+                    timeout=timeout_duration
+                )
+                break  # Si succès, sortir de la boucle
                 
-                try:
-                    # Nettoyer le texte pour extraire le JSON
-                    start_idx = generated_text.find('{')
-                    end_idx = generated_text.rfind('}') + 1
-                    
-                    if start_idx != -1 and end_idx > start_idx:
-                        json_text = generated_text[start_idx:end_idx]
-                        article_data = json.loads(json_text)
-                        
-                        # Log de l'action
-                        log_content_action(request, 'GENERATION_IA', 'Article', None,
-                                         f"Prompt: {prompt[:100]}...")
-                        
-                        return JsonResponse({
-                            'success': True,
-                            'titre': article_data.get('titre', ''),
-                            'resume': article_data.get('resume', ''),
-                            'contenu': article_data.get('contenu', ''),
-                            'message': 'Article généré avec succès !'
-                        })
-                    else:
-                        raise ValueError("Format JSON non trouvé dans la réponse")
-                        
-                except (json.JSONDecodeError, ValueError) as e:
-                    # Fallback : créer une structure basique à partir du texte brut
-                    lines = generated_text.strip().split('\n')
-                    titre = lines[0] if lines else "Article généré"
-                    contenu = generated_text
-                    
+            except requests.exceptions.Timeout:
+                if attempt == max_retries - 1:  # Dernière tentative
+                    log_error(request, Exception("Timeout API OpenAI après plusieurs tentatives"), 
+                             "Timeout lors de la génération d'article")
                     return JsonResponse({
-                        'success': True,
-                        'titre': titre,
-                        'resume': '',
-                        'contenu': contenu,
-                        'message': 'Article généré avec succès (format simplifié) !'
-                    })
-            else:
-                raise Exception("Aucun contenu généré par l'API")
-        else:
-            error_message = f"Erreur API Gemini: {response.status_code}"
+                        'error': 'La génération prend trop de temps. Essayez avec un prompt plus court ou réessayez plus tard.'
+                    }, status=408)
+                
+                # Réduire les paramètres pour la tentative suivante
+                gpt_payload["max_tokens"] = max(800, gpt_payload["max_tokens"] - 300)
+                timeout_duration = 45  # Réduire le timeout pour la deuxième tentative
+                continue
+            
+            except requests.exceptions.RequestException as e:
+                log_error(request, e, f"Erreur de connexion à OpenAI (tentative {attempt + 1})")
+                if attempt == max_retries - 1:
+                    return JsonResponse({
+                        'error': 'Erreur de connexion à l\'API OpenAI. Vérifiez votre connexion internet.'
+                    }, status=500)
+                continue
+        
+        if response.status_code != 200:
+            error_message = f"Erreur API OpenAI: {response.status_code}"
             if response.text:
                 try:
                     error_data = response.json()
@@ -840,20 +833,194 @@ def generer_article_gemini(request):
                 except:
                     pass
             
-            log_error(request, Exception(error_message), "Erreur lors de l'appel à l'API Gemini")
+            log_error(request, Exception(error_message), "Erreur lors de l'appel à l'API OpenAI")
             return JsonResponse({'error': error_message}, status=500)
+        
+        gpt_response = response.json()
+        generated_text = gpt_response['choices'][0]['message']['content'].strip()
+        
+        # Parser le JSON généré avec gestion d'erreur améliorée
+        try:
+            # Nettoyer le texte pour extraire le JSON
+            start_idx = generated_text.find('{')
+            end_idx = generated_text.rfind('}') + 1
             
-    except requests.RequestException as e:
-        log_error(request, e, "Erreur de connexion à l'API Gemini")
+            if start_idx != -1 and end_idx > start_idx:
+                json_text = generated_text[start_idx:end_idx]
+                article_data = json.loads(json_text)
+            else:
+                raise ValueError("Format JSON non trouvé dans la réponse")
+            
+            # Validation des champs requis
+            if not article_data.get('titre') or not article_data.get('contenu'):
+                raise ValueError("Champs titre ou contenu manquants")
+                
+        except (json.JSONDecodeError, ValueError) as e:
+            # Fallback amélioré : parser manuellement le contenu
+            log_error(request, e, "Erreur de parsing JSON, utilisation du fallback")
+            
+            lines = [line.strip() for line in generated_text.split('\n') if line.strip()]
+            titre = "Article généré par IA"
+            contenu = generated_text
+            resume = ""
+            
+            # Essayer d'extraire un titre des premières lignes
+            for line in lines[:3]:
+                if len(line) > 10 and len(line) < 100 and not line.startswith('{'):
+                    titre = line.replace('"', '').replace("'", "")
+                    break
+            
+            article_data = {
+                'titre': titre,
+                'resume': resume,
+                'contenu': f"<p>{contenu.replace(chr(10), '</p><p>')}</p>"
+            }
+        
+        result_data = {
+            'success': True,
+            'titre': article_data.get('titre', ''),
+            'resume': article_data.get('resume', ''),
+            'contenu': article_data.get('contenu', ''),
+            'message': 'Article généré avec succès !'
+        }
+        
+        # Génération de l'image de couverture avec DALL-E si demandée
+        if generer_image:
+            try:
+                # Prompt simplifié pour l'image
+                image_prompt = f"Professional blog cover image about: {prompt}. Modern, clean, professional style, no text overlay."
+                
+                dalle_payload = {
+                    "model": "dall-e-3",
+                    "prompt": image_prompt[:400],  # Limiter la taille du prompt
+                    "n": 1,
+                    "size": "1024x1024",
+                    "quality": "standard",
+                    "response_format": "b64_json"
+                }
+                
+                # Timeout plus long pour DALL-E
+                dalle_response = requests.post(
+                    'https://api.openai.com/v1/images/generations',
+                    headers=headers,
+                    json=dalle_payload,
+                    timeout=90  # 90 secondes pour DALL-E
+                )
+                
+                if dalle_response.status_code == 200:
+                    dalle_data = dalle_response.json()
+                    if 'data' in dalle_data and len(dalle_data['data']) > 0:
+                        # Décoder l'image base64
+                        image_b64 = dalle_data['data'][0]['b64_json']
+                        
+                        # Créer un nom de fichier unique
+                        import uuid
+                        filename = f"ai_generated_{uuid.uuid4().hex[:8]}.png"
+                        
+                        # Sauvegarder l'image temporairement en base64 pour l'affichage
+                        result_data['image_generated'] = True
+                        result_data['image_data'] = f"data:image/png;base64,{image_b64}"
+                        result_data['image_filename'] = filename
+                        result_data['message'] = 'Article et image générés avec succès !'
+                    else:
+                        result_data['image_error'] = 'Aucune image générée par DALL-E'
+                else:
+                    error_msg = f"Erreur DALL-E: {dalle_response.status_code}"
+                    if dalle_response.text:
+                        try:
+                            error_data = dalle_response.json()
+                            if 'error' in error_data:
+                                error_msg = error_data['error'].get('message', error_msg)
+                        except:
+                            pass
+                    result_data['image_error'] = error_msg
+                    
+            except requests.exceptions.Timeout:
+                result_data['image_error'] = 'Timeout lors de la génération d\'image. L\'article a été créé sans image.'
+                log_error(request, Exception("Timeout DALL-E"), "Timeout lors de la génération d'image")
+                
+            except Exception as e:
+                log_error(request, e, "Erreur lors de la génération d'image avec DALL-E")
+                result_data['image_error'] = f'Erreur lors de la génération d\'image: {str(e)}'
+        
+        # Log de l'action
+        log_content_action(request, 'GENERATION_IA_OPENAI', 'Article', None,
+                         f"Prompt: {prompt[:100]}..., Image: {generer_image}")
+        
+        return JsonResponse(result_data)
+        
+    except requests.exceptions.Timeout:
+        log_error(request, Exception("Timeout général"), "Timeout lors de la génération d'article")
         return JsonResponse({
-            'error': 'Erreur de connexion à l\'API Gemini. Veuillez réessayer.'
+            'error': 'La génération prend trop de temps. Essayez avec un prompt plus court.'
+        }, status=408)
+        
+    except requests.RequestException as e:
+        log_error(request, e, "Erreur de connexion à l'API OpenAI")
+        return JsonResponse({
+            'error': 'Erreur de connexion à l\'API OpenAI. Veuillez réessayer.'
         }, status=500)
         
     except json.JSONDecodeError:
         return JsonResponse({'error': 'Format de données invalide'}, status=400)
         
     except Exception as e:
-        log_error(request, e, "Erreur lors de la génération d'article avec Gemini")
+        log_error(request, e, "Erreur lors de la génération d'article avec OpenAI")
         return JsonResponse({
             'error': 'Une erreur inattendue est survenue lors de la génération.'
+        }, status=500)
+
+@login_required
+@csrf_exempt
+def sauvegarder_image_generee(request):
+    """
+    Vue pour sauvegarder une image générée par IA dans le système de fichiers
+    """
+    if request.method != 'POST':
+        return JsonResponse({'error': 'Méthode non autorisée'}, status=405)
+    
+    try:
+        data = json.loads(request.body)
+        image_data = data.get('image_data', '')
+        filename = data.get('filename', 'generated_image.png')
+        
+        if not image_data.startswith('data:image/'):
+            return JsonResponse({'error': 'Format d\'image invalide'}, status=400)
+        
+        # Extraire les données base64
+        header, encoded = image_data.split(',', 1)
+        image_bytes = base64.b64decode(encoded)
+        
+        # Créer un nom de fichier unique
+        import uuid
+        import os
+        from django.utils import timezone
+        
+        name, ext = os.path.splitext(filename)
+        unique_filename = f"{name}_{uuid.uuid4().hex[:8]}{ext}"
+        
+        # Sauvegarder dans le répertoire des images d'articles
+        from django.core.files.storage import default_storage
+        file_path = f"articles/covers/{unique_filename}"
+        
+        # Sauvegarder le fichier
+        saved_path = default_storage.save(file_path, ContentFile(image_bytes))
+        
+        # Retourner l'URL pour utilisation dans le formulaire
+        file_url = default_storage.url(saved_path)
+        
+        log_content_action(request, 'SAUVEGARDE_IMAGE_IA', 'Image', None,
+                         f"Fichier: {unique_filename}")
+        
+        return JsonResponse({
+            'success': True,
+            'file_path': saved_path,
+            'file_url': file_url,
+            'filename': unique_filename
+        })
+        
+    except Exception as e:
+        log_error(request, e, "Erreur lors de la sauvegarde d'image générée")
+        return JsonResponse({
+            'error': 'Erreur lors de la sauvegarde de l\'image'
         }, status=500)
